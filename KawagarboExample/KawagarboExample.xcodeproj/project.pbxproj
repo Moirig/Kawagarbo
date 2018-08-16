@@ -13,7 +13,7 @@
 		3B1E083A2125285C00788CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E08382125285C00788CD7 /* Main.storyboard */; };
 		3B1E083C2125285F00788CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E083B2125285F00788CD7 /* Assets.xcassets */; };
 		3B1E083F2125285F00788CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E083D2125285F00788CD7 /* LaunchScreen.storyboard */; };
-		3B1E0848212528A400788CD7 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E0847212528A400788CD7 /* test.txt */; };
+		3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E084B212545DF00788CD7 /* Kawagarbo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		3B1E083B2125285F00788CD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B1E083E2125285F00788CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B1E08402125285F00788CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B1E0847212528A400788CD7 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
+		3B1E084B212545DF00788CD7 /* Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kawagarbo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +73,90 @@
 		3B1E0846212528A400788CD7 /* Kawagarbo */ = {
 			isa = PBXGroup;
 			children = (
-				3B1E0847212528A400788CD7 /* test.txt */,
+				3B1E084B212545DF00788CD7 /* Kawagarbo.swift */,
+				3B1E085421254AA000788CD7 /* NativeApis */,
+				3B1E084F212549B500788CD7 /* Core */,
 			);
 			name = Kawagarbo;
 			path = ../Kawagarbo;
+			sourceTree = "<group>";
+		};
+		3B1E08492125451900788CD7 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		3B1E084A2125452E00788CD7 /* JSBridge */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JSBridge;
+			sourceTree = "<group>";
+		};
+		3B1E084D212548BB00788CD7 /* OfflinePackage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OfflinePackage;
+			sourceTree = "<group>";
+		};
+		3B1E084E212548FD00788CD7 /* WebRoute */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebRoute;
+			sourceTree = "<group>";
+		};
+		3B1E084F212549B500788CD7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3B1E085321254A7E00788CD7 /* Utils */,
+				3B1E085221254A6200788CD7 /* Resource */,
+				3B1E085121254A2B00788CD7 /* ViewController */,
+				3B1E085021254A0400788CD7 /* NativeApi */,
+				3B1E084E212548FD00788CD7 /* WebRoute */,
+				3B1E084D212548BB00788CD7 /* OfflinePackage */,
+				3B1E084A2125452E00788CD7 /* JSBridge */,
+				3B1E08492125451900788CD7 /* WebView */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3B1E085021254A0400788CD7 /* NativeApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NativeApi;
+			sourceTree = "<group>";
+		};
+		3B1E085121254A2B00788CD7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3B1E085221254A6200788CD7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		3B1E085321254A7E00788CD7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3B1E085421254AA000788CD7 /* NativeApis */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NativeApis;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +219,6 @@
 			files = (
 				3B1E083F2125285F00788CD7 /* LaunchScreen.storyboard in Resources */,
 				3B1E083C2125285F00788CD7 /* Assets.xcassets in Resources */,
-				3B1E0848212528A400788CD7 /* test.txt in Resources */,
 				3B1E083A2125285C00788CD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B1E08372125285C00788CD7 /* SecondViewController.swift in Sources */,
+				3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */,
 				3B1E08332125285C00788CD7 /* AppDelegate.swift in Sources */,
 				3B1E08352125285C00788CD7 /* FirstViewController.swift in Sources */,
 			);
