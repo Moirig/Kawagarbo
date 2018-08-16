@@ -112,6 +112,7 @@
 		3B1E084F212549B500788CD7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3B1E085521254B7500788CD7 /* Security */,
 				3B1E085321254A7E00788CD7 /* Utils */,
 				3B1E085221254A6200788CD7 /* Resource */,
 				3B1E085121254A2B00788CD7 /* ViewController */,
@@ -155,8 +156,79 @@
 		3B1E085421254AA000788CD7 /* NativeApis */ = {
 			isa = PBXGroup;
 			children = (
+				3B1E085D21254C9800788CD7 /* StatisticApi */,
+				3B1E085C21254C8400788CD7 /* ShareApi */,
+				3B1E085B21254C6A00788CD7 /* QRApi */,
+				3B1E085A21254C5500788CD7 /* MapApi */,
+				3B1E085921254C2D00788CD7 /* NativeRouteApi */,
+				3B1E085821254C0400788CD7 /* DatabaseApi */,
+				3B1E085721254BFA00788CD7 /* CacheApi */,
+				3B1E085621254BE100788CD7 /* NetworkApi */,
 			);
 			path = NativeApis;
+			sourceTree = "<group>";
+		};
+		3B1E085521254B7500788CD7 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		3B1E085621254BE100788CD7 /* NetworkApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkApi;
+			sourceTree = "<group>";
+		};
+		3B1E085721254BFA00788CD7 /* CacheApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CacheApi;
+			sourceTree = "<group>";
+		};
+		3B1E085821254C0400788CD7 /* DatabaseApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DatabaseApi;
+			sourceTree = "<group>";
+		};
+		3B1E085921254C2D00788CD7 /* NativeRouteApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NativeRouteApi;
+			sourceTree = "<group>";
+		};
+		3B1E085A21254C5500788CD7 /* MapApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MapApi;
+			sourceTree = "<group>";
+		};
+		3B1E085B21254C6A00788CD7 /* QRApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = QRApi;
+			sourceTree = "<group>";
+		};
+		3B1E085C21254C8400788CD7 /* ShareApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShareApi;
+			sourceTree = "<group>";
+		};
+		3B1E085D21254C9800788CD7 /* StatisticApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StatisticApi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
