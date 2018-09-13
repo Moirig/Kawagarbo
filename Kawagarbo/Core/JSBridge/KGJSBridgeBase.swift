@@ -27,16 +27,16 @@ protocol KGJSBridgeBaseDelegate: AnyObject {
 
 class KGJSBridgeBase: NSObject {
     
-    public typealias Handler = (_ parameters: [String: Any]?, _ callback: Callback?) -> Void
-    public typealias Callback = (_ responseData: Any?) -> Void
+    typealias Handler = (_ parameters: [String: Any]?, _ callback: Callback?) -> Void
+    typealias Callback = (_ responseData: Any?) -> Void
     
     typealias Message = [String: Any]
     
     //TODO-提供配置文件
-    public static var debugLogEnable: Bool = false
-    public static var JSBridgeObj: String?
-    public static var JBCallbacksObj: String?
-    public static var JBScheme: String = kDefaultJBScheme
+    static var debugLogEnable: Bool = false
+    static var JSBridgeObj: String?
+    static var JBCallbacksObj: String?
+    static var JBScheme: String = kDefaultJBScheme
     
     weak var delegate: KGJSBridgeBaseDelegate?
     
@@ -120,7 +120,7 @@ class KGJSBridgeBase: NSObject {
                 guard let handler = messageHandlers[handlerName] else {
                     log("NoHandlerException, No handler for message from JS: \(message)")
                     //TODO-提供配置文件
-                    callback!(["code": -999, "message": "Native Api is not exist."])
+                    callback!(["code": NSURLErrorUnsupportedURL, "message": "Unsupported Native Api."])
                     return
                 }
                 handler(message["data"] as? [String : Any], callback)
@@ -139,9 +139,9 @@ class KGJSBridgeBase: NSObject {
     
 }
 
+// MARK: - Action
 extension KGJSBridgeBase {
     
-    // MARK: - Action
     func isJSBridge(url: URL) -> Bool {
         if !isSchemeMatch(url) {
             return false
@@ -171,16 +171,12 @@ extension KGJSBridgeBase {
     func webViewJavascriptFetchQueyCommand() -> String {
         return "\(KGJSBridgeBase.JSBridgeObj ?? kDefaultJSBridgeObj)._fetchQueue();"
     }
-    
-    func disableJavscriptAlertBoxSafetyTimeout() {
-        send(handlerName: "_disableJavascriptAlertBoxSafetyTimeout", data: nil, callback: nil)
-    }
 
 }
 
+// MARK: - Private
 extension KGJSBridgeBase {
     
-    // MARK: - Private
     private func queue(message: Message) {
         if startupMessageQueue.isEmpty {
             dispatch(message: message)
@@ -211,7 +207,6 @@ extension KGJSBridgeBase {
         }
     }
     
-    // MARK: - JSON
     private func serialize(message: Message, pretty: Bool) -> String? {
         var result: String?
         do {
@@ -236,9 +231,9 @@ extension KGJSBridgeBase {
     
 }
 
+// MARK: - Log
 extension KGJSBridgeBase {
     
-    // MARK: - Log
     private func log<T>(_ message: T, file: String = #file, function: String = #function, line: Int = #line) {
         if KGJSBridgeBase.debugLogEnable {
             let fileName = (file as NSString).lastPathComponent

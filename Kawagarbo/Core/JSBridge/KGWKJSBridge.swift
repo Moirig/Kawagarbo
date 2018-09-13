@@ -19,7 +19,7 @@ class KGWKJSBridge: NSObject {
         
     }
     
-    public init(webView: WKWebView) {
+    init(webView: WKWebView) {
         super.init()
         
         self.webView = webView
@@ -28,19 +28,19 @@ class KGWKJSBridge: NSObject {
         reset()
     }
     
-    public func reset() {
+    func reset() {
         base.reset()
     }
     
-    public func register(handlerName: String, handle: @escaping KGJSBridgeBase.Handler) {
+    func register(handlerName: String, handle: @escaping KGJSBridgeBase.Handler) {
         base.messageHandlers[handlerName] = handle
     }
     
-    public func remove(handlerName: String) {
+    func remove(handlerName: String) {
         base.messageHandlers.removeValue(forKey: handlerName)
     }
     
-    public func call(handlerName: String, data: Any? = nil, callback: KGJSBridgeBase.Callback? = nil) {
+    func call(handlerName: String, data: Any? = nil, callback: KGJSBridgeBase.Callback? = nil) {
         base.send(handlerName: handlerName, data: data, callback: callback)
     }
     

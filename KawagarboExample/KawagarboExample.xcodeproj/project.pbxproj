@@ -17,6 +17,8 @@
 		3B1E085F2125619A00788CD7 /* KGJSBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E085E2125619900788CD7 /* KGJSBridge.js */; };
 		3B1E08612125629F00788CD7 /* KGWKJSBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E08602125629F00788CD7 /* KGWKJSBridge.swift */; };
 		3B1E0863212573E200788CD7 /* KGJSBridgeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E0862212573E200788CD7 /* KGJSBridgeBase.swift */; };
+		3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C202148FE41006731B1 /* KGWKWebView.swift */; };
+		3BAE9C232148FF33006731B1 /* KGWKWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		3B1E085E2125619900788CD7 /* KGJSBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = KGJSBridge.js; sourceTree = "<group>"; };
 		3B1E08602125629F00788CD7 /* KGWKJSBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKJSBridge.swift; sourceTree = "<group>"; };
 		3B1E0862212573E200788CD7 /* KGJSBridgeBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGJSBridgeBase.swift; sourceTree = "<group>"; };
+		3BAE9C202148FE41006731B1 /* KGWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKWebView.swift; sourceTree = "<group>"; };
+		3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKWebViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 		3B1E08492125451900788CD7 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				3BAE9C202148FE41006731B1 /* KGWKWebView.swift */,
+				3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -331,8 +337,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B1E08372125285C00788CD7 /* SecondViewController.swift in Sources */,
+				3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */,
 				3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */,
 				3B1E08332125285C00788CD7 /* AppDelegate.swift in Sources */,
+				3BAE9C232148FF33006731B1 /* KGWKWebViewDelegate.swift in Sources */,
 				3B1E08612125629F00788CD7 /* KGWKJSBridge.swift in Sources */,
 				3B1E0863212573E200788CD7 /* KGJSBridgeBase.swift in Sources */,
 				3B1E08352125285C00788CD7 /* FirstViewController.swift in Sources */,
