@@ -19,6 +19,8 @@
 		3B1E0863212573E200788CD7 /* KGJSBridgeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E0862212573E200788CD7 /* KGJSBridgeBase.swift */; };
 		3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C202148FE41006731B1 /* KGWKWebView.swift */; };
 		3BAE9C232148FF33006731B1 /* KGWKWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */; };
+		3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */; };
+		3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9D23214BA1B8006731B1 /* KGWebViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		3B1E0862212573E200788CD7 /* KGJSBridgeBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGJSBridgeBase.swift; sourceTree = "<group>"; };
 		3BAE9C202148FE41006731B1 /* KGWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKWebView.swift; sourceTree = "<group>"; };
 		3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKWebViewDelegate.swift; sourceTree = "<group>"; };
+		3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewController.swift; sourceTree = "<group>"; };
+		3BAE9D23214BA1B8006731B1 /* KGWebViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 		3B1E085121254A2B00788CD7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */,
+				3BAE9D23214BA1B8006731B1 /* KGWebViewControllerDelegate.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -338,11 +344,13 @@
 			files = (
 				3B1E08372125285C00788CD7 /* SecondViewController.swift in Sources */,
 				3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */,
+				3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */,
 				3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */,
 				3B1E08332125285C00788CD7 /* AppDelegate.swift in Sources */,
 				3BAE9C232148FF33006731B1 /* KGWKWebViewDelegate.swift in Sources */,
 				3B1E08612125629F00788CD7 /* KGWKJSBridge.swift in Sources */,
 				3B1E0863212573E200788CD7 /* KGJSBridgeBase.swift in Sources */,
+				3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */,
 				3B1E08352125285C00788CD7 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

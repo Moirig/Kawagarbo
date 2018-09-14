@@ -11,7 +11,7 @@ import WebKit
 
 private let kProgressObserverKey: String = "estimatedProgress"
 
-class KGWKWebView: WKWebView {
+public class KGWKWebView: WKWebView {
 
     weak var webViewDelegate: KGWKWebViewDelegate?
     
@@ -86,11 +86,16 @@ class KGWKWebView: WKWebView {
         uiDelegate = nil
     }
     
-    override init(frame: CGRect, configuration: WKWebViewConfiguration) {
-        super.init(frame: frame, configuration: configuration)
+    convenience init() {
+        self.init()
     }
     
-    required init?(coder: NSCoder) {
+    override init(frame: CGRect, configuration: WKWebViewConfiguration) {
+        super.init(frame: frame, configuration: configuration)
+        setupWebView()
+    }
+    
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -101,7 +106,7 @@ class KGWKWebView: WKWebView {
         scrollView.delegate = self
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == kProgressObserverKey {
             progressView.alpha = 1
             progressView .setProgress(Float(estimatedProgress), animated: true)
@@ -123,7 +128,7 @@ class KGWKWebView: WKWebView {
 // MARK: - WKNavigationDelegate
 extension KGWKWebView: WKNavigationDelegate {
     
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let allowed = webViewDelegate?.webView(self, shouldStartLoadWith: navigationAction.request, navigationType: navigationAction.navigationType) else {
             decisionHandler(.allow)
             return
@@ -132,27 +137,27 @@ extension KGWKWebView: WKNavigationDelegate {
         decisionHandler(allowed ? .allow : .cancel)
     }
     
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+    public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         webViewDelegate?.webViewDidStartLoad(self)
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webViewDelegate?.webViewDidFinishLoad(self)
     }
     
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+    public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         webViewDelegate?.webView(self, didFailLoadWithError: error)
     }
     
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+    public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         webViewDelegate?.webView(self, didFailLoadWithError: error)
     }
     
-    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+    public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         webViewDelegate?.webViewDidTerminate(self)
     }
     
-    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+    public func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         guard challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust && challenge.previousFailureCount == 0 else {
             completionHandler(.cancelAuthenticationChallenge, nil)
             return
@@ -161,7 +166,7 @@ extension KGWKWebView: WKNavigationDelegate {
         completionHandler(.useCredential, credential)
     }
     
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         let response = navigationResponse.response
         guard response.mimeType == "application/octet-stream" else {
             decisionHandler(.allow)
@@ -182,7 +187,7 @@ extension KGWKWebView: WKNavigationDelegate {
 // MARK: - WKUIDelegate
 extension KGWKWebView: WKUIDelegate {
     
-    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+    public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         if banAlert {
             completionHandler()
             return
@@ -191,7 +196,7 @@ extension KGWKWebView: WKUIDelegate {
         //TODO-showAlert
     }
     
-    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
+    public func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
         if banAlert {
             completionHandler(false)
             return
@@ -200,7 +205,7 @@ extension KGWKWebView: WKUIDelegate {
         //TODO-showAlert
     }
     
-    func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
+    public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
         if banAlert {
             completionHandler(nil)
             return
@@ -209,7 +214,7 @@ extension KGWKWebView: WKUIDelegate {
         //TODO-showAlert
     }
     
-    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+    public func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         if navigationAction.targetFrame == nil {
             webView.load(navigationAction.request)
         }
@@ -221,7 +226,7 @@ extension KGWKWebView: WKUIDelegate {
 // MARK: - UIScrollViewDelegate
 extension KGWKWebView: UIScrollViewDelegate {
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         scrollView.decelerationRate = UIScrollViewDecelerationRateNormal
     }
     
