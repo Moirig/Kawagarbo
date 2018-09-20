@@ -11,7 +11,7 @@ import WebKit
 
 public class KGWebViewController: UIViewController {
     
-    public typealias KGWebCallback = (_ path: String, _ data: [String: Any], _ error: Error) -> Void
+    public typealias KGWebCallback = (_ path: String, _ data: [String: Any]?, _ error: Error?) -> Void
     
     public weak var webView: KGWKWebView?
     
@@ -137,13 +137,97 @@ extension KGWebViewController {
     
 }
 
+// MARK: - Notification
 extension KGWebViewController {
     
     func addNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(exitApp(_:)), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
+            
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
+            
+        }
     }
     
-    @objc func exitApp(_ notification: Notification) {
+    func removeNotification() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+}
+
+// MARK: - Call Web
+extension KGWebViewController {
+    
+    public typealias KGCallWebComplete = (_ data: [String: Any]?, _ error: NSError?) -> Void
+
+    func callWeb(function: String, parameters: [String: Any]? = nil, complete: KGCallWebComplete? = nil) {
+        guard function.count > 0 else { return }
+        
+        debugPrint(
+            """
+            ---------------- Native->Web ----------------
+            function:\(function)
+            \(parameters?.string ?? "")
+            ---------------------------------------------
+            """
+        )
+        
+        jsBridge.call(handlerName: function, data: parameters) { (response) in
+            guard let complete = complete else { return }
+            if let _ = response as? [Any] {
+                complete(nil, NSError(code: NSURLErrorUnknown, message: "Unknown Error"))
+                return
+            }
+            
+            var dictionary: [String: Any]?
+            
+            if let string = response as? String {
+                let data = string.data(using: .utf8)
+                dictionary = data?.dictionary
+            }
+            else if let data = response as? Data {
+                dictionary = data.dictionary
+            }
+            else if let dict = response as? [String: Any] {
+                dictionary = dict
+            }
+            
+            debugPrint(
+                """
+                ---------------- Native->Web ----------------
+                function:\(function)
+                \(dictionary?.string ?? "")
+                ---------------------------------------------
+                """
+            )
+            
+            guard let dict = dictionary, let code = dict["code"] as? Int else {
+                complete(nil, NSError(code: NSURLErrorUnknown, message: "Unknown Error"))
+                return
+            }
+            
+            //TODO-配置
+            if code == 200 {
+                if let dataDic = dict["data"] as? [String: Any] {
+                    complete(dataDic, nil)
+                }
+                else {
+                    complete(nil, nil)
+                }
+            }
+            else {
+                let error: NSError
+                if let message = dict["message"] as? String {
+                    error = NSError(code: code, message: message)
+                }
+                else {
+                    error = NSError(code: code)
+                }
+                complete(nil, error)
+            }
+        }
+        
         
     }
     

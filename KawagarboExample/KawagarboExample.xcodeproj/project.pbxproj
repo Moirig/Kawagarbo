@@ -21,6 +21,9 @@
 		3BAE9C232148FF33006731B1 /* KGWKWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */; };
 		3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */; };
 		3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9D23214BA1B8006731B1 /* KGWebViewControllerDelegate.swift */; };
+		3BF76BC321536F96008B40A0 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BC221536F96008B40A0 /* Dictionary+Extension.swift */; };
+		3BF76BD1215377E6008B40A0 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD0215377E6008B40A0 /* Data+Extension.swift */; };
+		3BF76BD321538259008B40A0 /* NSError+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD221538259008B40A0 /* NSError+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKWebViewDelegate.swift; sourceTree = "<group>"; };
 		3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewController.swift; sourceTree = "<group>"; };
 		3BAE9D23214BA1B8006731B1 /* KGWebViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewControllerDelegate.swift; sourceTree = "<group>"; };
+		3BF76BC221536F96008B40A0 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		3BF76BD0215377E6008B40A0 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		3BF76BD221538259008B40A0 /* NSError+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,7 @@
 		3B1E085321254A7E00788CD7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3BF76BBF21536EAD008B40A0 /* Extension */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -250,6 +257,32 @@
 			children = (
 			);
 			path = StatisticApi;
+			sourceTree = "<group>";
+		};
+		3BF76BBF21536EAD008B40A0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3BF76BC121536ED2008B40A0 /* UIkit */,
+				3BF76BC021536EC6008B40A0 /* Foundation */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3BF76BC021536EC6008B40A0 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				3BF76BC221536F96008B40A0 /* Dictionary+Extension.swift */,
+				3BF76BD0215377E6008B40A0 /* Data+Extension.swift */,
+				3BF76BD221538259008B40A0 /* NSError+Extension.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		3BF76BC121536ED2008B40A0 /* UIkit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIkit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +380,9 @@
 				3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */,
 				3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */,
 				3B1E08332125285C00788CD7 /* AppDelegate.swift in Sources */,
+				3BF76BD1215377E6008B40A0 /* Data+Extension.swift in Sources */,
+				3BF76BC321536F96008B40A0 /* Dictionary+Extension.swift in Sources */,
+				3BF76BD321538259008B40A0 /* NSError+Extension.swift in Sources */,
 				3BAE9C232148FF33006731B1 /* KGWKWebViewDelegate.swift in Sources */,
 				3B1E08612125629F00788CD7 /* KGWKJSBridge.swift in Sources */,
 				3B1E0863212573E200788CD7 /* KGJSBridgeBase.swift in Sources */,
@@ -504,7 +540,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Moirig.KawagarboExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -522,7 +558,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Moirig.KawagarboExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -227,7 +227,7 @@ extension KGWKWebView: WKUIDelegate {
 extension KGWKWebView: UIScrollViewDelegate {
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        scrollView.decelerationRate = UIScrollViewDecelerationRateNormal
+        scrollView.decelerationRate = .normal
     }
     
 }
