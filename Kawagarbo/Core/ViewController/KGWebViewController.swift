@@ -11,7 +11,7 @@ import WebKit
 
 public class KGWebViewController: UIViewController {
     
-    public typealias KGWebCallback = (_ path: String, _ data: [String: Any]?, _ error: Error?) -> Void
+    public typealias KGWebCallback = (_ path: String, _ data: [String: Any]?, _ error: NSError?) -> Void
     
     public weak var webView: KGWKWebView?
     
@@ -30,6 +30,10 @@ public class KGWebViewController: UIViewController {
         let jsBridge = KGWKJSBridge(webView: self.webView!)
         return jsBridge
     }()
+    
+    deinit {
+        removeNotification()
+    }
     
     public convenience init(urlString: String, parameters: [String: Any]? = nil, headers: [String: String]? = nil) {
         self.init()
@@ -139,14 +143,14 @@ extension KGWebViewController {
 
 // MARK: - Notification
 extension KGWebViewController {
-    
+    //TODO-配置
     func addNotification() {
         NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
-            
+            self.callWeb(function: "kg.exitApp")
         }
         
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
-            
+            self.callWeb(function: "kg.enterApp")
         }
     }
     

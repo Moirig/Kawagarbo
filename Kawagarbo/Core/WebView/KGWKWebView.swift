@@ -61,7 +61,7 @@ public class KGWKWebView: WKWebView {
     
     private static let sharedProcessPool: WKProcessPool = WKProcessPool()
     
-    private class var defaultConfiguration: WKWebViewConfiguration {
+    class var defaultConfiguration: WKWebViewConfiguration {
         let defaultConfiguration = WKWebViewConfiguration()
         
         if #available(iOS 10.0, *) {
