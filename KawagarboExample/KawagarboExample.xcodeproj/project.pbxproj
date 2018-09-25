@@ -25,6 +25,7 @@
 		3BF76BD1215377E6008B40A0 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD0215377E6008B40A0 /* Data+Extension.swift */; };
 		3BF76BD321538259008B40A0 /* NSError+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD221538259008B40A0 /* NSError+Extension.swift */; };
 		3BF76BD521549513008B40A0 /* KGWebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD421549513008B40A0 /* KGWebViewManager.swift */; };
+		3BF76C1E215881A9008B40A0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76C1D215881A9008B40A0 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		3BF76BD0215377E6008B40A0 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		3BF76BD221538259008B40A0 /* NSError+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+Extension.swift"; sourceTree = "<group>"; };
 		3BF76BD421549513008B40A0 /* KGWebViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewManager.swift; sourceTree = "<group>"; };
+		3BF76C1D215881A9008B40A0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 				3BF76BC221536F96008B40A0 /* Dictionary+Extension.swift */,
 				3BF76BD0215377E6008B40A0 /* Data+Extension.swift */,
 				3BF76BD221538259008B40A0 /* NSError+Extension.swift */,
+				3BF76C1D215881A9008B40A0 /* String+Extension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				3B1E0863212573E200788CD7 /* KGJSBridgeBase.swift in Sources */,
 				3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */,
 				3B1E08352125285C00788CD7 /* FirstViewController.swift in Sources */,
+				3BF76C1E215881A9008B40A0 /* String+Extension.swift in Sources */,
 				3BF76BD521549513008B40A0 /* KGWebViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

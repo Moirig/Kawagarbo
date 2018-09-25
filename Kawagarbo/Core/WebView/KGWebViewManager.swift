@@ -19,7 +19,7 @@ class KGWebViewManager: NSObject {
     
     var emptyWebView: KGWKWebView?
     
-    var createWebView: KGWKWebView {
+    class var createWebView: KGWKWebView {
         if KGWebViewManager.manager.emptyWebView == nil {
             createEmptyWebView()
         }
@@ -30,21 +30,21 @@ class KGWebViewManager: NSObject {
         return webview
     }
     
-    var currentWebView: KGWKWebView? {
+    class var currentWebView: KGWKWebView? {
         return KGWebViewManager.manager.webViewStack.last
     }
 
-    func preloadWebView() {
+    class func preloadWebView() {
         let webView = KGWKWebView(frame: CGRect.zero, configuration: KGWKWebView.defaultConfiguration)
         webView.loadHTMLString("", baseURL: nil)
         KGWebViewManager.manager.emptyWebView = webView
     }
     
-    func createEmptyWebView() {
+    class func createEmptyWebView() {
         KGWebViewManager.manager.emptyWebView = KGWKWebView(frame: CGRect.zero, configuration: KGWKWebView.defaultConfiguration)
     }
     
-    func removeEmptyWebView() {
+    class func removeCurrentWebView() {
         KGWebViewManager.manager.webViewStack.removeLast()
     }
 

@@ -86,8 +86,8 @@ public class KGWKWebView: WKWebView {
         uiDelegate = nil
     }
     
-    convenience init() {
-        self.init()
+    class var webView: KGWKWebView {
+        return KGWebViewManager.createWebView
     }
     
     override init(frame: CGRect, configuration: WKWebViewConfiguration) {
@@ -100,10 +100,18 @@ public class KGWKWebView: WKWebView {
     }
     
     func setupWebView() {
-        addSubview(progressView)
+        allowsBackForwardNavigationGestures = true
+        
         navigationDelegate = self
         uiDelegate = self
         scrollView.delegate = self
+        
+        //TODO-customUA
+        let originUA = KGWKWebView.originalUserAgent
+        
+        
+        addSubview(progressView)
+
     }
     
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

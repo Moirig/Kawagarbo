@@ -12,11 +12,11 @@ public protocol KGWKWebViewControllerDelegate: NSObjectProtocol {
 
     func webViewController(_ webViewController: KGWebViewController, didClickBackItem backItem: Any)
     
-    func webViewController(_ webViewController: KGWebViewController, didStartLoad webView: KGWKWebView)
+    func webViewControllerDidStartLoad(_ webViewController: KGWebViewController)
 
-    func webViewController(_ webViewController: KGWebViewController, didFinishLoad webView: KGWKWebView)
+    func webViewControllerDidFinishLoad(_ webViewController: KGWebViewController)
 
-    func webViewController(_ webViewController: KGWebViewController, didFailLoad webView: KGWKWebView)
+    func webViewControllerDidFailLoad(_ webViewController: KGWebViewController)
 
 }
 
@@ -24,10 +24,10 @@ extension KGWKWebViewControllerDelegate {
     
     func webViewController(_ webViewController: KGWebViewController, didClickBackItem backItem: Any) {}
     
-    func webViewController(_ webViewController: KGWebViewController, didStartLoad webView: KGWKWebView) {}
+    func webViewControllerDidStartLoad(_ webViewController: KGWebViewController) {}
     
-    func webViewController(_ webViewController: KGWebViewController, didFinishLoad webView: KGWKWebView) {}
+    func webViewControllerDidFinishLoad(_ webViewController: KGWebViewController) {}
     
-    func webViewController(_ webViewController: KGWebViewController, didFailLoad webView: KGWKWebView) {}
+    func webViewControllerDidFailLoad(_ webViewController: KGWebViewController) {}
     
 }
