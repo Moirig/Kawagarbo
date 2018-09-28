@@ -35,7 +35,7 @@ public class KGWKWebView: WKWebView {
     
     var banAlert: Bool = false
     
-    class var originalUserAgent: String {
+    static var originalUserAgent: String {
         let webview = UIWebView(frame: CGRect.zero)
         var userAgent = webview.stringByEvaluatingJavaScript(from: "navigator.userAgent")
         
@@ -61,7 +61,7 @@ public class KGWKWebView: WKWebView {
     
     private static let sharedProcessPool: WKProcessPool = WKProcessPool()
     
-    class var defaultConfiguration: WKWebViewConfiguration {
+    static var defaultConfiguration: WKWebViewConfiguration {
         let defaultConfiguration = WKWebViewConfiguration()
         
         if #available(iOS 10.0, *) {
@@ -86,7 +86,7 @@ public class KGWKWebView: WKWebView {
         uiDelegate = nil
     }
     
-    class var webView: KGWKWebView {
+    static var webView: KGWKWebView {
         return KGWebViewManager.createWebView
     }
     

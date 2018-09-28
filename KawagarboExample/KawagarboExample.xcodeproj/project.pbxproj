@@ -15,8 +15,11 @@
 		3B1E083F2125285F00788CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E083D2125285F00788CD7 /* LaunchScreen.storyboard */; };
 		3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E084B212545DF00788CD7 /* Kawagarbo.swift */; };
 		3B1E085F2125619A00788CD7 /* KGJSBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E085E2125619900788CD7 /* KGJSBridge.js */; };
-		3B1E08612125629F00788CD7 /* KGWKJSBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E08602125629F00788CD7 /* KGWKJSBridge.swift */; };
-		3B1E0863212573E200788CD7 /* KGJSBridgeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E0862212573E200788CD7 /* KGJSBridgeBase.swift */; };
+		3B1E08612125629F00788CD7 /* KGNativeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E08602125629F00788CD7 /* KGNativeApiManager.swift */; };
+		3B1E0863212573E200788CD7 /* KGJSBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E0862212573E200788CD7 /* KGJSBridge.swift */; };
+		3B29BBD2215B6CA100D2024B /* KGNativeApiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */; };
+		3B29BBDA215B854400D2024B /* KGNativeApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */; };
+		3B29BC02215C840200D2024B /* KGNativeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BC01215C840200D2024B /* KGNativeApi.swift */; };
 		3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C202148FE41006731B1 /* KGWKWebView.swift */; };
 		3BAE9C232148FF33006731B1 /* KGWKWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */; };
 		3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */; };
@@ -39,8 +42,11 @@
 		3B1E08402125285F00788CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B1E084B212545DF00788CD7 /* Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kawagarbo.swift; sourceTree = "<group>"; };
 		3B1E085E2125619900788CD7 /* KGJSBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = KGJSBridge.js; sourceTree = "<group>"; };
-		3B1E08602125629F00788CD7 /* KGWKJSBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKJSBridge.swift; sourceTree = "<group>"; };
-		3B1E0862212573E200788CD7 /* KGJSBridgeBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGJSBridgeBase.swift; sourceTree = "<group>"; };
+		3B1E08602125629F00788CD7 /* KGNativeApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiManager.swift; sourceTree = "<group>"; };
+		3B1E0862212573E200788CD7 /* KGJSBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGJSBridge.swift; sourceTree = "<group>"; };
+		3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiDelegate.swift; sourceTree = "<group>"; };
+		3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiResponse.swift; sourceTree = "<group>"; };
+		3B29BC01215C840200D2024B /* KGNativeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApi.swift; sourceTree = "<group>"; };
 		3BAE9C202148FE41006731B1 /* KGWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKWebView.swift; sourceTree = "<group>"; };
 		3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKWebViewDelegate.swift; sourceTree = "<group>"; };
 		3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewController.swift; sourceTree = "<group>"; };
@@ -119,8 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				3B1E085E2125619900788CD7 /* KGJSBridge.js */,
-				3B1E08602125629F00788CD7 /* KGWKJSBridge.swift */,
-				3B1E0862212573E200788CD7 /* KGJSBridgeBase.swift */,
+				3B1E0862212573E200788CD7 /* KGJSBridge.swift */,
 			);
 			path = JSBridge;
 			sourceTree = "<group>";
@@ -158,6 +163,10 @@
 		3B1E085021254A0400788CD7 /* NativeApi */ = {
 			isa = PBXGroup;
 			children = (
+				3B29BC01215C840200D2024B /* KGNativeApi.swift */,
+				3B1E08602125629F00788CD7 /* KGNativeApiManager.swift */,
+				3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */,
+				3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */,
 			);
 			path = NativeApi;
 			sourceTree = "<group>";
@@ -382,16 +391,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B1E08372125285C00788CD7 /* SecondViewController.swift in Sources */,
+				3B29BBDA215B854400D2024B /* KGNativeApiResponse.swift in Sources */,
 				3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */,
+				3B29BBD2215B6CA100D2024B /* KGNativeApiDelegate.swift in Sources */,
 				3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */,
+				3B29BC02215C840200D2024B /* KGNativeApi.swift in Sources */,
 				3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */,
 				3B1E08332125285C00788CD7 /* AppDelegate.swift in Sources */,
 				3BF76BD1215377E6008B40A0 /* Data+Extension.swift in Sources */,
 				3BF76BC321536F96008B40A0 /* Dictionary+Extension.swift in Sources */,
 				3BF76BD321538259008B40A0 /* NSError+Extension.swift in Sources */,
 				3BAE9C232148FF33006731B1 /* KGWKWebViewDelegate.swift in Sources */,
-				3B1E08612125629F00788CD7 /* KGWKJSBridge.swift in Sources */,
-				3B1E0863212573E200788CD7 /* KGJSBridgeBase.swift in Sources */,
+				3B1E08612125629F00788CD7 /* KGNativeApiManager.swift in Sources */,
+				3B1E0863212573E200788CD7 /* KGJSBridge.swift in Sources */,
 				3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */,
 				3B1E08352125285C00788CD7 /* FirstViewController.swift in Sources */,
 				3BF76C1E215881A9008B40A0 /* String+Extension.swift in Sources */,

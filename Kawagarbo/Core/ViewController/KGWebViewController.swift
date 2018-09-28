@@ -31,9 +31,10 @@ public class KGWebViewController: UIViewController {
     
     public var userInfo: [String: Any]?
     
-    private lazy var jsBridge: KGWKJSBridge = {
-        let jsBridge = KGWKJSBridge(webView: self.webView)
-        return jsBridge
+    private lazy var nativeApi: KGNativeApiManager = {
+        let nativeApi = KGNativeApiManager()
+        nativeApi.webViewController = self
+        return nativeApi
     }()
     
     deinit {
@@ -72,13 +73,13 @@ public class KGWebViewController: UIViewController {
         super.viewDidAppear(animated)
         
         navigationController?.interactivePopGestureRecognizer?.isEnabled = !webView.canGoBack
-        callWeb(function: "kg.enterPage")
+        nativeApi.callWeb(function: "kg.enterPage")
     }
     
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        callWeb(function: "kg.exitPage")
+        nativeApi.callWeb(function: "kg.exitPage")
     }
     
     override public func viewDidDisappear(_ animated: Bool) {
@@ -205,11 +206,11 @@ extension KGWebViewController {
     //TODO-配置
     func addNotification() {
         NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.callWeb(function: "kg.exitApp")
+            self.nativeApi.callWeb(function: "kg.exitApp")
         }
         
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.callWeb(function: "kg.enterApp")
+            self.nativeApi.callWeb(function: "kg.enterApp")
         }
     }
     
@@ -222,75 +223,7 @@ extension KGWebViewController {
 // MARK: - Call Web
 extension KGWebViewController {
     
-    public typealias KGCallWebComplete = (_ data: [String: Any]?, _ error: NSError?) -> Void
-
-    func callWeb(function: String, parameters: [String: Any]? = nil, complete: KGCallWebComplete? = nil) {
-        guard function.count > 0 else { return }
-        
-        debugPrint(
-            """
-            ---------------- Native->Web ----------------
-            function:\(function)
-            \(parameters?.string ?? "")
-            ---------------------------------------------
-            """
-        )
-        
-        jsBridge.call(handlerName: function, data: parameters) { (response) in
-            guard let complete = complete else { return }
-            if let _ = response as? [Any] {
-                complete(nil, NSError(code: NSURLErrorUnknown, message: "Unknown Error"))
-                return
-            }
-            
-            var dictionary: [String: Any]?
-            
-            if let string = response as? String {
-                let data = string.data(using: .utf8)
-                dictionary = data?.dictionary
-            }
-            else if let data = response as? Data {
-                dictionary = data.dictionary
-            }
-            else if let dict = response as? [String: Any] {
-                dictionary = dict
-            }
-            
-            debugPrint(
-                """
-                ---------------- Native->Web ----------------
-                function:\(function)
-                \(dictionary?.string ?? "")
-                ---------------------------------------------
-                """
-            )
-            
-            guard let dict = dictionary, let code = dict["code"] as? Int else {
-                complete(nil, NSError(code: NSURLErrorUnknown, message: "Unknown Error"))
-                return
-            }
-            
-            //TODO-配置
-            if code == 200 {
-                if let dataDic = dict["data"] as? [String: Any] {
-                    complete(dataDic, nil)
-                }
-                else {
-                    complete(nil, nil)
-                }
-            }
-            else {
-                let error: NSError
-                if let message = dict["message"] as? String {
-                    error = NSError(code: code, message: message)
-                }
-                else {
-                    error = NSError(code: code)
-                }
-                complete(nil, error)
-            }
-        }
-    }
+    
     
 }
 

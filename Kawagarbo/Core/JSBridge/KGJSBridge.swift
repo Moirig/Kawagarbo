@@ -1,5 +1,5 @@
 //
-//  KGJSBridgeBase.swift
+//  KGJSBridge.swift
 //  KawagarboExample
 //
 //  Created by 温一鸿 on 2018/8/16.
@@ -21,11 +21,11 @@ private let kDefaultJBScheme: String = "kwgb"
 private let kQueueHasMessage: String = "__wvjb_queue_message__"
 private let kBridgeLoaded: String = "__request__bridge__inject__"
 
-protocol KGJSBridgeBaseDelegate: AnyObject {
+protocol KGJSBridgeDelegate: AnyObject {
     func evaluateJavascript(javascript: String)
 }
 
-class KGJSBridgeBase: NSObject {
+class KGJSBridge: NSObject {
     
     typealias Handler = (_ parameters: [String: Any]?, _ callback: Callback?) -> Void
     typealias Callback = (_ responseData: Any?) -> Void
@@ -38,7 +38,7 @@ class KGJSBridgeBase: NSObject {
     static var JBCallbacksObj: String?
     static var JBScheme: String = kDefaultJBScheme
     
-    weak var delegate: KGJSBridgeBaseDelegate?
+    weak var delegate: KGJSBridgeDelegate?
     
     var startupMessageQueue = [Message]()
     var responseCallbacks = [String: Callback]()
@@ -53,10 +53,10 @@ class KGJSBridgeBase: NSObject {
         do {
             if let path: String = Bundle.main.path(forResource: kDefaultJSBridgeObj, ofType: "js") {
                 KGJSBridgeJS = try String(contentsOfFile: path, encoding: .utf8)
-                if let bridgeObj = KGJSBridgeBase.JSBridgeObj {
+                if let bridgeObj = KGJSBridge.JSBridgeObj {
                     KGJSBridgeJS = KGJSBridgeJS.replacingOccurrences(of: kDefaultJSBridgeObj, with: bridgeObj)
                 }
-                if let callbacksObj = KGJSBridgeBase.JBCallbacksObj {
+                if let callbacksObj = KGJSBridge.JBCallbacksObj {
                     KGJSBridgeJS = KGJSBridgeJS.replacingOccurrences(of: kDefaultJBCallbacksObj, with: callbacksObj)
                 }
             }
@@ -65,15 +65,9 @@ class KGJSBridgeBase: NSObject {
             debugPrint(error)
         }
     }
-
-    func reset() {
-        startupMessageQueue = [Message]()
-        responseCallbacks = [String: Callback]()
-        uniqueId = 0
-    }
     
     func send(handlerName: String, data: Any?, callback: Callback?) {
-        var message = [String: Any]()
+        var message = Message()
         message[kParamHandlerName] = handlerName
         
         if let aData = data {
@@ -140,7 +134,7 @@ class KGJSBridgeBase: NSObject {
 }
 
 // MARK: - Action
-extension KGJSBridgeBase {
+extension KGJSBridge {
     
     func isJSBridge(url: URL) -> Bool {
         if !isSchemeMatch(url) {
@@ -151,7 +145,7 @@ extension KGJSBridgeBase {
     
     func isSchemeMatch(_ url: URL) -> Bool {
         let scheme = url.scheme?.lowercased()
-        return scheme == KGJSBridgeBase.JBScheme || scheme == "https"
+        return scheme == KGJSBridge.JBScheme || scheme == "https"
     }
     
     func isQueueMessage(url: URL) -> Bool {
@@ -165,17 +159,17 @@ extension KGJSBridgeBase {
     }
     
     func logUnkownMessage(url: URL) {
-        debugPrint("\(KGJSBridgeBase.JSBridgeObj ?? kDefaultJSBridgeObj): WARNING: Received unknown \(KGJSBridgeBase.JSBridgeObj ?? kDefaultJSBridgeObj) command \(url.absoluteString)")
+        debugPrint("\(KGJSBridge.JSBridgeObj ?? kDefaultJSBridgeObj): WARNING: Received unknown \(KGJSBridge.JSBridgeObj ?? kDefaultJSBridgeObj) command \(url.absoluteString)")
     }
     
     func webViewJavascriptFetchQueyCommand() -> String {
-        return "\(KGJSBridgeBase.JSBridgeObj ?? kDefaultJSBridgeObj)._fetchQueue();"
+        return "\(KGJSBridge.JSBridgeObj ?? kDefaultJSBridgeObj)._fetchQueue();"
     }
 
 }
 
 // MARK: - Private
-extension KGJSBridgeBase {
+extension KGJSBridge {
     
     private func queue(message: Message) {
         if startupMessageQueue.isEmpty {
@@ -198,12 +192,8 @@ extension KGJSBridgeBase {
         messageJSON = messageJSON.replacingOccurrences(of: "\u{2029}", with: "\\u2029")
         
         let javascriptCommand = "KGJSBridge._handleMessageFromNative('\(messageJSON)');"
-        if Thread.current.isMainThread {
-            delegate?.evaluateJavascript(javascript: javascriptCommand)
-        } else {
-            DispatchQueue.main.async {
-                self.delegate?.evaluateJavascript(javascript: javascriptCommand)
-            }
+        DispatchQueue.main.async {
+            self.delegate?.evaluateJavascript(javascript: javascriptCommand)
         }
     }
     
@@ -222,7 +212,7 @@ extension KGJSBridgeBase {
         var result = [Message]()
         guard let data = messageJSON.data(using: .utf8) else { return nil }
         do {
-            result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [KGJSBridgeBase.Message]
+            result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [KGJSBridge.Message]
         } catch {
             debugPrint(error)
         }
@@ -232,10 +222,10 @@ extension KGJSBridgeBase {
 }
 
 // MARK: - Log
-extension KGJSBridgeBase {
+extension KGJSBridge {
     
     private func log<T>(_ message: T, file: String = #file, function: String = #function, line: Int = #line) {
-        if KGJSBridgeBase.debugLogEnable {
+        if KGJSBridge.debugLogEnable {
             let fileName = (file as NSString).lastPathComponent
             debugPrint("\(fileName):\(line) \(function) | \(message)")
         }
