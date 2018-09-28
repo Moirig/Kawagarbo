@@ -27,7 +27,6 @@ public class KGNativeApiManager: NSObject {
         super.init()
         
         jsBridge.delegate = self
-        
     }
     
 }
@@ -149,15 +148,15 @@ extension KGNativeApiManager: WKNavigationDelegate {
             return
         }
         
-        if jsBridge.isJSBridge(url: url) {
-            if jsBridge.isBridgeLoaded(url: url) {
+        if KGJSBridge.isJSBridge(url: url) {
+            if KGJSBridge.isBridgeLoaded(url: url) {
                 jsBridge.injectJavascriptFile()
             }
-            else if (jsBridge.isQueueMessage(url: url)) {
+            else if (KGJSBridge.isQueueMessage(url: url)) {
                 self.wkFlushMessageQueue()
             }
             else {
-                jsBridge.logUnkownMessage(url: url)
+                KGJSBridge.logUnkownMessage(url: url)
             }
             decisionHandler(.cancel)
             return;
@@ -173,7 +172,7 @@ extension KGNativeApiManager: WKNavigationDelegate {
 extension KGNativeApiManager: KGJSBridgeDelegate {
     
     private func wkFlushMessageQueue() {
-        webView?.evaluateJavaScript(jsBridge.webViewJavascriptFetchQueyCommand(), completionHandler: { [weak self] (result, error) in
+        webView?.evaluateJavaScript(KGJSBridge.webViewJavascriptFetchQueyCommand(), completionHandler: { [weak self] (result, error) in
             guard let strongSelf = self else { return }
             if let error = error {
                 debugPrint("KGNativeApiManager: WARNING: Error when trying to fetch data from WKWebView: \(error)")

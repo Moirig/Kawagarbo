@@ -139,36 +139,36 @@ class KGJSBridge: NSObject {
     
 }
 
-// MARK: - Action
+// MARK: - Get
 extension KGJSBridge {
     
-    func isJSBridge(url: URL) -> Bool {
+    static func isJSBridge(url: URL) -> Bool {
         if !isSchemeMatch(url) {
             return false
         }
         return isBridgeLoaded(url:url) || isQueueMessage(url:url)
     }
     
-    func isSchemeMatch(_ url: URL) -> Bool {
+    static func isSchemeMatch(_ url: URL) -> Bool {
         let scheme = url.scheme?.lowercased()
         return scheme == KGJSBridge.JBScheme || scheme == "https"
     }
     
-    func isQueueMessage(url: URL) -> Bool {
+    static func isQueueMessage(url: URL) -> Bool {
         let host = url.host?.lowercased()
         return isSchemeMatch(url) && host == kQueueHasMessage
     }
     
-    func isBridgeLoaded(url: URL) -> Bool {
+    static func isBridgeLoaded(url: URL) -> Bool {
         let host = url.host?.lowercased()
         return isSchemeMatch(url) && host == kBridgeLoaded
     }
     
-    func logUnkownMessage(url: URL) {
+    static func logUnkownMessage(url: URL) {
         debugPrint("\(KGJSBridge.JSBridgeObj ?? kDefaultJSBridgeObj): WARNING: Received unknown \(KGJSBridge.JSBridgeObj ?? kDefaultJSBridgeObj) command \(url.absoluteString)")
     }
     
-    func webViewJavascriptFetchQueyCommand() -> String {
+    static func webViewJavascriptFetchQueyCommand() -> String {
         return "\(KGJSBridge.JSBridgeObj ?? kDefaultJSBridgeObj)._fetchQueue();"
     }
 
