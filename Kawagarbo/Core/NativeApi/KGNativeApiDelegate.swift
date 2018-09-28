@@ -8,13 +8,11 @@
 
 import Foundation
 
-public typealias KGNativeApiCompletionClosure = (_ response: KGNativeApiResponse) -> Void
-
 public protocol KGNativeApiDelegate: NSObjectProtocol {
     
     var path: String { get }
     
-    func perform(with parameters: [String: Any]?, complete: KGNativeApiCompletionClosure)
+    func perform(with parameters: [String: Any]?, complete: KGNativeApiResponseClosure)
     
     func regist()
     

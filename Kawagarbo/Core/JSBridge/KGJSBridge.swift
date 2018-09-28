@@ -28,7 +28,7 @@ protocol KGJSBridgeDelegate: AnyObject {
 class KGJSBridge: NSObject {
     
     typealias Handler = (_ parameters: [String: Any]?, _ callback: Callback?) -> Void
-    typealias Callback = (_ responseData: Any?) -> Void
+    typealias Callback = (_ responseData: [String: Any]?) -> Void
     
     typealias Message = [String: Any]
     
@@ -66,7 +66,7 @@ class KGJSBridge: NSObject {
         }
     }
     
-    func send(handlerName: String, data: Any?, callback: Callback?) {
+    func send(handlerName: String, data: [String: Any]?, callback: Callback?) {
         var message = Message()
         message[kParamHandlerName] = handlerName
         
@@ -91,30 +91,36 @@ class KGJSBridge: NSObject {
         }
         
         for message in messages {
-            log(message)
-            
             if let responseId = message[kParamResponseId] as? String {
                 guard let callback = responseCallbacks[responseId] else { continue }
-                callback(message[kParamResponseData])
+                callback(message[kParamResponseData] as? [String: Any])
                 responseCallbacks.removeValue(forKey: responseId)
             } else {
                 var callback: Callback?
                 if let callbackID = message[kParamCallbackId] {
-                    callback = { (_ responseData: Any?) -> Void in
-                        let msg = [kParamResponseId: callbackID, kParamResponseData: responseData ?? NSNull()] as Message
+                    callback = { (_ responseData: [String: Any]?) -> Void in
+                        let msg = [kParamResponseId: callbackID, kParamResponseData: responseData ?? [:]] as Message
                         self.queue(message: msg)
                     }
                 } else {
-                    callback = { (_ responseData: Any?) -> Void in
+                    callback = { (_ responseData: [String: Any]?) -> Void in
                         // no logic
                     }
                 }
                 
                 guard let handlerName = message[kParamHandlerName] as? String else { return }
                 guard let handler = messageHandlers[handlerName] else {
-                    log("NoHandlerException, No handler for message from JS: \(message)")
+                    debugPrint(
+                        """
+                        ---------------- Web->Native ----------------
+                        No Handler!
+                        \(message.string)
+                        ---------------------------------------------
+                        """
+                    )
                     //TODO-提供配置文件
-                    callback!(["code": NSURLErrorUnsupportedURL, "message": "Unsupported Native Api."])
+                    guard let aCallback = callback else { return }
+                    aCallback(["code": NSURLErrorUnsupportedURL, "message": "Unsupported Native Api."])
                     return
                 }
                 handler(message["data"] as? [String : Any], callback)
@@ -220,16 +226,3 @@ extension KGJSBridge {
     }
     
 }
-
-// MARK: - Log
-extension KGJSBridge {
-    
-    private func log<T>(_ message: T, file: String = #file, function: String = #function, line: Int = #line) {
-        if KGJSBridge.debugLogEnable {
-            let fileName = (file as NSString).lastPathComponent
-            debugPrint("\(fileName):\(line) \(function) | \(message)")
-        }
-    }
-    
-}
-

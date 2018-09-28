@@ -78,10 +78,8 @@ extension KGNativeApiManager {
 }
 
 extension KGNativeApiManager {
-    
-    public typealias CallWebCompleteClosure = (_ data: [String: Any]?, _ error: NSError?) -> Void
-    
-    public func callWeb(function: String, parameters: [String: Any]? = nil, complete: CallWebCompleteClosure? = nil) {
+        
+    public func callWeb(function: String, parameters: [String: Any]? = nil, complete: KGNativeApiResponseClosure? = nil) {
         guard function.count > 0 else { return }
         
         debugPrint(
@@ -95,56 +93,32 @@ extension KGNativeApiManager {
         
         call(handlerName: function, data: parameters) { (response) in
             guard let complete = complete else { return }
-            if let _ = response as? [Any] {
-                complete(nil, NSError(code: NSURLErrorUnknown, message: "Unknown Error"))
-                return
-            }
-            
-            var dictionary: [String: Any]?
-            
-            if let string = response as? String {
-                let data = string.data(using: .utf8)
-                dictionary = data?.dictionary
-            }
-            else if let data = response as? Data {
-                dictionary = data.dictionary
-            }
-            else if let dict = response as? [String: Any] {
-                dictionary = dict
-            }
             
             debugPrint(
                 """
                 ---------------- Native->Web ----------------
                 function:\(function)
-                \(dictionary?.string ?? "")
+                \(response?.string ?? "")
                 ---------------------------------------------
                 """
             )
             
-            guard let dict = dictionary, let code = dict["code"] as? Int else {
-                complete(nil, NSError(code: NSURLErrorUnknown, message: "Unknown Error"))
-                return
+            guard let response = response, let code = response["code"] as? Int else {
+                return complete(.failure(code: NSURLErrorUnknown, message: "Unknown Error"))
             }
             
             //TODO-配置
             if code == 200 {
-                if let dataDic = dict["data"] as? [String: Any] {
-                    complete(dataDic, nil)
+                guard let responseData = response["data"] as? [String: Any] else {
+                    return complete(.success(data: nil))
                 }
-                else {
-                    complete(nil, nil)
-                }
+                complete(.success(data: responseData))
             }
             else {
-                let error: NSError
-                if let message = dict["message"] as? String {
-                    error = NSError(code: code, message: message)
+                guard let message = response["message"] as? String else {
+                    return complete(.failure(code: NSURLErrorUnknown, message: nil))
                 }
-                else {
-                    error = NSError(code: code)
-                }
-                complete(nil, error)
+                complete(.failure(code: NSURLErrorUnknown, message: message))
             }
         }
     }
@@ -161,7 +135,7 @@ extension KGNativeApiManager {
         jsBridge.messageHandlers.removeValue(forKey: handlerName)
     }
     
-    private func call(handlerName: String, data: Any? = nil, callback: KGJSBridge.Callback? = nil) {
+    private func call(handlerName: String, data: [String: Any]? = nil, callback: KGJSBridge.Callback? = nil) {
         jsBridge.send(handlerName: handlerName, data: data, callback: callback)
     }
     

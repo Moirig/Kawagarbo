@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias KGNativeApiResponseClosure = (_ response: KGNativeApiResponse) -> Void
+
 public enum KGNativeApiResponse {
     case success(data: [String: Any]?)
     case failure(code: Int, message: String?)
