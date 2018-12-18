@@ -12,7 +12,7 @@ public protocol KGNativeApiDelegate: NSObjectProtocol {
     
     var path: String { get }
     
-    func perform(with parameters: [String: Any]?, complete: KGNativeApiResponseClosure)
+    func perform(with parameters: [String: Any]?, in webViewController: KGWebViewController?, complete: KGNativeApiResponseClosure)
     
     func regist()
     

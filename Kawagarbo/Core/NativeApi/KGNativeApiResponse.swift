@@ -8,11 +8,10 @@
 
 import Foundation
 
-public typealias KGNativeApiResponseClosure = (_ response: KGNativeApiResponse) -> Void
-
 public enum KGNativeApiResponse {
     case success(data: [String: Any]?)
     case failure(code: Int, message: String?)
+    case cancel
 }
 
 extension KGNativeApiResponse {
@@ -20,8 +19,8 @@ extension KGNativeApiResponse {
     var response: [String: Any] {
         
         var dict: [String : Any] = [
-            "code": 0,
-            "message": ""
+            kParamCode: kParamSuccessCode,
+            kParamMessage: ""
         ]
         
         switch self {
@@ -29,19 +28,22 @@ extension KGNativeApiResponse {
         case .success(let data):
             
             if let data = data {
-                dict["data"] = data
+                dict[kParamData] = data
             }
             
         case .failure(let code, let message):
             
-            dict["code"] = code
+            dict[kParamCode] = code
             
             if let message = message {
-                dict["message"] = message
+                dict[kParamMessage] = message
             }
             
             
+        case .cancel:
+            dict[kParamCode] = kParamCancelCode
         }
+        
         return dict
     }
 }

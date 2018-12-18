@@ -19,16 +19,17 @@
 		3B1E0863212573E200788CD7 /* KGJSBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E0862212573E200788CD7 /* KGJSBridge.swift */; };
 		3B29BBD2215B6CA100D2024B /* KGNativeApiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */; };
 		3B29BBDA215B854400D2024B /* KGNativeApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */; };
-		3B29BC02215C840200D2024B /* KGNativeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BC01215C840200D2024B /* KGNativeApi.swift */; };
+		3B6240FD21C7946900F753EA /* KGScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */; };
+		3B6240FF21C8983B00F753EA /* KGNativeApiConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */; };
 		3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C202148FE41006731B1 /* KGWKWebView.swift */; };
-		3BAE9C232148FF33006731B1 /* KGWKWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */; };
+		3BAE9C232148FF33006731B1 /* KGWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C222148FF33006731B1 /* KGWebViewDelegate.swift */; };
 		3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */; };
 		3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9D23214BA1B8006731B1 /* KGWebViewControllerDelegate.swift */; };
-		3BF76BC321536F96008B40A0 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BC221536F96008B40A0 /* Dictionary+Extension.swift */; };
-		3BF76BD1215377E6008B40A0 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD0215377E6008B40A0 /* Data+Extension.swift */; };
-		3BF76BD321538259008B40A0 /* NSError+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD221538259008B40A0 /* NSError+Extension.swift */; };
+		3BF76BC321536F96008B40A0 /* Dictionary+KGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BC221536F96008B40A0 /* Dictionary+KGExtension.swift */; };
+		3BF76BD1215377E6008B40A0 /* Data+KGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD0215377E6008B40A0 /* Data+KGExtension.swift */; };
+		3BF76BD321538259008B40A0 /* NSError+KGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD221538259008B40A0 /* NSError+KGExtension.swift */; };
 		3BF76BD521549513008B40A0 /* KGWebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD421549513008B40A0 /* KGWebViewManager.swift */; };
-		3BF76C1E215881A9008B40A0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76C1D215881A9008B40A0 /* String+Extension.swift */; };
+		3BF76C1E215881A9008B40A0 /* String+KGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76C1D215881A9008B40A0 /* String+KGExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,16 +47,17 @@
 		3B1E0862212573E200788CD7 /* KGJSBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGJSBridge.swift; sourceTree = "<group>"; };
 		3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiDelegate.swift; sourceTree = "<group>"; };
 		3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiResponse.swift; sourceTree = "<group>"; };
-		3B29BC01215C840200D2024B /* KGNativeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApi.swift; sourceTree = "<group>"; };
+		3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGScriptMessageHandler.swift; sourceTree = "<group>"; };
+		3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiConst.swift; sourceTree = "<group>"; };
 		3BAE9C202148FE41006731B1 /* KGWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKWebView.swift; sourceTree = "<group>"; };
-		3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKWebViewDelegate.swift; sourceTree = "<group>"; };
+		3BAE9C222148FF33006731B1 /* KGWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewDelegate.swift; sourceTree = "<group>"; };
 		3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewController.swift; sourceTree = "<group>"; };
 		3BAE9D23214BA1B8006731B1 /* KGWebViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewControllerDelegate.swift; sourceTree = "<group>"; };
-		3BF76BC221536F96008B40A0 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
-		3BF76BD0215377E6008B40A0 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
-		3BF76BD221538259008B40A0 /* NSError+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+Extension.swift"; sourceTree = "<group>"; };
+		3BF76BC221536F96008B40A0 /* Dictionary+KGExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+KGExtension.swift"; sourceTree = "<group>"; };
+		3BF76BD0215377E6008B40A0 /* Data+KGExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+KGExtension.swift"; sourceTree = "<group>"; };
+		3BF76BD221538259008B40A0 /* NSError+KGExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+KGExtension.swift"; sourceTree = "<group>"; };
 		3BF76BD421549513008B40A0 /* KGWebViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewManager.swift; sourceTree = "<group>"; };
-		3BF76C1D215881A9008B40A0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		3BF76C1D215881A9008B40A0 /* String+KGExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+KGExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				3BAE9C202148FE41006731B1 /* KGWKWebView.swift */,
-				3BAE9C222148FF33006731B1 /* KGWKWebViewDelegate.swift */,
+				3BAE9C222148FF33006731B1 /* KGWebViewDelegate.swift */,
 				3BF76BD421549513008B40A0 /* KGWebViewManager.swift */,
 			);
 			path = WebView;
@@ -125,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				3B1E085E2125619900788CD7 /* KGJSBridge.js */,
-				3B1E0862212573E200788CD7 /* KGJSBridge.swift */,
 			);
 			path = JSBridge;
 			sourceTree = "<group>";
@@ -147,6 +148,7 @@
 		3B1E084F212549B500788CD7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3B6240F921C790CD00F753EA /* ScriptMessageHandler */,
 				3B1E085521254B7500788CD7 /* Security */,
 				3B1E085321254A7E00788CD7 /* Utils */,
 				3B1E085221254A6200788CD7 /* Resource */,
@@ -163,10 +165,11 @@
 		3B1E085021254A0400788CD7 /* NativeApi */ = {
 			isa = PBXGroup;
 			children = (
-				3B29BC01215C840200D2024B /* KGNativeApi.swift */,
 				3B1E08602125629F00788CD7 /* KGNativeApiManager.swift */,
 				3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */,
 				3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */,
+				3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */,
+				3B1E0862212573E200788CD7 /* KGJSBridge.swift */,
 			);
 			path = NativeApi;
 			sourceTree = "<group>";
@@ -273,6 +276,14 @@
 			path = StatisticApi;
 			sourceTree = "<group>";
 		};
+		3B6240F921C790CD00F753EA /* ScriptMessageHandler */ = {
+			isa = PBXGroup;
+			children = (
+				3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */,
+			);
+			path = ScriptMessageHandler;
+			sourceTree = "<group>";
+		};
 		3BF76BBF21536EAD008B40A0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,10 +296,10 @@
 		3BF76BC021536EC6008B40A0 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				3BF76BC221536F96008B40A0 /* Dictionary+Extension.swift */,
-				3BF76BD0215377E6008B40A0 /* Data+Extension.swift */,
-				3BF76BD221538259008B40A0 /* NSError+Extension.swift */,
-				3BF76C1D215881A9008B40A0 /* String+Extension.swift */,
+				3BF76BC221536F96008B40A0 /* Dictionary+KGExtension.swift */,
+				3BF76BD0215377E6008B40A0 /* Data+KGExtension.swift */,
+				3BF76BD221538259008B40A0 /* NSError+KGExtension.swift */,
+				3BF76C1D215881A9008B40A0 /* String+KGExtension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -395,18 +406,19 @@
 				3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */,
 				3B29BBD2215B6CA100D2024B /* KGNativeApiDelegate.swift in Sources */,
 				3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */,
-				3B29BC02215C840200D2024B /* KGNativeApi.swift in Sources */,
 				3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */,
+				3B6240FF21C8983B00F753EA /* KGNativeApiConst.swift in Sources */,
 				3B1E08332125285C00788CD7 /* AppDelegate.swift in Sources */,
-				3BF76BD1215377E6008B40A0 /* Data+Extension.swift in Sources */,
-				3BF76BC321536F96008B40A0 /* Dictionary+Extension.swift in Sources */,
-				3BF76BD321538259008B40A0 /* NSError+Extension.swift in Sources */,
-				3BAE9C232148FF33006731B1 /* KGWKWebViewDelegate.swift in Sources */,
+				3BF76BD1215377E6008B40A0 /* Data+KGExtension.swift in Sources */,
+				3BF76BC321536F96008B40A0 /* Dictionary+KGExtension.swift in Sources */,
+				3BF76BD321538259008B40A0 /* NSError+KGExtension.swift in Sources */,
+				3BAE9C232148FF33006731B1 /* KGWebViewDelegate.swift in Sources */,
 				3B1E08612125629F00788CD7 /* KGNativeApiManager.swift in Sources */,
+				3B6240FD21C7946900F753EA /* KGScriptMessageHandler.swift in Sources */,
 				3B1E0863212573E200788CD7 /* KGJSBridge.swift in Sources */,
 				3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */,
 				3B1E08352125285C00788CD7 /* FirstViewController.swift in Sources */,
-				3BF76C1E215881A9008B40A0 /* String+Extension.swift in Sources */,
+				3BF76C1E215881A9008B40A0 /* String+KGExtension.swift in Sources */,
 				3BF76BD521549513008B40A0 /* KGWebViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

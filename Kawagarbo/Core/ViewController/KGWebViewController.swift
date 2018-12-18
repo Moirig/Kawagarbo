@@ -23,9 +23,9 @@ public class KGWebViewController: UIViewController {
     //TODO-没完成
     public var webRoute: Any?
     
-    public weak var delegate: KGWKWebViewControllerDelegate?
+    public weak var delegate: KGWebViewControllerDelegate?
     
-    public static var delegate: KGWKWebViewControllerDelegate?
+    public static var delegate: KGWebViewControllerDelegate?
     
     public var callback: KGWebCallback?
     
@@ -114,8 +114,8 @@ extension KGWebViewController {
 }
 
 
-// MARK: - KGWKWebViewDelegate
-extension KGWebViewController: KGWKWebViewDelegate {
+// MARK: - KGWebViewDelegate
+extension KGWebViewController: KGWebViewDelegate {
     
     func webView(_ webView: KGWKWebView, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool {
         guard let url = request.url, let scheme = url.scheme, let host = url.host else { return false }

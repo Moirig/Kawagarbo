@@ -26,6 +26,8 @@ public class KGNativeApiManager: NSObject {
     override init() {
         super.init()
         
+        let scriptMessageDelegate = KGScriptMessageHandler(delegate: self)
+        webView?.configuration.userContentController.add(scriptMessageDelegate, name: KGScriptMessageHandleName)
         jsBridge.delegate = self
     }
     
@@ -55,7 +57,9 @@ extension KGNativeApiManager {
     
     private func inject(apis: [String: KGNativeApiDelegate]) {
         for (path, api) in apis {
-            register(handlerName: path) { (parameters, callback) in
+            register(handlerName: path) {[weak self] (parameters, callback) in
+                guard let strongSelf = self else { return }
+                
                 debugPrint("""
                     ---------------- Web->Native ----------------
                     path:\(path)
@@ -63,7 +67,7 @@ extension KGNativeApiManager {
                     ---------------------------------------------
                     """)
                 
-                api.perform(with: parameters, complete: { (apiResponse) in
+                api.perform(with: parameters, in: strongSelf.webViewController, complete: { (apiResponse) in
                     if let callback = callback {
                         DispatchQueue.main.async {
                             callback(apiResponse.response)
@@ -107,7 +111,7 @@ extension KGNativeApiManager {
             }
             
             //TODO-配置
-            if code == 200 {
+            if code == kParamSuccessCode {
                 guard let responseData = response["data"] as? [String: Any] else {
                     return complete(.success(data: nil))
                 }
@@ -140,51 +144,27 @@ extension KGNativeApiManager {
     
 }
 
-extension KGNativeApiManager: WKNavigationDelegate {
+extension KGNativeApiManager: WKScriptMessageHandler {
     
-    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        guard webView == self.webView, let webViewDelegate = webViewDelegate, let url = navigationAction.request.url else {
-            decisionHandler(.allow)
-            return
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        
+        if let messageDict = message.body as? KGJSBridge.Message {
+            jsBridge.invokeHandler(message: messageDict)
+        }
+        else {
+            debugPrint("KGJSBridge: Error: Invalid message type")
         }
         
-        if KGJSBridge.isJSBridge(url: url) {
-            if KGJSBridge.isBridgeLoaded(url: url) {
-                jsBridge.injectJavascriptFile()
-            }
-            else if (KGJSBridge.isQueueMessage(url: url)) {
-                self.wkFlushMessageQueue()
-            }
-            else {
-                KGJSBridge.logUnkownMessage(url: url)
-            }
-            decisionHandler(.cancel)
-            return;
-        }
-        
-        if webViewDelegate.webView?(webView, decidePolicyFor: navigationAction, decisionHandler: decisionHandler) == nil {
-            decisionHandler(.allow)
-        }
     }
     
 }
 
 extension KGNativeApiManager: KGJSBridgeDelegate {
     
-    private func wkFlushMessageQueue() {
-        webView?.evaluateJavaScript(KGJSBridge.webViewJavascriptFetchQueyCommand(), completionHandler: { [weak self] (result, error) in
-            guard let strongSelf = self else { return }
-            if let error = error {
-                debugPrint("KGNativeApiManager: WARNING: Error when trying to fetch data from WKWebView: \(error)")
-            }
-            if let result = result as? String {
-                strongSelf.jsBridge.flush(messageQueueString: result)
-            }
-        })
-    }
-    
     func evaluateJavascript(javascript: String) {
         webView?.evaluateJavaScript(javascript, completionHandler: nil)
     }
     
 }
+
+

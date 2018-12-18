@@ -13,7 +13,7 @@ private let kProgressObserverKey: String = "estimatedProgress"
 
 public class KGWKWebView: WKWebView {
 
-    weak var webViewDelegate: KGWKWebViewDelegate?
+    weak var webViewDelegate: KGWebViewDelegate?
     
     var progressHidden: Bool {
         get {
@@ -76,6 +76,7 @@ public class KGWKWebView: WKWebView {
         defaultConfiguration.allowsInlineMediaPlayback = true
         defaultConfiguration.processPool = sharedProcessPool
         
+        defaultConfiguration.userContentController = WKUserContentController()        
         return defaultConfiguration
     }
     

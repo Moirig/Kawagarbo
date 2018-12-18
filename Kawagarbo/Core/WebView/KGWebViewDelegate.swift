@@ -1,5 +1,5 @@
 //
-//  KGWKWebViewDelegate.swift
+//  KGWebViewDelegate.swift
 //  KawagarboExample
 //
 //  Created by 温一鸿 on 2018/9/12.
@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-protocol KGWKWebViewDelegate: NSObjectProtocol {
+protocol KGWebViewDelegate: NSObjectProtocol {
     
     func webView(_ webView: KGWKWebView, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool
     
@@ -23,7 +23,7 @@ protocol KGWKWebViewDelegate: NSObjectProtocol {
     
 }
 
-extension KGWKWebViewDelegate {
+extension KGWebViewDelegate {
     
     func webView(_ webView: KGWKWebView, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool {
         return true

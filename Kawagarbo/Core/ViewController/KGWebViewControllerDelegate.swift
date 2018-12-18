@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import WebKit
 
-public protocol KGWKWebViewControllerDelegate: NSObjectProtocol {
+public protocol KGWebViewControllerDelegate: NSObjectProtocol {
 
     func webViewController(_ webViewController: KGWebViewController, didClickBackItem backItem: Any)
+    
+    func webViewController(_ webViewController: KGWebViewController, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool
     
     func webViewControllerDidStartLoad(_ webViewController: KGWebViewController)
 
@@ -20,9 +23,11 @@ public protocol KGWKWebViewControllerDelegate: NSObjectProtocol {
 
 }
 
-extension KGWKWebViewControllerDelegate {
+extension KGWebViewControllerDelegate {
     
     func webViewController(_ webViewController: KGWebViewController, didClickBackItem backItem: Any) {}
+    
+    func webViewController(_ webViewController: KGWebViewController, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool { return true }
     
     func webViewControllerDidStartLoad(_ webViewController: KGWebViewController) {}
     
