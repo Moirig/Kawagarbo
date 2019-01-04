@@ -31,14 +31,14 @@ public class KGWebViewController: UIViewController {
     
     public var userInfo: [String: Any]?
     
-    private lazy var nativeApi: KGNativeApiManager = {
-        let nativeApi = KGNativeApiManager()
-        nativeApi.webViewController = self
-        return nativeApi
+    private lazy var nativeApiManager: KGNativeApiManager = {
+        let manager = KGNativeApiManager()
+        manager.webViewController = self
+        return manager
     }()
     
     deinit {
-        
+        nativeApiManager.removeAllApis()
         deinitWebView()
     }
     
@@ -55,7 +55,7 @@ public class KGWebViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.addSubview(webView)
 
     }
@@ -73,13 +73,15 @@ public class KGWebViewController: UIViewController {
         super.viewDidAppear(animated)
         
         navigationController?.interactivePopGestureRecognizer?.isEnabled = !webView.canGoBack
-        nativeApi.callWeb(function: "kg.enterPage")
+        //TODO-Path
+        nativeApiManager.callJS(function: "")
     }
     
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        nativeApi.callWeb(function: "kg.exitPage")
+        //TODO-Path
+        nativeApiManager.callJS(function: "")
     }
     
     override public func viewDidDisappear(_ animated: Bool) {
@@ -166,7 +168,7 @@ extension KGWebViewController: KGWebViewDelegate {
         let nsError = error as NSError
         if nsError.code == 102 || nsError.code == 204 { return }
         if let urlError = error as? URLError, urlError.code == .cancelled { return }
-        
+
         if let url = webView.url, url.isFileURL,
            let forwardItemScheme = webView.backForwardList.forwardItem?.url.scheme, forwardItemScheme.isHTTP,
            let filePath = webView.url?.absoluteString.replacingOccurrences(of: "file://", with: ""), FileManager.default.fileExists(atPath: filePath) {
@@ -180,6 +182,10 @@ extension KGWebViewController: KGWebViewDelegate {
     func webViewDidTerminate(_ webView: KGWKWebView) {
         deinitWebView()
         reloadWebView()
+    }
+    
+    func webViewTitleChange(_ webView: KGWKWebView) {
+        title = webView.title
     }
     
 }
@@ -206,11 +212,11 @@ extension KGWebViewController {
     //TODO-配置
     func addNotification() {
         NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.nativeApi.callWeb(function: "kg.exitApp")
+            self.nativeApiManager.callJS(function: "")
         }
         
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.nativeApi.callWeb(function: "kg.enterApp")
+            self.nativeApiManager.callJS(function: "")
         }
     }
     

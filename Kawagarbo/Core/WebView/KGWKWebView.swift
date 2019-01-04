@@ -10,9 +10,10 @@ import UIKit
 import WebKit
 
 private let kProgressObserverKey: String = "estimatedProgress"
+private let kTitleObserverKey: String = "title"
 
 public class KGWKWebView: WKWebView {
-
+    
     weak var webViewDelegate: KGWebViewDelegate?
     
     var progressHidden: Bool {
@@ -53,9 +54,9 @@ public class KGWKWebView: WKWebView {
     private lazy var progressView: UIProgressView = {
         let progressView = UIProgressView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0))
         //TODO-配置
-        progressView.progressTintColor = UIColor.green
+        progressView.progressTintColor = UIColor.blue
         progressView.alpha = 0
-        self.addObserver(self, forKeyPath: kProgressObserverKey, options: [.old, .new], context: nil)
+        
         return progressView;
     }()
     
@@ -82,6 +83,8 @@ public class KGWKWebView: WKWebView {
     
     deinit {
         removeObserver(self, forKeyPath: kProgressObserverKey)
+        removeObserver(self, forKeyPath: kTitleObserverKey)
+
         stopLoading()
         navigationDelegate = nil
         uiDelegate = nil
@@ -107,6 +110,9 @@ public class KGWKWebView: WKWebView {
         uiDelegate = self
         scrollView.delegate = self
         
+        addObserver(self, forKeyPath: kProgressObserverKey, options: [.old, .new], context: nil)
+        addObserver(self, forKeyPath: kTitleObserverKey, options: [.old, .new], context: nil)
+        
         //TODO-customUA
         let originUA = KGWKWebView.originalUserAgent
         
@@ -126,6 +132,9 @@ public class KGWKWebView: WKWebView {
                     self.progressView .setProgress(0, animated: true)
                 }
             }
+        }
+        else if keyPath == kTitleObserverKey {
+            webViewDelegate?.webViewTitleChange(self)
         }
         else {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)

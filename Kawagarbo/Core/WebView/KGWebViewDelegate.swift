@@ -21,6 +21,8 @@ protocol KGWebViewDelegate: NSObjectProtocol {
     
     func webViewDidTerminate(_ webView: KGWKWebView)
     
+    func webViewTitleChange(_ webView: KGWKWebView)
+    
 }
 
 extension KGWebViewDelegate {
@@ -36,5 +38,7 @@ extension KGWebViewDelegate {
     func webView(_ webView: KGWKWebView, didFailLoadWithError error: Error) {}
     
     func webViewDidTerminate(_ webView: KGWKWebView) {}
+    
+    func webViewTitleChange(_ webView: KGWKWebView) {}
     
 }

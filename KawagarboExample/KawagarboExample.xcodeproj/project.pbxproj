@@ -14,11 +14,12 @@
 		3B1E083C2125285F00788CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E083B2125285F00788CD7 /* Assets.xcassets */; };
 		3B1E083F2125285F00788CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E083D2125285F00788CD7 /* LaunchScreen.storyboard */; };
 		3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E084B212545DF00788CD7 /* Kawagarbo.swift */; };
-		3B1E085F2125619A00788CD7 /* KGJSBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E085E2125619900788CD7 /* KGJSBridge.js */; };
 		3B1E08612125629F00788CD7 /* KGNativeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E08602125629F00788CD7 /* KGNativeApiManager.swift */; };
-		3B1E0863212573E200788CD7 /* KGJSBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E0862212573E200788CD7 /* KGJSBridge.swift */; };
+		3B2090D921D1CC370017D15C /* KGConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2090D821D1CC370017D15C /* KGConfig.swift */; };
 		3B29BBD2215B6CA100D2024B /* KGNativeApiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */; };
 		3B29BBDA215B854400D2024B /* KGNativeApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */; };
+		3B57588121CA3705006A4F46 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57588021CA3705006A4F46 /* Test.swift */; };
+		3B59414621CE059E0010C50C /* KGNativeApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59414521CE059E0010C50C /* KGNativeApiError.swift */; };
 		3B6240FD21C7946900F753EA /* KGScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */; };
 		3B6240FF21C8983B00F753EA /* KGNativeApiConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */; };
 		3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C202148FE41006731B1 /* KGWKWebView.swift */; };
@@ -42,11 +43,12 @@
 		3B1E083E2125285F00788CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B1E08402125285F00788CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B1E084B212545DF00788CD7 /* Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kawagarbo.swift; sourceTree = "<group>"; };
-		3B1E085E2125619900788CD7 /* KGJSBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = KGJSBridge.js; sourceTree = "<group>"; };
 		3B1E08602125629F00788CD7 /* KGNativeApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiManager.swift; sourceTree = "<group>"; };
-		3B1E0862212573E200788CD7 /* KGJSBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGJSBridge.swift; sourceTree = "<group>"; };
+		3B2090D821D1CC370017D15C /* KGConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGConfig.swift; sourceTree = "<group>"; };
 		3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiDelegate.swift; sourceTree = "<group>"; };
 		3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiResponse.swift; sourceTree = "<group>"; };
+		3B57588021CA3705006A4F46 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		3B59414521CE059E0010C50C /* KGNativeApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiError.swift; sourceTree = "<group>"; };
 		3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGScriptMessageHandler.swift; sourceTree = "<group>"; };
 		3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiConst.swift; sourceTree = "<group>"; };
 		3BAE9C202148FE41006731B1 /* KGWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKWebView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				3B1E08322125285C00788CD7 /* AppDelegate.swift */,
 				3B1E08342125285C00788CD7 /* FirstViewController.swift */,
 				3B1E08362125285C00788CD7 /* SecondViewController.swift */,
+				3B57588021CA3705006A4F46 /* Test.swift */,
 				3B1E08382125285C00788CD7 /* Main.storyboard */,
 				3B1E083B2125285F00788CD7 /* Assets.xcassets */,
 				3B1E083D2125285F00788CD7 /* LaunchScreen.storyboard */,
@@ -123,14 +126,6 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
-		3B1E084A2125452E00788CD7 /* JSBridge */ = {
-			isa = PBXGroup;
-			children = (
-				3B1E085E2125619900788CD7 /* KGJSBridge.js */,
-			);
-			path = JSBridge;
-			sourceTree = "<group>";
-		};
 		3B1E084D212548BB00788CD7 /* OfflinePackage */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +143,7 @@
 		3B1E084F212549B500788CD7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				3B6240F921C790CD00F753EA /* ScriptMessageHandler */,
+				3B2090D721D1CBC00017D15C /* Config */,
 				3B1E085521254B7500788CD7 /* Security */,
 				3B1E085321254A7E00788CD7 /* Utils */,
 				3B1E085221254A6200788CD7 /* Resource */,
@@ -156,7 +151,6 @@
 				3B1E085021254A0400788CD7 /* NativeApi */,
 				3B1E084E212548FD00788CD7 /* WebRoute */,
 				3B1E084D212548BB00788CD7 /* OfflinePackage */,
-				3B1E084A2125452E00788CD7 /* JSBridge */,
 				3B1E08492125451900788CD7 /* WebView */,
 			);
 			path = Core;
@@ -168,8 +162,9 @@
 				3B1E08602125629F00788CD7 /* KGNativeApiManager.swift */,
 				3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */,
 				3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */,
+				3B59414521CE059E0010C50C /* KGNativeApiError.swift */,
 				3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */,
-				3B1E0862212573E200788CD7 /* KGJSBridge.swift */,
+				3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */,
 			);
 			path = NativeApi;
 			sourceTree = "<group>";
@@ -276,12 +271,12 @@
 			path = StatisticApi;
 			sourceTree = "<group>";
 		};
-		3B6240F921C790CD00F753EA /* ScriptMessageHandler */ = {
+		3B2090D721D1CBC00017D15C /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */,
+				3B2090D821D1CC370017D15C /* KGConfig.swift */,
 			);
-			path = ScriptMessageHandler;
+			path = Config;
 			sourceTree = "<group>";
 		};
 		3BF76BBF21536EAD008B40A0 /* Extension */ = {
@@ -370,7 +365,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B1E085F2125619A00788CD7 /* KGJSBridge.js in Resources */,
 				3B1E083F2125285F00788CD7 /* LaunchScreen.storyboard in Resources */,
 				3B1E083C2125285F00788CD7 /* Assets.xcassets in Resources */,
 				3B1E083A2125285C00788CD7 /* Main.storyboard in Resources */,
@@ -392,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "KEYWORDS=\"TODO-|FIXME-|DevTeam-|XXX-\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+			shellScript = "KEYWORDS=\"TODO-|FIXME-|DevTeam-|XXX-\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -405,6 +399,7 @@
 				3B29BBDA215B854400D2024B /* KGNativeApiResponse.swift in Sources */,
 				3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */,
 				3B29BBD2215B6CA100D2024B /* KGNativeApiDelegate.swift in Sources */,
+				3B57588121CA3705006A4F46 /* Test.swift in Sources */,
 				3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */,
 				3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */,
 				3B6240FF21C8983B00F753EA /* KGNativeApiConst.swift in Sources */,
@@ -414,12 +409,13 @@
 				3BF76BD321538259008B40A0 /* NSError+KGExtension.swift in Sources */,
 				3BAE9C232148FF33006731B1 /* KGWebViewDelegate.swift in Sources */,
 				3B1E08612125629F00788CD7 /* KGNativeApiManager.swift in Sources */,
+				3B59414621CE059E0010C50C /* KGNativeApiError.swift in Sources */,
 				3B6240FD21C7946900F753EA /* KGScriptMessageHandler.swift in Sources */,
-				3B1E0863212573E200788CD7 /* KGJSBridge.swift in Sources */,
 				3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */,
 				3B1E08352125285C00788CD7 /* FirstViewController.swift in Sources */,
 				3BF76C1E215881A9008B40A0 /* String+KGExtension.swift in Sources */,
 				3BF76BD521549513008B40A0 /* KGWebViewManager.swift in Sources */,
+				3B2090D921D1CC370017D15C /* KGConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

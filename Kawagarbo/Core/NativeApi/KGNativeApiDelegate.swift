@@ -16,17 +16,12 @@ public protocol KGNativeApiDelegate: NSObjectProtocol {
     
     func regist()
     
-    func dynamicRegist()
 }
 
 extension KGNativeApiDelegate {
     
     func regist() {
         KGNativeApiManager.addNativeApi(self)
-    }
-    
-    func dynamicRegist() {
-        KGNativeApiManager.addDynamicNativeApi(self)
     }
     
 }

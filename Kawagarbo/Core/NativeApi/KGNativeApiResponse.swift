@@ -9,41 +9,46 @@
 import Foundation
 
 public enum KGNativeApiResponse {
-    case success(data: [String: Any]?)
+    case success(data: [String: Any]?, message: String?)
+    case cancel(message: String?)
+    case unknowApi(apiPath: String)
     case failure(code: Int, message: String?)
-    case cancel
 }
 
 extension KGNativeApiResponse {
     
-    var response: [String: Any] {
+    var jsonObject: [String: Any] {
         
-        var dict: [String : Any] = [
-            kParamCode: kParamSuccessCode,
-            kParamMessage: ""
-        ]
+        var dict: [String : Any] = [:]
         
         switch self {
             
-        case .success(let data):
+        case .success(let data, let message):
+            
+            dict[kParamCode] = kParamSuccessCode
+            dict[kParamMessage] = message ?? ""
             
             if let data = data {
                 dict[kParamData] = data
             }
             
+        case .cancel(let message):
+            
+            dict[kParamCode] = kParamCancelCode
+            dict[kParamMessage] = message ?? ""
+            
+        case .unknowApi(let apiPath):
+            
+            dict[kParamCode] = KGNativeApiError.unknowNativeApi
+            dict[kParamMessage] = "\(KGNativeApiError.unknowNativeApi.localizedDescription):\(apiPath)!"
+            
         case .failure(let code, let message):
             
             dict[kParamCode] = code
+            dict[kParamMessage] = message ?? ""
             
-            if let message = message {
-                dict[kParamMessage] = message
-            }
-            
-            
-        case .cancel:
-            dict[kParamCode] = kParamCancelCode
         }
-        
         return dict
     }
+
 }
