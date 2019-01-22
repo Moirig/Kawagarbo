@@ -8,12 +8,32 @@
 
 import UIKit
 
-protocol KGConfig {
+public struct KGConfig {
     
-    static var progressViewColor: UIColor { get }
+    public var injectDynamically: Bool?
+    
+    public var progressColor: UIColor?
     
     
+    var isInjectDynamically: Bool {
+        if let isInjectDynamically = injectDynamically {
+            if isInjectDynamically {
+                return true
+            }
+        }
+        else if KGGlobalConfig.injectDynamically {
+            return true
+        }
+        
+        return false
+    }
     
-    var progressViewColor: UIColor { get }
+    var progressTintColor: UIColor {
+        if let color = progressColor {
+            return color
+        }
+        
+        return KGGlobalConfig.progressColor
+    }
     
 }

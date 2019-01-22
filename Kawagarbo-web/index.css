@@ -1,0 +1,36 @@
+body {
+    background-color: #EEEEEE;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    padding-left: 15px;
+}
+
+.cell {
+    background-color: white;
+    margin-bottom: 1px;
+    padding: 0;
+    padding-left: 15px;
+    vertical-align:middle;
+    height: 44px;
+    line-height:44px;
+}
+
+.cellImage {
+    margin-left: 190px;
+    margin-right: 15px;
+    vertical-align:middle;
+    width: 38px;
+    height: 38px;
+}
+
+.longlongCell {
+    background-color: lightpink;
+    margin-bottom: 1px;
+    padding: 0;
+    padding-left: 15px;
+    vertical-align:middle;
+    height: 2000px;
+}

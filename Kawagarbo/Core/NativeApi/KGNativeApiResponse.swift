@@ -11,7 +11,7 @@ import Foundation
 public enum KGNativeApiResponse {
     case success(data: [String: Any]?, message: String?)
     case cancel(message: String?)
-    case unknowApi(apiPath: String)
+    case unknownApi(api: String)
     case failure(code: Int, message: String?)
 }
 
@@ -25,7 +25,7 @@ extension KGNativeApiResponse {
             
         case .success(let data, let message):
             
-            dict[kParamCode] = kParamSuccessCode
+            dict[kParamCode] = kParamCodeSuccess
             dict[kParamMessage] = message ?? ""
             
             if let data = data {
@@ -34,19 +34,19 @@ extension KGNativeApiResponse {
             
         case .cancel(let message):
             
-            dict[kParamCode] = kParamCancelCode
+            dict[kParamCode] = kParamCodeCancel
             dict[kParamMessage] = message ?? ""
             
-        case .unknowApi(let apiPath):
+        case .unknownApi(let api):
             
-            dict[kParamCode] = KGNativeApiError.unknowNativeApi
-            dict[kParamMessage] = "\(KGNativeApiError.unknowNativeApi.localizedDescription):\(apiPath)!"
+            dict[kParamCode] = kParamCodeUnknownApi
+            dict[kParamMessage] = "Unknown Api:\(api)!"
             
         case .failure(let code, let message):
             
             dict[kParamCode] = code
             dict[kParamMessage] = message ?? ""
-            
+        
         }
         return dict
     }

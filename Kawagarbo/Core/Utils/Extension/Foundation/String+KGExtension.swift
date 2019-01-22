@@ -19,4 +19,17 @@ extension String {
         }
         return false
     }
+    
+    var isFile: Bool {
+        return self == "file" || hasPrefix("file")
+    }
+    
+    var urlEncode: String {
+        let encodeUrlSet: CharacterSet = CharacterSet.urlQueryAllowed
+        if let encodeUrlString = self.addingPercentEncoding(withAllowedCharacters: encodeUrlSet) {
+            return encodeUrlString
+        }
+        
+        return self
+    }
 }

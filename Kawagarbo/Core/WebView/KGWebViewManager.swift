@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KGWebViewManager: NSObject {
+public class KGWebViewManager: NSObject {
     
     static let manager: KGWebViewManager = KGWebViewManager()
     
@@ -34,7 +34,7 @@ class KGWebViewManager: NSObject {
         return KGWebViewManager.manager.webViewStack.last
     }
 
-    class func preloadWebView() {
+    public class func preloadWebView() {
         let webView = KGWKWebView(frame: CGRect.zero, configuration: KGWKWebView.defaultConfiguration)
         webView.loadHTMLString("", baseURL: nil)
         KGWebViewManager.manager.emptyWebView = webView

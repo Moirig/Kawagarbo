@@ -15,7 +15,7 @@ public class KGNativeApiManager: NSObject {
     
     private var webView: KGWKWebView? { return webViewController?.webView }
     
-    private static var nativeApis: [String: KGNativeApiDelegate] = [:]
+    static var nativeApis: [String: KGNativeApiDelegate] = [:]
     
     private var startupMessageQueue = [Message]()
     
@@ -40,24 +40,19 @@ extension KGNativeApiManager {
         nativeApis[api.path] = api
     }
     
-    func injectApis(apiPaths: [String]) {
-        var workApis: [String: KGNativeApiDelegate] = [:]
-        for apiPath in apiPaths {
-            workApis[apiPath] = KGNativeApiManager.nativeApis[apiPath];
-        }
-        
-        for (apiPath, api) in workApis {
+    func injectApis() {
+        for (apiPath, api) in KGNativeApiManager.nativeApis {
             regist(apiPath) {[weak self] (parameters, callback) in
                 guard let strongSelf = self else { return }
                 
                 debugPrint("""
-                    ---------------- Web->Native ----------------
+                    -------------------- Kawagarbo --------------------
                     path:\(apiPath)
                     parameters:\(parameters?.string ?? "")
-                    ---------------------------------------------
+                    ---------------------------------------------------
                     """)
-                
-                api.perform(with: parameters, in: strongSelf.webViewController) { (apiResponse) in
+                api.webViewController = strongSelf.webViewController
+                api.perform(with: parameters) { (apiResponse) in
                     if let callback = callback {
                         DispatchQueue.main.async {
                             callback(apiResponse.jsonObject)
@@ -78,46 +73,61 @@ extension KGNativeApiManager {
         
     func callJS(function: String, parameters: [String: Any]? = nil, complete: KGNativeApiResponseClosure? = nil) {
         guard function.count > 0 else { return }
-        
-        debugPrint(
+        #if DEBUG
+        print(
             """
-            ---------------- Native->Web ----------------
+            -------------------- Kawagarbo --------------------
             function:\(function)
             \(parameters?.string ?? "")
-            ---------------------------------------------
+            ---------------------------------------------------
             """
         )
+        #endif
         
-        call(handler: function, data: parameters) { (response) in
+        call(handler: function, data: parameters) { (jsonObject) in
             guard let complete = complete else { return }
+            
+            
+            
+            guard let jsonObj = jsonObject, let code = jsonObj[kParamCode] as? Int else {
+                #if DEBUG
+                print(
+                    """
+                    -------------------- Kawagarbo --------------------
+                    Invalid Response Type:
+                    \(jsonObject?.string ?? "")
+                    ---------------------------------------------------
+                    """
+                )
+                #endif
+                return
+            }
             
             debugPrint(
                 """
-                ---------------- Native->Web ----------------
+                -------------------- Kawagarbo --------------------
                 function:\(function)
-                \(response?.string ?? "")
-                ---------------------------------------------
+                \(jsonObj.string)
+                ---------------------------------------------------
                 """
             )
             
-            guard let response = response, let code = response[kParamCode] as? Int else {
-                return complete(.failure(code: KGNativeApiError.cannotParseResponse.rawValue, message: KGNativeApiError.cannotParseResponse.localizedDescription))
-            }
+            let message = jsonObj[kParamMessage] as? String ?? ""
             
-            let message = response[kParamMessage] as? String
-            
-            if code == kParamSuccessCode {
-                let data = response[kParamData] as? [String: Any]
+            switch code {
+                
+            case kParamCodeSuccess:
+                let data = jsonObj[kParamData] as? [String: Any]
                 complete(.success(data: data, message: message))
-            }
-            else if code == kParamCancelCode {
+            
+            case kParamCodeCancel:
                 complete(.cancel(message: message))
-            }
-            else {
-                guard let msg = message else {
-                    return complete(.failure(code: KGNativeApiError.cannotParseResponse.rawValue, message: KGNativeApiError.cannotParseResponse.localizedDescription))
-                }
-                complete(.failure(code: code, message: msg))
+
+            case kParamCodeUnknownApi:
+                complete(.unknownApi(api: function))
+                
+            default:
+                complete(.failure(code: code, message: message))
             }
         }
     }
@@ -171,15 +181,14 @@ extension KGNativeApiManager {
             guard let handler = messageHandlers[handlerName] else {
                 debugPrint(
                     """
-                    ---------------- Web->Native ----------------
-                    \(KGNativeApiError.unknowNativeApi.localizedDescription)
-                    \(message.string)
-                    ---------------------------------------------
+                    -------------------- Kawagarbo --------------------
+                    UnknownApi:\(handlerName)
+                    ---------------------------------------------------
                     """
                 )
 
                 guard let aCallback = callback else { return }
-                aCallback([kParamCode: KGNativeApiError.unknowNativeApi.rawValue, kParamMessage: "\(KGNativeApiError.unknowNativeApi.localizedDescription):\(handlerName)!" ])
+                aCallback(KGNativeApiResponse.unknownApi(api: handlerName).jsonObject)
                 return
             }
             handler(message[kParamData] as? Message, callback)
@@ -198,13 +207,15 @@ extension KGNativeApiManager: WKScriptMessageHandler {
         else {
             debugPrint(
                 """
-                ---------------- Web->Native ----------------
-                \(KGNativeApiError.invalidParameters.localizedDescription)
-                ---------------------------------------------
+                -------------------- Kawagarbo --------------------
+                Invalid Paramters:
+                \(message.body)
+                ---------------------------------------------------
                 """
             )
         }
     }
+    
     
 }
 
@@ -223,7 +234,7 @@ extension KGNativeApiManager {
         messageJSON = messageJSON.replacingOccurrences(of: "\u{2028}", with: "\\u2028")
         messageJSON = messageJSON.replacingOccurrences(of: "\u{2029}", with: "\\u2029")
         
-        let javascript = "\(KGJSBridgeObj).\(KGJSBridgeHandleMessageFunction)('\(messageJSON)');"
+        let javascript = "\(KGJSBridgeObj).\(KGSubscribeHandler)('\(messageJSON)');"
         DispatchQueue.main.async {
             self.webView?.evaluateJavaScript(javascript, completionHandler: nil)
         }
@@ -237,9 +248,10 @@ extension KGNativeApiManager {
         } catch {
             debugPrint(
                 """
-                ---------- JSONSerializationError -----------
-                \(KGNativeApiError.invalidParameters.localizedDescription)
-                ---------------------------------------------
+                -------------------- Kawagarbo --------------------
+                Invalid Paramters:
+                \(message)
+                ---------------------------------------------------
                 """
             )
         }
