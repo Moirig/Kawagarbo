@@ -16,47 +16,34 @@ public class KGWKWebView: WKWebView {
     
     weak var webViewDelegate: KGWebViewDelegate?
     
-    public var config: KGConfig?
+//    public lazy var nativeApiManager: KGNativeApiManager = {
+//        let manager = KGNativeApiManager()
+//        return manager
+//    }()
     
-//    var progressHidden: Bool {
-//        get {
-//            return progressView.isHidden
-//        }
-//        set {
-//            progressView.isHidden = newValue
-//        }
-//    }
-//
-//    var progress: Float {
-//        get {
-//            return progressView.progress
-//        }
-//        set {
-//            progressView.setProgress(newValue, animated: true)
-//        }
-//    }
+    public var config: KGConfig! {
+        get { return KGConfig() }
+        set {
+            progressView.progressTintColor = newValue.getProgressTintColor
+            
+            if #available(iOS 9.0, *) {
+                customUserAgent = KGWKWebView.originalUserAgent + newValue.getUserAgent
+            }
+        }
+    }
     
     var banAlert: Bool = false
     
     static var originalUserAgent: String {
         let webview = UIWebView(frame: CGRect.zero)
-        var userAgent = webview.stringByEvaluatingJavaScript(from: "navigator.userAgent")
-        
-        if let projectUserAgent = projectUserAgent {
-            userAgent = userAgent?.replacingOccurrences(of: projectUserAgent, with: "")
-        }
-        
+        let userAgent = webview.stringByEvaluatingJavaScript(from: "navigator.userAgent")
         return userAgent ?? ""
     }
     
     var projectUserAgent: String?
     
-    static var projectUserAgent: String?
-    
     private lazy var progressView: UIProgressView = {
         let progressView = UIProgressView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0))
-        //TODO-配置
-        progressView.progressTintColor = config?.progressTintColor
         progressView.alpha = 0
         
         return progressView;
@@ -113,12 +100,7 @@ public class KGWKWebView: WKWebView {
         addObserver(self, forKeyPath: kProgressObserverKey, options: [.old, .new], context: nil)
         addObserver(self, forKeyPath: kTitleObserverKey, options: [.old, .new], context: nil)
         
-        //TODO-customUA
-        let originUA = KGWKWebView.originalUserAgent
-        
-        
         addSubview(progressView)
-
     }
     
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

@@ -24,7 +24,6 @@ public class KGWebViewController: UIViewController {
         webView.frame = view.frame
         webView.webViewDelegate = self
         webView.scrollView.delegate = self
-        webView.config = config
         
         if #available(iOS 11.0, *) {
             webView.scrollView.contentInsetAdjustmentBehavior = .never
@@ -45,12 +44,6 @@ public class KGWebViewController: UIViewController {
     public var callback: KGWebCallback?
     
     public var userInfo: [String: Any]?
-    
-    public lazy var nativeApiManager: KGNativeApiManager = {
-        let manager = KGNativeApiManager()
-        manager.webViewController = self
-        return manager
-    }()
     
     deinit {
         deinitWebView()
@@ -77,6 +70,8 @@ public class KGWebViewController: UIViewController {
         
         injectNativeApi()
         
+        webRoute?.config = config
+        webView.config = config
         view.addSubview(webView)
         reloadWebView()
     }
@@ -125,8 +120,11 @@ public class KGWebViewController: UIViewController {
 extension KGWebViewController {
     
     func injectNativeApi() {
+        
+        NativeApiManager.webViewController = self
+
         if !config.isInjectDynamically {
-            nativeApiManager.injectApis()
+            NativeApiManager.injectApis()
         }
     }
     
@@ -156,15 +154,7 @@ extension KGWebViewController: KGWebViewDelegate {
     func webView(_ webView: KGWKWebView, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool {
         guard let url = request.url, let scheme = url.scheme, let host = url.host else { return false }
         
-        #if DEBUG
-        print(
-            """
-            -------------------- ShouldStart --------------------
-            \(url.absoluteString)
-            -----------------------------------------------------
-            """
-        )
-        #endif
+        KGLog(title: "ShouldStart", url.absoluteString)
         
         if scheme.isHTTP {
             if host == "itunes.apple.com" {
@@ -220,16 +210,7 @@ extension KGWebViewController: KGWebViewDelegate {
     }
     
     func webView(_ webView: KGWKWebView, didFailLoadWithError error: Error) {
-        
-        #if DEBUG
-        print(
-            """
-            -------------------- didFailLoad --------------------
-            \(error)
-            -----------------------------------------------------
-            """
-        )
-        #endif
+        KGLog(title: "didFailLoad:", error)
         
         let nsError = error as NSError
         if nsError.code == 102 || nsError.code == 204 { return }
@@ -301,19 +282,19 @@ extension KGWebViewController: UIScrollViewDelegate {
 extension KGWebViewController {
     
     func onShow() {
-        nativeApiManager.callJS(function: "onShow")
+        NativeApiManager.callJS(function: "onShow")
     }
     
     func onHide() {
-        nativeApiManager.callJS(function: "onHide")
+        NativeApiManager.callJS(function: "onHide")
     }
     
     func onUnload() {
-        nativeApiManager.callJS(function: "onUnload")
+        NativeApiManager.callJS(function: "onUnload")
     }
     
     func onReady() {
-        nativeApiManager.callJS(function: "onReady")
+        NativeApiManager.callJS(function: "onReady")
     }
     
     private func isUnload(_ webView: KGWKWebView, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool {

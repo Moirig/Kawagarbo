@@ -8,6 +8,6 @@
 
 import UIKit
 
-class Kawagarbo: NSObject {
+public class Kawagarbo: NSObject {
 
 }

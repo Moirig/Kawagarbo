@@ -16,6 +16,14 @@ public class KGWebRoute: NSObject {
     
     public var urlRequest: URLRequest?
     
+    public var config: KGConfig! {
+        get { return KGConfig() }
+        set {
+            urlRequest?.cachePolicy = newValue.getCachePolicy
+            urlRequest?.timeoutInterval = newValue.getTimeoutInterval
+        }
+    }
+    
     public convenience init(urlString: String, parameters: [String: String]? = nil, headerFields: [String: String]? = nil) {
         self.init()
         

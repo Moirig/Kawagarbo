@@ -12,28 +12,53 @@ public struct KGConfig {
     
     public var injectDynamically: Bool?
     
-    public var progressColor: UIColor?
+    public var userAgent: String?
+    
+    public var cachePolicy: URLRequest.CachePolicy?
+    
+    public var timeoutInterval: TimeInterval?
+    
+    public var progressTintColor: UIColor?
     
     
     var isInjectDynamically: Bool {
         if let isInjectDynamically = injectDynamically {
-            if isInjectDynamically {
-                return true
-            }
+            return isInjectDynamically
         }
-        else if KGGlobalConfig.injectDynamically {
-            return true
-        }
-        
-        return false
+        return KGGlobalConfig.injectDynamically
     }
     
-    var progressTintColor: UIColor {
-        if let color = progressColor {
+    var getProgressTintColor: UIColor {
+        if let color = progressTintColor {
             return color
         }
         
-        return KGGlobalConfig.progressColor
+        return KGGlobalConfig.progressTintColor
     }
+    
+    var getUserAgent: String {
+        if let ua = userAgent {
+            return ua
+        }
+        
+        return KGGlobalConfig.userAgent ?? ""
+    }
+    
+    var getCachePolicy: URLRequest.CachePolicy {
+        if let policy = cachePolicy {
+            return policy
+        }
+        
+        return KGGlobalConfig.cachePolicy
+    }
+    
+    var getTimeoutInterval: TimeInterval {
+        if let interval = timeoutInterval {
+            return interval
+        }
+        
+        return KGGlobalConfig.timeoutInterval
+    }
+    
     
 }

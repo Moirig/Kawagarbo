@@ -16,6 +16,8 @@
 		3B29BBD2215B6CA100D2024B /* KGNativeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BBD1215B6CA100D2024B /* KGNativeApi.swift */; };
 		3B29BBDA215B854400D2024B /* KGNativeApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */; };
 		3B58977321F5BC550089B83E /* KGGlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58977221F5BC540089B83E /* KGGlobalConfig.swift */; };
+		3B58977F21F6E2F30089B83E /* KGLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58977E21F6E2F30089B83E /* KGLog.swift */; };
+		3B58978521F6F3E00089B83E /* KGSetNavigationBarTitleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58978421F6F3E00089B83E /* KGSetNavigationBarTitleApi.swift */; };
 		3B6240FD21C7946900F753EA /* KGScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */; };
 		3B6240FF21C8983B00F753EA /* KGNativeApiConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */; };
 		3B6B9D2221EEBB2B009D1B68 /* KGWebRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B9D2121EEBB2B009D1B68 /* KGWebRoute.swift */; };
@@ -42,6 +44,8 @@
 		3B29BBD1215B6CA100D2024B /* KGNativeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApi.swift; sourceTree = "<group>"; };
 		3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiResponse.swift; sourceTree = "<group>"; };
 		3B58977221F5BC540089B83E /* KGGlobalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGGlobalConfig.swift; sourceTree = "<group>"; };
+		3B58977E21F6E2F30089B83E /* KGLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGLog.swift; sourceTree = "<group>"; };
+		3B58978421F6F3E00089B83E /* KGSetNavigationBarTitleApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGSetNavigationBarTitleApi.swift; sourceTree = "<group>"; };
 		3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGScriptMessageHandler.swift; sourceTree = "<group>"; };
 		3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiConst.swift; sourceTree = "<group>"; };
 		3B6B9D2121EEBB2B009D1B68 /* KGWebRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebRoute.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		3B1E085021254A0400788CD7 /* NativeApi */ = {
 			isa = PBXGroup;
 			children = (
+				3B58978021F6F0CA0089B83E /* Apis */,
 				3B1E08602125629F00788CD7 /* KGNativeApiManager.swift */,
 				3B29BBD1215B6CA100D2024B /* KGNativeApi.swift */,
 				3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */,
@@ -179,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				3BF76BBF21536EAD008B40A0 /* Extension */,
+				3B58977E21F6E2F30089B83E /* KGLog.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -268,6 +274,22 @@
 				3B58977221F5BC540089B83E /* KGGlobalConfig.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		3B58978021F6F0CA0089B83E /* Apis */ = {
+			isa = PBXGroup;
+			children = (
+				3B58978321F6F38D0089B83E /* NavigationBar */,
+			);
+			path = Apis;
+			sourceTree = "<group>";
+		};
+		3B58978321F6F38D0089B83E /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				3B58978421F6F3E00089B83E /* KGSetNavigationBarTitleApi.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		3BF76BBF21536EAD008B40A0 /* Extension */ = {
@@ -387,6 +409,7 @@
 			files = (
 				3B29BBDA215B854400D2024B /* KGNativeApiResponse.swift in Sources */,
 				3B58977321F5BC550089B83E /* KGGlobalConfig.swift in Sources */,
+				3B58977F21F6E2F30089B83E /* KGLog.swift in Sources */,
 				3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */,
 				3B29BBD2215B6CA100D2024B /* KGNativeApi.swift in Sources */,
 				3B6B9D2221EEBB2B009D1B68 /* KGWebRoute.swift in Sources */,
@@ -401,6 +424,7 @@
 				3B1E08612125629F00788CD7 /* KGNativeApiManager.swift in Sources */,
 				3B6240FD21C7946900F753EA /* KGScriptMessageHandler.swift in Sources */,
 				3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */,
+				3B58978521F6F3E00089B83E /* KGSetNavigationBarTitleApi.swift in Sources */,
 				3BF76C1E215881A9008B40A0 /* String+KGExtension.swift in Sources */,
 				3BF76BD521549513008B40A0 /* KGWebViewManager.swift in Sources */,
 				3B2090D921D1CC370017D15C /* KGConfig.swift in Sources */,

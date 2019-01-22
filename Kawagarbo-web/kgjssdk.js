@@ -5,7 +5,7 @@
 
     if (!window.onerror) {
         window.onerror = function(msg, url, line) {
-            console.log("JSBridge: ERROR:" + msg + "@" + url + ":" + line)
+            console.log('JSBridge: ERROR:' + msg + '@' + url + ':' + line)
         }
     }
 
@@ -82,7 +82,7 @@
                 handler(message.data, responseCallback)
             }
             else {
-                console.log("JSBridge: WARNING: no handler for message from Native:", message)
+                console.log('JSBridge: WARNING: no handler for message from Native:', message)
                 responseCallback({code: -1, message: 'No Api:' + message.handlerName + '!'})
             }
         }
@@ -96,15 +96,17 @@
 
     window.wx = {}
 
-    wx.invokeHandler = function(req) {
-        callHandler(req.path, req.data, function (res) {
-            if (res.code == Code.success) { req.data.success && req.data.success(res.data) }
+    wx.invokeHandler = function(path, object) {
+        callHandler(path, object, function (res) {
+            object.complete && object.complete(res)
 
-            else if (res.code == Code.cancel) { req.data.cancel && req.data.cancel(res.message) }
+            if (res.code == Code.success) { object.success && object.success(res.data) }
 
-            else if (res.code == Code.unknown) { req.data.unknown && req.data.unknown(res.message) }
+            else if (res.code == Code.cancel) { object.cancel && object.cancel(res.message) }
 
-            else { req.data.fail && req.data.fail(res) }
+            else if (res.code == Code.unknown) { object.unknown && object.unknown(res.message) }
+
+            else { object.fail && object.fail(res) }
         })
     }
 
@@ -115,6 +117,8 @@
             callback && callback(data)
         })
     }
+
+    //subscribeHandler
 
     wx.onShow = function (callback) {
         wx.subscribeHandler('onShow', callback)
@@ -132,5 +136,10 @@
         wx.subscribeHandler('onReady', callback)
     }
 
+    //invokeHandler
+
+    wx.setNavigationBarTitle = function (object) {
+        wx.invokeHandler('setNavigationBarTitle', object)
+    }
 
 })();

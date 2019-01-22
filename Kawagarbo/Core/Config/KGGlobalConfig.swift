@@ -10,8 +10,14 @@ import UIKit
 
 public struct KGGlobalConfig {
     
-    static var injectDynamically: Bool = false
+    public static var injectDynamically: Bool = false
     
-    static var progressColor: UIColor = UIColor.green
+    public static var userAgent: String?
+    
+    public static var cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy
+    
+    public static var timeoutInterval: TimeInterval = 60
+    
+    public static var progressTintColor: UIColor = UIColor(red:0.59, green:0.78, blue:0.45, alpha:1.00)
 
 }

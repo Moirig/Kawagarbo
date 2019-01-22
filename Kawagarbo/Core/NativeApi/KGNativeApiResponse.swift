@@ -9,7 +9,7 @@
 import Foundation
 
 public enum KGNativeApiResponse {
-    case success(data: [String: Any]?, message: String?)
+    case success(data: [String: Any]?)
     case cancel(message: String?)
     case unknownApi(api: String)
     case failure(code: Int, message: String?)
@@ -23,10 +23,10 @@ extension KGNativeApiResponse {
         
         switch self {
             
-        case .success(let data, let message):
+        case .success(let data):
             
             dict[kParamCode] = kParamCodeSuccess
-            dict[kParamMessage] = message ?? ""
+            dict[kParamMessage] = ""
             
             if let data = data {
                 dict[kParamData] = data

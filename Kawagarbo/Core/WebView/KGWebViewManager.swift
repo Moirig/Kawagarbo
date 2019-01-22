@@ -35,13 +35,20 @@ public class KGWebViewManager: NSObject {
     }
 
     public class func preloadWebView() {
-        let webView = KGWKWebView(frame: CGRect.zero, configuration: KGWKWebView.defaultConfiguration)
+        let webView = getWebView
         webView.loadHTMLString("", baseURL: nil)
         KGWebViewManager.manager.emptyWebView = webView
     }
     
     class func createEmptyWebView() {
-        KGWebViewManager.manager.emptyWebView = KGWKWebView(frame: CGRect.zero, configuration: KGWKWebView.defaultConfiguration)
+        KGWebViewManager.manager.emptyWebView = getWebView
+    }
+    
+    static var getWebView: KGWKWebView {
+        let configuration = KGWKWebView.defaultConfiguration
+        let userContentController = NativeApiManager.userContentController
+        configuration.userContentController = userContentController
+        return KGWKWebView(frame: CGRect.zero, configuration: configuration)
     }
     
     class func removeCurrentWebView() {

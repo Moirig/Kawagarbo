@@ -9,6 +9,8 @@
 import UIKit
 import WebKit
 
+let NativeApiManager = KGNativeApiManager()
+
 public class KGNativeApiManager: NSObject {
 
     weak var webViewController: KGWebViewController?
@@ -28,15 +30,20 @@ public class KGNativeApiManager: NSObject {
     override init() {
         super.init()
         
+    }
+    
+    var userContentController: WKUserContentController {
+        let userContentController = WKUserContentController()
         let scriptMessageDelegate = KGScriptMessageHandler(delegate: self)
-        webView?.configuration.userContentController.add(scriptMessageDelegate, name: KGScriptMessageHandleName)
+        userContentController.add(scriptMessageDelegate, name: KGScriptMessageHandleName)
+        return userContentController
     }
     
 }
 
 extension KGNativeApiManager {
     
-    static func addNativeApi(_ api: KGNativeApiDelegate) {
+    class func addNativeApi(_ api: KGNativeApiDelegate) {
         nativeApis[api.path] = api
     }
     
@@ -45,15 +52,15 @@ extension KGNativeApiManager {
             regist(apiPath) {[weak self] (parameters, callback) in
                 guard let strongSelf = self else { return }
                 
-                debugPrint("""
-                    -------------------- Kawagarbo --------------------
+                KGLog(title: "callNative:", """
                     path:\(apiPath)
                     parameters:\(parameters?.string ?? "")
-                    ---------------------------------------------------
                     """)
+                
                 api.webViewController = strongSelf.webViewController
                 api.perform(with: parameters) { (apiResponse) in
                     if let callback = callback {
+                        
                         DispatchQueue.main.async {
                             callback(apiResponse.jsonObject)
                         }
@@ -61,6 +68,8 @@ extension KGNativeApiManager {
                 }
             }
         }
+        
+        KGLog("Inject Apis Success!")
     }
     
     func removeAllApis() {
@@ -71,46 +80,26 @@ extension KGNativeApiManager {
 
 extension KGNativeApiManager {
         
-    func callJS(function: String, parameters: [String: Any]? = nil, complete: KGNativeApiResponseClosure? = nil) {
+    public func callJS(function: String, parameters: [String: Any]? = nil, complete: KGNativeApiResponseClosure? = nil) {
         guard function.count > 0 else { return }
-        #if DEBUG
-        print(
-            """
-            -------------------- Kawagarbo --------------------
-            function:\(function)
+        KGLog(title: "callJS:", """
+            \(function)
             \(parameters?.string ?? "")
-            ---------------------------------------------------
-            """
-        )
-        #endif
-        
+            """)
         call(handler: function, data: parameters) { (jsonObject) in
             guard let complete = complete else { return }
             
             
             
             guard let jsonObj = jsonObject, let code = jsonObj[kParamCode] as? Int else {
-                #if DEBUG
-                print(
-                    """
-                    -------------------- Kawagarbo --------------------
-                    Invalid Response Type:
-                    \(jsonObject?.string ?? "")
-                    ---------------------------------------------------
-                    """
-                )
-                #endif
+                KGLog(title: "Invalid Response Type:", jsonObject?.string ?? "")
                 return
             }
             
-            debugPrint(
-                """
-                -------------------- Kawagarbo --------------------
+            KGLog(title: "JSResponse:", """
                 function:\(function)
                 \(jsonObj.string)
-                ---------------------------------------------------
-                """
-            )
+                """)
             
             let message = jsonObj[kParamMessage] as? String ?? ""
             
@@ -118,7 +107,7 @@ extension KGNativeApiManager {
                 
             case kParamCodeSuccess:
                 let data = jsonObj[kParamData] as? [String: Any]
-                complete(.success(data: data, message: message))
+                complete(.success(data: data))
             
             case kParamCodeCancel:
                 complete(.cancel(message: message))
@@ -179,13 +168,7 @@ extension KGNativeApiManager {
             
             guard let handlerName = message[kParamHandlerName] as? String else { return }
             guard let handler = messageHandlers[handlerName] else {
-                debugPrint(
-                    """
-                    -------------------- Kawagarbo --------------------
-                    UnknownApi:\(handlerName)
-                    ---------------------------------------------------
-                    """
-                )
+                KGLog(title: "UnknownApi:", handlerName)
 
                 guard let aCallback = callback else { return }
                 aCallback(KGNativeApiResponse.unknownApi(api: handlerName).jsonObject)
@@ -205,14 +188,7 @@ extension KGNativeApiManager: WKScriptMessageHandler {
             invokeHandler(message: messageDict)
         }
         else {
-            debugPrint(
-                """
-                -------------------- Kawagarbo --------------------
-                Invalid Paramters:
-                \(message.body)
-                ---------------------------------------------------
-                """
-            )
+            KGLog(title: "Invalid Paramters:", message.body)
         }
     }
     
@@ -246,14 +222,7 @@ extension KGNativeApiManager {
             let data = try JSONSerialization.data(withJSONObject: message, options: pretty ? .prettyPrinted : JSONSerialization.WritingOptions(rawValue: 0))
             result = String(data: data, encoding: .utf8)
         } catch {
-            debugPrint(
-                """
-                -------------------- Kawagarbo --------------------
-                Invalid Paramters:
-                \(message)
-                ---------------------------------------------------
-                """
-            )
+            KGLog(title: "Invalid Paramters:", message)
         }
         return result
     }

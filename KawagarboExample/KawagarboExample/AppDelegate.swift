@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         KGWebViewManager.preloadWebView()
+        KGNativeApi.regist()
         
         let webVC = KGWebViewController(urlString: "http://192.168.71.7:4000/Kawagarbo-web/index.html")
         let navi = UINavigationController(rootViewController: webVC)
