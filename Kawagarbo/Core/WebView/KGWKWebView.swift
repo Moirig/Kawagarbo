@@ -16,23 +16,25 @@ public class KGWKWebView: WKWebView {
     
     weak var webViewDelegate: KGWebViewDelegate?
     
-    var progressHidden: Bool {
-        get {
-            return progressView.isHidden
-        }
-        set {
-            progressView.isHidden = newValue
-        }
-    }
+    public var config: KGConfig?
     
-    var progress: Float {
-        get {
-            return progressView.progress
-        }
-        set {
-            progressView.setProgress(newValue, animated: true)
-        }
-    }
+//    var progressHidden: Bool {
+//        get {
+//            return progressView.isHidden
+//        }
+//        set {
+//            progressView.isHidden = newValue
+//        }
+//    }
+//
+//    var progress: Float {
+//        get {
+//            return progressView.progress
+//        }
+//        set {
+//            progressView.setProgress(newValue, animated: true)
+//        }
+//    }
     
     var banAlert: Bool = false
     
@@ -54,7 +56,7 @@ public class KGWKWebView: WKWebView {
     private lazy var progressView: UIProgressView = {
         let progressView = UIProgressView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0))
         //TODO-配置
-        progressView.progressTintColor = UIColor.blue
+        progressView.progressTintColor = config?.progressTintColor
         progressView.alpha = 0
         
         return progressView;
@@ -67,7 +69,6 @@ public class KGWKWebView: WKWebView {
         
         if #available(iOS 10.0, *) {
             defaultConfiguration.mediaTypesRequiringUserActionForPlayback = .all
-            defaultConfiguration.dataDetectorTypes = [.link, .phoneNumber]
         }
         if #available(iOS 9.0, *) {
             defaultConfiguration.requiresUserActionForMediaPlayback = false
@@ -108,7 +109,6 @@ public class KGWKWebView: WKWebView {
         
         navigationDelegate = self
         uiDelegate = self
-        scrollView.delegate = self
         
         addObserver(self, forKeyPath: kProgressObserverKey, options: [.old, .new], context: nil)
         addObserver(self, forKeyPath: kTitleObserverKey, options: [.old, .new], context: nil)
@@ -211,7 +211,11 @@ extension KGWKWebView: WKUIDelegate {
             return
         }
         
+        let alert = UIAlertView(title: nil, message: message, delegate: nil, cancelButtonTitle: "好的")
+        alert.show()
+        
         //TODO-showAlert
+        completionHandler()
     }
     
     public func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
@@ -237,15 +241,6 @@ extension KGWKWebView: WKUIDelegate {
             webView.load(navigationAction.request)
         }
         return nil
-    }
-    
-}
-
-// MARK: - UIScrollViewDelegate
-extension KGWKWebView: UIScrollViewDelegate {
-    
-    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        scrollView.decelerationRate = .normal
     }
     
 }

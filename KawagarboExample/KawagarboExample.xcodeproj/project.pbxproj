@@ -8,20 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3B1E08332125285C00788CD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E08322125285C00788CD7 /* AppDelegate.swift */; };
-		3B1E08352125285C00788CD7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E08342125285C00788CD7 /* FirstViewController.swift */; };
-		3B1E08372125285C00788CD7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E08362125285C00788CD7 /* SecondViewController.swift */; };
-		3B1E083A2125285C00788CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E08382125285C00788CD7 /* Main.storyboard */; };
 		3B1E083C2125285F00788CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E083B2125285F00788CD7 /* Assets.xcassets */; };
 		3B1E083F2125285F00788CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E083D2125285F00788CD7 /* LaunchScreen.storyboard */; };
 		3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E084B212545DF00788CD7 /* Kawagarbo.swift */; };
 		3B1E08612125629F00788CD7 /* KGNativeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E08602125629F00788CD7 /* KGNativeApiManager.swift */; };
 		3B2090D921D1CC370017D15C /* KGConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2090D821D1CC370017D15C /* KGConfig.swift */; };
-		3B29BBD2215B6CA100D2024B /* KGNativeApiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */; };
+		3B29BBD2215B6CA100D2024B /* KGNativeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BBD1215B6CA100D2024B /* KGNativeApi.swift */; };
 		3B29BBDA215B854400D2024B /* KGNativeApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */; };
-		3B57588121CA3705006A4F46 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57588021CA3705006A4F46 /* Test.swift */; };
-		3B59414621CE059E0010C50C /* KGNativeApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59414521CE059E0010C50C /* KGNativeApiError.swift */; };
+		3B58977321F5BC550089B83E /* KGGlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58977221F5BC540089B83E /* KGGlobalConfig.swift */; };
 		3B6240FD21C7946900F753EA /* KGScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */; };
 		3B6240FF21C8983B00F753EA /* KGNativeApiConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */; };
+		3B6B9D2221EEBB2B009D1B68 /* KGWebRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B9D2121EEBB2B009D1B68 /* KGWebRoute.swift */; };
 		3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C202148FE41006731B1 /* KGWKWebView.swift */; };
 		3BAE9C232148FF33006731B1 /* KGWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C222148FF33006731B1 /* KGWebViewDelegate.swift */; };
 		3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */; };
@@ -36,21 +33,18 @@
 /* Begin PBXFileReference section */
 		3B1E082F2125285C00788CD7 /* KawagarboExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KawagarboExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1E08322125285C00788CD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B1E08342125285C00788CD7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		3B1E08362125285C00788CD7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		3B1E08392125285C00788CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B1E083B2125285F00788CD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B1E083E2125285F00788CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B1E08402125285F00788CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B1E084B212545DF00788CD7 /* Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kawagarbo.swift; sourceTree = "<group>"; };
 		3B1E08602125629F00788CD7 /* KGNativeApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiManager.swift; sourceTree = "<group>"; };
 		3B2090D821D1CC370017D15C /* KGConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGConfig.swift; sourceTree = "<group>"; };
-		3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiDelegate.swift; sourceTree = "<group>"; };
+		3B29BBD1215B6CA100D2024B /* KGNativeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApi.swift; sourceTree = "<group>"; };
 		3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiResponse.swift; sourceTree = "<group>"; };
-		3B57588021CA3705006A4F46 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		3B59414521CE059E0010C50C /* KGNativeApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiError.swift; sourceTree = "<group>"; };
+		3B58977221F5BC540089B83E /* KGGlobalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGGlobalConfig.swift; sourceTree = "<group>"; };
 		3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGScriptMessageHandler.swift; sourceTree = "<group>"; };
 		3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiConst.swift; sourceTree = "<group>"; };
+		3B6B9D2121EEBB2B009D1B68 /* KGWebRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebRoute.swift; sourceTree = "<group>"; };
 		3BAE9C202148FE41006731B1 /* KGWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWKWebView.swift; sourceTree = "<group>"; };
 		3BAE9C222148FF33006731B1 /* KGWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewDelegate.swift; sourceTree = "<group>"; };
 		3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewController.swift; sourceTree = "<group>"; };
@@ -94,10 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				3B1E08322125285C00788CD7 /* AppDelegate.swift */,
-				3B1E08342125285C00788CD7 /* FirstViewController.swift */,
-				3B1E08362125285C00788CD7 /* SecondViewController.swift */,
-				3B57588021CA3705006A4F46 /* Test.swift */,
-				3B1E08382125285C00788CD7 /* Main.storyboard */,
 				3B1E083B2125285F00788CD7 /* Assets.xcassets */,
 				3B1E083D2125285F00788CD7 /* LaunchScreen.storyboard */,
 				3B1E08402125285F00788CD7 /* Info.plist */,
@@ -136,6 +126,7 @@
 		3B1E084E212548FD00788CD7 /* WebRoute */ = {
 			isa = PBXGroup;
 			children = (
+				3B6B9D2121EEBB2B009D1B68 /* KGWebRoute.swift */,
 			);
 			path = WebRoute;
 			sourceTree = "<group>";
@@ -160,9 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				3B1E08602125629F00788CD7 /* KGNativeApiManager.swift */,
-				3B29BBD1215B6CA100D2024B /* KGNativeApiDelegate.swift */,
+				3B29BBD1215B6CA100D2024B /* KGNativeApi.swift */,
 				3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */,
-				3B59414521CE059E0010C50C /* KGNativeApiError.swift */,
 				3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */,
 				3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */,
 			);
@@ -275,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				3B2090D821D1CC370017D15C /* KGConfig.swift */,
+				3B58977221F5BC540089B83E /* KGGlobalConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -367,7 +358,6 @@
 			files = (
 				3B1E083F2125285F00788CD7 /* LaunchScreen.storyboard in Resources */,
 				3B1E083C2125285F00788CD7 /* Assets.xcassets in Resources */,
-				3B1E083A2125285C00788CD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,11 +385,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B1E08372125285C00788CD7 /* SecondViewController.swift in Sources */,
 				3B29BBDA215B854400D2024B /* KGNativeApiResponse.swift in Sources */,
+				3B58977321F5BC550089B83E /* KGGlobalConfig.swift in Sources */,
 				3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */,
-				3B29BBD2215B6CA100D2024B /* KGNativeApiDelegate.swift in Sources */,
-				3B57588121CA3705006A4F46 /* Test.swift in Sources */,
+				3B29BBD2215B6CA100D2024B /* KGNativeApi.swift in Sources */,
+				3B6B9D2221EEBB2B009D1B68 /* KGWebRoute.swift in Sources */,
 				3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */,
 				3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */,
 				3B6240FF21C8983B00F753EA /* KGNativeApiConst.swift in Sources */,
@@ -409,10 +399,8 @@
 				3BF76BD321538259008B40A0 /* NSError+KGExtension.swift in Sources */,
 				3BAE9C232148FF33006731B1 /* KGWebViewDelegate.swift in Sources */,
 				3B1E08612125629F00788CD7 /* KGNativeApiManager.swift in Sources */,
-				3B59414621CE059E0010C50C /* KGNativeApiError.swift in Sources */,
 				3B6240FD21C7946900F753EA /* KGScriptMessageHandler.swift in Sources */,
 				3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */,
-				3B1E08352125285C00788CD7 /* FirstViewController.swift in Sources */,
 				3BF76C1E215881A9008B40A0 /* String+KGExtension.swift in Sources */,
 				3BF76BD521549513008B40A0 /* KGWebViewManager.swift in Sources */,
 				3B2090D921D1CC370017D15C /* KGConfig.swift in Sources */,
@@ -422,14 +410,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3B1E08382125285C00788CD7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3B1E08392125285C00788CD7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3B1E083D2125285F00788CD7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -566,6 +546,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Moirig.KawagarboExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

@@ -17,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        KGWebViewManager.preloadWebView()
+        
+        let webVC = KGWebViewController(urlString: "http://192.168.71.7:4000/Kawagarbo-web/index.html")
+        let navi = UINavigationController(rootViewController: webVC)
+//        navi.isNavigationBarHidden = true
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navi
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

@@ -13,15 +13,30 @@ public class KGWebViewController: UIViewController {
     
     public typealias KGWebCallback = (_ path: String, _ data: [String: Any]?, _ error: NSError?) -> Void
     
+    public lazy var config: KGConfig = {
+        let config = KGConfig()
+        
+        return config
+    }()
+    
     public lazy var webView: KGWKWebView = {
         let webView = KGWKWebView.webView
         webView.frame = view.frame
         webView.webViewDelegate = self
+        webView.scrollView.delegate = self
+        webView.config = config
+        
+        if #available(iOS 11.0, *) {
+            webView.scrollView.contentInsetAdjustmentBehavior = .never
+        }
+        else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
+        
         return webView
     }()
     
-    //TODO-没完成
-    public var webRoute: Any?
+    public var webRoute: KGWebRoute?
     
     public weak var delegate: KGWebViewControllerDelegate?
     
@@ -31,14 +46,13 @@ public class KGWebViewController: UIViewController {
     
     public var userInfo: [String: Any]?
     
-    private lazy var nativeApiManager: KGNativeApiManager = {
+    public lazy var nativeApiManager: KGNativeApiManager = {
         let manager = KGNativeApiManager()
         manager.webViewController = self
         return manager
     }()
     
     deinit {
-        nativeApiManager.removeAllApis()
         deinitWebView()
     }
     
@@ -49,20 +63,27 @@ public class KGWebViewController: UIViewController {
         KGWebViewManager.removeCurrentWebView()
     }
     
-    public convenience init(urlString: String, parameters: [String: Any]? = nil, headers: [String: String]? = nil) {
+    public convenience init(urlString: String, parameters: [String: String]? = nil, headerFields: [String: String]? = nil) {
         self.init()
+        webRoute = KGWebRoute(urlString: urlString, parameters: parameters, headerFields: headerFields)
     }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.white
+        
+        addNotification()
+        
+        injectNativeApi()
+        
         view.addSubview(webView)
-
+        reloadWebView()
     }
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         if webView.url == nil || webView.url?.absoluteString == "about:blank" {
             deinitWebView()
             reloadWebView()
@@ -72,16 +93,11 @@ public class KGWebViewController: UIViewController {
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = !webView.canGoBack
-        //TODO-Path
-        nativeApiManager.callJS(function: "")
     }
     
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        //TODO-Path
-        nativeApiManager.callJS(function: "")
     }
     
     override public func viewDidDisappear(_ animated: Bool) {
@@ -94,6 +110,13 @@ public class KGWebViewController: UIViewController {
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        guard let navigationBar = navigationController?.navigationBar, navigationBar.frame.maxY > 20 else {
+            return
+        }
+        
+        var frame = webView.frame
+        frame.origin.y = navigationBar.frame.maxY
+        webView.frame = frame
     }
 
 }
@@ -101,16 +124,27 @@ public class KGWebViewController: UIViewController {
 // MARK: - Setup
 extension KGWebViewController {
     
+    func injectNativeApi() {
+        if !config.isInjectDynamically {
+            nativeApiManager.injectApis()
+        }
+    }
+    
     func reloadWebView() {
+        if !view.subviews.contains(webView) {
+            view .addSubview(webView)
+        }
         
-    }
-    
-    func registNativeApi() {
+        guard let urlRequest = webRoute?.urlRequest else { return }
+        guard let url = urlRequest.url else { return }
         
-    }
-    
-    func setupNavigatonController() {
+        //TODO-accessUrl
+        if #available(iOS 9.0, *), url.isFileURL, let accessUrl = URL(string: "") {
+            webView.loadFileURL(url, allowingReadAccessTo: accessUrl)
+            return
+        }
         
+        webView.load(urlRequest)
     }
     
 }
@@ -121,31 +155,46 @@ extension KGWebViewController: KGWebViewDelegate {
     
     func webView(_ webView: KGWKWebView, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool {
         guard let url = request.url, let scheme = url.scheme, let host = url.host else { return false }
-        debugPrint(
+        
+        #if DEBUG
+        print(
             """
-            ---------------- ShouldStart ----------------
+            -------------------- ShouldStart --------------------
             \(url.absoluteString)
-            ---------------------------------------------
+            -----------------------------------------------------
             """
         )
+        #endif
         
-        if !url.isFileURL {
-            if scheme.isHTTP && host == "itunes.apple.com" {
+        if scheme.isHTTP {
+            if host == "itunes.apple.com" {
                 UIApplication.shared.openURL(url)
                 return false
             }
-            else if scheme == "tel" {
-                let phoneCallStr = url.absoluteString.replacingOccurrences(of: scheme, with: "telprompt")
-                guard let telUrl = URL(string: phoneCallStr) else {
-                    return false
-                }
-                UIApplication.shared.openURL(telUrl)
-            }
-            else {
-                if UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.openURL(url)
-                }
+        }
+        else if scheme == "tel" {
+            let phoneCallStr = url.absoluteString.replacingOccurrences(of: scheme, with: "telprompt")
+            guard let telUrl = URL(string: phoneCallStr) else {
                 return false
+            }
+            UIApplication.shared.openURL(telUrl)
+            return false
+        }
+        else {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.openURL(url)
+            }
+            return false
+        }
+        
+        if scheme.isHTTP || scheme.isFile {
+            if navigationType != .reload {
+                if isUnload(webView, shouldStartLoadWith: request, navigationType: navigationType) {
+                    onUnload()
+                }
+                else {
+                    onHide()
+                }
             }
         }
         
@@ -160,11 +209,28 @@ extension KGWebViewController: KGWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: KGWKWebView) {
         
+        if !config.isInjectDynamically {
+            onReady()
+        }
+        
+        onShow()
+        
         KGWebViewController.delegate?.webViewControllerDidFinishLoad(self)
         delegate?.webViewControllerDidFinishLoad(self)
     }
     
     func webView(_ webView: KGWKWebView, didFailLoadWithError error: Error) {
+        
+        #if DEBUG
+        print(
+            """
+            -------------------- didFailLoad --------------------
+            \(error)
+            -----------------------------------------------------
+            """
+        )
+        #endif
+        
         let nsError = error as NSError
         if nsError.code == 102 || nsError.code == 204 { return }
         if let urlError = error as? URLError, urlError.code == .cancelled { return }
@@ -194,29 +260,25 @@ extension KGWebViewController: KGWebViewDelegate {
 // MARK: - Action
 extension KGWebViewController {
     
-    func updateWebRoute() {
+    func updateWebRoute(url: URL) {
+        guard url.absoluteString != "about:blank" else { return }
+        guard let urlString = webRoute?.urlString, urlString == url.absoluteString else { return }
         
-    }
-    
-    func updateUI() {
-        webView.evaluateJavaScript("document.title") { [weak self] (obj, error) in
-            guard let strongSelf = self, let title = obj as? String else { return }
-            strongSelf.title = title
-        }
+        webRoute = KGWebRoute(urlString: url.absoluteString)
     }
     
 }
 
 // MARK: - Notification
 extension KGWebViewController {
-    //TODO-配置
+
     func addNotification() {
         NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.nativeApiManager.callJS(function: "")
+            self.onHide()
         }
         
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.nativeApiManager.callJS(function: "")
+            self.onShow()
         }
     }
     
@@ -226,10 +288,40 @@ extension KGWebViewController {
     
 }
 
-// MARK: - Call Web
-extension KGWebViewController {
+// MARK: - UIScrollViewDelegate
+extension KGWebViewController: UIScrollViewDelegate {
     
-    
+    private func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollView.decelerationRate = .normal
+    }
     
 }
 
+// MARK: - Web Life Cycle
+extension KGWebViewController {
+    
+    func onShow() {
+        nativeApiManager.callJS(function: "onShow")
+    }
+    
+    func onHide() {
+        nativeApiManager.callJS(function: "onHide")
+    }
+    
+    func onUnload() {
+        nativeApiManager.callJS(function: "onUnload")
+    }
+    
+    func onReady() {
+        nativeApiManager.callJS(function: "onReady")
+    }
+    
+    private func isUnload(_ webView: KGWKWebView, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool {
+        //goback
+        if navigationType == .backForward && webView.backForwardList.backItem?.url.absoluteString == request.url?.absoluteString {
+            return true
+        }
+        
+        return false
+    }
+}
