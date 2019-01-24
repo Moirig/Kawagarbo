@@ -18,6 +18,10 @@
 		3B58977321F5BC550089B83E /* KGGlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58977221F5BC540089B83E /* KGGlobalConfig.swift */; };
 		3B58977F21F6E2F30089B83E /* KGLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58977E21F6E2F30089B83E /* KGLog.swift */; };
 		3B58978521F6F3E00089B83E /* KGSetNavigationBarTitleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58978421F6F3E00089B83E /* KGSetNavigationBarTitleApi.swift */; };
+		3B5897A121F7FB5B0089B83E /* KGIframeIntercept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5897A021F7FB5B0089B83E /* KGIframeIntercept.swift */; };
+		3B5897A321F814750089B83E /* FileManager+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5897A221F814750089B83E /* FileManager+Kawagarbo.swift */; };
+		3B58987821F96B990089B83E /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58987721F96B990089B83E /* FirstVC.swift */; };
+		3B5898A021F98FE60089B83E /* Kawagarbo-web in Resources */ = {isa = PBXBuildFile; fileRef = 3B58989F21F98FE60089B83E /* Kawagarbo-web */; };
 		3B6240FD21C7946900F753EA /* KGScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */; };
 		3B6240FF21C8983B00F753EA /* KGNativeApiConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */; };
 		3B6B9D2221EEBB2B009D1B68 /* KGWebRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B9D2121EEBB2B009D1B68 /* KGWebRoute.swift */; };
@@ -25,11 +29,11 @@
 		3BAE9C232148FF33006731B1 /* KGWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9C222148FF33006731B1 /* KGWebViewDelegate.swift */; };
 		3BAE9D22214BA03E006731B1 /* KGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */; };
 		3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE9D23214BA1B8006731B1 /* KGWebViewControllerDelegate.swift */; };
-		3BF76BC321536F96008B40A0 /* Dictionary+KGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BC221536F96008B40A0 /* Dictionary+KGExtension.swift */; };
-		3BF76BD1215377E6008B40A0 /* Data+KGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD0215377E6008B40A0 /* Data+KGExtension.swift */; };
-		3BF76BD321538259008B40A0 /* NSError+KGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD221538259008B40A0 /* NSError+KGExtension.swift */; };
+		3BF76BC321536F96008B40A0 /* Dictionary+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BC221536F96008B40A0 /* Dictionary+Kawagarbo.swift */; };
+		3BF76BD1215377E6008B40A0 /* Data+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD0215377E6008B40A0 /* Data+Kawagarbo.swift */; };
+		3BF76BD321538259008B40A0 /* NSError+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD221538259008B40A0 /* NSError+Kawagarbo.swift */; };
 		3BF76BD521549513008B40A0 /* KGWebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76BD421549513008B40A0 /* KGWebViewManager.swift */; };
-		3BF76C1E215881A9008B40A0 /* String+KGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76C1D215881A9008B40A0 /* String+KGExtension.swift */; };
+		3BF76C1E215881A9008B40A0 /* String+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF76C1D215881A9008B40A0 /* String+Kawagarbo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		3B58977221F5BC540089B83E /* KGGlobalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGGlobalConfig.swift; sourceTree = "<group>"; };
 		3B58977E21F6E2F30089B83E /* KGLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGLog.swift; sourceTree = "<group>"; };
 		3B58978421F6F3E00089B83E /* KGSetNavigationBarTitleApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGSetNavigationBarTitleApi.swift; sourceTree = "<group>"; };
+		3B5897A021F7FB5B0089B83E /* KGIframeIntercept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGIframeIntercept.swift; sourceTree = "<group>"; };
+		3B5897A221F814750089B83E /* FileManager+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Kawagarbo.swift"; sourceTree = "<group>"; };
+		3B58987721F96B990089B83E /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		3B58989F21F98FE60089B83E /* Kawagarbo-web */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Kawagarbo-web"; path = "../Kawagarbo-web"; sourceTree = "<group>"; };
 		3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGScriptMessageHandler.swift; sourceTree = "<group>"; };
 		3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNativeApiConst.swift; sourceTree = "<group>"; };
 		3B6B9D2121EEBB2B009D1B68 /* KGWebRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebRoute.swift; sourceTree = "<group>"; };
@@ -53,11 +61,11 @@
 		3BAE9C222148FF33006731B1 /* KGWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewDelegate.swift; sourceTree = "<group>"; };
 		3BAE9D21214BA03E006731B1 /* KGWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewController.swift; sourceTree = "<group>"; };
 		3BAE9D23214BA1B8006731B1 /* KGWebViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewControllerDelegate.swift; sourceTree = "<group>"; };
-		3BF76BC221536F96008B40A0 /* Dictionary+KGExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+KGExtension.swift"; sourceTree = "<group>"; };
-		3BF76BD0215377E6008B40A0 /* Data+KGExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+KGExtension.swift"; sourceTree = "<group>"; };
-		3BF76BD221538259008B40A0 /* NSError+KGExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+KGExtension.swift"; sourceTree = "<group>"; };
+		3BF76BC221536F96008B40A0 /* Dictionary+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Kawagarbo.swift"; sourceTree = "<group>"; };
+		3BF76BD0215377E6008B40A0 /* Data+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Kawagarbo.swift"; sourceTree = "<group>"; };
+		3BF76BD221538259008B40A0 /* NSError+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+Kawagarbo.swift"; sourceTree = "<group>"; };
 		3BF76BD421549513008B40A0 /* KGWebViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebViewManager.swift; sourceTree = "<group>"; };
-		3BF76C1D215881A9008B40A0 /* String+KGExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+KGExtension.swift"; sourceTree = "<group>"; };
+		3BF76C1D215881A9008B40A0 /* String+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Kawagarbo.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 		3B1E08262125285C00788CD7 = {
 			isa = PBXGroup;
 			children = (
+				3B58989F21F98FE60089B83E /* Kawagarbo-web */,
 				3B1E0846212528A400788CD7 /* Kawagarbo */,
 				3B1E08312125285C00788CD7 /* KawagarboExample */,
 				3B1E08302125285C00788CD7 /* Products */,
@@ -92,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				3B1E08322125285C00788CD7 /* AppDelegate.swift */,
+				3B58987721F96B990089B83E /* FirstVC.swift */,
 				3B1E083B2125285F00788CD7 /* Assets.xcassets */,
 				3B1E083D2125285F00788CD7 /* LaunchScreen.storyboard */,
 				3B1E08402125285F00788CD7 /* Info.plist */,
@@ -160,6 +170,7 @@
 				3B29BBD9215B854400D2024B /* KGNativeApiResponse.swift */,
 				3B6240FE21C8983B00F753EA /* KGNativeApiConst.swift */,
 				3B6240FC21C7946900F753EA /* KGScriptMessageHandler.swift */,
+				3B5897A021F7FB5B0089B83E /* KGIframeIntercept.swift */,
 			);
 			path = NativeApi;
 			sourceTree = "<group>";
@@ -295,7 +306,6 @@
 		3BF76BBF21536EAD008B40A0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3BF76BC121536ED2008B40A0 /* UIkit */,
 				3BF76BC021536EC6008B40A0 /* Foundation */,
 			);
 			path = Extension;
@@ -304,19 +314,13 @@
 		3BF76BC021536EC6008B40A0 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				3BF76BC221536F96008B40A0 /* Dictionary+KGExtension.swift */,
-				3BF76BD0215377E6008B40A0 /* Data+KGExtension.swift */,
-				3BF76BD221538259008B40A0 /* NSError+KGExtension.swift */,
-				3BF76C1D215881A9008B40A0 /* String+KGExtension.swift */,
+				3BF76BC221536F96008B40A0 /* Dictionary+Kawagarbo.swift */,
+				3BF76BD0215377E6008B40A0 /* Data+Kawagarbo.swift */,
+				3BF76BD221538259008B40A0 /* NSError+Kawagarbo.swift */,
+				3BF76C1D215881A9008B40A0 /* String+Kawagarbo.swift */,
+				3B5897A221F814750089B83E /* FileManager+Kawagarbo.swift */,
 			);
 			path = Foundation;
-			sourceTree = "<group>";
-		};
-		3BF76BC121536ED2008B40A0 /* UIkit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIkit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B1E083F2125285F00788CD7 /* LaunchScreen.storyboard in Resources */,
+				3B5898A021F98FE60089B83E /* Kawagarbo-web in Resources */,
 				3B1E083C2125285F00788CD7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +413,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B29BBDA215B854400D2024B /* KGNativeApiResponse.swift in Sources */,
+				3B58987821F96B990089B83E /* FirstVC.swift in Sources */,
 				3B58977321F5BC550089B83E /* KGGlobalConfig.swift in Sources */,
+				3B5897A121F7FB5B0089B83E /* KGIframeIntercept.swift in Sources */,
 				3B58977F21F6E2F30089B83E /* KGLog.swift in Sources */,
 				3BAE9C212148FE41006731B1 /* KGWKWebView.swift in Sources */,
 				3B29BBD2215B6CA100D2024B /* KGNativeApi.swift in Sources */,
@@ -417,15 +424,16 @@
 				3B1E084C212545DF00788CD7 /* Kawagarbo.swift in Sources */,
 				3B6240FF21C8983B00F753EA /* KGNativeApiConst.swift in Sources */,
 				3B1E08332125285C00788CD7 /* AppDelegate.swift in Sources */,
-				3BF76BD1215377E6008B40A0 /* Data+KGExtension.swift in Sources */,
-				3BF76BC321536F96008B40A0 /* Dictionary+KGExtension.swift in Sources */,
-				3BF76BD321538259008B40A0 /* NSError+KGExtension.swift in Sources */,
+				3BF76BD1215377E6008B40A0 /* Data+Kawagarbo.swift in Sources */,
+				3BF76BC321536F96008B40A0 /* Dictionary+Kawagarbo.swift in Sources */,
+				3BF76BD321538259008B40A0 /* NSError+Kawagarbo.swift in Sources */,
 				3BAE9C232148FF33006731B1 /* KGWebViewDelegate.swift in Sources */,
 				3B1E08612125629F00788CD7 /* KGNativeApiManager.swift in Sources */,
 				3B6240FD21C7946900F753EA /* KGScriptMessageHandler.swift in Sources */,
+				3B5897A321F814750089B83E /* FileManager+Kawagarbo.swift in Sources */,
 				3BAE9D24214BA1B8006731B1 /* KGWebViewControllerDelegate.swift in Sources */,
 				3B58978521F6F3E00089B83E /* KGSetNavigationBarTitleApi.swift in Sources */,
-				3BF76C1E215881A9008B40A0 /* String+KGExtension.swift in Sources */,
+				3BF76C1E215881A9008B40A0 /* String+Kawagarbo.swift in Sources */,
 				3BF76BD521549513008B40A0 /* KGWebViewManager.swift in Sources */,
 				3B2090D921D1CC370017D15C /* KGConfig.swift in Sources */,
 			);
@@ -564,6 +572,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7LLFP9K7Y8;
 				INFOPLIST_FILE = KawagarboExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -583,6 +592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7LLFP9K7Y8;
 				INFOPLIST_FILE = KawagarboExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (

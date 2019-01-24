@@ -10,4 +10,11 @@ import UIKit
 
 public class Kawagarbo: NSObject {
 
+    public static func setup() {
+        KGWebViewManager.preloadWebView()
+        KGNativeApi.regist()
+        
+        FileManager.createDirectory(KawagarboCachePath)
+    }
+    
 }

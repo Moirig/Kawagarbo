@@ -43,7 +43,7 @@ public class KGNativeApiManager: NSObject {
 
 extension KGNativeApiManager {
     
-    class func addNativeApi(_ api: KGNativeApiDelegate) {
+    static func addNativeApi(_ api: KGNativeApiDelegate) {
         nativeApis[api.path] = api
     }
     

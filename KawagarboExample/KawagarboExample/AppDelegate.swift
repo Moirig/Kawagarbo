@@ -16,13 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        Kawagarbo.setup()
         
-        KGWebViewManager.preloadWebView()
-        KGNativeApi.regist()
+        let atPath = Bundle.main.bundlePath + "/Kawagarbo-web"
+        let toPath = KawagarboCachePath + "/Kawagarbo-web"
+        FileManager.createDirectory(toPath)
+        FileManager.copyItem(atPath: atPath, toPath: toPath)
         
-        let webVC = KGWebViewController(urlString: "http://192.168.71.7:4000/Kawagarbo-web/index.html")
-        let navi = UINavigationController(rootViewController: webVC)
-//        navi.isNavigationBarHidden = true
+        let vc = FirstVC()
+        let navi = UINavigationController(rootViewController: vc)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navi

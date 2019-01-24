@@ -11,6 +11,6 @@ function navigateTo() {
 
 function setTitle() {
     wx.setNavigationBarTitle({
-        title: 'qwerty'
+        title: '当前页面'
     })
 }

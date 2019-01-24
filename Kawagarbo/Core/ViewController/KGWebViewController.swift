@@ -80,8 +80,7 @@ public class KGWebViewController: UIViewController {
         super.viewWillAppear(animated)
 
         if webView.url == nil || webView.url?.absoluteString == "about:blank" {
-            deinitWebView()
-            reloadWebView()
+            reset()
         }
     }
     
@@ -136,13 +135,22 @@ extension KGWebViewController {
         guard let urlRequest = webRoute?.urlRequest else { return }
         guard let url = urlRequest.url else { return }
         
-        //TODO-accessUrl
-        if #available(iOS 9.0, *), url.isFileURL, let accessUrl = URL(string: "") {
+        //TODO-加载离线包首页的逻辑
+        if #available(iOS 9.0, *), url.isFileURL {
+            let accessUrl = URL(fileURLWithPath: KawagarboCachePath)
             webView.loadFileURL(url, allowingReadAccessTo: accessUrl)
-            return
         }
+        else {
+            webView.load(urlRequest)
+        }
+        KGLog(title: "Reload:", url.absoluteString)
         
-        webView.load(urlRequest)
+    }
+    
+    func reset() {
+        deinitWebView()
+        injectNativeApi()
+        reloadWebView()
     }
     
 }
@@ -152,28 +160,12 @@ extension KGWebViewController {
 extension KGWebViewController: KGWebViewDelegate {
     
     func webView(_ webView: KGWKWebView, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool {
-        guard let url = request.url, let scheme = url.scheme, let host = url.host else { return false }
+        guard let url = request.url, let scheme = url.scheme else { return false }
         
-        KGLog(title: "ShouldStart", url.absoluteString)
+        KGLog(title: "ShouldStart:", url.absoluteString)
         
-        if scheme.isHTTP {
-            if host == "itunes.apple.com" {
-                UIApplication.shared.openURL(url)
-                return false
-            }
-        }
-        else if scheme == "tel" {
-            let phoneCallStr = url.absoluteString.replacingOccurrences(of: scheme, with: "telprompt")
-            guard let telUrl = URL(string: phoneCallStr) else {
-                return false
-            }
-            UIApplication.shared.openURL(telUrl)
-            return false
-        }
-        else {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.openURL(url)
-            }
+        if KGIframeIntercept.canIntercept(url) {
+            KGIframeIntercept.intercept(url)
             return false
         }
         
@@ -186,6 +178,13 @@ extension KGWebViewController: KGWebViewDelegate {
                     onHide()
                 }
             }
+        }
+        
+        if let adelegate = delegate {
+            return adelegate.webViewController(self, shouldStartLoadWith: request, navigationType: navigationType)
+        }
+        if let adelegate = KGWebViewController.delegate {
+            return adelegate.webViewController(self, shouldStartLoadWith: request, navigationType: navigationType)
         }
         
         return true
@@ -227,8 +226,7 @@ extension KGWebViewController: KGWebViewDelegate {
     }
     
     func webViewDidTerminate(_ webView: KGWKWebView) {
-        deinitWebView()
-        reloadWebView()
+        reset()
     }
     
     func webViewTitleChange(_ webView: KGWKWebView) {
