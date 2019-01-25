@@ -47,10 +47,10 @@ extension FirstVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        let urlString = "http://192.168.71.7:4000/Kawagarbo-web/index.html"
+        let urlString = "http://192.168.71.7:4000/Kawagarbo-web/index.html"
         
-        let toPath = KawagarboCachePath + "/Kawagarbo-web"
-        let urlString = "file://" + toPath + "/index.html"
+//        let toPath = KawagarboCachePath + "/Kawagarbo-web"
+//        let urlString = "file://" + toPath + "/index.html"
         
         let webVC = KGWebViewController(urlString: urlString)
         navigationController?.pushViewController(webVC, animated: true)

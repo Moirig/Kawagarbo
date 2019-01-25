@@ -8,13 +8,13 @@
 
 import Foundation
 
-public let KawagarboCachePath: String = FileManager.kgCachePath
+public let KawagarboCachePath: String = FileManager.kg.kawagarboCachePath
 
 private let KawagarboCachePathName: String = "kawagarbo"
 
-extension FileManager {
+extension KGNamespace where Base == FileManager {
     
-    static var kgCachePath: String {
+    static var kawagarboCachePath: String {
         if #available(iOS 9.0, *) {
             return documentPath + "/" + KawagarboCachePathName
         }
@@ -23,7 +23,7 @@ extension FileManager {
     
 }
 
-public extension FileManager {
+public extension KGNamespace where Base == FileManager {
     
     static var documentPath: String {
         return NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true).first ?? ""

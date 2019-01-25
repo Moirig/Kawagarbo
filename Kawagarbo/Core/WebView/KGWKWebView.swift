@@ -16,11 +16,6 @@ public class KGWKWebView: WKWebView {
     
     weak var webViewDelegate: KGWebViewDelegate?
     
-//    public lazy var nativeApiManager: KGNativeApiManager = {
-//        let manager = KGNativeApiManager()
-//        return manager
-//    }()
-    
     public var config: KGConfig! {
         get { return KGConfig() }
         set {
@@ -31,17 +26,13 @@ public class KGWKWebView: WKWebView {
             }
         }
     }
-    
-    var banAlert: Bool = false
-    
+        
     static var originalUserAgent: String {
         let webview = UIWebView(frame: CGRect.zero)
         let userAgent = webview.stringByEvaluatingJavaScript(from: "navigator.userAgent")
         return userAgent ?? ""
     }
-    
-    var projectUserAgent: String?
-    
+        
     private lazy var progressView: UIProgressView = {
         let progressView = UIProgressView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0))
         progressView.alpha = 0
@@ -167,19 +158,7 @@ extension KGWKWebView: WKNavigationDelegate {
     }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        let response = navigationResponse.response
-        guard response.mimeType == "application/octet-stream" else {
-            decisionHandler(.allow)
-            return
-        }
-        
-        decisionHandler(.cancel)
-        
-        if let urlString = response.url?.absoluteString {
-            //TODO-没写完
-        }
-        
-       
+        decisionHandler(.allow)
     }
     
 }
@@ -188,10 +167,6 @@ extension KGWKWebView: WKNavigationDelegate {
 extension KGWKWebView: WKUIDelegate {
     
     public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        if banAlert {
-            completionHandler()
-            return
-        }
         
         let alert = UIAlertView(title: nil, message: message, delegate: nil, cancelButtonTitle: "好的")
         alert.show()
@@ -201,20 +176,14 @@ extension KGWKWebView: WKUIDelegate {
     }
     
     public func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-        if banAlert {
-            completionHandler(false)
-            return
-        }
         
+        completionHandler(false)
         //TODO-showAlert
     }
     
     public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
-        if banAlert {
-            completionHandler(nil)
-            return
-        }
         
+        completionHandler(nil)
         //TODO-showAlert
     }
     

@@ -8,12 +8,14 @@
 
 import Foundation
 
-extension Dictionary {
+extension Dictionary: KGNamespaceProtocol {}
+
+extension KGNamespace where Base == Dictionary<String, Any> {
     
     var string: String {
         
         do {
-            let data = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+            let data = try JSONSerialization.data(withJSONObject: base, options: .prettyPrinted)
             let string = String(data: data, encoding: .utf8)
             return string ?? ""
         }

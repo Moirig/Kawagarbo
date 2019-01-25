@@ -164,12 +164,7 @@ extension KGWebViewController: KGWebViewDelegate {
         
         KGLog(title: "ShouldStart:", url.absoluteString)
         
-        if KGIframeIntercept.canIntercept(url) {
-            KGIframeIntercept.intercept(url)
-            return false
-        }
-        
-        if scheme.isHTTP || scheme.isFile {
+        if scheme.kg.isHTTP || scheme.kg.isFile {
             if navigationType != .reload {
                 if isUnload(webView, shouldStartLoadWith: request, navigationType: navigationType) {
                     onUnload()
@@ -216,7 +211,7 @@ extension KGWebViewController: KGWebViewDelegate {
         if let urlError = error as? URLError, urlError.code == .cancelled { return }
 
         if let url = webView.url, url.isFileURL,
-           let forwardItemScheme = webView.backForwardList.forwardItem?.url.scheme, forwardItemScheme.isHTTP,
+           let forwardItemScheme = webView.backForwardList.forwardItem?.url.scheme, forwardItemScheme.kg.isHTTP,
            let filePath = webView.url?.absoluteString.replacingOccurrences(of: "file://", with: ""), FileManager.default.fileExists(atPath: filePath) {
             return reloadWebView()
         }

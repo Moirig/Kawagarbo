@@ -40,7 +40,7 @@ public class KGWebRoute: NSObject {
         }
         
         if URL(string: formatUrl) == nil {
-            formatUrl = formatUrl.urlEncode
+            formatUrl = formatUrl.kg.urlEncode
         }
         
         if let url = URL(string: formatUrl) {

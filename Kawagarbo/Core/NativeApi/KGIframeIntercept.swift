@@ -13,12 +13,12 @@ class KGIframeIntercept: NSObject {
     static func canIntercept(_ url: URL) -> Bool {
         guard let scheme = url.scheme else { return true }
         
-        if scheme.isHTTP {
+        if scheme.kg.isHTTP {
             guard let host = url.host else { return true }
             if host == "itunes.apple.com" { return true }
         }
             
-        else if scheme.isFile { }
+        else if scheme.kg.isFile { }
             
         else if scheme == "tel" { return true }
             

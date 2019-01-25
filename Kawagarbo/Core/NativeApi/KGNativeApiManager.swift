@@ -54,7 +54,7 @@ extension KGNativeApiManager {
                 
                 KGLog(title: "callNative:", """
                     path:\(apiPath)
-                    parameters:\(parameters?.string ?? "")
+                    parameters:\(parameters?.kg.string ?? "")
                     """)
                 
                 api.webViewController = strongSelf.webViewController
@@ -84,7 +84,7 @@ extension KGNativeApiManager {
         guard function.count > 0 else { return }
         KGLog(title: "callJS:", """
             \(function)
-            \(parameters?.string ?? "")
+            \(parameters?.kg.string ?? "")
             """)
         call(handler: function, data: parameters) { (jsonObject) in
             guard let complete = complete else { return }
@@ -92,13 +92,13 @@ extension KGNativeApiManager {
             
             
             guard let jsonObj = jsonObject, let code = jsonObj[kParamCode] as? Int else {
-                KGLog(title: "Invalid Response Type:", jsonObject?.string ?? "")
+                KGLog(title: "Invalid Response Type:", jsonObject?.kg.string ?? "")
                 return
             }
             
             KGLog(title: "JSResponse:", """
                 function:\(function)
-                \(jsonObj.string)
+                \(jsonObj.kg.string)
                 """)
             
             let message = jsonObj[kParamMessage] as? String ?? ""

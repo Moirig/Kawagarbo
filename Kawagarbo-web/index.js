@@ -1,7 +1,6 @@
 
 wx.onReady(function () {
 
-
 })
 
 
