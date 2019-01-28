@@ -247,11 +247,11 @@ extension KGWebViewController {
 extension KGWebViewController {
 
     func addNotification() {
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillResignActive, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
             self.onHide()
         }
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
             self.onShow()
         }
     }
@@ -266,7 +266,7 @@ extension KGWebViewController {
 extension KGWebViewController: UIScrollViewDelegate {
     
     private func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        scrollView.decelerationRate = UIScrollViewDecelerationRateNormal
+        scrollView.decelerationRate = .normal
     }
     
 }
