@@ -1,0 +1,16 @@
+PODS:
+  - Kawagarbo_iOS (0.1.0)
+
+DEPENDENCIES:
+  - Kawagarbo_iOS (from `../`)
+
+EXTERNAL SOURCES:
+  Kawagarbo_iOS:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Kawagarbo_iOS: 7eac0e3eac1b4bbc004439a25a59a7630754769e
+
+PODFILE CHECKSUM: c2a1cc76932508a453b23ca5fe13f8ab3953e645
+
+COCOAPODS: 1.6.0.beta.2

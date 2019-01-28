@@ -1,0 +1,6 @@
+framework module Kawagarbo_iOS {
+  umbrella header "Kawagarbo_iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

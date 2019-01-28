@@ -1,0 +1,21 @@
+{
+  "name": "Kawagarbo_iOS",
+  "version": "0.1.0",
+  "summary": "A lightweight hybrid framework.",
+  "homepage": "https://github.com/Moirig/Kawagarbo_iOS",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Moirig": "https://github.com/Moirig"
+  },
+  "source": {
+    "git": "https://github.com/Moirig/Kawagarbo_iOS.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Kawagarbo_iOS/**/*.{swift,h,m}"
+}
