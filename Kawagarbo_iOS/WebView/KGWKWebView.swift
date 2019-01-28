@@ -16,6 +16,10 @@ public class KGWKWebView: WKWebView {
     
     weak var webViewDelegate: KGWebViewDelegate?
     
+    var alertCompletionHandler: (() -> Void)?
+    var comfirmCompletionHandler: ((Bool) -> Void)?
+    var textCompletionHandler: ((String?) -> Void)?
+    
     public var config: KGConfig! {
         get { return KGConfig() }
         set {
@@ -168,23 +172,30 @@ extension KGWKWebView: WKUIDelegate {
     
     public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         
-        let alert = UIAlertView(title: nil, message: message, delegate: nil, cancelButtonTitle: "好的")
+        let alert = UIAlertView(title: nil, message: message, delegate: self, cancelButtonTitle: "好的")
+        alert.tag = 1000
         alert.show()
         
-        //TODO-showAlert
-        completionHandler()
+        alertCompletionHandler = completionHandler
     }
     
     public func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
         
-        completionHandler(false)
-        //TODO-showAlert
+        let alert = UIAlertView(title: "", message: message, delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确认")
+        alert.tag = 1001
+        alert.show()
+        
+        comfirmCompletionHandler = completionHandler
     }
     
     public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
         
-        completionHandler(nil)
-        //TODO-showAlert
+        let alert = UIAlertView(title: "", message: prompt, delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确认")
+        alert.alertViewStyle = .plainTextInput
+        alert.tag = 1002
+        alert.show()
+
+        textCompletionHandler = completionHandler
     }
     
     public func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
@@ -192,6 +203,47 @@ extension KGWKWebView: WKUIDelegate {
             webView.load(navigationAction.request)
         }
         return nil
+    }
+    
+}
+
+extension KGWKWebView: UIAlertViewDelegate {
+    
+    public func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
+        switch alertView.tag {
+        case 1000:
+            if let completionHandler = alertCompletionHandler, buttonIndex == alertView.cancelButtonIndex {
+                completionHandler()
+                alertCompletionHandler = nil
+            }
+            
+        case 1001:
+            if let completionHandler = comfirmCompletionHandler {
+                if buttonIndex == alertView.cancelButtonIndex {
+                    completionHandler(false)
+                }
+                else {
+                    completionHandler(true)
+                }
+                comfirmCompletionHandler = nil
+            }
+            
+        case 1002:
+            if let completionHandler = textCompletionHandler {
+                if buttonIndex == alertView.cancelButtonIndex {
+                    completionHandler(nil)
+                }
+                else {
+                    let textField = alertView.textField(at: 0)
+                    completionHandler(textField?.text)
+                }
+                textCompletionHandler = nil
+            }
+            
+        default:
+            
+            break
+        }
     }
     
 }
