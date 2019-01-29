@@ -3,9 +3,12 @@ wx.onReady(function () {
 
 })
 
+function toAlert() {
+    window.location.href = 'pages/alert/alert.html'
+}
 
-function navigateTo() {
-    window.location.href = 'pages/goback.html'
+function toGoback() {
+    window.location.href = 'pages/goback/goback.html'
 }
 
 function setTitle() {

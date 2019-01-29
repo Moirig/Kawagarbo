@@ -17,7 +17,7 @@ public class KGWKWebView: WKWebView {
     weak var webViewDelegate: KGWebViewDelegate?
     
     var alertCompletionHandler: (() -> Void)?
-    var comfirmCompletionHandler: ((Bool) -> Void)?
+    var confirmCompletionHandler: ((Bool) -> Void)?
     var textCompletionHandler: ((String?) -> Void)?
     
     public var config: KGConfig! {
@@ -185,7 +185,7 @@ extension KGWKWebView: WKUIDelegate {
         alert.tag = 1001
         alert.show()
         
-        comfirmCompletionHandler = completionHandler
+        confirmCompletionHandler = completionHandler
     }
     
     public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
@@ -218,14 +218,14 @@ extension KGWKWebView: UIAlertViewDelegate {
             }
             
         case 1001:
-            if let completionHandler = comfirmCompletionHandler {
+            if let completionHandler = confirmCompletionHandler {
                 if buttonIndex == alertView.cancelButtonIndex {
                     completionHandler(false)
                 }
                 else {
                     completionHandler(true)
                 }
-                comfirmCompletionHandler = nil
+                confirmCompletionHandler = nil
             }
             
         case 1002:
