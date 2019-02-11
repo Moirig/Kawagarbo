@@ -11,10 +11,14 @@ function toGoback() {
     window.location.href = 'pages/goback/goback.html'
 }
 
-function setTitle() {
+function setNavigationBarTitle() {
     wx.setNavigationBarTitle({
         title: '当前页面'
     })
+}
+
+function canIUse() {
+    wx.canIUse('getSystemInfo')
 }
 
 function getSystemInfo() {

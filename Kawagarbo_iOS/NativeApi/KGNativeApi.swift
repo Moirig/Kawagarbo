@@ -31,8 +31,11 @@ public class KGNativeApi: NSObject {
     public weak var webViewController: KGWebViewController?
     
     public static func regist() {
-        KGSetNavigationBarTitleApi().regist()
+        
+        KGCanIUseApi().regist()
         KGGetSystemInfoApi().regist()
+
+        KGSetNavigationBarTitleApi().regist()
     }
     
 }

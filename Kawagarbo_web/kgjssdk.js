@@ -145,6 +145,18 @@
 
     //invokeHandler
 
+    wx.canIUse = function(schema) {
+        wx.invokeHandler('canIUse', {
+            'schema': schema,
+            success: function () {
+                alert('success')
+            },
+            fail: function (res) {
+                alert(res.message)
+            }
+        })
+    }
+
     wx.getSystemInfo = function (object) {
         wx.invokeHandler('getSystemInfo', object)
     }

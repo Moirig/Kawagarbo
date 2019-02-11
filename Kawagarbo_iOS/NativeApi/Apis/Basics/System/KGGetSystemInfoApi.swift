@@ -6,33 +6,7 @@
 //
 
 //TODO-SDKVersion:"2.5.2"
-//albumAuthorized:true
-//batteryLevel:93
-//bluetoothEnabled:false
-//brand:"iPhone"
-//cameraAuthorized:true
-//deviceOrientation:"portrait"
-//errMsg:"getSystemInfo:ok"
 //TODO-fontSizeSetting:17
-//language:"zh_CN"
-//locationAuthorized:true
-//locationEnabled:true
-//microphoneAuthorized:true
-//model:"iPhone 7 Plus<iPhone9,2>"
-//notificationAlertAuthorized:true
-//notificationAuthorized:true
-//notificationBadgeAuthorized:true
-//notificationSoundAuthorized:true
-//pixelRatio:3
-//platform:"ios"
-//screenHeight:736
-//screenWidth:414
-//statusBarHeight:20
-//system:"iOS 11.3"
-//version:"7.0.2"
-//wifiEnabled:true
-//windowHeight:624
-//windowWidth:414
 
 import UIKit
 
