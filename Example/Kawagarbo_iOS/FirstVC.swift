@@ -56,7 +56,6 @@ extension FirstVC: UITableViewDataSource, UITableViewDelegate {
         
         let webVC = KGWebViewController(urlString: urlString)
         navigationController?.pushViewController(webVC, animated: true)
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

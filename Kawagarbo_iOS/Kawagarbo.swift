@@ -14,7 +14,7 @@ public class Kawagarbo: NSObject {
         KGWebViewManager.preloadWebView()
         KGNativeApi.regist()
         
-        FileManager.createDirectory(KawagarboCachePath)
+        FileManager.kg.createDirectory(KawagarboCachePath)
     }
     
 }

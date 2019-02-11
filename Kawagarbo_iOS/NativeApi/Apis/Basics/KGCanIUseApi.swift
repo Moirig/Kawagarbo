@@ -18,14 +18,10 @@ class KGCanIUseApi: KGNativeApi, KGNativeApiDelegate {
     
     func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
         
-        guard let schemaString = parameters?["schema"] as? String, schemaString.count > 0 else {
-            return complete(.failure(code: kParamCodeDefaultFail, message: "no schema"))
-        }
+        guard let schemaString = parameters?["schema"] as? String, schemaString.count > 0 else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid schema")) }
         
         let schemas = schemaString.components(separatedBy: ".")
-        guard let schema = schemas.last else {
-            return complete(.failure(code: kParamCodeDefaultFail, message: "no schema"))
-        }
+        guard let schema = schemas.last else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid schema")) }
         
         if KGNativeApiManager.nativeApis[schema] == nil {
             return complete(.failure(code: kParamCodeDefaultFail, message: "Unknown Api:\(schema)!"))

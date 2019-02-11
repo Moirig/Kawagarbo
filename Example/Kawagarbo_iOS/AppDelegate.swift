@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let atPath = Bundle.main.bundlePath + "/Kawagarbo_web"
         let toPath = KawagarboCachePath + "/Kawagarbo_web"
-        FileManager.createDirectory(toPath)
-        FileManager.copyItem(atPath: atPath, toPath: toPath)
+        FileManager.kg.createDirectory(toPath)
+        FileManager.kg.copyItem(atPath: atPath, toPath: toPath)
         
         let vc = FirstVC()
         let navi = UINavigationController(rootViewController: vc)

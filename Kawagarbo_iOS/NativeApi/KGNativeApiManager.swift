@@ -9,8 +9,6 @@
 import UIKit
 import WebKit
 
-let NativeApiManager = KGNativeApiManager()
-
 public class KGNativeApiManager: NSObject {
 
     weak var webViewController: KGWebViewController?

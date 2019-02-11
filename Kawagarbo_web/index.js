@@ -28,3 +28,9 @@ function getSystemInfo() {
         }
     })
 }
+
+function navigateTo(url) {
+    wx.navigateTo({
+        url: url
+    })
+}

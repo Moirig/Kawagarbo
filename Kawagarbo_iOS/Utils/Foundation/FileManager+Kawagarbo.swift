@@ -39,8 +39,8 @@ public extension KGNamespace where Base == FileManager {
     
 }
 
-public extension FileManager {
-    
+public extension KGNamespace where Base == FileManager {
+
     static func fileExists(atPath: String) -> Bool {
         return FileManager.default.fileExists(atPath: atPath)
     }

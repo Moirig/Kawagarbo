@@ -12,6 +12,14 @@ extension String: KGNamespaceProtocol {}
 
 extension KGNamespace where Base == String {
     
+    var noScheme: String {
+        guard let url = URL(string: base) else { return base }
+        
+        guard let scheme = url.scheme else { return base }
+        
+        return base.replacingOccurrences(of: (scheme + "://"), with: "")
+    }
+    
     var isHTTP: Bool {
         if base == "https" || base == "http" {
             return true

@@ -16,6 +16,8 @@ public class KGWKWebView: WKWebView {
     
     weak var webViewDelegate: KGWebViewDelegate?
     
+    var nativeApiManager: KGNativeApiManager?
+    
     var alertCompletionHandler: (() -> Void)?
     var confirmCompletionHandler: ((Bool) -> Void)?
     var textCompletionHandler: ((String?) -> Void)?

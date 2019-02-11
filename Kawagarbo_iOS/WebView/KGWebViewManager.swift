@@ -46,9 +46,12 @@ public class KGWebViewManager: NSObject {
     
     static var getWebView: KGWKWebView {
         let configuration = KGWKWebView.defaultConfiguration
-        let userContentController = NativeApiManager.userContentController
+        let nativeApiManager = KGNativeApiManager()
+        let userContentController = nativeApiManager.userContentController
         configuration.userContentController = userContentController
-        return KGWKWebView(frame: CGRect.zero, configuration: configuration)
+        let webView = KGWKWebView(frame: CGRect.zero, configuration: configuration)
+        webView.nativeApiManager = nativeApiManager
+        return webView
     }
     
     static func removeCurrentWebView() {

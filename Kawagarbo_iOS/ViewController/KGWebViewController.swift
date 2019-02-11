@@ -35,6 +35,10 @@ public class KGWebViewController: UIViewController {
         return webView
     }()
     
+    public var nativeApiManager: KGNativeApiManager {
+        return webView.nativeApiManager!
+    }
+    
     public var webRoute: KGWebRoute?
     
     public weak var delegate: KGWebViewControllerDelegate?
@@ -46,6 +50,7 @@ public class KGWebViewController: UIViewController {
     public var userInfo: [String: Any]?
     
     deinit {
+        KGLog(title: "Deinit", self)
         deinitWebView()
     }
     
@@ -63,7 +68,7 @@ public class KGWebViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-
+        KGLog(title: "ViewDidLoad", self)
         view.backgroundColor = UIColor.white
         
         addNotification()
@@ -90,7 +95,7 @@ public class KGWebViewController: UIViewController {
     }
     
     override public func viewWillDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+        super.viewWillDisappear(animated)
         
     }
     
@@ -121,10 +126,10 @@ extension KGWebViewController {
     
     func injectNativeApi() {
         
-        NativeApiManager.webViewController = self
+        nativeApiManager.webViewController = self
 
-        if !config.isInjectDynamically {
-            NativeApiManager.injectApis()
+        if config.isInjectDynamically == false {
+            nativeApiManager.injectApis()
         }
     }
     
@@ -213,7 +218,7 @@ extension KGWebViewController: KGWebViewDelegate {
 
         if let url = webView.url, url.isFileURL,
            let forwardItemScheme = webView.backForwardList.forwardItem?.url.scheme, forwardItemScheme.kg.isHTTP,
-           let filePath = webView.url?.absoluteString.replacingOccurrences(of: "file://", with: ""), FileManager.default.fileExists(atPath: filePath) {
+           let filePath = webView.url?.absoluteString.kg.noScheme, FileManager.kg.fileExists(atPath: filePath) {
             return reloadWebView()
         }
         
@@ -248,12 +253,14 @@ extension KGWebViewController {
 extension KGWebViewController {
 
     func addNotification() {
-        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.onHide()
+        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) {[weak self] (notification) in
+            guard let strongSelf = self else { return }
+            strongSelf.onHide()
         }
         
-        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.onShow()
+        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) {[weak self] (notification) in
+            guard let strongSelf = self else { return }
+            strongSelf.onShow()
         }
     }
     
@@ -276,19 +283,19 @@ extension KGWebViewController: UIScrollViewDelegate {
 extension KGWebViewController {
     
     func onShow() {
-        NativeApiManager.callJS(function: "onShow")
+        nativeApiManager.callJS(function: "onShow")
     }
     
     func onHide() {
-        NativeApiManager.callJS(function: "onHide")
+        nativeApiManager.callJS(function: "onHide")
     }
     
     func onUnload() {
-        NativeApiManager.callJS(function: "onUnload")
+        nativeApiManager.callJS(function: "onUnload")
     }
     
     func onReady() {
-        NativeApiManager.callJS(function: "onReady")
+        nativeApiManager.callJS(function: "onReady")
     }
     
     private func isUnload(_ webView: KGWKWebView, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool {
