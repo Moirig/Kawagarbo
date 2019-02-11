@@ -16,3 +16,11 @@ function setTitle() {
         title: '当前页面'
     })
 }
+
+function getSystemInfo() {
+    wx.getSystemInfo({
+        success: function (res) {
+            alert(JSON.stringify(res))
+        }
+    })
+}

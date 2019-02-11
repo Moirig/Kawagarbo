@@ -110,6 +110,7 @@ public class KGWebViewController: UIViewController {
         
         var frame = webView.frame
         frame.origin.y = navigationBar.frame.maxY
+        frame.size.height = UIScreen.kg.height - navigationBar.frame.maxY
         webView.frame = frame
     }
 

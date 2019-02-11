@@ -97,7 +97,14 @@
     window.wx = {}
 
     wx.invokeHandler = function(path, object) {
-        callHandler(path, object, function (res) {
+        var obj = JSON.parse(JSON.stringify(object))
+        delete obj.complete
+        delete obj.success
+        delete obj.cancel
+        delete obj.unknown
+        delete obj.fail
+
+        callHandler(path, obj, function (res) {
             object.complete && object.complete(res)
 
             if (res.code == Code.success) { object.success && object.success(res.data) }
@@ -137,6 +144,10 @@
     }
 
     //invokeHandler
+
+    wx.getSystemInfo = function (object) {
+        wx.invokeHandler('getSystemInfo', object)
+    }
 
     wx.setNavigationBarTitle = function (object) {
         wx.invokeHandler('setNavigationBarTitle', object)

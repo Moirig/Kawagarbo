@@ -60,6 +60,10 @@ extension KGNativeApiManager {
                 api.webViewController = strongSelf.webViewController
                 api.perform(with: parameters) { (apiResponse) in
                     if let callback = callback {
+                        KGLog(title: "nativeResponse:", """
+                            path:\(apiPath)
+                            response:\(apiResponse.jsonObject)
+                            """)
                         
                         DispatchQueue.main.async {
                             callback(apiResponse.jsonObject)

@@ -24,7 +24,7 @@ class FirstVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.backgroundColor = UIColor.white
         view.addSubview(tableView)
 
@@ -47,8 +47,9 @@ class FirstVC: UIViewController {
 extension FirstVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let urlString = "http://192.168.213.21:4000/Kawagarbo_web/index.html"
+        let urlString = "http://192.168.215.193:4000/Kawagarbo_web/index.html"
+
+//        let urlString = "http://localhost:4000/Kawagarbo_web/index.html"
         
 //        let toPath = KawagarboCachePath + "/Kawagarbo_web"
 //        let urlString = "file://" + toPath + "/index.html"
