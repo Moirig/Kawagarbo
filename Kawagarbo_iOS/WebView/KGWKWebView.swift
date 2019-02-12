@@ -249,3 +249,39 @@ extension KGWKWebView: UIAlertViewDelegate {
     }
     
 }
+
+typealias ClosureType =  @convention(c) (Any, Selector, UnsafeRawPointer, Bool, Bool, Any) -> Void
+
+extension KGWKWebView {
+    
+    var allowDisplayingKeyboardWithoutUserAction: Bool {
+        get {
+            return false
+        } set {
+            if newValue == true {
+                setKeyboardRequiresUserInteraction()
+            }
+        }
+    }
+    
+    func setKeyboardRequiresUserInteraction() {
+        var selStr = ""
+        if #available(iOS 11.3, *) {
+            selStr = "X3N0YXJ0QXNzaXN0aW5nTm9kZTp1c2VySXNJbnRlcmFjdGluZzpibHVyUHJldmlvdXNOb2RlOmNoYW5naW5nQWN0aXZpdHlTdGF0ZTp1c2VyT2JqZWN0Og=="
+        }
+        else {
+            selStr = "X3N0YXJ0QXNzaXN0aW5nTm9kZTp1c2VySXNJbnRlcmFjdGluZzpibHVyUHJldmlvdXNOb2RlOnVzZXJPYmplY3Q6Og"
+        }
+        let sel: Selector = sel_getUid(selStr.kg.base64DecodedString)
+        let WKContentView: AnyClass = NSClassFromString("WKContentView")!
+        let method = class_getInstanceMethod(WKContentView, sel)
+        let originalImp: IMP = method_getImplementation(method!)
+        let original: ClosureType = unsafeBitCast(originalImp, to: ClosureType.self)
+        let block : @convention(block) (Any, UnsafeRawPointer, Bool, Bool, Any) -> Void = {(me, arg0, arg1, arg2, arg3) in
+            original(me, sel, arg0, true, arg2, arg3)
+        }
+        let imp: IMP = imp_implementationWithBlock(block)
+        method_setImplementation(method!, imp)
+    }
+    
+}

@@ -128,6 +128,7 @@ extension KGWebViewController {
         webview.frame = view.frame
         webview.webViewDelegate = self
         webview.scrollView.delegate = self
+        webview.allowDisplayingKeyboardWithoutUserAction = true
 
         if #available(iOS 11.0, *) {
             webview.scrollView.contentInsetAdjustmentBehavior = .never
