@@ -161,9 +161,17 @@
         wx.invokeHandler('getSystemInfo', object)
     }
 
+
+
     wx.navigateTo = function (object) {
         wx.invokeHandler('navigateTo', object)
     }
+
+    wx.navigateBack = function (object) {
+        wx.invokeHandler('navigateBack', object)
+    }
+
+
 
     wx.setNavigationBarTitle = function (object) {
         wx.invokeHandler('setNavigationBarTitle', object)

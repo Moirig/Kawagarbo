@@ -1,4 +1,9 @@
 
+function goback() {
+    // history.back(-1)
+    location.href = document.referrer
+}
+
 function showAlert() {
     alert('alert text')
 }

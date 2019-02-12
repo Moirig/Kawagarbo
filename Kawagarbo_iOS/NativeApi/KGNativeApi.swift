@@ -36,6 +36,7 @@ public class KGNativeApi: NSObject {
         KGGetSystemInfoApi().regist()
         
         KGNavigateToApi().regist()
+        KGNavigateBackApi().regist()
 
         KGSetNavigationBarTitleApi().regist()
     }

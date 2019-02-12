@@ -11,21 +11,17 @@ function toGoback() {
     window.location.href = 'pages/goback/goback.html'
 }
 
+function toSystem() {
+    window.location.href = 'pages/system/system.html'
+}
+
+function toRoute() {
+    window.location.href = 'pages/route/route.html'
+}
+
 function setNavigationBarTitle() {
     wx.setNavigationBarTitle({
         title: '当前页面'
-    })
-}
-
-function canIUse() {
-    wx.canIUse('getSystemInfo')
-}
-
-function getSystemInfo() {
-    wx.getSystemInfo({
-        success: function (res) {
-            alert(JSON.stringify(res))
-        }
     })
 }
 
@@ -34,3 +30,4 @@ function navigateTo(url) {
         url: url
     })
 }
+
