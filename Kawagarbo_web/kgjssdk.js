@@ -183,6 +183,11 @@
         wx.invokeHandler('redirectTo', object)
     }
 
+    wx.reLaunch = function(object) {
+        object.url = _toAbsURL(object.url)
+        wx.invokeHandler('reLaunch', object)
+    }
+
 
     wx.setNavigationBarTitle = function (object) {
         wx.invokeHandler('setNavigationBarTitle', object)

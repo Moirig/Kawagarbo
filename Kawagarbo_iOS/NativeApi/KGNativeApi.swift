@@ -38,7 +38,8 @@ public class KGNativeApi: NSObject {
         KGNavigateToApi().regist()
         KGNavigateBackApi().regist()
         KGRedirectToApi().regist()
-
+        KGReLaunchApi().regist()
+        
         KGSetNavigationBarTitleApi().regist()
     }
     

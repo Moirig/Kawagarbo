@@ -16,3 +16,9 @@ function redirectTo(url) {
         url: url
     })
 }
+
+function reLaunch(url) {
+    wx.reLaunch({
+        url: url
+    })
+}
