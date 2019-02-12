@@ -25,11 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FileManager.kg.createDirectory(toPath)
         FileManager.kg.copyItem(atPath: atPath, toPath: toPath)
         
-        let vc = FirstVC()
-        let navi = UINavigationController(rootViewController: vc)
+        let vc1 = FirstVC()
+        let navi1 = UINavigationController(rootViewController: vc1)
+        
+        let vc2 = SecondVC()
+        let navi2 = UINavigationController(rootViewController: vc2)
+        
+        let tabbarVC = UITabBarController()
+        tabbarVC.viewControllers = [navi1, navi2]
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navi
+        window?.rootViewController = tabbarVC
         window?.makeKeyAndVisible()
         
         return true

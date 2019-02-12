@@ -188,6 +188,10 @@
         wx.invokeHandler('reLaunch', object)
     }
 
+    wx.switchTab = function(object) {
+        wx.invokeHandler('switchTab', object)
+    }
+
 
     wx.setNavigationBarTitle = function (object) {
         wx.invokeHandler('setNavigationBarTitle', object)

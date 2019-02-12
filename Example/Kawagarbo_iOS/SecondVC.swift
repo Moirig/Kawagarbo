@@ -1,15 +1,15 @@
 //
-//  FirstVC.swift
-//  KawagarboExample
+//  SecondVC.swift
+//  Kawagarbo_iOS_Example
 //
-//  Created by 温一鸿 on 2019/1/24.
-//  Copyright © 2019年 Moirig. All rights reserved.
+//  Created by 温一鸿 on 2019/2/12.
+//  Copyright © 2019年 CocoaPods. All rights reserved.
 //
 
 import UIKit
 import Kawagarbo_iOS
 
-class FirstVC: UIViewController {
+class SecondVC: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.frame)
@@ -21,40 +21,39 @@ class FirstVC: UIViewController {
         return tableView
     }()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "tab1"
+        title = "tab2"
 
         view.backgroundColor = UIColor.white
         view.addSubview(tableView)
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
-extension FirstVC: UITableViewDataSource, UITableViewDelegate {
+extension SecondVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let urlString = "http://192.168.215.193:4000/Kawagarbo_web/index.html"
-
-//        let urlString = "http://localhost:4000/Kawagarbo_web/index.html"
         
-//        let toPath = KawagarboCachePath + "/Kawagarbo_web"
-//        let urlString = "file://" + toPath + "/index.html"
+        //        let urlString = "http://localhost:4000/Kawagarbo_web/index.html"
+        
+        //        let toPath = KawagarboCachePath + "/Kawagarbo_web"
+        //        let urlString = "file://" + toPath + "/index.html"
         
         let webVC = KGWebViewController(urlString: urlString)
         navigationController?.pushViewController(webVC, animated: true)

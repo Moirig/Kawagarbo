@@ -22,3 +22,9 @@ function reLaunch(url) {
         url: url
     })
 }
+
+function switchTab(index) {
+    wx.switchTab({
+        index: index
+    })
+}
