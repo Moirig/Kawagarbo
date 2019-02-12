@@ -10,8 +10,6 @@ import UIKit
 
 public class KGWebRoute: NSObject {
     
-    public static var baseURLString: String?
-    
     public var url: URL? { return urlRequest?.url }
     
     public var urlString: String? { return urlRequest?.url?.absoluteString }
@@ -46,20 +44,8 @@ public class KGWebRoute: NSObject {
         }
         
         if let url = URL(string: formatUrl) {
-            if url.scheme == nil || url.host == nil {
-                formatUrl = "\(KGWebRoute.baseURLString ?? "")\(formatUrl)"
-            }
-        }
-        
-        if let url = URL(string: formatUrl) {
             var request = URLRequest(url: url)
             request.allHTTPHeaderFields = headerFields
-            
-            let urlString = formatUrl.replacingOccurrences(of: url.lastPathComponent, with: "")
-            if let baseURLString = KGWebRoute.baseURLString, urlString.hasPrefix(baseURLString) {}
-            else {
-                KGWebRoute.baseURLString = formatUrl.replacingOccurrences(of: url.lastPathComponent, with: "")
-            }
             
             return request
         }

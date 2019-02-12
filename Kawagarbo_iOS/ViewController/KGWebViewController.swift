@@ -19,24 +19,10 @@ public class KGWebViewController: UIViewController {
         return config
     }()
     
-    public lazy var webView: KGWKWebView = {
-        let webView = KGWKWebView.webView
-        webView.frame = view.frame
-        webView.webViewDelegate = self
-        webView.scrollView.delegate = self
-        
-        if #available(iOS 11.0, *) {
-            webView.scrollView.contentInsetAdjustmentBehavior = .never
-        }
-        else {
-            automaticallyAdjustsScrollViewInsets = false
-        }
-        
-        return webView
-    }()
+    public weak var webView: KGWKWebView?
     
-    public var nativeApiManager: KGNativeApiManager {
-        return webView.nativeApiManager!
+    public var nativeApiManager: KGNativeApiManager? {
+        return webView?.nativeApiManager
     }
     
     public var webRoute: KGWebRoute?
@@ -55,6 +41,7 @@ public class KGWebViewController: UIViewController {
     }
     
     func deinitWebView() {
+        guard let webView = webView else { return }
         webView.webViewDelegate = nil
         webView.scrollView.delegate = nil
         webView.removeFromSuperview()
@@ -69,23 +56,18 @@ public class KGWebViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         KGLog(title: "ViewDidLoad", self)
+        
         view.backgroundColor = UIColor.white
-        
-        addNotification()
-        
-        injectNativeApi()
-        
         webRoute?.config = config
-        webView.config = config
-        view.addSubview(webView)
-        reloadWebView()
+
+        setup()
     }
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if webView.url == nil || webView.url?.absoluteString == "about:blank" {
-            reset()
+        if webView?.url == nil || webView?.url?.absoluteString == "about:blank" {
+            setup()
         }
     }
     
@@ -109,7 +91,7 @@ public class KGWebViewController: UIViewController {
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        guard let navigationBar = navigationController?.navigationBar, navigationBar.frame.maxY > 20 else {
+        guard let webView = webView, let navigationBar = navigationController?.navigationBar, navigationBar.frame.maxY > 20 else {
             return
         }
         
@@ -124,16 +106,42 @@ public class KGWebViewController: UIViewController {
 // MARK: - Setup
 extension KGWebViewController {
     
+    public func setup() {
+        deinitWebView()
+        setupWebView()
+        injectNativeApi()
+        reloadWebView()
+    }
+    
     func injectNativeApi() {
         
-        nativeApiManager.webViewController = self
+        nativeApiManager?.webViewController = self
 
         if config.isInjectDynamically == false {
-            nativeApiManager.injectApis()
+            nativeApiManager?.injectApis()
         }
     }
     
+    func setupWebView() {
+        let webview = KGWKWebView.webView
+        webview.config = config
+        webview.frame = view.frame
+        webview.webViewDelegate = self
+        webview.scrollView.delegate = self
+
+        if #available(iOS 11.0, *) {
+            webview.scrollView.contentInsetAdjustmentBehavior = .never
+        }
+        else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
+        
+        webView = webview
+    }
+    
     func reloadWebView() {
+        guard let webView = webView else { return }
+        
         if !view.subviews.contains(webView) {
             view .addSubview(webView)
         }
@@ -151,12 +159,6 @@ extension KGWebViewController {
         }
         KGLog(title: "Reload:", url.absoluteString)
         
-    }
-    
-    func reset() {
-        deinitWebView()
-        injectNativeApi()
-        reloadWebView()
     }
     
 }
@@ -227,7 +229,7 @@ extension KGWebViewController: KGWebViewDelegate {
     }
     
     func webViewDidTerminate(_ webView: KGWKWebView) {
-        reset()
+        setup()
     }
     
     func webViewTitleChange(_ webView: KGWKWebView) {
@@ -283,19 +285,19 @@ extension KGWebViewController: UIScrollViewDelegate {
 extension KGWebViewController {
     
     func onShow() {
-        nativeApiManager.callJS(function: "onShow")
+        nativeApiManager?.callJS(function: "onShow")
     }
     
     func onHide() {
-        nativeApiManager.callJS(function: "onHide")
+        nativeApiManager?.callJS(function: "onHide")
     }
     
     func onUnload() {
-        nativeApiManager.callJS(function: "onUnload")
+        nativeApiManager?.callJS(function: "onUnload")
     }
     
     func onReady() {
-        nativeApiManager.callJS(function: "onReady")
+        nativeApiManager?.callJS(function: "onReady")
     }
     
     private func isUnload(_ webView: KGWKWebView, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool {

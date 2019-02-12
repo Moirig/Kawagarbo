@@ -10,3 +10,9 @@ function navigateBack() {
         delta: 1
     })
 }
+
+function redirectTo(url) {
+    wx.redirectTo({
+        url: url
+    })
+}

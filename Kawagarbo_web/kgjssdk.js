@@ -88,6 +88,12 @@
         }
     }
 
+    function _toAbsURL(url){
+        var a = document.createElement('a');
+        a.href = url;
+        return a.href;
+    };
+
     const Code = {
         success: 200,
         cancel: -999,
@@ -164,6 +170,7 @@
 
 
     wx.navigateTo = function (object) {
+        object.url = _toAbsURL(object.url)
         wx.invokeHandler('navigateTo', object)
     }
 
@@ -171,6 +178,10 @@
         wx.invokeHandler('navigateBack', object)
     }
 
+    wx.redirectTo = function(object) {
+        object.url = _toAbsURL(object.url)
+        wx.invokeHandler('redirectTo', object)
+    }
 
 
     wx.setNavigationBarTitle = function (object) {

@@ -54,8 +54,8 @@ class KGGetSystemInfoApi: KGNativeApi, KGNativeApiDelegate {
         dict["version"] = KGInfoPlist.appVersion
         
         dict["wifiEnabled"] = KGSystemInfo.wifiEnabled
-        dict["windowWidth"] = webViewController?.webView.frame.width ?? 0
-        dict["windowHeight"] = webViewController?.webView.frame.height ?? 0
+        dict["windowWidth"] = webViewController?.webView?.frame.width ?? 0
+        dict["windowHeight"] = webViewController?.webView?.frame.height ?? 0
         
         
         complete(.success(data: dict))

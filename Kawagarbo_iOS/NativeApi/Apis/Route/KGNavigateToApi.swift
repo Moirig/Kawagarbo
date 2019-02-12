@@ -15,15 +15,12 @@ class KGNavigateToApi: KGNativeApi, KGNativeApiDelegate {
         
         guard let urlString = parameters?["url"] as? String else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid url!")) }
         
-        guard let url = URL(string: urlString) else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid url!")) }
+        guard let _ = URL(string: urlString) else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid url!")) }
         
-        if url.scheme == nil || url.host == nil {
-            guard let baseURLString = KGWebRoute.baseURLString else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid url!")) }
-            if baseURLString.kg.isFile {
-                let filePath = baseURLString.kg.noScheme + urlString
-                if FileManager.kg.fileExists(atPath: filePath) == false {
-                    return complete(.failure(code: kParamCodeDefaultFail, message: "Can not find filePath!"))
-                }
+        if urlString.kg.isFile {
+            let filePath = urlString.kg.noScheme
+            if FileManager.kg.fileExists(atPath: filePath) == false {
+                return complete(.failure(code: kParamCodeDefaultFail, message: "No file!"))
             }
         }
         
