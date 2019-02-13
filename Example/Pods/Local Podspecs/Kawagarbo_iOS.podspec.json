@@ -17,5 +17,15 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "Kawagarbo_iOS/**/*.{swift,h,m}"
+  "source_files": "Kawagarbo_iOS/**/*.{swift,h,m}",
+  "resource_bundles": {
+    "Kawagarbo_iOS": [
+      "Kawagarbo_iOS/Resource/*"
+    ]
+  },
+  "dependencies": {
+    "MBProgressHUD": [
+
+    ]
+  }
 }

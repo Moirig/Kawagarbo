@@ -19,6 +19,10 @@ function toRoute() {
     window.location.href = 'pages/route/route.html'
 }
 
+function toInteraction() {
+    window.location.href = 'pages/interaction/interaction.html'
+}
+
 function setNavigationBarTitle() {
     wx.setNavigationBarTitle({
         title: '当前页面'

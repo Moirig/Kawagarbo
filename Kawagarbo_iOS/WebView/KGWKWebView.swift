@@ -267,12 +267,15 @@ extension KGWKWebView {
     func setKeyboardRequiresUserInteraction() {
         var selStr = ""
         if #available(iOS 11.3, *) {
+            //"_startAssistingNode:userIsInteracting:blurPreviousNode:changingActivityState:userObject:"
             selStr = "X3N0YXJ0QXNzaXN0aW5nTm9kZTp1c2VySXNJbnRlcmFjdGluZzpibHVyUHJldmlvdXNOb2RlOmNoYW5naW5nQWN0aXZpdHlTdGF0ZTp1c2VyT2JqZWN0Og=="
         }
         else {
-            selStr = "X3N0YXJ0QXNzaXN0aW5nTm9kZTp1c2VySXNJbnRlcmFjdGluZzpibHVyUHJldmlvdXNOb2RlOnVzZXJPYmplY3Q6Og"
+            //"_startAssistingNode:userIsInteracting:blurPreviousNode:userObject:"
+            selStr = "X3N0YXJ0QXNzaXN0aW5nTm9kZTp1c2VySXNJbnRlcmFjdGluZzpibHVyUHJldmlvdXNOb2RlOnVzZXJPYmplY3Q6"
         }
-        let sel: Selector = sel_getUid(selStr.kg.base64DecodedString)
+        selStr = selStr.kg.base64DecodedString
+        let sel: Selector = sel_getUid(selStr)
         let WKContentView: AnyClass = NSClassFromString("WKContentView")!
         let method = class_getInstanceMethod(WKContentView, sel)
         let originalImp: IMP = method_getImplementation(method!)

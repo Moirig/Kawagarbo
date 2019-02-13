@@ -192,6 +192,16 @@
         wx.invokeHandler('switchTab', object)
     }
 
+    wx.showToast = function(object) {
+        object.icon = object.icon || 'success'
+        object.duration = object.duration || 1500
+        object.mask = object.mask || false
+        if (object.image) {
+            object.image = _toAbsURL(object.image)
+        }
+        wx.invokeHandler('showToast', object)
+    }
+
 
     wx.setNavigationBarTitle = function (object) {
         wx.invokeHandler('setNavigationBarTitle', object)

@@ -8,4 +8,10 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/Moirig/Kawagarbo_iOS.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
   s.source_files = 'Kawagarbo_iOS/**/*.{swift,h,m}'
+  s.resource_bundles = {
+    'Kawagarbo_iOS' => ['Kawagarbo_iOS/Resource/*']
+  }
+  
+  s.dependency  'MBProgressHUD'
+  
 end

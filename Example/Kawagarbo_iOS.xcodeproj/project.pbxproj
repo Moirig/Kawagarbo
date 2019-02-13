@@ -174,6 +174,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				19A78D90FDF9692F11B2E3B7 /* [CP] Embed Pods Frameworks */,
+				3B96C8382213C35500D2E5D5 /* TODO-Warning */,
 			);
 			buildRules = (
 			);
@@ -276,17 +277,37 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Kawagarbo_iOS_Example/Pods-Kawagarbo_iOS_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kawagarbo_iOS/Kawagarbo_iOS.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kawagarbo_iOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kawagarbo_iOS_Example/Pods-Kawagarbo_iOS_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3B96C8382213C35500D2E5D5 /* TODO-Warning */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "TODO-Warning";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO-\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" −name\"∗.swift\"−name\"∗.swift\" -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\n";
 		};
 		966D77819F1465980F9A8A96 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
