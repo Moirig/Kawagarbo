@@ -202,6 +202,11 @@
         wx.invokeHandler('showToast', object)
     }
 
+    wx.showLoading = function(object) {
+        object.mask = object.mask || false
+        wx.invokeHandler('showLoading', object)
+    }
+
 
     wx.setNavigationBarTitle = function (object) {
         wx.invokeHandler('setNavigationBarTitle', object)

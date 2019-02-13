@@ -33,3 +33,9 @@ function showToastLoading() {
         title: '加载中...'
     })
 }
+
+function showLoading() {
+    wx.showLoading({
+        title: ''
+    })
+}

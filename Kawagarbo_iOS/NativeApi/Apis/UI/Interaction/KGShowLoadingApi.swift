@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class KGShowLoadingApi: KGNativeApi, KGNativeApiDelegate {
     
     var path: String { return "showLoading" }
     
     func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
-        //TODO-
+        let title = parameters?["title"] as? String
+        let mask = (parameters?["mask"] as? Bool) ?? false
+        
+        MBProgressHUD.loading(title: title, hasMask: mask)
+        
+        complete(.success(data: nil))
     }
-    
 
 }
