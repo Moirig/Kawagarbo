@@ -103,6 +103,7 @@
     window.wx = {}
 
     wx.invokeHandler = function(path, object) {
+        object = object || {}
         var obj = JSON.parse(JSON.stringify(object))
         delete obj.complete
         delete obj.success
@@ -207,6 +208,13 @@
         wx.invokeHandler('showLoading', object)
     }
 
+    wx.hideToast = function(object) {
+        wx.invokeHandler('hideToast', object)
+    }
+
+    wx.hideLoading = function(object) {
+        wx.invokeHandler('hideLoading', object)
+    }
 
     wx.setNavigationBarTitle = function (object) {
         wx.invokeHandler('setNavigationBarTitle', object)

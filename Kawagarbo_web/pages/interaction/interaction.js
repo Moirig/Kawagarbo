@@ -39,3 +39,11 @@ function showLoading() {
         title: ''
     })
 }
+
+function hideToast() {
+    wx.hideToast()
+}
+
+function hideLoading() {
+    wx.hideLoading()
+}

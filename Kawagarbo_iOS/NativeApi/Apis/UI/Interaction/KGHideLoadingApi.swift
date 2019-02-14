@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class KGHideLoadingApi: KGNativeApi, KGNativeApiDelegate {
     
     var path: String { return "hideLoading" }
     
     func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
-        //TODO-
+        MBProgressHUD.hide()
+        complete(.success(data: nil))
     }
     
-
 }
