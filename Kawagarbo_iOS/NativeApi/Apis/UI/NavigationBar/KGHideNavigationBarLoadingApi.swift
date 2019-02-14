@@ -12,8 +12,8 @@ class KGHideNavigationBarLoadingApi: KGNativeApi, KGNativeApiDelegate {
     var path: String { return "hideNavigationBarLoading" }
     
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
-
-        //TODO-
+        webViewController?.titleView.isShowLoading = false
+        complete(.success(data: nil))
     }
 
 }

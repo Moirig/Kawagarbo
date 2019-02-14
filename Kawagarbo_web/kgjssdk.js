@@ -239,8 +239,17 @@
         wx.invokeHandler('showActionSheet', object)
     }
 
+
+    wx.showNavigationBarLoading = function(object) {
+        wx.invokeHandler('showNavigationBarLoading', object)
+    }
+
     wx.setNavigationBarTitle = function (object) {
         wx.invokeHandler('setNavigationBarTitle', object)
+    }
+
+    wx.hideNavigationBarLoading = function(object) {
+        wx.invokeHandler('hideNavigationBarLoading', object)
     }
 
 })();

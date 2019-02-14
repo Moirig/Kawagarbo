@@ -23,10 +23,8 @@ function toInteraction() {
     window.location.href = 'pages/interaction/interaction.html'
 }
 
-function setNavigationBarTitle() {
-    wx.setNavigationBarTitle({
-        title: '当前页面'
-    })
+function toNavigationBar() {
+    window.location.href = 'pages/navigationBar/navigationBar.html'
 }
 
 function navigateTo(url) {

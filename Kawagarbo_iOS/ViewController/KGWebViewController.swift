@@ -35,6 +35,10 @@ public class KGWebViewController: UIViewController {
     
     public var userInfo: [String: Any]?
     
+    lazy var titleView: KGTitleView = {
+        return KGTitleView(frame: CGRect(x: 0, y: 0, width: UIScreen.kg.width - 140, height: 44))
+    }()
+    
     deinit {
         KGLog(title: "Deinit", self)
         deinitWebView()
@@ -57,6 +61,7 @@ public class KGWebViewController: UIViewController {
         super.viewDidLoad()
         KGLog(title: "ViewDidLoad", self)
         
+        navigationItem.titleView = titleView
         view.backgroundColor = UIColor.white
         webRoute?.config = config
 
@@ -309,4 +314,17 @@ extension KGWebViewController {
         
         return false
     }
+}
+
+extension KGWebViewController {
+    
+    public override var title: String? {
+        get {
+            return titleView.title
+        }
+        set {
+            titleView.title = newValue ?? ""
+        }
+    }
+    
 }
