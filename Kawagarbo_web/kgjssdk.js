@@ -114,13 +114,20 @@
         callHandler(path, obj, function (res) {
             object.complete && object.complete(res)
 
-            if (res.code == Code.success) { object.success && object.success(res.data) }
+            if (res.code == Code.success) {
+                res.data.errMsg = path + ':ok'
+                object.success && object.success(res.data)
+            }
 
             else if (res.code == Code.cancel) { object.cancel && object.cancel(res.message) }
 
             else if (res.code == Code.unknown) { object.unknown && object.unknown(res.message) }
 
-            else { object.fail && object.fail(res) }
+            else {
+                res.message = path + ':' + res.message
+                res.errMsg = res.message
+                object.fail && object.fail(res)
+            }
         })
     }
 
@@ -223,6 +230,13 @@
         object.confirmText = object.confirmText || '确定'
         object.confirmColor = object.confirmColor || '#576B95'
         wx.invokeHandler('showModal', object)
+    }
+
+    wx.showActionSheet = function(object) {
+        object.cancelText = object.cancelText || '取消'
+        object.cancelColor = object.cancelColor || '#000000'
+        object.itemColor = object.itemColor || '#000000'
+        wx.invokeHandler('showActionSheet', object)
     }
 
     wx.setNavigationBarTitle = function (object) {

@@ -54,3 +54,15 @@ function showModal() {
         content: 'content'
     })
 }
+
+function showActionSheet() {
+    wx.showActionSheet({
+        itemList: ['a', 'b', 'c'],
+        success: function (res) {
+            alert(JSON.stringify(res))
+        },
+        fail: function (res) {
+            alert(JSON.stringify(res))
+        }
+    })
+}

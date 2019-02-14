@@ -57,6 +57,7 @@ extension FirstVC: UITableViewDataSource, UITableViewDelegate {
 //        let urlString = "file://" + toPath + "/index.html"
         
         let webVC = KGWebViewController(urlString: urlString)
+        webVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(webVC, animated: true)
     }
     

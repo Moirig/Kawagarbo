@@ -46,6 +46,7 @@ public class KGNativeApi: NSObject {
         KGHideToastApi().regist()
         KGHideLoadingApi().regist()
         KGShowModalApi().regist()
+        KGShowActionSheetApi().regist()
         
         KGSetNavigationBarTitleApi().regist()
     }
