@@ -12,8 +12,8 @@ class KGShowToastApi: KGNativeApi, KGNativeApiDelegate {
     
     var path: String { return "showToast" }
     
-    func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
-        
+    func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
+
         let title = parameters?["title"] as? String
         let icon = (parameters?["icon"] as? String) ?? "success"
         let image = parameters?["image"] as? String

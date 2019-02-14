@@ -12,7 +12,8 @@ class KGShowLoadingApi: KGNativeApi, KGNativeApiDelegate {
     
     var path: String { return "showLoading" }
     
-    func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
+    func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
+
         let title = parameters?["title"] as? String
         let mask = (parameters?["mask"] as? Bool) ?? false
         

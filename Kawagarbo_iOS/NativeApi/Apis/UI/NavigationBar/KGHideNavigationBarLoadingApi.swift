@@ -11,7 +11,8 @@ class KGHideNavigationBarLoadingApi: KGNativeApi, KGNativeApiDelegate {
     
     var path: String { return "hideNavigationBarLoading" }
     
-    func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
+    func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
+
         //TODO-
     }
 

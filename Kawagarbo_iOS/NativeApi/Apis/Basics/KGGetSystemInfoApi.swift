@@ -14,8 +14,8 @@ class KGGetSystemInfoApi: KGNativeApi, KGNativeApiDelegate {
     
     var path: String { return "getSystemInfo" }
     
-    func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
-        
+    func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
+
         var dict: [String: Any] = [:]
         
         dict["albumAuthorized"] = KGSystemInfo.albumAuthorized

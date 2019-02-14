@@ -8,9 +8,6 @@
 
 import UIKit
 
-public typealias KGNativeApiResponseClosure = (_ response: KGNativeApiResponse) -> Void
-
-
 public let kParamCode: String = "code"
 public let kParamMessage: String = "message"
 public let kParamData: String = "data"

@@ -16,8 +16,8 @@ class KGCanIUseApi: KGNativeApi, KGNativeApiDelegate {
     
     var path: String { return "canIUse" }
     
-    func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
-        
+    func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
+
         guard let schemaString = parameters?["schema"] as? String, schemaString.count > 0 else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid schema")) }
         
         let schemas = schemaString.components(separatedBy: ".")

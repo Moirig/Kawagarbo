@@ -11,8 +11,8 @@ class KGNavigateBackApi: KGNativeApi, KGNativeApiDelegate {
     
     var path: String { return "navigateBack" }
     
-    func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
-        
+    func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
+
         guard let delta = parameters?["delta"] as? Int, delta > 0 else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid delta!")) }
         
         guard let count = webViewController?.navigationController?.viewControllers.count else { return complete(.failure(code: kParamCodeDefaultFail, message: "Can not navigateBack!")) }

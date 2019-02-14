@@ -11,7 +11,8 @@ class KGSetNavigationBarColorApi: KGNativeApi, KGNativeApiDelegate {
     
     var path: String { return "setNavigationBarColor" }
     
-    func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
+    func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
+
         //TODO-
     }
 

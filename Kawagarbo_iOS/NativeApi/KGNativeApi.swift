@@ -14,7 +14,7 @@ public protocol KGNativeApiDelegate: NSObjectProtocol {
     
     var path: String { get }
     
-    func perform(with parameters: [String: Any]?, complete: KGNativeApiResponseClosure)
+    func perform(with parameters: [String: Any]?, complete: @escaping (_ response: KGNativeApiResponse) -> Void)
     
 }
 
@@ -45,6 +45,7 @@ public class KGNativeApi: NSObject {
         KGShowLoadingApi().regist()
         KGHideToastApi().regist()
         KGHideLoadingApi().regist()
+        KGShowModalApi().regist()
         
         KGSetNavigationBarTitleApi().regist()
     }

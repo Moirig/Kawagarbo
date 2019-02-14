@@ -12,8 +12,8 @@ class KGSetNavigationBarTitleApi: KGNativeApi, KGNativeApiDelegate {
     
     var path: String { return "setNavigationBarTitle" }
     
-    func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
-        
+    func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
+
         guard let title = parameters?["title"] as? String else {
             return complete(.failure(code: kParamCodeDefaultFail, message: "title undefined!"))
         }

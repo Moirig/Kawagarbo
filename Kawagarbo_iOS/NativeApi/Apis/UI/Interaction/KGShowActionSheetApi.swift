@@ -11,7 +11,8 @@ class KGShowActionSheetApi: KGNativeApi, KGNativeApiDelegate {
     
     var path: String { return "showActionSheet" }
     
-    func perform(with parameters: [String : Any]?, complete: (KGNativeApiResponse) -> Void) {
+    func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
+
         //TODO-
     }
     

@@ -216,6 +216,15 @@
         wx.invokeHandler('hideLoading', object)
     }
 
+    wx.showModal = function(object) {
+        object.showCancel = object.showCancel || true
+        object.cancelText = object.cancelText || '取消'
+        object.cancelColor = object.cancelColor || '#000000'
+        object.confirmText = object.confirmText || '确定'
+        object.confirmColor = object.confirmColor || '#576B95'
+        wx.invokeHandler('showModal', object)
+    }
+
     wx.setNavigationBarTitle = function (object) {
         wx.invokeHandler('setNavigationBarTitle', object)
     }

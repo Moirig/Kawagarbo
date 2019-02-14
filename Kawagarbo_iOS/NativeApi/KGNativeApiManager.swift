@@ -82,7 +82,7 @@ extension KGNativeApiManager {
 
 extension KGNativeApiManager {
         
-    public func callJS(function: String, parameters: [String: Any]? = nil, complete: KGNativeApiResponseClosure? = nil) {
+    public func callJS(function: String, parameters: [String: Any]? = nil, complete: ((_ response: KGNativeApiResponse) -> Void)? = nil) {
         guard function.count > 0 else { return }
         KGLog(title: "callJS:", """
             \(function)

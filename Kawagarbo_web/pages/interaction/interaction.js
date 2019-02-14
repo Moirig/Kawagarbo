@@ -47,3 +47,10 @@ function hideToast() {
 function hideLoading() {
     wx.hideLoading()
 }
+
+function showModal() {
+    wx.showModal({
+        title: 'title',
+        content: 'content'
+    })
+}
