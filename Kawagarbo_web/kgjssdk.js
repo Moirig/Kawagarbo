@@ -272,4 +272,8 @@
         wx.invokeHandler('hideTabBar', object)
     }
 
+    wx.setTabBarStyle = function (object) {
+        wx.invokeHandler('setTabBarStyle', object)
+    }
+
 })();
