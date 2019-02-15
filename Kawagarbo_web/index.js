@@ -27,6 +27,10 @@ function toNavigationBar() {
     window.location.href = 'pages/navigationBar/navigationBar.html'
 }
 
+function toTabBar() {
+    window.location.href = 'pages/tabBar/tabBar.html'
+}
+
 function navigateTo(url) {
     wx.navigateTo({
         url: url

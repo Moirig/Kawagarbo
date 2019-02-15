@@ -112,22 +112,29 @@
         delete obj.fail
 
         callHandler(path, obj, function (res) {
-            object.complete && object.complete(res)
-
+            res.data = res.data || {}
             if (res.code == Code.success) {
                 res.data.errMsg = path + ':ok'
                 object.success && object.success(res.data)
             }
 
-            else if (res.code == Code.cancel) { object.cancel && object.cancel(res.message) }
+            else if (res.code == Code.cancel) {
+                res.data.errMsg = path + ':' + res.message
+                object.cancel && object.cancel(res.data)
+            }
 
-            else if (res.code == Code.unknown) { object.unknown && object.unknown(res.message) }
+            else if (res.code == Code.unknown) {
+                res.data.errMsg = path + ':' + res.message
+                object.unknown && object.unknown(res.data)
+            }
 
             else {
-                res.message = path + ':' + res.message
-                res.errMsg = res.message
-                object.fail && object.fail(res)
+                res.data.errMsg = path + ':' + res.message
+                object.fail && object.fail(res.data)
             }
+
+            delete res.message
+            object.complete && object.complete(res)
         })
     }
 
@@ -254,6 +261,15 @@
 
     wx.hideNavigationBarLoading = function(object) {
         wx.invokeHandler('hideNavigationBarLoading', object)
+    }
+
+
+    wx.showTabBar = function (object) {
+        wx.invokeHandler('showTabBar', object)
+    }
+
+    wx.hideTabBar = function (object) {
+        wx.invokeHandler('hideTabBar', object)
     }
 
 })();

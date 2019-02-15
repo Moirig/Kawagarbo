@@ -28,7 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc1 = FirstVC()
         let navi1 = UINavigationController(rootViewController: vc1)
         
-        let vc2 = SecondVC()
+        let urlString = "file://" + toPath + "/index.html"
+        
+        let vc2 = KGWebViewController(urlString: urlString)
+        vc2.title = "tab2"
         let navi2 = UINavigationController(rootViewController: vc2)
         
         let tabbarVC = UITabBarController()

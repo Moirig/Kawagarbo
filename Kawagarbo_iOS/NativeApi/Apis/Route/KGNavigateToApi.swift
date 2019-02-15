@@ -25,6 +25,7 @@ class KGNavigateToApi: KGNativeApi, KGNativeApiDelegate {
         }
         
         let webVC = KGWebViewController(urlString: urlString)
+        webVC.hidesBottomBarWhenPushed = true
         webViewController?.navigationController?.pushViewController(webVC, animated: true)
         
         complete(.success(data: nil))

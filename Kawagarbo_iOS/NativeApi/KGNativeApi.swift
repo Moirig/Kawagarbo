@@ -52,6 +52,9 @@ public class KGNativeApi: NSObject {
         KGSetNavigationBarTitleApi().regist()
         KGSetNavigationBarColorApi().regist()
         KGHideNavigationBarLoadingApi().regist()
+        
+        KGShowTabBarApi().regist()
+        KGHideTabBarApi().regist()
     }
     
 }
