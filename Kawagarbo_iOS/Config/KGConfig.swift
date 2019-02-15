@@ -10,55 +10,18 @@ import UIKit
 
 public struct KGConfig {
     
-    public var injectDynamically: Bool?
+    public var injectDynamically: Bool = KGGlobalConfig.injectDynamically
     
-    public var userAgent: String?
+    public var userAgent: String = KGGlobalConfig.userAgent ?? ""
     
-    public var cachePolicy: URLRequest.CachePolicy?
+    public var cachePolicy: URLRequest.CachePolicy = KGGlobalConfig.cachePolicy
     
-    public var timeoutInterval: TimeInterval?
+    public var timeoutInterval: TimeInterval = KGGlobalConfig.timeoutInterval
     
-    public var progressTintColor: UIColor?
+    public var progressTintColor: UIColor = KGGlobalConfig.progressTintColor
     
+    public var barBackgroundColor: UIColor = KGGlobalConfig.barBackgroundColor
     
-    var isInjectDynamically: Bool {
-        if let isInjectDynamically = injectDynamically {
-            return isInjectDynamically
-        }
-        return KGGlobalConfig.injectDynamically
-    }
-    
-    var getProgressTintColor: UIColor {
-        if let color = progressTintColor {
-            return color
-        }
-        
-        return KGGlobalConfig.progressTintColor
-    }
-    
-    var getUserAgent: String {
-        if let ua = userAgent {
-            return ua
-        }
-        
-        return KGGlobalConfig.userAgent ?? ""
-    }
-    
-    var getCachePolicy: URLRequest.CachePolicy {
-        if let policy = cachePolicy {
-            return policy
-        }
-        
-        return KGGlobalConfig.cachePolicy
-    }
-    
-    var getTimeoutInterval: TimeInterval {
-        if let interval = timeoutInterval {
-            return interval
-        }
-        
-        return KGGlobalConfig.timeoutInterval
-    }
-    
+    public var barFrontColor: UIColor = KGGlobalConfig.barFrontColor
     
 }

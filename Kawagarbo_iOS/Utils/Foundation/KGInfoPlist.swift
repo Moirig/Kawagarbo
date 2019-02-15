@@ -7,16 +7,20 @@
 
 import UIKit
 
-let InfoPlist: [String: Any] = Bundle.main.infoDictionary ?? [:]
-
 struct KGInfoPlist {
     
+    static let shared: [String: Any] = Bundle.main.infoDictionary ?? [:]
+    
     static var appName: String {
-        return InfoPlist["CFBundleDisplayName"] as? String ?? ""
+        return KGInfoPlist.shared["CFBundleDisplayName"] as? String ?? ""
     }
     
     static var appVersion: String {
-        return InfoPlist["CFBundleShortVersionString"] as? String ?? ""
+        return KGInfoPlist.shared["CFBundleShortVersionString"] as? String ?? ""
     }
-
+    
+    static var baseStatusBarAppearance: Bool {
+        return KGInfoPlist.shared["UIViewControllerBasedStatusBarAppearance"] as? Bool ?? false
+    }
+    
 }

@@ -21,10 +21,28 @@ class KGTitleView: UIView {
     
     var isShowLoading: Bool {
         get {
-            return activityIndicator.isAnimating
+            return activityIndicator?.isAnimating ?? false
         }
         set {
-            newValue ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+            if newValue {
+                addActivityIndicator()
+            }
+            else {
+                removeActivityIndicator()
+            }
+        }
+    }
+    
+    override var tintColor: UIColor! {
+        get {
+            return titleLabel.textColor
+        }
+        set {
+            titleLabel.textColor = newValue
+            if let indicator = activityIndicator, indicator.isAnimating {
+                removeActivityIndicator()
+                addActivityIndicator()
+            }
         }
     }
     
@@ -37,11 +55,7 @@ class KGTitleView: UIView {
         return label
     }()
     
-    lazy var activityIndicator: UIActivityIndicatorView = {
-        let juhua = UIActivityIndicatorView(style: .gray)
-        juhua.hidesWhenStopped = true
-        return juhua
-    }()
+    var activityIndicator: UIActivityIndicatorView?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,7 +69,6 @@ class KGTitleView: UIView {
     
     func setUI() {
         addSubview(titleLabel)
-        addSubview(activityIndicator)
     }
     
     override func layoutSubviews() {
@@ -63,8 +76,24 @@ class KGTitleView: UIView {
         titleLabel.kg.fitWidth()
         titleLabel.center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
         
-        activityIndicator.center = CGPoint(x: titleLabel.frame.minX - 15, y: bounds.height / 2)
+        activityIndicator?.center = CGPoint(x: titleLabel.frame.minX - 15, y: bounds.height / 2)
     }
+    
+    func addActivityIndicator() {
+        activityIndicator = tintColor == UIColor(hexString: "#ffffff") ? UIActivityIndicatorView(style: .white) : UIActivityIndicatorView(style: .gray)
+        activityIndicator!.hidesWhenStopped = true
+        activityIndicator!.startAnimating()
+        activityIndicator!.tintColor = tintColor
+        addSubview(activityIndicator!)
+    }
+    
+    func removeActivityIndicator() {
+        activityIndicator?.stopAnimating()
+        activityIndicator?.removeFromSuperview()
+        activityIndicator = nil
+    }
+    
+    
     
 }
 

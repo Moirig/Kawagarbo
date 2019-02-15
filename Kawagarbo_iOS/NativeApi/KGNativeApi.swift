@@ -50,6 +50,7 @@ public class KGNativeApi: NSObject {
         
         KGShowNavigationBarLoadingApi().regist()
         KGSetNavigationBarTitleApi().regist()
+        KGSetNavigationBarColorApi().regist()
         KGHideNavigationBarLoadingApi().regist()
     }
     

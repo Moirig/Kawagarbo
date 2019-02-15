@@ -19,8 +19,8 @@ public class KGWebRoute: NSObject {
     public var config: KGConfig! {
         get { return KGConfig() }
         set {
-            urlRequest?.cachePolicy = newValue.getCachePolicy
-            urlRequest?.timeoutInterval = newValue.getTimeoutInterval
+            urlRequest?.cachePolicy = newValue.cachePolicy
+            urlRequest?.timeoutInterval = newValue.timeoutInterval
         }
     }
     

@@ -25,10 +25,10 @@ public class KGWKWebView: WKWebView {
     public var config: KGConfig! {
         get { return KGConfig() }
         set {
-            progressView.progressTintColor = newValue.getProgressTintColor
+            progressView.progressTintColor = newValue.progressTintColor
             
             if #available(iOS 9.0, *) {
-                customUserAgent = KGWKWebView.originalUserAgent + newValue.getUserAgent
+                customUserAgent = KGWKWebView.originalUserAgent + newValue.userAgent
             }
         }
     }

@@ -11,15 +11,11 @@ import WebKit
 
 public class KGWebViewController: UIViewController {
     
-    public typealias KGWebCallback = (_ path: String, _ data: [String: Any]?, _ error: NSError?) -> Void
-    
     public lazy var config: KGConfig = {
         let config = KGConfig()
         
         return config
     }()
-    
-    public weak var webView: KGWKWebView?
     
     public var nativeApiManager: KGNativeApiManager? {
         return webView?.nativeApiManager
@@ -31,13 +27,16 @@ public class KGWebViewController: UIViewController {
     
     public static var delegate: KGWebViewControllerDelegate?
     
-    public var callback: KGWebCallback?
-    
     public var userInfo: [String: Any]?
+
+    var originUI = KGWebVCUI()
+    var currentUI = KGWebVCUI()
     
     lazy var titleView: KGTitleView = {
         return KGTitleView(frame: CGRect(x: 0, y: 0, width: UIScreen.kg.width - 140, height: 44))
     }()
+    
+    public weak var webView: KGWKWebView?
     
     deinit {
         KGLog(title: "Deinit", self)
@@ -61,6 +60,7 @@ public class KGWebViewController: UIViewController {
         super.viewDidLoad()
         KGLog(title: "ViewDidLoad", self)
         
+        storeOriginUI()
         navigationItem.titleView = titleView
         view.backgroundColor = UIColor.white
         webRoute?.config = config
@@ -70,7 +70,7 @@ public class KGWebViewController: UIViewController {
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        changeToCurrentUI()
         if webView?.url == nil || webView?.url?.absoluteString == "about:blank" {
             setup()
         }
@@ -83,7 +83,7 @@ public class KGWebViewController: UIViewController {
     
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        resetToOriginUI()
     }
     
     override public func viewDidDisappear(_ animated: Bool) {
@@ -122,7 +122,7 @@ extension KGWebViewController {
         
         nativeApiManager?.webViewController = self
 
-        if config.isInjectDynamically == false {
+        if config.injectDynamically == false {
             nativeApiManager?.injectApis()
         }
     }
@@ -167,6 +167,32 @@ extension KGWebViewController {
         
     }
     
+    func storeOriginUI() {
+        originUI.navigationBar.frontColor = config.barFrontColor
+        originUI.navigationBar.backgroundColor = config.barBackgroundColor
+        
+        currentUI.navigationBar.frontColor = config.barFrontColor
+        currentUI.navigationBar.backgroundColor = config.barBackgroundColor
+    }
+    
+    func changeToCurrentUI() {
+        if let bar = navigationController?.navigationBar {
+            bar.tintColor = currentUI.navigationBar.frontColor
+            bar.barTintColor = currentUI.navigationBar.backgroundColor
+            titleView.tintColor = currentUI.navigationBar.frontColor
+            UIApplication.shared.statusBarStyle = currentUI.navigationBar.frontColor == UIColor(hexString: "#ffffff") ? .lightContent : .default
+        }
+    }
+    
+    func resetToOriginUI() {
+        if let bar = navigationController?.navigationBar {
+            bar.tintColor = originUI.navigationBar.frontColor
+            bar.barTintColor = originUI.navigationBar.backgroundColor
+            titleView.tintColor = originUI.navigationBar.frontColor
+            UIApplication.shared.statusBarStyle = originUI.navigationBar.frontColor == UIColor(hexString: "#ffffff") ? .lightContent : .default
+        }
+    }
+    
 }
 
 
@@ -207,7 +233,7 @@ extension KGWebViewController: KGWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: KGWKWebView) {
         
-        if !config.isInjectDynamically {
+        if config.injectDynamically == false {
             onReady()
         }
         

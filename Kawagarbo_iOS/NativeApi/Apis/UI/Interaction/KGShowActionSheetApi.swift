@@ -17,7 +17,7 @@ class KGShowActionSheetApi: KGNativeApi, KGNativeApiDelegate {
         let cancelText = (parameters?["cancelText"] as? String) ?? "取消"
         let cancelColor = (parameters?["cancelColor"] as? String) ?? "#000000"
 
-        guard let itemList = parameters?["itemList"] as? [String], itemList.count > 0 else { return complete(.failure(code: kParamCodeDefaultFail, message: "fail parameter error: parameter.itemList should have at least 1 item")) }
+        guard let itemList = parameters?["itemList"] as? [String], itemList.count > 0 else { return complete(.failure(code: kParamCodeDefaultFail, message: "fail parameter error: parameter.itemList should have at least 1 item;")) }
 
         let itemColor = (parameters?["itemColor"] as? String) ?? "#000000"
         

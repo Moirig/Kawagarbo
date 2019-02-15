@@ -20,4 +20,8 @@ public struct KGGlobalConfig {
     
     public static var progressTintColor: UIColor = UIColor(red:0.59, green:0.78, blue:0.45, alpha:1.00)
 
+    public static var barBackgroundColor: UIColor = UIColor(hexString: "#ffffff")!
+    
+    public static var barFrontColor: UIColor = UIColor(hexString: "#000000")!
+    
 }

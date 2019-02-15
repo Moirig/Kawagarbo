@@ -19,6 +19,7 @@
 		35E974A87B4E16AE1577C3D804470F7B /* Pods-Kawagarbo_iOS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CC835985FF701600236AEF6E8185505 /* Pods-Kawagarbo_iOS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		397DF6579DDE84F5DC875AD888EC33FE /* UIScreen+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FD3955958029FBE5A770D1ED23959 /* UIScreen+Kawagarbo.swift */; };
 		3B3DB6E722156B2100336DDC /* UILabel+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3DB6E622156B2100336DDC /* UILabel+Kawagarbo.swift */; };
+		3B3DB7032216503E00336DDC /* KGWebVCUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3DB7022216503E00336DDC /* KGWebVCUI.swift */; };
 		401EE1B28AD52FCA9A3A607402007001 /* KGRedirectToApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFE9C366F0939F7F89A227A82F9541 /* KGRedirectToApi.swift */; };
 		443010426F27E2D5818D9AD8D8D15CAC /* UIAlertAction+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05BBB3A055B35585D17E907A86123EB /* UIAlertAction+Kawagarbo.swift */; };
 		488A763DB68A7BD1B76CC04EC56686D9 /* KGNativeApiConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79075B577D9F310E38C8DA645D864986 /* KGNativeApiConst.swift */; };
@@ -140,6 +141,7 @@
 		38D76CD1F1285F4075D93E5926C4913E /* KGNavigateBackApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGNavigateBackApi.swift; sourceTree = "<group>"; };
 		393FD3955958029FBE5A770D1ED23959 /* UIScreen+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIScreen+Kawagarbo.swift"; sourceTree = "<group>"; };
 		3B3DB6E622156B2100336DDC /* UILabel+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Kawagarbo.swift"; sourceTree = "<group>"; };
+		3B3DB7022216503E00336DDC /* KGWebVCUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGWebVCUI.swift; sourceTree = "<group>"; };
 		3D724D4A52B1B26A591A76FFADAA633E /* KGSetNavigationBarColorApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSetNavigationBarColorApi.swift; sourceTree = "<group>"; };
 		443AC3701D67C13B20E52DD5EEC1F676 /* Kawagarbo_iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kawagarbo_iOS.xcconfig; sourceTree = "<group>"; };
 		44844F7CCEDEAA8262ED14AEBBC685CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -537,6 +539,7 @@
 			children = (
 				5C740A0C30CA74B5F2C22AED94BE9659 /* KGConfig.swift */,
 				8A746361C230D14704514F75CB5A1251 /* KGGlobalConfig.swift */,
+				3B3DB7022216503E00336DDC /* KGWebVCUI.swift */,
 			);
 			name = Config;
 			path = Kawagarbo_iOS/Config;
@@ -888,6 +891,7 @@
 				C2426953B1D85790420EDDA6DBFFFA31 /* UIDevice+Kawagarbo.swift in Sources */,
 				397DF6579DDE84F5DC875AD888EC33FE /* UIScreen+Kawagarbo.swift in Sources */,
 				C8F92958C489E6390DED938C1ADF39C1 /* URLProtocol+Kawagarbo.swift in Sources */,
+				3B3DB7032216503E00336DDC /* KGWebVCUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

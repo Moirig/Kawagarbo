@@ -248,6 +248,10 @@
         wx.invokeHandler('setNavigationBarTitle', object)
     }
 
+    wx.setNavigationBarColor = function (object) {
+        wx.invokeHandler('setNavigationBarColor', object)
+    }
+
     wx.hideNavigationBarLoading = function(object) {
         wx.invokeHandler('hideNavigationBarLoading', object)
     }
