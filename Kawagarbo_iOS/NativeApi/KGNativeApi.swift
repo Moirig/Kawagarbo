@@ -56,6 +56,7 @@ public class KGNativeApi: NSObject {
         KGShowTabBarApi().regist()
         KGHideTabBarApi().regist()
         KGSetTabBarStyleApi().regist()
+        KGSetTabBarItemApi().regist()
     }
     
 }

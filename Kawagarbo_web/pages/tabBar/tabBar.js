@@ -38,3 +38,12 @@ function resetTabBarStyle() {
         borderStyle: 'black'
     })
 }
+
+function setTabBarItem() {
+    wx.setTabBarItem({
+        index: 0,
+        text: 'aaaa',
+        iconPath: 'home_n.png',
+        selectedIconPath: 'home_s.png'
+    })
+}

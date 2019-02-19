@@ -276,4 +276,14 @@
         wx.invokeHandler('setTabBarStyle', object)
     }
 
+    wx.setTabBarItem = function (object) {
+        if (object.iconPath) {
+            object.iconPath = _toAbsURL(object.iconPath)
+        }
+        if (object.selectedIconPath) {
+            object.selectedIconPath = _toAbsURL(object.selectedIconPath)
+        }
+        wx.invokeHandler('setTabBarItem', object)
+    }
+
 })();

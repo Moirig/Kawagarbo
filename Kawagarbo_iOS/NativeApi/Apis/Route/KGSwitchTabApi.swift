@@ -15,7 +15,7 @@ class KGSwitchTabApi: KGNativeApi, KGNativeApiDelegate {
 
         guard var index = parameters?["index"] as? Int else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid delta!")) }
         
-        guard let tabBarController = webViewController?.navigationController?.tabBarController, let count = tabBarController.viewControllers?.count else { return complete(.failure(code: kParamCodeDefaultFail, message: "Can not switchTab!")) }
+        guard let tabBarController = webViewController?.navigationController?.tabBarController, let count = tabBarController.viewControllers?.count else { return complete(.failure(code: kParamCodeDefaultFail, message: "no tabbar;")) }
         if index < 0 { index = 0 }
         if index > count - 1 { index = count - 1 }
         
