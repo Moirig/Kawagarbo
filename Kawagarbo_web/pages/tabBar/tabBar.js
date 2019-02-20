@@ -47,3 +47,28 @@ function setTabBarItem() {
         selectedIconPath: 'home_s.png'
     })
 }
+
+function showTabBarRedDot() {
+    wx.showTabBarRedDot({
+        index: 0
+    })
+}
+
+function setTabBarBadge() {
+    wx.setTabBarBadge({
+        index: 0,
+        text: '1234'
+    })
+}
+
+function hideTabBarRedDot() {
+    wx.hideTabBarRedDot({
+        index: 0
+    })
+}
+
+function removeTabBarBadge() {
+    wx.removeTabBarBadge({
+        index: 0
+    })
+}

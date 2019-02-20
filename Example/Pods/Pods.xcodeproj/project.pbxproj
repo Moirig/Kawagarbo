@@ -7,83 +7,88 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0366C14C2CE2A65D2B9ABE7D8A08905A /* KGWebViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA687AE1B1DB11A0FFBF047A2624F9A /* KGWebViewControllerDelegate.swift */; };
-		0565DBBBA476B1DF0E74370DE1589D16 /* Bundle+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AFE8EA2F2012107BE144EE09B73E2D /* Bundle+Kawagarbo.swift */; };
-		06AFEBB9A338A5FBEBE2E2EA0ACFA9EF /* KGSystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163B3905E4D210928FD4DC8B7A2BA107 /* KGSystemInfo.swift */; };
-		0981A9933106D70153DB71BAEFDD09A3 /* UIColor+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C312367CA2B072FDDB4FDBE7EF276E /* UIColor+Kawagarbo.swift */; };
-		0C8B8D9948AD08D9D64F198F14130476 /* KGShowModalApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448A1FBCEDBDBCC60E507435F5D24CC5 /* KGShowModalApi.swift */; };
-		0EB06106AF53E2CC26DC87D31252807F /* KGSetTabBarStyleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F5B358ABF5D2E43722E3555E9501F2 /* KGSetTabBarStyleApi.swift */; };
-		122F94BCDFBD26887E925DBAF0B1031B /* KGNativeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36082C957C956E11AD25E5BEE6E71FC1 /* KGNativeApi.swift */; };
-		133593B9F0A25EBE8C8EF23399B9D879 /* KGShowActionSheetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DCEB8898A161FC0EFC9B0D00BE35A0 /* KGShowActionSheetApi.swift */; };
-		157D3058C10F38274617C78EDB8262D8 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A0B557DDBD4E64A351CE7CB8CC4F9C /* MBProgressHUD-dummy.m */; };
-		17272F191D0F9F03F7072930671EC1DE /* KGWebVCUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6390F88DBDCC7986D9C37C7C282F0982 /* KGWebVCUI.swift */; };
-		196795C29C8CC47A26A10FFFD832DB71 /* UIScreen+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256FCA01B9354449000C670934FB6863 /* UIScreen+Kawagarbo.swift */; };
-		1BB5691A155FF6C085E627BF6CEA3820 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44844F7CCEDEAA8262ED14AEBBC685CB /* Foundation.framework */; };
-		208A1FDDB1B96DEBD91DB9319B80B821 /* KGSetTabBarItemApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D864E1E4F4831D97473563CC294394C /* KGSetTabBarItemApi.swift */; };
-		212D8B6264BBD8FD9F0BFF768F1C465F /* KGBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BCB6BBA71140B64A1A0B7BFE1217C /* KGBluetoothManager.swift */; };
-		21326181F332655F1B409A177D85F7FE /* KGSetNavigationBarColorApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F9875DB43903B4CB57DCAA56F6CB4 /* KGSetNavigationBarColorApi.swift */; };
-		22B094447A56873933AB11FB3461759A /* Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DADF37F01E3A4B7384C6BC52B90F7F /* Kawagarbo.swift */; };
-		29D0ED786DDBA6F01DA2E1B8567293E4 /* KGGlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3080747D372EEAA47F3B062A97714C /* KGGlobalConfig.swift */; };
-		2B45F190CB2EBC2ABFA3416792DBEBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44844F7CCEDEAA8262ED14AEBBC685CB /* Foundation.framework */; };
-		2D0165B7FC239221C888FDE6353BC3CD /* Data+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4893FF71796F674994897D18356C0 /* Data+Kawagarbo.swift */; };
+		00DA8229BC5350653AEA5BCF2F6222F4 /* KGSwitchTabApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41CD061740FE75EBF647FF00152F7A5 /* KGSwitchTabApi.swift */; };
+		069B26023C20E358DE22F0E9EAAEF42B /* URLProtocol+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F34C90EA963699CF16E08E350F1EA /* URLProtocol+Kawagarbo.swift */; };
+		122865F682F45D3553602420E31D669B /* UIApplication+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8BEB609D518EA4A587B74B6884B663 /* UIApplication+Kawagarbo.swift */; };
+		16179DBA859DC3F1BF7D0AA6535AA46A /* KGWebViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA687AE1B1DB11A0FFBF047A2624F9A /* KGWebViewControllerDelegate.swift */; };
+		19A0678BDAAF4EB8F9C8B5D98AC52BB6 /* KGRedirectToApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFA7988ACC802F0B7365C161EAADC63 /* KGRedirectToApi.swift */; };
+		1A79D5D4EB8419233D06AC1B536ADF9F /* Kawagarbo_iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BB3EC1CAEA5EF004213548C9D53D491 /* Kawagarbo_iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FA4E4373CE932B4E9700FD9F650F3BB /* KGNativeApiConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64807967E9A36A06DF12351D9061361 /* KGNativeApiConst.swift */; };
+		217C5ACE62ADF23E5DAB34A71B77494F /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A0B557DDBD4E64A351CE7CB8CC4F9C /* MBProgressHUD-dummy.m */; };
+		22109FA0A37CE39851EEDA96D04AFBDD /* MBProgressHUD+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08860128CB6E722663DDBB8D9D623386 /* MBProgressHUD+Kawagarbo.swift */; };
+		233BD0A0E6528BEDD39C3B1985A497E2 /* Kawagarbo_iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C63E7A9F47CCB3FC734EEF0538265B /* Kawagarbo_iOS-dummy.m */; };
+		2C46996F9DD15724161E3E94540074FB /* KGBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C78162429C1571D4BBC0F0E9B774E9 /* KGBluetoothManager.swift */; };
+		332B61C050167699F824F298171BB955 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34895AC8CC84250F50B0D6F7FBF8D2B6 /* QuartzCore.framework */; };
+		3360C5CEF6B0B9FC52FBBF1D97A8734B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA56DA9FD5D297A7EF9F7BC33896BE3C /* CoreGraphics.framework */; };
+		35DF2A53A8E1A25C7ECD407C4EC336D1 /* KGWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2159A9E4C73C4CF75FC54E6DEF246D5 /* KGWebViewDelegate.swift */; };
 		35E974A87B4E16AE1577C3D804470F7B /* Pods-Kawagarbo_iOS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CC835985FF701600236AEF6E8185505 /* Pods-Kawagarbo_iOS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B0AC1C5221BAB7E004DF68D /* UIImage+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AC1C4221BAB7E004DF68D /* UIImage+Kawagarbo.swift */; };
-		40DC5CF3A442E4D88530F12A9CC8EACF /* UIAlertAction+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A04FB0DCB2C4FC9E1CB7D86BB4F212 /* UIAlertAction+Kawagarbo.swift */; };
-		41C0DDAD7CB85F591994F9D8A33D4F58 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 942444D00A2AA57EDA483C649CE039DC /* images */; };
-		43BBDCCAAD0700B70E9F446807B342AC /* KGIframeIntercept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49513737A62F699E1102A99EE1F45B08 /* KGIframeIntercept.swift */; };
-		44D9AAAA4261396BE72DE888D0264BE3 /* KGWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5F892A59E5B1BCE71F673D9DA7B4A1 /* KGWKWebView.swift */; };
-		47AFAA0D33E6E5BD504B88BDD52E2882 /* FileManager+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A280201C9856F0D5081B2641B51C87F /* FileManager+Kawagarbo.swift */; };
-		4E9E08B4974D46749DE7F036F9D78494 /* UIDevice+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DF5D10CFE6A1AD48249440FAF4207 /* UIDevice+Kawagarbo.swift */; };
+		397E9A486573314A04A4DBB6F8F90D22 /* Dictionary+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD14E77F7C3957F7CAC2A81164AC99 /* Dictionary+Kawagarbo.swift */; };
+		3C1964E37F082CE92C55539C529B9D2E /* KGGetSystemInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC9FF9BA7996C356F041206702D5D4 /* KGGetSystemInfoApi.swift */; };
+		3C837FE309C6C59DBD0F264E1241F984 /* KGSetTabBarStyleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35DCB1CCA10F295F267006BDCA5952 /* KGSetTabBarStyleApi.swift */; };
+		4020E32A3FECB389FC785858DD4266F5 /* KGHideToastApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E4C1B193539BE284C54936E1D6742 /* KGHideToastApi.swift */; };
+		407361074926392E073E8BD81BF7D655 /* KGHideTabBarApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415829633C7F0683A09A704EC626763D /* KGHideTabBarApi.swift */; };
+		45964BB549BCC32991DF942EF8588D5C /* Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DADF37F01E3A4B7384C6BC52B90F7F /* Kawagarbo.swift */; };
+		48257270CCCE55A0A2847B2CE201DBCE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC88E9BB2DAE98E2B831183A06BFB8C /* MBProgressHUD.m */; };
+		4C98A2E696193545B33D8824EC63BDC7 /* KGShowNavigationBarLoadingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC1DB5BAC8E3A6ABAD155A8E03FA75 /* KGShowNavigationBarLoadingApi.swift */; };
+		4DB90011308D0A4DBF1AEEA16EFEDDA6 /* MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 64C4B198239A8F470DC15789F73A858A /* MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FEA2CE1577A1714874EE3012AE2F8FC /* KGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B69029195EA0226C691D99A45DED6 /* KGWebViewController.swift */; };
 		50B25E2C1E6FA8B626E30D42B8E0E8C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44844F7CCEDEAA8262ED14AEBBC685CB /* Foundation.framework */; };
-		55F97CEEA465CF0C1A60D03AE7D63932 /* KGNavigateBackApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E49BFBC6AE58269E9FBA993E746DCFD /* KGNavigateBackApi.swift */; };
-		5962A170B86D2F0E5338405EB2F7F234 /* KGNativeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84656539EDC2AFBC87CFE0A3566C2BB3 /* KGNativeApiManager.swift */; };
-		5DFF6ABA4F79B6B4EC93DD9E58F2037F /* KGHideNavigationBarLoadingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3406E2CE2F6F082DB3906E9BC4DE970 /* KGHideNavigationBarLoadingApi.swift */; };
-		5F9FDEC0E9E1D7DF943DF1ABB1882F77 /* KGConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F00A248B63F528E867D760EECABC0AB /* KGConfig.swift */; };
+		55440A6E287F2283766D9F1CBD5EC373 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44844F7CCEDEAA8262ED14AEBBC685CB /* Foundation.framework */; };
+		593DEEDFD5151427F33226843F1AB140 /* KGShowModalApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55CC477CFCDBCCA52233B117449DC48 /* KGShowModalApi.swift */; };
+		5F729BD581F3C32C8DEC062BB8E4C392 /* KGTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA71EF9D16AD4414CD78FC169709D49 /* KGTitleView.swift */; };
+		60FA247CE40E88846E5E2CFF78B7340C /* KGNativeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84656539EDC2AFBC87CFE0A3566C2BB3 /* KGNativeApiManager.swift */; };
 		6BCBAE81909728F6579FA51F528B068C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44844F7CCEDEAA8262ED14AEBBC685CB /* Foundation.framework */; };
-		6E45331E142E6244C2B2D88DFD577A57 /* KGAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED09199DD66D7A2E507B9184DF7F5BE8 /* KGAlertView.swift */; };
-		6F6F82A5546C4FB99583119B8AD95FD3 /* KGHideLoadingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84DE6C6C4755848C8103569DEC3B4E /* KGHideLoadingApi.swift */; };
-		7230D0CC9A945BA8099839595DA89CF0 /* KGSetNavigationBarTitleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BC8C4E1E2EC84110528CE6AEA4D187 /* KGSetNavigationBarTitleApi.swift */; };
-		7465A3BCDABEA07676A80497A013D201 /* KGNativeApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529223589EB9D76E8064E3F1F73A86C8 /* KGNativeApiResponse.swift */; };
-		75976E0FB4D5804695382F2DF049E990 /* MBProgressHUD+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F901EADA6B2B791A8BEE797CED658F8 /* MBProgressHUD+Kawagarbo.swift */; };
-		788C4BEF5DC051521A653799E15A7F70 /* Kawagarbo_iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BB3EC1CAEA5EF004213548C9D53D491 /* Kawagarbo_iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		79BFEF6E66F8E22721680F9818DF3D9E /* KGLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902ECA780610CBF94DE6BF35B2038A3 /* KGLog.swift */; };
-		7C6E2D0507F3C9E29236F6F695B3E7BD /* KGShowTabBarApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2A30663562B1BDE69699DB93C9867 /* KGShowTabBarApi.swift */; };
-		848F7FD680D21E72CAFB8A288F8308D6 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = EA7EF56646DB1B2F653740B0FB77850B /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84E4FC63A99045797297E22557548292 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA56DA9FD5D297A7EF9F7BC33896BE3C /* CoreGraphics.framework */; };
+		711C73A9BDC050DC980643F06495B64D /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F16CB7A1F93EA63362E3B8C5400E9B /* MBProgressHUD.framework */; };
+		716FA5C6D82C3169703F16B061931A33 /* KGHideLoadingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5EBF835282AF227F1E26B8E9931ED /* KGHideLoadingApi.swift */; };
+		78BB9193CC00CCFBAD064995B6169E8B /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = EA7EF56646DB1B2F653740B0FB77850B /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78BF5916EA6A08827B2BEF2E4968AA12 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 942444D00A2AA57EDA483C649CE039DC /* images */; };
+		7E2662D9F9269F8DA680D456DDC613F2 /* UIImage+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6199662B1ED1CFD1381742B8299DB0C0 /* UIImage+Kawagarbo.swift */; };
+		7F6C0514104DB54E36D025FE405F7A68 /* KGSystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5987AAD1064B5A8381943A01F672FAC8 /* KGSystemInfo.swift */; };
+		825C99FC56F624087722EFD9B2B7D2C3 /* UILabel+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3814413E0CA916EEA4A94E4D8B5167AB /* UILabel+Kawagarbo.swift */; };
+		840E64D037086763CD6B3B732A81C74E /* KGShowTabBarRedDotApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018646582C454849D44CD2F25251FBA1 /* KGShowTabBarRedDotApi.swift */; };
 		863B9CA567E1909C5F213905DB83C3A5 /* Pods-Kawagarbo_iOS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5366DBC503A825C472D6BE9D27D4E70F /* Pods-Kawagarbo_iOS_Tests-dummy.m */; };
-		87C6BC272EC0C33D5AAD1587C2326949 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC88E9BB2DAE98E2B831183A06BFB8C /* MBProgressHUD.m */; };
-		8C2BCFA9975BA1D12D9B831C312D52F6 /* KGHideTabBarApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4AB7B6E6FEED22BC765C5CC6BF5AD0 /* KGHideTabBarApi.swift */; };
-		8C3273F9BEF6EEBC2547EFF15B43B121 /* MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 64C4B198239A8F470DC15789F73A858A /* MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		999F464BFE2115101EC7E3C24694C66D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34895AC8CC84250F50B0D6F7FBF8D2B6 /* QuartzCore.framework */; };
-		9B1B43495366E51500DF29ACB05ADC0C /* Kawagarbo_iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C63E7A9F47CCB3FC734EEF0538265B /* Kawagarbo_iOS-dummy.m */; };
-		9B7D439059B2B15086CA5CBBC6E9E577 /* UIApplication+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02F58EFEED2B73D97D0F3348F2E3A5 /* UIApplication+Kawagarbo.swift */; };
-		9BE2DBB0E669328613504F44FFF6D8B2 /* URLProtocol+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765693D769FF056AB109BEDCBE8462FF /* URLProtocol+Kawagarbo.swift */; };
-		9D7D8BD8425DF2AA62CA44B763B95582 /* KGCanIUseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F3B80B1A69C2C3DBA4DB80A1B2F9B /* KGCanIUseApi.swift */; };
-		A212ED463C1539F43208DBC728A3DC3D /* KGNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564F70D97196794F5915B6D7946C337 /* KGNamespace.swift */; };
-		A6068AE2F9D33AB2B46CC61A0DCC5061 /* KGTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E338132ACF9141BA3C335EAFB99A4 /* KGTitleView.swift */; };
-		A7BDE8AEA580FC7E014F6DCC5CC95866 /* KGWebRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BCA64FE4431AA5944BA3547F9852C /* KGWebRoute.swift */; };
-		A92536AFB7210ACD425D7D6F270818C3 /* KGNavigateToApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E1956344C5934E7947283E5D61C911 /* KGNavigateToApi.swift */; };
-		AA2A88FD0E7B25BB25BE50A366486F3B /* KGWebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E4CEE6F1C59E18446294743D590AD /* KGWebViewManager.swift */; };
-		AD89DF484921AF5E0F33DD1B19F119C9 /* Kawagarbo_iOS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93CC7CA7DF090EFEC1082057E74924AD /* Kawagarbo_iOS.bundle */; };
-		B4872002D8EE40DED694A1CADE2BA9A2 /* KGHideToastApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51B0EAE4AC9BCFE4A2193EA8F8DE14 /* KGHideToastApi.swift */; };
-		B875795D327173B60B70949884B98773 /* KGInfoPlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44032B657E4E4AD81E6EB3C5240A1B /* KGInfoPlist.swift */; };
-		BC64EBB2876B6BFBF2812E8FFE2B09EB /* Dictionary+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424E8221DF2C69AC953A31C21D9524E1 /* Dictionary+Kawagarbo.swift */; };
-		BFC3716DC8F17A3EAC208A6E5CED4C19 /* UILabel+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7574267DBEE6920233A4A52B7D92774 /* UILabel+Kawagarbo.swift */; };
-		D2E3EA0113AF2CC2DF046E319FC02A57 /* KGShowToastApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F644903A0401F3E313535BFFE2516E /* KGShowToastApi.swift */; };
-		D3466913CE7E9CB03ED4767B03AF5E84 /* KGSwitchTabApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41CD061740FE75EBF647FF00152F7A5 /* KGSwitchTabApi.swift */; };
-		D528FFF7C2A1B1173438037D66D3B354 /* KGRedirectToApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFA7988ACC802F0B7365C161EAADC63 /* KGRedirectToApi.swift */; };
-		D60AE81978CD7DFF63756DB505A0B3EB /* KGShowNavigationBarLoadingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E798595AC89EE78F9B418CEB4A6EE0F /* KGShowNavigationBarLoadingApi.swift */; };
+		8D54F1BF707DEBAFBC79CE0C52517BDE /* KGCanIUseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F3B80B1A69C2C3DBA4DB80A1B2F9B /* KGCanIUseApi.swift */; };
+		8DC41D48C77B82FE086D708365AF359B /* KGWebRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BCA64FE4431AA5944BA3547F9852C /* KGWebRoute.swift */; };
+		903F957C6B1EBCAC773BA5ECAE56B718 /* KGShowActionSheetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4D0BF23487BC58A3B934F9AB33D39 /* KGShowActionSheetApi.swift */; };
+		90859712795036D6BD16545E6472DAC5 /* KGScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34DABBC8237CAAEEB9E19521E8570C2 /* KGScriptMessageHandler.swift */; };
+		92EDE801246CB68BC71DC56356EEBF98 /* KGIframeIntercept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49513737A62F699E1102A99EE1F45B08 /* KGIframeIntercept.swift */; };
+		9BF811061678918675CBC519FD33A6DD /* KGShowTabBarApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF98198740EC0865015FE811E581545 /* KGShowTabBarApi.swift */; };
+		9C5697E5197A7DDE64BB021B2F0DB397 /* UIColor+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EFD618095AD35849D5965FA1B127DC /* UIColor+Kawagarbo.swift */; };
+		A15F88B6FEBB65D18B97F6C045AA2211 /* KGReLaunchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56DF1B9ACE617869FC574207C94E1EF /* KGReLaunchApi.swift */; };
+		A8E0F954A44D7463F0ECA792B721192B /* UIAlertAction+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C840B27834C4E54CD6B84CFC9CAF4919 /* UIAlertAction+Kawagarbo.swift */; };
+		AA017A5B8BAEE1C41AB179FF0DAFC69E /* KGNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00262925FB966E26FD51B2A70A5A3356 /* KGNamespace.swift */; };
+		AB880E97463789CBA85ADA0DE35B8A0E /* KGConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F00A248B63F528E867D760EECABC0AB /* KGConfig.swift */; };
+		B07AE4375A83150D075306BE7C761C35 /* KGSetNavigationBarTitleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E63EA5AC53F332818B1ABE9EE6540 /* KGSetNavigationBarTitleApi.swift */; };
+		B41C774960F3DABEAAD2FD484FA6EE8F /* FileManager+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF2222CD6768D006F220EB694584FE5 /* FileManager+Kawagarbo.swift */; };
+		B607736EE9E4353123BC204C5DC2D01A /* String+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0D0A82F17177D8766D63E4C14CD82 /* String+Kawagarbo.swift */; };
+		B6A18EEDF019B9B055ABF9D9AE007E4D /* KGSetNavigationBarColorApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A882450D2647EADB58999DAA3DFF39 /* KGSetNavigationBarColorApi.swift */; };
+		B6F1C51B0C668DDB9950B4395C0FCACE /* Kawagarbo_iOS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93CC7CA7DF090EFEC1082057E74924AD /* Kawagarbo_iOS.bundle */; };
+		BD06442C69E1FBF546F2DB728415F6B2 /* KGSetTabBarItemApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3226B023E77402A2F4BBD32EB3458 /* KGSetTabBarItemApi.swift */; };
+		BE649BCCBE45146E937F6E03E52FFD5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44844F7CCEDEAA8262ED14AEBBC685CB /* Foundation.framework */; };
+		C1AAB33BF7B8C7FBB0DA257A2AA78362 /* KGNavigateBackApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E49BFBC6AE58269E9FBA993E746DCFD /* KGNavigateBackApi.swift */; };
+		C42AFEE4425CDD22A372D6EC6FBF32AC /* KGWebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E4CEE6F1C59E18446294743D590AD /* KGWebViewManager.swift */; };
+		C74C396EDD5A408A48B09F6E271569AB /* KGShowToastApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD26A4BBFBAA11072FF9565B4636FB77 /* KGShowToastApi.swift */; };
+		C95530493782180C9DA51DC1B4D1EC19 /* KGInfoPlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406DA638B88CFE925FEB65923CCFD68 /* KGInfoPlist.swift */; };
+		CB139323E612F042219309E02B9A99A1 /* Bundle+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024A1761085405562BA6F06D5DDA588F /* Bundle+Kawagarbo.swift */; };
+		CCFAAC10299ED8F4BDD738AE3011132F /* UIScreen+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E196C332903B3263369496A2DEA471F6 /* UIScreen+Kawagarbo.swift */; };
+		CFEE6EA31593035636396AE402F17047 /* KGGlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3080747D372EEAA47F3B062A97714C /* KGGlobalConfig.swift */; };
+		D2A824872EF2E4CBD91D9339F0094655 /* KGWebVCUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6390F88DBDCC7986D9C37C7C282F0982 /* KGWebVCUI.swift */; };
+		D5B3C5F7F157D46E10073E2755FA5950 /* KGLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB8428BCC9FFC7BBC6C301F1C782B17 /* KGLog.swift */; };
+		D622D7DC0070370C3A9AC476B026F49A /* UITabBar+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0FA91B7D8AE7D038C93F298F20FD9 /* UITabBar+Kawagarbo.swift */; };
+		D6687B9A5378B12700AB75F265B072F9 /* KGNavigateToApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E1956344C5934E7947283E5D61C911 /* KGNavigateToApi.swift */; };
 		D6F8943DF2B067BEFA1E169E1AA308C8 /* Pods-Kawagarbo_iOS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E6ADC6350A1F82E9B927D4BBB524C2 /* Pods-Kawagarbo_iOS_Example-dummy.m */; };
-		DB11B6FB370256E24DB444DFDDB62B2D /* KGReLaunchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56DF1B9ACE617869FC574207C94E1EF /* KGReLaunchApi.swift */; };
-		E002165679AA42D977D57920AEEDB24A /* KGNativeApiConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64807967E9A36A06DF12351D9061361 /* KGNativeApiConst.swift */; };
-		E3EE7BEF46CECFBC29C319EAAC2CFDA8 /* KGShowLoadingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9962E872B4E446B5E5EE4ED8A7DC05C3 /* KGShowLoadingApi.swift */; };
-		E6FA84216E2E4229925AFD7EA39CCC81 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F16CB7A1F93EA63362E3B8C5400E9B /* MBProgressHUD.framework */; };
-		E85EB77D712125E99F598B5D29C026C1 /* String+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB068F15E1ADEEDDDFC93C18441937 /* String+Kawagarbo.swift */; };
-		EA66F0621649E77064DCE4A1C3F4D3E1 /* KGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B69029195EA0226C691D99A45DED6 /* KGWebViewController.swift */; };
+		D8F651854B76EEE4269E39DE629C05E4 /* KGWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5F892A59E5B1BCE71F673D9DA7B4A1 /* KGWKWebView.swift */; };
+		D9D098CD48D1C7ED27176655B14E170D /* KGHideNavigationBarLoadingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E359403B8AEB262A4B2933A2C264EF5D /* KGHideNavigationBarLoadingApi.swift */; };
+		DFE312D1DD794B9E5E9D119A409B2539 /* KGSetTabBarBadgeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185BE845DB85FF79745826CA1A408807 /* KGSetTabBarBadgeApi.swift */; };
+		E63B2FB349CF195A61041ED3AA576084 /* UIDevice+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F44F3E74C45C92952A517E370F02E21 /* UIDevice+Kawagarbo.swift */; };
+		E7A68235F6D1620D610F2509EF8A7917 /* KGRemoveTabBarBadgeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D738C007DE0AC315FE2643DFA113BE4A /* KGRemoveTabBarBadgeApi.swift */; };
+		E84DF6479A84FBA9C5C2E950C8BCA7FE /* Data+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2819C82843F707ED8BC0457135235A0 /* Data+Kawagarbo.swift */; };
 		EAD787574B5C5D89667289CA6973ECE5 /* Pods-Kawagarbo_iOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FC981B2874240E5973E4B3E38A90635 /* Pods-Kawagarbo_iOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F115327BE9A276450F8A4B9CE435E06D /* KGScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34DABBC8237CAAEEB9E19521E8570C2 /* KGScriptMessageHandler.swift */; };
-		F5129A6D6B5B5079399C05256CBE2267 /* KGWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2159A9E4C73C4CF75FC54E6DEF246D5 /* KGWebViewDelegate.swift */; };
-		FAA26C7DC0F59961374758F0F3CB1B94 /* KGGetSystemInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC9FF9BA7996C356F041206702D5D4 /* KGGetSystemInfoApi.swift */; };
+		ED6D70AD2054C73050001648B15BC403 /* KGNativeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36082C957C956E11AD25E5BEE6E71FC1 /* KGNativeApi.swift */; };
+		F0C5E206C70F7F060C0604C4E6B5A193 /* KGAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3137DC37B7DE1FA126A87C7606A7A919 /* KGAlertView.swift */; };
+		F1DE6A6E188AC9E4B32946BB6F1712A0 /* KGNativeApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529223589EB9D76E8064E3F1F73A86C8 /* KGNativeApiResponse.swift */; };
+		F3FA762F15E11FFB446DC169EED78A79 /* KGShowLoadingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0151DC5602EE30CF6DC4DAAC6ED2A6 /* KGShowLoadingApi.swift */; };
+		F41062D04178C391C2B232C0A779FA1A /* KGHideTabBarRedDotApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA1554EC1A814BAFE8A22A49B129C5 /* KGHideTabBarRedDotApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,157 +99,165 @@
 			remoteGlobalIDString = A74DA09F1F67CBFC7FD30155FED123F9;
 			remoteInfo = "Pods-Kawagarbo_iOS_Example";
 		};
-		10577146CB1174F09190A3868F5F77AC /* PBXContainerItemProxy */ = {
+		16595F615E83E16F1F3830424A6C56C1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6B4161BD2DEF653EB571E156DE563CBC;
-			remoteInfo = MBProgressHUD;
+			remoteGlobalIDString = C9DE5DDF84D79F458975D31F4F68AFBD;
+			remoteInfo = "Kawagarbo_iOS-Kawagarbo_iOS";
 		};
 		16E08FED1C3EE72ADADDBAAEE79A1852 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6B4161BD2DEF653EB571E156DE563CBC;
+			remoteGlobalIDString = 120C1A8B97F0E236FFE84AF7747C4C3A;
 			remoteInfo = MBProgressHUD;
-		};
-		8CDDB159F2D98729F0D352577C444EB0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 38F8EF161A7E9D32A9253CF96F2E4B40;
-			remoteInfo = "Kawagarbo_iOS-Kawagarbo_iOS";
 		};
 		CA3E0E219458D8A8E9C8B7EBB14B0384 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 55917E0FBE583D1B3098817E7D32A884;
+			remoteGlobalIDString = 478B08742D5B625CB598E91E173E32A8;
 			remoteInfo = Kawagarbo_iOS;
+		};
+		D90B0D1B01E28C8FD56C0394DA79A590 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 120C1A8B97F0E236FFE84AF7747C4C3A;
+			remoteInfo = MBProgressHUD;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0564F70D97196794F5915B6D7946C337 /* KGNamespace.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGNamespace.swift; sourceTree = "<group>"; };
-		0A4AB7B6E6FEED22BC765C5CC6BF5AD0 /* KGHideTabBarApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGHideTabBarApi.swift; sourceTree = "<group>"; };
-		0BD2A30663562B1BDE69699DB93C9867 /* KGShowTabBarApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowTabBarApi.swift; sourceTree = "<group>"; };
+		00262925FB966E26FD51B2A70A5A3356 /* KGNamespace.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGNamespace.swift; sourceTree = "<group>"; };
+		018646582C454849D44CD2F25251FBA1 /* KGShowTabBarRedDotApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowTabBarRedDotApi.swift; sourceTree = "<group>"; };
+		024A1761085405562BA6F06D5DDA588F /* Bundle+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Kawagarbo.swift"; sourceTree = "<group>"; };
+		0406DA638B88CFE925FEB65923CCFD68 /* KGInfoPlist.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGInfoPlist.swift; sourceTree = "<group>"; };
+		08860128CB6E722663DDBB8D9D623386 /* MBProgressHUD+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Kawagarbo.swift"; sourceTree = "<group>"; };
+		08A882450D2647EADB58999DAA3DFF39 /* KGSetNavigationBarColorApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSetNavigationBarColorApi.swift; sourceTree = "<group>"; };
 		0C5EC1197A5CE1990101E29A5B1B83FC /* ResourceBundle-Kawagarbo_iOS-Kawagarbo_iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Kawagarbo_iOS-Kawagarbo_iOS-Info.plist"; sourceTree = "<group>"; };
-		142E9631662E4A71081C3067ECE86B7B /* Kawagarbo_iOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Kawagarbo_iOS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		12C78162429C1571D4BBC0F0E9B774E9 /* KGBluetoothManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGBluetoothManager.swift; sourceTree = "<group>"; };
+		142E9631662E4A71081C3067ECE86B7B /* Kawagarbo_iOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Kawagarbo_iOS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		14F16CB7A1F93EA63362E3B8C5400E9B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1540F5F8D5A02CBF0D0B7AEDA2F0EFC5 /* Kawagarbo_iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Kawagarbo_iOS-Info.plist"; sourceTree = "<group>"; };
-		15C312367CA2B072FDDB4FDBE7EF276E /* UIColor+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Kawagarbo.swift"; sourceTree = "<group>"; };
-		163B3905E4D210928FD4DC8B7A2BA107 /* KGSystemInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSystemInfo.swift; sourceTree = "<group>"; };
+		185BE845DB85FF79745826CA1A408807 /* KGSetTabBarBadgeApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSetTabBarBadgeApi.swift; sourceTree = "<group>"; };
+		18DD14E77F7C3957F7CAC2A81164AC99 /* Dictionary+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Dictionary+Kawagarbo.swift"; sourceTree = "<group>"; };
 		19A0B557DDBD4E64A351CE7CB8CC4F9C /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		1A280201C9856F0D5081B2641B51C87F /* FileManager+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FileManager+Kawagarbo.swift"; sourceTree = "<group>"; };
-		21A04FB0DCB2C4FC9E1CB7D86BB4F212 /* UIAlertAction+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Kawagarbo.swift"; sourceTree = "<group>"; };
+		1AB3226B023E77402A2F4BBD32EB3458 /* KGSetTabBarItemApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSetTabBarItemApi.swift; sourceTree = "<group>"; };
+		1DB4D0BF23487BC58A3B934F9AB33D39 /* KGShowActionSheetApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowActionSheetApi.swift; sourceTree = "<group>"; };
+		1DF2222CD6768D006F220EB694584FE5 /* FileManager+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FileManager+Kawagarbo.swift"; sourceTree = "<group>"; };
+		1FB8428BCC9FFC7BBC6C301F1C782B17 /* KGLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGLog.swift; sourceTree = "<group>"; };
+		1FF98198740EC0865015FE811E581545 /* KGShowTabBarApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowTabBarApi.swift; sourceTree = "<group>"; };
 		22DADF37F01E3A4B7384C6BC52B90F7F /* Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kawagarbo.swift; path = Kawagarbo_iOS/Kawagarbo.swift; sourceTree = "<group>"; };
 		24AC9FF9BA7996C356F041206702D5D4 /* KGGetSystemInfoApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGGetSystemInfoApi.swift; sourceTree = "<group>"; };
-		24F5B358ABF5D2E43722E3555E9501F2 /* KGSetTabBarStyleApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSetTabBarStyleApi.swift; sourceTree = "<group>"; };
-		256FCA01B9354449000C670934FB6863 /* UIScreen+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIScreen+Kawagarbo.swift"; sourceTree = "<group>"; };
 		274E4CEE6F1C59E18446294743D590AD /* KGWebViewManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGWebViewManager.swift; sourceTree = "<group>"; };
 		2C0B69029195EA0226C691D99A45DED6 /* KGWebViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGWebViewController.swift; sourceTree = "<group>"; };
 		2C74900DC16CE010C4570784F231CF95 /* Pods-Kawagarbo_iOS_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Kawagarbo_iOS_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3137DC37B7DE1FA126A87C7606A7A919 /* KGAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGAlertView.swift; sourceTree = "<group>"; };
 		34895AC8CC84250F50B0D6F7FBF8D2B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		36082C957C956E11AD25E5BEE6E71FC1 /* KGNativeApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGNativeApi.swift; sourceTree = "<group>"; };
-		36A4893FF71796F674994897D18356C0 /* Data+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Data+Kawagarbo.swift"; sourceTree = "<group>"; };
+		3814413E0CA916EEA4A94E4D8B5167AB /* UILabel+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UILabel+Kawagarbo.swift"; sourceTree = "<group>"; };
 		384BCA64FE4431AA5944BA3547F9852C /* KGWebRoute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGWebRoute.swift; sourceTree = "<group>"; };
-		3902ECA780610CBF94DE6BF35B2038A3 /* KGLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGLog.swift; sourceTree = "<group>"; };
-		3B0AC1C4221BAB7E004DF68D /* UIImage+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Kawagarbo.swift"; sourceTree = "<group>"; };
-		3F901EADA6B2B791A8BEE797CED658F8 /* MBProgressHUD+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Kawagarbo.swift"; sourceTree = "<group>"; };
-		424E8221DF2C69AC953A31C21D9524E1 /* Dictionary+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Dictionary+Kawagarbo.swift"; sourceTree = "<group>"; };
+		415829633C7F0683A09A704EC626763D /* KGHideTabBarApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGHideTabBarApi.swift; sourceTree = "<group>"; };
+		442E63EA5AC53F332818B1ABE9EE6540 /* KGSetNavigationBarTitleApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSetNavigationBarTitleApi.swift; sourceTree = "<group>"; };
 		44844F7CCEDEAA8262ED14AEBBC685CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		448A1FBCEDBDBCC60E507435F5D24CC5 /* KGShowModalApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowModalApi.swift; sourceTree = "<group>"; };
 		464A354D81830510D2BF95D54538E354 /* Pods-Kawagarbo_iOS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Kawagarbo_iOS_Tests.modulemap"; sourceTree = "<group>"; };
 		486F96F62951D76DD9A863B2F2F85816 /* Pods-Kawagarbo_iOS_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Kawagarbo_iOS_Example-Info.plist"; sourceTree = "<group>"; };
 		49513737A62F699E1102A99EE1F45B08 /* KGIframeIntercept.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGIframeIntercept.swift; sourceTree = "<group>"; };
-		4A84DE6C6C4755848C8103569DEC3B4E /* KGHideLoadingApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGHideLoadingApi.swift; sourceTree = "<group>"; };
-		4D44032B657E4E4AD81E6EB3C5240A1B /* KGInfoPlist.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGInfoPlist.swift; sourceTree = "<group>"; };
 		4FA687AE1B1DB11A0FFBF047A2624F9A /* KGWebViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGWebViewControllerDelegate.swift; sourceTree = "<group>"; };
 		529223589EB9D76E8064E3F1F73A86C8 /* KGNativeApiResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGNativeApiResponse.swift; sourceTree = "<group>"; };
 		5366DBC503A825C472D6BE9D27D4E70F /* Pods-Kawagarbo_iOS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Kawagarbo_iOS_Tests-dummy.m"; sourceTree = "<group>"; };
-		55277BEF37D1D64D9B6812E1F90ED738 /* Pods_Kawagarbo_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kawagarbo_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55277BEF37D1D64D9B6812E1F90ED738 /* Pods_Kawagarbo_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Kawagarbo_iOS_Example.framework; path = "Pods-Kawagarbo_iOS_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58EFD618095AD35849D5965FA1B127DC /* UIColor+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Kawagarbo.swift"; sourceTree = "<group>"; };
+		5987AAD1064B5A8381943A01F672FAC8 /* KGSystemInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSystemInfo.swift; sourceTree = "<group>"; };
+		5A6E4C1B193539BE284C54936E1D6742 /* KGHideToastApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGHideToastApi.swift; sourceTree = "<group>"; };
 		5F00A248B63F528E867D760EECABC0AB /* KGConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGConfig.swift; sourceTree = "<group>"; };
+		6199662B1ED1CFD1381742B8299DB0C0 /* UIImage+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Kawagarbo.swift"; sourceTree = "<group>"; };
 		6390F88DBDCC7986D9C37C7C282F0982 /* KGWebVCUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGWebVCUI.swift; sourceTree = "<group>"; };
 		64C4B198239A8F470DC15789F73A858A /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
 		695F3B80B1A69C2C3DBA4DB80A1B2F9B /* KGCanIUseApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGCanIUseApi.swift; sourceTree = "<group>"; };
-		6D864E1E4F4831D97473563CC294394C /* KGSetTabBarItemApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSetTabBarItemApi.swift; sourceTree = "<group>"; };
+		6B8BEB609D518EA4A587B74B6884B663 /* UIApplication+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIApplication+Kawagarbo.swift"; sourceTree = "<group>"; };
+		6F44F3E74C45C92952A517E370F02E21 /* UIDevice+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIDevice+Kawagarbo.swift"; sourceTree = "<group>"; };
 		733916EEC33409217F6C892EAE19EF84 /* Pods-Kawagarbo_iOS_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Kawagarbo_iOS_Tests-Info.plist"; sourceTree = "<group>"; };
-		765693D769FF056AB109BEDCBE8462FF /* URLProtocol+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "URLProtocol+Kawagarbo.swift"; sourceTree = "<group>"; };
-		7A1EE6778C19FED245B3DC3D60650533 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		7A1EE6778C19FED245B3DC3D60650533 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		8403693846D6B1973253C1EC872FF199 /* Pods-Kawagarbo_iOS_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Kawagarbo_iOS_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		84656539EDC2AFBC87CFE0A3566C2BB3 /* KGNativeApiManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGNativeApiManager.swift; sourceTree = "<group>"; };
 		8CC835985FF701600236AEF6E8185505 /* Pods-Kawagarbo_iOS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Kawagarbo_iOS_Example-umbrella.h"; sourceTree = "<group>"; };
 		8CC88E9BB2DAE98E2B831183A06BFB8C /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		8E49BFBC6AE58269E9FBA993E746DCFD /* KGNavigateBackApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGNavigateBackApi.swift; sourceTree = "<group>"; };
-		8E798595AC89EE78F9B418CEB4A6EE0F /* KGShowNavigationBarLoadingApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowNavigationBarLoadingApi.swift; sourceTree = "<group>"; };
 		91E6ADC6350A1F82E9B927D4BBB524C2 /* Pods-Kawagarbo_iOS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Kawagarbo_iOS_Example-dummy.m"; sourceTree = "<group>"; };
-		91F644903A0401F3E313535BFFE2516E /* KGShowToastApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowToastApi.swift; sourceTree = "<group>"; };
-		93CC7CA7DF090EFEC1082057E74924AD /* Kawagarbo_iOS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Kawagarbo_iOS.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		93CC7CA7DF090EFEC1082057E74924AD /* Kawagarbo_iOS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Kawagarbo_iOS.bundle; path = "Kawagarbo_iOS-Kawagarbo_iOS.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D6DF9986E4EE18CE6E421AD3D3EB1F /* Pods-Kawagarbo_iOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Kawagarbo_iOS_Example.release.xcconfig"; sourceTree = "<group>"; };
-		93DCEB8898A161FC0EFC9B0D00BE35A0 /* KGShowActionSheetApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowActionSheetApi.swift; sourceTree = "<group>"; };
 		93F94A13B4DB2E4290F3DFAA65105BE6 /* Pods-Kawagarbo_iOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Kawagarbo_iOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		942444D00A2AA57EDA483C649CE039DC /* images */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = images; path = Kawagarbo_iOS/Resource/images; sourceTree = "<group>"; };
-		9962E872B4E446B5E5EE4ED8A7DC05C3 /* KGShowLoadingApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowLoadingApi.swift; sourceTree = "<group>"; };
+		942444D00A2AA57EDA483C649CE039DC /* images */ = {isa = PBXFileReference; includeInIndex = 1; name = images; path = Kawagarbo_iOS/Resource/images; sourceTree = "<group>"; };
 		9A3080747D372EEAA47F3B062A97714C /* KGGlobalConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGGlobalConfig.swift; sourceTree = "<group>"; };
 		9BB3EC1CAEA5EF004213548C9D53D491 /* Kawagarbo_iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kawagarbo_iOS-umbrella.h"; sourceTree = "<group>"; };
 		9FC981B2874240E5973E4B3E38A90635 /* Pods-Kawagarbo_iOS_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Kawagarbo_iOS_Tests-umbrella.h"; sourceTree = "<group>"; };
 		A191E3E3411E5552A77D132A1ECFD76B /* Pods-Kawagarbo_iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Kawagarbo_iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1CE2E16BDE9A65CDAC0FBC193B6442E /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		A3406E2CE2F6F082DB3906E9BC4DE970 /* KGHideNavigationBarLoadingApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGHideNavigationBarLoadingApi.swift; sourceTree = "<group>"; };
-		ACAB068F15E1ADEEDDDFC93C18441937 /* String+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Kawagarbo.swift"; sourceTree = "<group>"; };
-		ADAE49A7A3F19ED6580375F3BEF496BD /* Pods_Kawagarbo_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kawagarbo_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55CC477CFCDBCCA52233B117449DC48 /* KGShowModalApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowModalApi.swift; sourceTree = "<group>"; };
+		AA0151DC5602EE30CF6DC4DAAC6ED2A6 /* KGShowLoadingApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowLoadingApi.swift; sourceTree = "<group>"; };
+		AB35DCB1CCA10F295F267006BDCA5952 /* KGSetTabBarStyleApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSetTabBarStyleApi.swift; sourceTree = "<group>"; };
+		ABEC1DB5BAC8E3A6ABAD155A8E03FA75 /* KGShowNavigationBarLoadingApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowNavigationBarLoadingApi.swift; sourceTree = "<group>"; };
+		ADAE49A7A3F19ED6580375F3BEF496BD /* Pods_Kawagarbo_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Kawagarbo_iOS_Tests.framework; path = "Pods-Kawagarbo_iOS_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF330DB901A0778DE134D55EFA39F4F7 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
-		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AFC0FA91B7D8AE7D038C93F298F20FD9 /* UITabBar+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITabBar+Kawagarbo.swift"; sourceTree = "<group>"; };
+		B2AA1554EC1A814BAFE8A22A49B129C5 /* KGHideTabBarRedDotApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGHideTabBarRedDotApi.swift; sourceTree = "<group>"; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B56DF1B9ACE617869FC574207C94E1EF /* KGReLaunchApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGReLaunchApi.swift; sourceTree = "<group>"; };
-		B8BC8C4E1E2EC84110528CE6AEA4D187 /* KGSetNavigationBarTitleApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSetNavigationBarTitleApi.swift; sourceTree = "<group>"; };
-		BB51B0EAE4AC9BCFE4A2193EA8F8DE14 /* KGHideToastApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGHideToastApi.swift; sourceTree = "<group>"; };
-		BB9BCB6BBA71140B64A1A0B7BFE1217C /* KGBluetoothManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGBluetoothManager.swift; sourceTree = "<group>"; };
+		B6F5EBF835282AF227F1E26B8E9931ED /* KGHideLoadingApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGHideLoadingApi.swift; sourceTree = "<group>"; };
+		BD26A4BBFBAA11072FF9565B4636FB77 /* KGShowToastApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGShowToastApi.swift; sourceTree = "<group>"; };
 		BF5F892A59E5B1BCE71F673D9DA7B4A1 /* KGWKWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGWKWebView.swift; sourceTree = "<group>"; };
 		C34DABBC8237CAAEEB9E19521E8570C2 /* KGScriptMessageHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGScriptMessageHandler.swift; sourceTree = "<group>"; };
-		C35DF5D10CFE6A1AD48249440FAF4207 /* UIDevice+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIDevice+Kawagarbo.swift"; sourceTree = "<group>"; };
-		C36814170BB24971C166DFF70395E8D5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C772E7B8E78248095B8F47151C1F3E46 /* Kawagarbo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kawagarbo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C36814170BB24971C166DFF70395E8D5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C772E7B8E78248095B8F47151C1F3E46 /* Kawagarbo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kawagarbo_iOS.framework; path = Kawagarbo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C63E7A9F47CCB3FC734EEF0538265B /* Kawagarbo_iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kawagarbo_iOS-dummy.m"; sourceTree = "<group>"; };
+		C840B27834C4E54CD6B84CFC9CAF4919 /* UIAlertAction+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Kawagarbo.swift"; sourceTree = "<group>"; };
 		C9D3C46809922F9E188C904763A30C98 /* Kawagarbo_iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Kawagarbo_iOS.modulemap; sourceTree = "<group>"; };
 		CA56DA9FD5D297A7EF9F7BC33896BE3C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		CADB70708FD8EE4FBCECFDBDB764545F /* Pods-Kawagarbo_iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Kawagarbo_iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D20FAAD07DB73E9E468875AFA1F2EC79 /* Pods-Kawagarbo_iOS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Kawagarbo_iOS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D3B0D0A82F17177D8766D63E4C14CD82 /* String+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Kawagarbo.swift"; sourceTree = "<group>"; };
 		D41CD061740FE75EBF647FF00152F7A5 /* KGSwitchTabApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSwitchTabApi.swift; sourceTree = "<group>"; };
 		D64807967E9A36A06DF12351D9061361 /* KGNativeApiConst.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGNativeApiConst.swift; sourceTree = "<group>"; };
 		D6E1956344C5934E7947283E5D61C911 /* KGNavigateToApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGNavigateToApi.swift; sourceTree = "<group>"; };
-		D6EAB37994C9822A4431169DED3D46D0 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6EAB37994C9822A4431169DED3D46D0 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D738C007DE0AC315FE2643DFA113BE4A /* KGRemoveTabBarBadgeApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGRemoveTabBarBadgeApi.swift; sourceTree = "<group>"; };
 		D8ED20D3673B002FD37F448BBA10C750 /* Pods-Kawagarbo_iOS_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Kawagarbo_iOS_Example-frameworks.sh"; sourceTree = "<group>"; };
+		DCA71EF9D16AD4414CD78FC169709D49 /* KGTitleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGTitleView.swift; sourceTree = "<group>"; };
 		DEFA7988ACC802F0B7365C161EAADC63 /* KGRedirectToApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGRedirectToApi.swift; sourceTree = "<group>"; };
 		DF0BE6469434F7C1F50DDDAB97289AD8 /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
-		DF3E338132ACF9141BA3C335EAFB99A4 /* KGTitleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGTitleView.swift; sourceTree = "<group>"; };
-		E0AFE8EA2F2012107BE144EE09B73E2D /* Bundle+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Kawagarbo.swift"; sourceTree = "<group>"; };
+		E196C332903B3263369496A2DEA471F6 /* UIScreen+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIScreen+Kawagarbo.swift"; sourceTree = "<group>"; };
 		E2C87A5982283D9330BE76B672E7091F /* Kawagarbo_iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kawagarbo_iOS.xcconfig; sourceTree = "<group>"; };
-		E7574267DBEE6920233A4A52B7D92774 /* UILabel+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UILabel+Kawagarbo.swift"; sourceTree = "<group>"; };
+		E359403B8AEB262A4B2933A2C264EF5D /* KGHideNavigationBarLoadingApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGHideNavigationBarLoadingApi.swift; sourceTree = "<group>"; };
 		E80CBD43D015B89B9831EDBE484FA0B3 /* Pods-Kawagarbo_iOS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Kawagarbo_iOS_Example.modulemap"; sourceTree = "<group>"; };
 		E8EA1CBE1043D894CA4899773AB5024F /* Kawagarbo_iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kawagarbo_iOS-prefix.pch"; sourceTree = "<group>"; };
-		EA3F9875DB43903B4CB57DCAA56F6CB4 /* KGSetNavigationBarColorApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGSetNavigationBarColorApi.swift; sourceTree = "<group>"; };
 		EA7EF56646DB1B2F653740B0FB77850B /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		ED09199DD66D7A2E507B9184DF7F5BE8 /* KGAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGAlertView.swift; sourceTree = "<group>"; };
 		F13386AD28909607147A55B1043A9C0F /* MBProgressHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBProgressHUD-Info.plist"; sourceTree = "<group>"; };
 		F2159A9E4C73C4CF75FC54E6DEF246D5 /* KGWebViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KGWebViewDelegate.swift; sourceTree = "<group>"; };
+		F2819C82843F707ED8BC0457135235A0 /* Data+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Data+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F48F34C90EA963699CF16E08E350F1EA /* URLProtocol+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "URLProtocol+Kawagarbo.swift"; sourceTree = "<group>"; };
 		F52D11DDFE899C8AD6A6FBE0D081996C /* Pods-Kawagarbo_iOS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Kawagarbo_iOS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FE02F58EFEED2B73D97D0F3348F2E3A5 /* UIApplication+Kawagarbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIApplication+Kawagarbo.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		47DB424CEEEFBD71E33C72A169A33C3F /* Frameworks */ = {
+		283E7FC13EAA1F3D419C6429D4045592 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE649BCCBE45146E937F6E03E52FFD5D /* Foundation.framework in Frameworks */,
+				711C73A9BDC050DC980643F06495B64D /* MBProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87BFA9C59E1F51AD3554D9737436290F /* Frameworks */ = {
+		5C15CAD5794DCCE8A330B971910E8B16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B45F190CB2EBC2ABFA3416792DBEBE6 /* Foundation.framework in Frameworks */,
-				E6FA84216E2E4229925AFD7EA39CCC81 /* MBProgressHUD.framework in Frameworks */,
+				3360C5CEF6B0B9FC52FBBF1D97A8734B /* CoreGraphics.framework in Frameworks */,
+				55440A6E287F2283766D9F1CBD5EC373 /* Foundation.framework in Frameworks */,
+				332B61C050167699F824F298171BB955 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,13 +269,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BEBF3EC7D5CB1489E6DD4C256A062C55 /* Frameworks */ = {
+		C816699C86A6F18503492431D03FD4A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E4FC63A99045797297E22557548292 /* CoreGraphics.framework in Frameworks */,
-				1BB5691A155FF6C085E627BF6CEA3820 /* Foundation.framework in Frameworks */,
-				999F464BFE2115101EC7E3C24694C66D /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,25 +295,22 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		0C431BD0C1EACD6575C53E7F0B7D9AF7 /* NavigationBar */ = {
+		27CB889D8B8386D86504A84DBE5BAEE2 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				A3406E2CE2F6F082DB3906E9BC4DE970 /* KGHideNavigationBarLoadingApi.swift */,
-				EA3F9875DB43903B4CB57DCAA56F6CB4 /* KGSetNavigationBarColorApi.swift */,
-				B8BC8C4E1E2EC84110528CE6AEA4D187 /* KGSetNavigationBarTitleApi.swift */,
-				8E798595AC89EE78F9B418CEB4A6EE0F /* KGShowNavigationBarLoadingApi.swift */,
+				024A1761085405562BA6F06D5DDA588F /* Bundle+Kawagarbo.swift */,
+				F2819C82843F707ED8BC0457135235A0 /* Data+Kawagarbo.swift */,
+				18DD14E77F7C3957F7CAC2A81164AC99 /* Dictionary+Kawagarbo.swift */,
+				1DF2222CD6768D006F220EB694584FE5 /* FileManager+Kawagarbo.swift */,
+				12C78162429C1571D4BBC0F0E9B774E9 /* KGBluetoothManager.swift */,
+				0406DA638B88CFE925FEB65923CCFD68 /* KGInfoPlist.swift */,
+				1FB8428BCC9FFC7BBC6C301F1C782B17 /* KGLog.swift */,
+				00262925FB966E26FD51B2A70A5A3356 /* KGNamespace.swift */,
+				D3B0D0A82F17177D8766D63E4C14CD82 /* String+Kawagarbo.swift */,
+				F48F34C90EA963699CF16E08E350F1EA /* URLProtocol+Kawagarbo.swift */,
 			);
-			path = NavigationBar;
-			sourceTree = "<group>";
-		};
-		271B8E50F9D8BDA097BD3748CFE5539A /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				BB6E779A5D610C9D5370B51F61E743E0 /* Interaction */,
-				0C431BD0C1EACD6575C53E7F0B7D9AF7 /* NavigationBar */,
-				55E9367A2375469F7EC0872D79952333 /* Tarbar */,
-			);
-			path = UI;
+			name = Foundation;
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		2841250068A79C37A0D3E3A38E214AE6 /* Config */ = {
@@ -315,6 +322,17 @@
 			);
 			name = Config;
 			path = Kawagarbo_iOS/Config;
+			sourceTree = "<group>";
+		};
+		357889DF9161D97CF415B7BBE54972B8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D795FAB61FEB4A50EEF6CE4867CB335D /* Interaction */,
+				9ABCC5415CA5D72DAB9208264C79511B /* NavigationBar */,
+				EE672C588C42CA3B88F8274B5B0F9341 /* Tarbar */,
+			);
+			name = UI;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		3C6F7884DB73CFE8CF2F14BAB9B82BE1 /* iOS */ = {
@@ -335,17 +353,6 @@
 				C36814170BB24971C166DFF70395E8D5 /* README.md */,
 			);
 			name = Pod;
-			sourceTree = "<group>";
-		};
-		55E9367A2375469F7EC0872D79952333 /* Tarbar */ = {
-			isa = PBXGroup;
-			children = (
-				0A4AB7B6E6FEED22BC765C5CC6BF5AD0 /* KGHideTabBarApi.swift */,
-				6D864E1E4F4831D97473563CC294394C /* KGSetTabBarItemApi.swift */,
-				24F5B358ABF5D2E43722E3555E9501F2 /* KGSetTabBarStyleApi.swift */,
-				0BD2A30663562B1BDE69699DB93C9867 /* KGShowTabBarApi.swift */,
-			);
-			path = Tarbar;
 			sourceTree = "<group>";
 		};
 		579AB16CE72A174019BD28B7957019CB /* Pods-Kawagarbo_iOS_Example */ = {
@@ -378,8 +385,9 @@
 			children = (
 				A2D33CAEACAF4A48D6225DD724EA5218 /* Basics */,
 				806F0A349D52219A6C25209F66730DA3 /* Route */,
-				271B8E50F9D8BDA097BD3748CFE5539A /* UI */,
+				357889DF9161D97CF415B7BBE54972B8 /* UI */,
 			);
+			name = Apis;
 			path = Apis;
 			sourceTree = "<group>";
 		};
@@ -405,6 +413,26 @@
 			path = Kawagarbo_iOS/ViewController;
 			sourceTree = "<group>";
 		};
+		752579E12D83392D819A6965BD316891 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3137DC37B7DE1FA126A87C7606A7A919 /* KGAlertView.swift */,
+				5987AAD1064B5A8381943A01F672FAC8 /* KGSystemInfo.swift */,
+				DCA71EF9D16AD4414CD78FC169709D49 /* KGTitleView.swift */,
+				08860128CB6E722663DDBB8D9D623386 /* MBProgressHUD+Kawagarbo.swift */,
+				C840B27834C4E54CD6B84CFC9CAF4919 /* UIAlertAction+Kawagarbo.swift */,
+				6B8BEB609D518EA4A587B74B6884B663 /* UIApplication+Kawagarbo.swift */,
+				58EFD618095AD35849D5965FA1B127DC /* UIColor+Kawagarbo.swift */,
+				6F44F3E74C45C92952A517E370F02E21 /* UIDevice+Kawagarbo.swift */,
+				6199662B1ED1CFD1381742B8299DB0C0 /* UIImage+Kawagarbo.swift */,
+				3814413E0CA916EEA4A94E4D8B5167AB /* UILabel+Kawagarbo.swift */,
+				E196C332903B3263369496A2DEA471F6 /* UIScreen+Kawagarbo.swift */,
+				AFC0FA91B7D8AE7D038C93F298F20FD9 /* UITabBar+Kawagarbo.swift */,
+			);
+			name = UI;
+			path = UI;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +454,7 @@
 				B56DF1B9ACE617869FC574207C94E1EF /* KGReLaunchApi.swift */,
 				D41CD061740FE75EBF647FF00152F7A5 /* KGSwitchTabApi.swift */,
 			);
+			name = Route;
 			path = Route;
 			sourceTree = "<group>";
 		};
@@ -452,7 +481,20 @@
 				8CC88E9BB2DAE98E2B831183A06BFB8C /* MBProgressHUD.m */,
 				F55FD0366F0973917535CB73A95E2C08 /* Support Files */,
 			);
+			name = MBProgressHUD;
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		9ABCC5415CA5D72DAB9208264C79511B /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				E359403B8AEB262A4B2933A2C264EF5D /* KGHideNavigationBarLoadingApi.swift */,
+				08A882450D2647EADB58999DAA3DFF39 /* KGSetNavigationBarColorApi.swift */,
+				442E63EA5AC53F332818B1ABE9EE6540 /* KGSetNavigationBarTitleApi.swift */,
+				ABEC1DB5BAC8E3A6ABAD155A8E03FA75 /* KGShowNavigationBarLoadingApi.swift */,
+			);
+			name = NavigationBar;
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		A2D33CAEACAF4A48D6225DD724EA5218 /* Basics */ = {
@@ -461,17 +503,8 @@
 				695F3B80B1A69C2C3DBA4DB80A1B2F9B /* KGCanIUseApi.swift */,
 				24AC9FF9BA7996C356F041206702D5D4 /* KGGetSystemInfoApi.swift */,
 			);
+			name = Basics;
 			path = Basics;
-			sourceTree = "<group>";
-		};
-		ADC72E981ED0E40489F308E20B68BDA2 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				DD97C50503069D234B1D0BB69EC5FF07 /* Foundation */,
-				D5F14D22F60D61D2223894B4056EA0EF /* UI */,
-			);
-			name = Utils;
-			path = Kawagarbo_iOS/Utils;
 			sourceTree = "<group>";
 		};
 		AF4EB90E6C4CCF0E5298BAB555D3E916 /* Kawagarbo_iOS */ = {
@@ -483,7 +516,7 @@
 				4DFC3B17B677CC9AA33A09D5EFC89A8D /* Pod */,
 				019173C39C4C4FCC2BA1E2D3804D7A87 /* Resources */,
 				E23FD6D2F5A3100497BCBC3258377F63 /* Support Files */,
-				ADC72E981ED0E40489F308E20B68BDA2 /* Utils */,
+				AFE0602828243611519C76FEF4E6E375 /* Utils */,
 				6FFCA6CD1EB565DFE76D173B9FFEBD56 /* ViewController */,
 				E42407B343EF88FF6B33FE029A399807 /* WebRoute */,
 				D6E6D1B0AE44B5CE5675581782009DA8 /* WebView */,
@@ -492,25 +525,22 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		AFE0602828243611519C76FEF4E6E375 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				27CB889D8B8386D86504A84DBE5BAEE2 /* Foundation */,
+				752579E12D83392D819A6965BD316891 /* UI */,
+			);
+			name = Utils;
+			path = Kawagarbo_iOS/Utils;
+			sourceTree = "<group>";
+		};
 		B2663576E730E58041890E602A466298 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
 				AF4EB90E6C4CCF0E5298BAB555D3E916 /* Kawagarbo_iOS */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		BB6E779A5D610C9D5370B51F61E743E0 /* Interaction */ = {
-			isa = PBXGroup;
-			children = (
-				4A84DE6C6C4755848C8103569DEC3B4E /* KGHideLoadingApi.swift */,
-				BB51B0EAE4AC9BCFE4A2193EA8F8DE14 /* KGHideToastApi.swift */,
-				93DCEB8898A161FC0EFC9B0D00BE35A0 /* KGShowActionSheetApi.swift */,
-				9962E872B4E446B5E5EE4ED8A7DC05C3 /* KGShowLoadingApi.swift */,
-				448A1FBCEDBDBCC60E507435F5D24CC5 /* KGShowModalApi.swift */,
-				91F644903A0401F3E313535BFFE2516E /* KGShowToastApi.swift */,
-			);
-			path = Interaction;
 			sourceTree = "<group>";
 		};
 		C1AD4F4ED925EF474D2FB42451A12440 /* Targets Support Files */ = {
@@ -531,24 +561,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D5F14D22F60D61D2223894B4056EA0EF /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				ED09199DD66D7A2E507B9184DF7F5BE8 /* KGAlertView.swift */,
-				163B3905E4D210928FD4DC8B7A2BA107 /* KGSystemInfo.swift */,
-				DF3E338132ACF9141BA3C335EAFB99A4 /* KGTitleView.swift */,
-				3F901EADA6B2B791A8BEE797CED658F8 /* MBProgressHUD+Kawagarbo.swift */,
-				21A04FB0DCB2C4FC9E1CB7D86BB4F212 /* UIAlertAction+Kawagarbo.swift */,
-				FE02F58EFEED2B73D97D0F3348F2E3A5 /* UIApplication+Kawagarbo.swift */,
-				15C312367CA2B072FDDB4FDBE7EF276E /* UIColor+Kawagarbo.swift */,
-				C35DF5D10CFE6A1AD48249440FAF4207 /* UIDevice+Kawagarbo.swift */,
-				E7574267DBEE6920233A4A52B7D92774 /* UILabel+Kawagarbo.swift */,
-				256FCA01B9354449000C670934FB6863 /* UIScreen+Kawagarbo.swift */,
-				3B0AC1C4221BAB7E004DF68D /* UIImage+Kawagarbo.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		D6E6D1B0AE44B5CE5675581782009DA8 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,21 +572,18 @@
 			path = Kawagarbo_iOS/WebView;
 			sourceTree = "<group>";
 		};
-		DD97C50503069D234B1D0BB69EC5FF07 /* Foundation */ = {
+		D795FAB61FEB4A50EEF6CE4867CB335D /* Interaction */ = {
 			isa = PBXGroup;
 			children = (
-				E0AFE8EA2F2012107BE144EE09B73E2D /* Bundle+Kawagarbo.swift */,
-				36A4893FF71796F674994897D18356C0 /* Data+Kawagarbo.swift */,
-				424E8221DF2C69AC953A31C21D9524E1 /* Dictionary+Kawagarbo.swift */,
-				1A280201C9856F0D5081B2641B51C87F /* FileManager+Kawagarbo.swift */,
-				BB9BCB6BBA71140B64A1A0B7BFE1217C /* KGBluetoothManager.swift */,
-				4D44032B657E4E4AD81E6EB3C5240A1B /* KGInfoPlist.swift */,
-				3902ECA780610CBF94DE6BF35B2038A3 /* KGLog.swift */,
-				0564F70D97196794F5915B6D7946C337 /* KGNamespace.swift */,
-				ACAB068F15E1ADEEDDDFC93C18441937 /* String+Kawagarbo.swift */,
-				765693D769FF056AB109BEDCBE8462FF /* URLProtocol+Kawagarbo.swift */,
+				B6F5EBF835282AF227F1E26B8E9931ED /* KGHideLoadingApi.swift */,
+				5A6E4C1B193539BE284C54936E1D6742 /* KGHideToastApi.swift */,
+				1DB4D0BF23487BC58A3B934F9AB33D39 /* KGShowActionSheetApi.swift */,
+				AA0151DC5602EE30CF6DC4DAAC6ED2A6 /* KGShowLoadingApi.swift */,
+				A55CC477CFCDBCCA52233B117449DC48 /* KGShowModalApi.swift */,
+				BD26A4BBFBAA11072FF9565B4636FB77 /* KGShowToastApi.swift */,
 			);
-			path = Foundation;
+			name = Interaction;
+			path = Interaction;
 			sourceTree = "<group>";
 		};
 		E23FD6D2F5A3100497BCBC3258377F63 /* Support Files */ = {
@@ -599,6 +608,22 @@
 			);
 			name = WebRoute;
 			path = Kawagarbo_iOS/WebRoute;
+			sourceTree = "<group>";
+		};
+		EE672C588C42CA3B88F8274B5B0F9341 /* Tarbar */ = {
+			isa = PBXGroup;
+			children = (
+				415829633C7F0683A09A704EC626763D /* KGHideTabBarApi.swift */,
+				B2AA1554EC1A814BAFE8A22A49B129C5 /* KGHideTabBarRedDotApi.swift */,
+				D738C007DE0AC315FE2643DFA113BE4A /* KGRemoveTabBarBadgeApi.swift */,
+				185BE845DB85FF79745826CA1A408807 /* KGSetTabBarBadgeApi.swift */,
+				1AB3226B023E77402A2F4BBD32EB3458 /* KGSetTabBarItemApi.swift */,
+				AB35DCB1CCA10F295F267006BDCA5952 /* KGSetTabBarStyleApi.swift */,
+				1FF98198740EC0865015FE811E581545 /* KGShowTabBarApi.swift */,
+				018646582C454849D44CD2F25251FBA1 /* KGShowTabBarRedDotApi.swift */,
+			);
+			name = Tarbar;
+			path = Tarbar;
 			sourceTree = "<group>";
 		};
 		EE8D8E80E31711FFCF9BD851D6E95CDC /* NativeApi */ = {
@@ -633,20 +658,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		4ACA480B39243ACD6763619E8A59284D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A79D5D4EB8419233D06AC1B536ADF9F /* Kawagarbo_iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		79B220C65D199D50AF34F9F2376D3F3B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EAD787574B5C5D89667289CA6973ECE5 /* Pods-Kawagarbo_iOS_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BA4BBB681B206030951D9FFD5EF0F57A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C3273F9BEF6EEBC2547EFF15B43B121 /* MBProgressHUD-umbrella.h in Headers */,
-				848F7FD680D21E72CAFB8A288F8308D6 /* MBProgressHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,17 +682,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE5D3BACFA59C31C5C39EA542A46C658 /* Headers */ = {
+		F5073EB1406CDF4526B57A8BD2210D43 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				788C4BEF5DC051521A653799E15A7F70 /* Kawagarbo_iOS-umbrella.h in Headers */,
+				4DB90011308D0A4DBF1AEEA16EFEDDA6 /* MBProgressHUD-umbrella.h in Headers */,
+				78BB9193CC00CCFBAD064995B6169E8B /* MBProgressHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		120C1A8B97F0E236FFE84AF7747C4C3A /* MBProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A274BA839FC220D572285A0E04F4099C /* Build configuration list for PBXNativeTarget "MBProgressHUD" */;
+			buildPhases = (
+				F5073EB1406CDF4526B57A8BD2210D43 /* Headers */,
+				14F6A2A6BAF406548328ED1E3B7756C5 /* Sources */,
+				5C15CAD5794DCCE8A330B971910E8B16 /* Frameworks */,
+				C0B8B1D36F1FD2CA3B513F32DA958782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MBProgressHUD;
+			productName = MBProgressHUD;
+			productReference = D6EAB37994C9822A4431169DED3D46D0 /* MBProgressHUD.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		22DC68714781B9BC56C41F7ED4E12688 /* Pods-Kawagarbo_iOS_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3522D1B6AE29E706EB0CB51E3A4B1A46 /* Build configuration list for PBXNativeTarget "Pods-Kawagarbo_iOS_Tests" */;
@@ -688,59 +731,24 @@
 			productReference = ADAE49A7A3F19ED6580375F3BEF496BD /* Pods_Kawagarbo_iOS_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		38F8EF161A7E9D32A9253CF96F2E4B40 /* Kawagarbo_iOS-Kawagarbo_iOS */ = {
+		478B08742D5B625CB598E91E173E32A8 /* Kawagarbo_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D1C39A2308A13F26807A46E92BC52899 /* Build configuration list for PBXNativeTarget "Kawagarbo_iOS-Kawagarbo_iOS" */;
+			buildConfigurationList = 54CD895BB3E591A6DA310A73BA0A12F5 /* Build configuration list for PBXNativeTarget "Kawagarbo_iOS" */;
 			buildPhases = (
-				7BBC6831BCBD496159AE032E21C05E0B /* Sources */,
-				47DB424CEEEFBD71E33C72A169A33C3F /* Frameworks */,
-				A5A85438340C25A9F001DC389D3096BA /* Resources */,
+				4ACA480B39243ACD6763619E8A59284D /* Headers */,
+				A2F55A1DB5E0ED2CD0D2EA6DF8251131 /* Sources */,
+				283E7FC13EAA1F3D419C6429D4045592 /* Frameworks */,
+				5FC7640DCA38066066BF410469A4A076 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Kawagarbo_iOS-Kawagarbo_iOS";
-			productName = "Kawagarbo_iOS-Kawagarbo_iOS";
-			productReference = 93CC7CA7DF090EFEC1082057E74924AD /* Kawagarbo_iOS.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		55917E0FBE583D1B3098817E7D32A884 /* Kawagarbo_iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F5B7523804D22EA40123F926C62119DB /* Build configuration list for PBXNativeTarget "Kawagarbo_iOS" */;
-			buildPhases = (
-				EE5D3BACFA59C31C5C39EA542A46C658 /* Headers */,
-				36F9DC799BE56406C927F546C0832F53 /* Sources */,
-				87BFA9C59E1F51AD3554D9737436290F /* Frameworks */,
-				770F7A647AD9A53F9BAD09A47531D086 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F08CD14B6CBCE158F19549BF27AC45D6 /* PBXTargetDependency */,
-				D76873DDF40A36DEF7C52ECD5E6B0234 /* PBXTargetDependency */,
+				1B74671EE0703557026C14E8742DF81D /* PBXTargetDependency */,
+				6A03979160C71C4F335E6D844C9FB28C /* PBXTargetDependency */,
 			);
 			name = Kawagarbo_iOS;
 			productName = Kawagarbo_iOS;
 			productReference = C772E7B8E78248095B8F47151C1F3E46 /* Kawagarbo_iOS.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		6B4161BD2DEF653EB571E156DE563CBC /* MBProgressHUD */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D79713568FD3C0CE813498AC8DBE879 /* Build configuration list for PBXNativeTarget "MBProgressHUD" */;
-			buildPhases = (
-				BA4BBB681B206030951D9FFD5EF0F57A /* Headers */,
-				C8E6A600BB55777D8E60816170412E6F /* Sources */,
-				BEBF3EC7D5CB1489E6DD4C256A062C55 /* Frameworks */,
-				A70AC1B91CA6EC4CD114E7B1120B0E89 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MBProgressHUD;
-			productName = MBProgressHUD;
-			productReference = D6EAB37994C9822A4431169DED3D46D0 /* MBProgressHUD.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A74DA09F1F67CBFC7FD30155FED123F9 /* Pods-Kawagarbo_iOS_Example */ = {
@@ -763,6 +771,23 @@
 			productReference = 55277BEF37D1D64D9B6812E1F90ED738 /* Pods_Kawagarbo_iOS_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		C9DE5DDF84D79F458975D31F4F68AFBD /* Kawagarbo_iOS-Kawagarbo_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 062BA8D36B9E20997B408416570EB3C9 /* Build configuration list for PBXNativeTarget "Kawagarbo_iOS-Kawagarbo_iOS" */;
+			buildPhases = (
+				F0B25D120BC1A3D867C9FC00E12A5F25 /* Sources */,
+				C816699C86A6F18503492431D03FD4A3 /* Frameworks */,
+				04240F583FE0DE2ACDBC09BB3EC8E239 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kawagarbo_iOS-Kawagarbo_iOS";
+			productName = "Kawagarbo_iOS-Kawagarbo_iOS";
+			productReference = 93CC7CA7DF090EFEC1082057E74924AD /* Kawagarbo_iOS.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -784,9 +809,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				55917E0FBE583D1B3098817E7D32A884 /* Kawagarbo_iOS */,
-				38F8EF161A7E9D32A9253CF96F2E4B40 /* Kawagarbo_iOS-Kawagarbo_iOS */,
-				6B4161BD2DEF653EB571E156DE563CBC /* MBProgressHUD */,
+				478B08742D5B625CB598E91E173E32A8 /* Kawagarbo_iOS */,
+				C9DE5DDF84D79F458975D31F4F68AFBD /* Kawagarbo_iOS-Kawagarbo_iOS */,
+				120C1A8B97F0E236FFE84AF7747C4C3A /* MBProgressHUD */,
 				A74DA09F1F67CBFC7FD30155FED123F9 /* Pods-Kawagarbo_iOS_Example */,
 				22DC68714781B9BC56C41F7ED4E12688 /* Pods-Kawagarbo_iOS_Tests */,
 			);
@@ -794,10 +819,26 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		04240F583FE0DE2ACDBC09BB3EC8E239 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78BF5916EA6A08827B2BEF2E4968AA12 /* images in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3031FECBC898B370196051E4078E241A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC7640DCA38066066BF410469A4A076 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6F1C51B0C668DDB9950B4395C0FCACE /* Kawagarbo_iOS.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,23 +849,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		770F7A647AD9A53F9BAD09A47531D086 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AD89DF484921AF5E0F33DD1B19F119C9 /* Kawagarbo_iOS.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5A85438340C25A9F001DC389D3096BA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41C0DDAD7CB85F591994F9D8A33D4F58 /* images in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A70AC1B91CA6EC4CD114E7B1120B0E89 /* Resources */ = {
+		C0B8B1D36F1FD2CA3B513F32DA958782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -834,69 +859,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		36F9DC799BE56406C927F546C0832F53 /* Sources */ = {
+		14F6A2A6BAF406548328ED1E3B7756C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0565DBBBA476B1DF0E74370DE1589D16 /* Bundle+Kawagarbo.swift in Sources */,
-				2D0165B7FC239221C888FDE6353BC3CD /* Data+Kawagarbo.swift in Sources */,
-				BC64EBB2876B6BFBF2812E8FFE2B09EB /* Dictionary+Kawagarbo.swift in Sources */,
-				47AFAA0D33E6E5BD504B88BDD52E2882 /* FileManager+Kawagarbo.swift in Sources */,
-				22B094447A56873933AB11FB3461759A /* Kawagarbo.swift in Sources */,
-				9B1B43495366E51500DF29ACB05ADC0C /* Kawagarbo_iOS-dummy.m in Sources */,
-				6E45331E142E6244C2B2D88DFD577A57 /* KGAlertView.swift in Sources */,
-				212D8B6264BBD8FD9F0BFF768F1C465F /* KGBluetoothManager.swift in Sources */,
-				9D7D8BD8425DF2AA62CA44B763B95582 /* KGCanIUseApi.swift in Sources */,
-				5F9FDEC0E9E1D7DF943DF1ABB1882F77 /* KGConfig.swift in Sources */,
-				FAA26C7DC0F59961374758F0F3CB1B94 /* KGGetSystemInfoApi.swift in Sources */,
-				29D0ED786DDBA6F01DA2E1B8567293E4 /* KGGlobalConfig.swift in Sources */,
-				6F6F82A5546C4FB99583119B8AD95FD3 /* KGHideLoadingApi.swift in Sources */,
-				5DFF6ABA4F79B6B4EC93DD9E58F2037F /* KGHideNavigationBarLoadingApi.swift in Sources */,
-				8C2BCFA9975BA1D12D9B831C312D52F6 /* KGHideTabBarApi.swift in Sources */,
-				B4872002D8EE40DED694A1CADE2BA9A2 /* KGHideToastApi.swift in Sources */,
-				43BBDCCAAD0700B70E9F446807B342AC /* KGIframeIntercept.swift in Sources */,
-				B875795D327173B60B70949884B98773 /* KGInfoPlist.swift in Sources */,
-				79BFEF6E66F8E22721680F9818DF3D9E /* KGLog.swift in Sources */,
-				A212ED463C1539F43208DBC728A3DC3D /* KGNamespace.swift in Sources */,
-				122F94BCDFBD26887E925DBAF0B1031B /* KGNativeApi.swift in Sources */,
-				E002165679AA42D977D57920AEEDB24A /* KGNativeApiConst.swift in Sources */,
-				5962A170B86D2F0E5338405EB2F7F234 /* KGNativeApiManager.swift in Sources */,
-				7465A3BCDABEA07676A80497A013D201 /* KGNativeApiResponse.swift in Sources */,
-				55F97CEEA465CF0C1A60D03AE7D63932 /* KGNavigateBackApi.swift in Sources */,
-				A92536AFB7210ACD425D7D6F270818C3 /* KGNavigateToApi.swift in Sources */,
-				3B0AC1C5221BAB7E004DF68D /* UIImage+Kawagarbo.swift in Sources */,
-				D528FFF7C2A1B1173438037D66D3B354 /* KGRedirectToApi.swift in Sources */,
-				DB11B6FB370256E24DB444DFDDB62B2D /* KGReLaunchApi.swift in Sources */,
-				F115327BE9A276450F8A4B9CE435E06D /* KGScriptMessageHandler.swift in Sources */,
-				21326181F332655F1B409A177D85F7FE /* KGSetNavigationBarColorApi.swift in Sources */,
-				7230D0CC9A945BA8099839595DA89CF0 /* KGSetNavigationBarTitleApi.swift in Sources */,
-				208A1FDDB1B96DEBD91DB9319B80B821 /* KGSetTabBarItemApi.swift in Sources */,
-				0EB06106AF53E2CC26DC87D31252807F /* KGSetTabBarStyleApi.swift in Sources */,
-				133593B9F0A25EBE8C8EF23399B9D879 /* KGShowActionSheetApi.swift in Sources */,
-				E3EE7BEF46CECFBC29C319EAAC2CFDA8 /* KGShowLoadingApi.swift in Sources */,
-				0C8B8D9948AD08D9D64F198F14130476 /* KGShowModalApi.swift in Sources */,
-				D60AE81978CD7DFF63756DB505A0B3EB /* KGShowNavigationBarLoadingApi.swift in Sources */,
-				7C6E2D0507F3C9E29236F6F695B3E7BD /* KGShowTabBarApi.swift in Sources */,
-				D2E3EA0113AF2CC2DF046E319FC02A57 /* KGShowToastApi.swift in Sources */,
-				D3466913CE7E9CB03ED4767B03AF5E84 /* KGSwitchTabApi.swift in Sources */,
-				06AFEBB9A338A5FBEBE2E2EA0ACFA9EF /* KGSystemInfo.swift in Sources */,
-				A6068AE2F9D33AB2B46CC61A0DCC5061 /* KGTitleView.swift in Sources */,
-				A7BDE8AEA580FC7E014F6DCC5CC95866 /* KGWebRoute.swift in Sources */,
-				17272F191D0F9F03F7072930671EC1DE /* KGWebVCUI.swift in Sources */,
-				EA66F0621649E77064DCE4A1C3F4D3E1 /* KGWebViewController.swift in Sources */,
-				0366C14C2CE2A65D2B9ABE7D8A08905A /* KGWebViewControllerDelegate.swift in Sources */,
-				F5129A6D6B5B5079399C05256CBE2267 /* KGWebViewDelegate.swift in Sources */,
-				AA2A88FD0E7B25BB25BE50A366486F3B /* KGWebViewManager.swift in Sources */,
-				44D9AAAA4261396BE72DE888D0264BE3 /* KGWKWebView.swift in Sources */,
-				75976E0FB4D5804695382F2DF049E990 /* MBProgressHUD+Kawagarbo.swift in Sources */,
-				E85EB77D712125E99F598B5D29C026C1 /* String+Kawagarbo.swift in Sources */,
-				40DC5CF3A442E4D88530F12A9CC8EACF /* UIAlertAction+Kawagarbo.swift in Sources */,
-				9B7D439059B2B15086CA5CBBC6E9E577 /* UIApplication+Kawagarbo.swift in Sources */,
-				0981A9933106D70153DB71BAEFDD09A3 /* UIColor+Kawagarbo.swift in Sources */,
-				4E9E08B4974D46749DE7F036F9D78494 /* UIDevice+Kawagarbo.swift in Sources */,
-				BFC3716DC8F17A3EAC208A6E5CED4C19 /* UILabel+Kawagarbo.swift in Sources */,
-				196795C29C8CC47A26A10FFFD832DB71 /* UIScreen+Kawagarbo.swift in Sources */,
-				9BE2DBB0E669328613504F44FFF6D8B2 /* URLProtocol+Kawagarbo.swift in Sources */,
+				217C5ACE62ADF23E5DAB34A71B77494F /* MBProgressHUD-dummy.m in Sources */,
+				48257270CCCE55A0A2847B2CE201DBCE /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,13 +876,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7BBC6831BCBD496159AE032E21C05E0B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		963866598DE914380858D3E9AEC6323A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -923,28 +884,109 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8E6A600BB55777D8E60816170412E6F /* Sources */ = {
+		A2F55A1DB5E0ED2CD0D2EA6DF8251131 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				157D3058C10F38274617C78EDB8262D8 /* MBProgressHUD-dummy.m in Sources */,
-				87C6BC272EC0C33D5AAD1587C2326949 /* MBProgressHUD.m in Sources */,
+				CB139323E612F042219309E02B9A99A1 /* Bundle+Kawagarbo.swift in Sources */,
+				E84DF6479A84FBA9C5C2E950C8BCA7FE /* Data+Kawagarbo.swift in Sources */,
+				397E9A486573314A04A4DBB6F8F90D22 /* Dictionary+Kawagarbo.swift in Sources */,
+				B41C774960F3DABEAAD2FD484FA6EE8F /* FileManager+Kawagarbo.swift in Sources */,
+				45964BB549BCC32991DF942EF8588D5C /* Kawagarbo.swift in Sources */,
+				233BD0A0E6528BEDD39C3B1985A497E2 /* Kawagarbo_iOS-dummy.m in Sources */,
+				F0C5E206C70F7F060C0604C4E6B5A193 /* KGAlertView.swift in Sources */,
+				2C46996F9DD15724161E3E94540074FB /* KGBluetoothManager.swift in Sources */,
+				8D54F1BF707DEBAFBC79CE0C52517BDE /* KGCanIUseApi.swift in Sources */,
+				AB880E97463789CBA85ADA0DE35B8A0E /* KGConfig.swift in Sources */,
+				3C1964E37F082CE92C55539C529B9D2E /* KGGetSystemInfoApi.swift in Sources */,
+				CFEE6EA31593035636396AE402F17047 /* KGGlobalConfig.swift in Sources */,
+				716FA5C6D82C3169703F16B061931A33 /* KGHideLoadingApi.swift in Sources */,
+				D9D098CD48D1C7ED27176655B14E170D /* KGHideNavigationBarLoadingApi.swift in Sources */,
+				407361074926392E073E8BD81BF7D655 /* KGHideTabBarApi.swift in Sources */,
+				F41062D04178C391C2B232C0A779FA1A /* KGHideTabBarRedDotApi.swift in Sources */,
+				4020E32A3FECB389FC785858DD4266F5 /* KGHideToastApi.swift in Sources */,
+				92EDE801246CB68BC71DC56356EEBF98 /* KGIframeIntercept.swift in Sources */,
+				C95530493782180C9DA51DC1B4D1EC19 /* KGInfoPlist.swift in Sources */,
+				D5B3C5F7F157D46E10073E2755FA5950 /* KGLog.swift in Sources */,
+				AA017A5B8BAEE1C41AB179FF0DAFC69E /* KGNamespace.swift in Sources */,
+				ED6D70AD2054C73050001648B15BC403 /* KGNativeApi.swift in Sources */,
+				1FA4E4373CE932B4E9700FD9F650F3BB /* KGNativeApiConst.swift in Sources */,
+				60FA247CE40E88846E5E2CFF78B7340C /* KGNativeApiManager.swift in Sources */,
+				F1DE6A6E188AC9E4B32946BB6F1712A0 /* KGNativeApiResponse.swift in Sources */,
+				C1AAB33BF7B8C7FBB0DA257A2AA78362 /* KGNavigateBackApi.swift in Sources */,
+				D6687B9A5378B12700AB75F265B072F9 /* KGNavigateToApi.swift in Sources */,
+				19A0678BDAAF4EB8F9C8B5D98AC52BB6 /* KGRedirectToApi.swift in Sources */,
+				A15F88B6FEBB65D18B97F6C045AA2211 /* KGReLaunchApi.swift in Sources */,
+				E7A68235F6D1620D610F2509EF8A7917 /* KGRemoveTabBarBadgeApi.swift in Sources */,
+				90859712795036D6BD16545E6472DAC5 /* KGScriptMessageHandler.swift in Sources */,
+				B6A18EEDF019B9B055ABF9D9AE007E4D /* KGSetNavigationBarColorApi.swift in Sources */,
+				B07AE4375A83150D075306BE7C761C35 /* KGSetNavigationBarTitleApi.swift in Sources */,
+				DFE312D1DD794B9E5E9D119A409B2539 /* KGSetTabBarBadgeApi.swift in Sources */,
+				BD06442C69E1FBF546F2DB728415F6B2 /* KGSetTabBarItemApi.swift in Sources */,
+				3C837FE309C6C59DBD0F264E1241F984 /* KGSetTabBarStyleApi.swift in Sources */,
+				903F957C6B1EBCAC773BA5ECAE56B718 /* KGShowActionSheetApi.swift in Sources */,
+				F3FA762F15E11FFB446DC169EED78A79 /* KGShowLoadingApi.swift in Sources */,
+				593DEEDFD5151427F33226843F1AB140 /* KGShowModalApi.swift in Sources */,
+				4C98A2E696193545B33D8824EC63BDC7 /* KGShowNavigationBarLoadingApi.swift in Sources */,
+				9BF811061678918675CBC519FD33A6DD /* KGShowTabBarApi.swift in Sources */,
+				840E64D037086763CD6B3B732A81C74E /* KGShowTabBarRedDotApi.swift in Sources */,
+				C74C396EDD5A408A48B09F6E271569AB /* KGShowToastApi.swift in Sources */,
+				00DA8229BC5350653AEA5BCF2F6222F4 /* KGSwitchTabApi.swift in Sources */,
+				7F6C0514104DB54E36D025FE405F7A68 /* KGSystemInfo.swift in Sources */,
+				5F729BD581F3C32C8DEC062BB8E4C392 /* KGTitleView.swift in Sources */,
+				8DC41D48C77B82FE086D708365AF359B /* KGWebRoute.swift in Sources */,
+				D2A824872EF2E4CBD91D9339F0094655 /* KGWebVCUI.swift in Sources */,
+				4FEA2CE1577A1714874EE3012AE2F8FC /* KGWebViewController.swift in Sources */,
+				16179DBA859DC3F1BF7D0AA6535AA46A /* KGWebViewControllerDelegate.swift in Sources */,
+				35DF2A53A8E1A25C7ECD407C4EC336D1 /* KGWebViewDelegate.swift in Sources */,
+				C42AFEE4425CDD22A372D6EC6FBF32AC /* KGWebViewManager.swift in Sources */,
+				D8F651854B76EEE4269E39DE629C05E4 /* KGWKWebView.swift in Sources */,
+				22109FA0A37CE39851EEDA96D04AFBDD /* MBProgressHUD+Kawagarbo.swift in Sources */,
+				B607736EE9E4353123BC204C5DC2D01A /* String+Kawagarbo.swift in Sources */,
+				A8E0F954A44D7463F0ECA792B721192B /* UIAlertAction+Kawagarbo.swift in Sources */,
+				122865F682F45D3553602420E31D669B /* UIApplication+Kawagarbo.swift in Sources */,
+				9C5697E5197A7DDE64BB021B2F0DB397 /* UIColor+Kawagarbo.swift in Sources */,
+				E63B2FB349CF195A61041ED3AA576084 /* UIDevice+Kawagarbo.swift in Sources */,
+				7E2662D9F9269F8DA680D456DDC613F2 /* UIImage+Kawagarbo.swift in Sources */,
+				825C99FC56F624087722EFD9B2B7D2C3 /* UILabel+Kawagarbo.swift in Sources */,
+				CCFAAC10299ED8F4BDD738AE3011132F /* UIScreen+Kawagarbo.swift in Sources */,
+				D622D7DC0070370C3A9AC476B026F49A /* UITabBar+Kawagarbo.swift in Sources */,
+				069B26023C20E358DE22F0E9EAAEF42B /* URLProtocol+Kawagarbo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0B25D120BC1A3D867C9FC00E12A5F25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1B74671EE0703557026C14E8742DF81D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Kawagarbo_iOS-Kawagarbo_iOS";
+			target = C9DE5DDF84D79F458975D31F4F68AFBD /* Kawagarbo_iOS-Kawagarbo_iOS */;
+			targetProxy = 16595F615E83E16F1F3830424A6C56C1 /* PBXContainerItemProxy */;
+		};
+		6A03979160C71C4F335E6D844C9FB28C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MBProgressHUD;
+			target = 120C1A8B97F0E236FFE84AF7747C4C3A /* MBProgressHUD */;
+			targetProxy = D90B0D1B01E28C8FD56C0394DA79A590 /* PBXContainerItemProxy */;
+		};
 		9E88EC1B0E998322DC62A0D80E4C15D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Kawagarbo_iOS;
-			target = 55917E0FBE583D1B3098817E7D32A884 /* Kawagarbo_iOS */;
+			target = 478B08742D5B625CB598E91E173E32A8 /* Kawagarbo_iOS */;
 			targetProxy = CA3E0E219458D8A8E9C8B7EBB14B0384 /* PBXContainerItemProxy */;
 		};
 		B8D48F30FB4892EA743DD21BA289909F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MBProgressHUD;
-			target = 6B4161BD2DEF653EB571E156DE563CBC /* MBProgressHUD */;
+			target = 120C1A8B97F0E236FFE84AF7747C4C3A /* MBProgressHUD */;
 			targetProxy = 16E08FED1C3EE72ADADDBAAEE79A1852 /* PBXContainerItemProxy */;
 		};
 		BE44213AFD2D1CC4A0AE77F34218BF68 /* PBXTargetDependency */ = {
@@ -952,18 +994,6 @@
 			name = "Pods-Kawagarbo_iOS_Example";
 			target = A74DA09F1F67CBFC7FD30155FED123F9 /* Pods-Kawagarbo_iOS_Example */;
 			targetProxy = 04EA2ECB79A0D9BFBBFBD934EA66B7F3 /* PBXContainerItemProxy */;
-		};
-		D76873DDF40A36DEF7C52ECD5E6B0234 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MBProgressHUD;
-			target = 6B4161BD2DEF653EB571E156DE563CBC /* MBProgressHUD */;
-			targetProxy = 10577146CB1174F09190A3868F5F77AC /* PBXContainerItemProxy */;
-		};
-		F08CD14B6CBCE158F19549BF27AC45D6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Kawagarbo_iOS-Kawagarbo_iOS";
-			target = 38F8EF161A7E9D32A9253CF96F2E4B40 /* Kawagarbo_iOS-Kawagarbo_iOS */;
-			targetProxy = 8CDDB159F2D98729F0D352577C444EB0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1001,38 +1031,6 @@
 			};
 			name = Debug;
 		};
-		240A5BF5614A440DB3AE5B894EF8A8B7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF0BE6469434F7C1F50DDDAB97289AD8 /* MBProgressHUD.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
-				PRODUCT_MODULE_NAME = MBProgressHUD;
-				PRODUCT_NAME = MBProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		2ED1CF2A9743498F781FFEC6BC77DD07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CADB70708FD8EE4FBCECFDBDB764545F /* Pods-Kawagarbo_iOS_Tests.release.xcconfig */;
@@ -1067,7 +1065,7 @@
 			};
 			name = Release;
 		};
-		335F3A100F0BCCB5416587EDB7D3ABDB /* Debug */ = {
+		3650650823454320110557C6B98D0271 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DF0BE6469434F7C1F50DDDAB97289AD8 /* MBProgressHUD.xcconfig */;
 			buildSettings = {
@@ -1097,6 +1095,70 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		6C7E698C20E8EEC2BB0C922899FFC643 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2C87A5982283D9330BE76B672E7091F /* Kawagarbo_iOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Kawagarbo_iOS";
+				INFOPLIST_FILE = "Target Support Files/Kawagarbo_iOS/ResourceBundle-Kawagarbo_iOS-Kawagarbo_iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = Kawagarbo_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		7F8A4E7054A002A5254A916EA003885A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF0BE6469434F7C1F50DDDAB97289AD8 /* MBProgressHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = MBProgressHUD;
+				PRODUCT_NAME = MBProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BDB5E0CB1D4E8DED86973183777D0308 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2C87A5982283D9330BE76B672E7091F /* Kawagarbo_iOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Kawagarbo_iOS";
+				INFOPLIST_FILE = "Target Support Files/Kawagarbo_iOS/ResourceBundle-Kawagarbo_iOS-Kawagarbo_iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = Kawagarbo_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		BE01AF5D395AE305A54D518A9B774D2A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1151,11 +1213,43 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
+		};
+		C4D8C05D17657C2F0E5BA051E5AE62C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2C87A5982283D9330BE76B672E7091F /* Kawagarbo_iOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Kawagarbo_iOS/Kawagarbo_iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Kawagarbo_iOS/Kawagarbo_iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Kawagarbo_iOS/Kawagarbo_iOS.modulemap";
+				PRODUCT_MODULE_NAME = Kawagarbo_iOS;
+				PRODUCT_NAME = Kawagarbo_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		CF9C92EDE2FFE8B3539DD7AB64380EF1 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1255,38 +1349,6 @@
 			};
 			name = Debug;
 		};
-		D80AFEF064114D8E0112316F56CE2EFD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2C87A5982283D9330BE76B672E7091F /* Kawagarbo_iOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Kawagarbo_iOS/Kawagarbo_iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Kawagarbo_iOS/Kawagarbo_iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Kawagarbo_iOS/Kawagarbo_iOS.modulemap";
-				PRODUCT_MODULE_NAME = Kawagarbo_iOS;
-				PRODUCT_NAME = Kawagarbo_iOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		DA05FA794BE411EAB026C9EABE7F517B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A191E3E3411E5552A77D132A1ECFD76B /* Pods-Kawagarbo_iOS_Tests.debug.xcconfig */;
@@ -1320,39 +1382,7 @@
 			};
 			name = Debug;
 		};
-		DC5D3A9607D2051D912B83E848DD8025 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2C87A5982283D9330BE76B672E7091F /* Kawagarbo_iOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Kawagarbo_iOS";
-				INFOPLIST_FILE = "Target Support Files/Kawagarbo_iOS/ResourceBundle-Kawagarbo_iOS-Kawagarbo_iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = Kawagarbo_iOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		E3D4621A25BE337862D9033764770916 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2C87A5982283D9330BE76B672E7091F /* Kawagarbo_iOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Kawagarbo_iOS";
-				INFOPLIST_FILE = "Target Support Files/Kawagarbo_iOS/ResourceBundle-Kawagarbo_iOS-Kawagarbo_iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = Kawagarbo_iOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		E503148D25792C81EE9D0AC855549E44 /* Debug */ = {
+		FEB3F0E67D7430E272A62FE21660B00E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E2C87A5982283D9330BE76B672E7091F /* Kawagarbo_iOS.xcconfig */;
 			buildSettings = {
@@ -1378,14 +1408,24 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		062BA8D36B9E20997B408416570EB3C9 /* Build configuration list for PBXNativeTarget "Kawagarbo_iOS-Kawagarbo_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C7E698C20E8EEC2BB0C922899FFC643 /* Debug */,
+				BDB5E0CB1D4E8DED86973183777D0308 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1404,11 +1444,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5D79713568FD3C0CE813498AC8DBE879 /* Build configuration list for PBXNativeTarget "MBProgressHUD" */ = {
+		54CD895BB3E591A6DA310A73BA0A12F5 /* Build configuration list for PBXNativeTarget "Kawagarbo_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				335F3A100F0BCCB5416587EDB7D3ABDB /* Debug */,
-				240A5BF5614A440DB3AE5B894EF8A8B7 /* Release */,
+				C4D8C05D17657C2F0E5BA051E5AE62C4 /* Debug */,
+				FEB3F0E67D7430E272A62FE21660B00E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1422,20 +1462,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D1C39A2308A13F26807A46E92BC52899 /* Build configuration list for PBXNativeTarget "Kawagarbo_iOS-Kawagarbo_iOS" */ = {
+		A274BA839FC220D572285A0E04F4099C /* Build configuration list for PBXNativeTarget "MBProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E3D4621A25BE337862D9033764770916 /* Debug */,
-				DC5D3A9607D2051D912B83E848DD8025 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F5B7523804D22EA40123F926C62119DB /* Build configuration list for PBXNativeTarget "Kawagarbo_iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E503148D25792C81EE9D0AC855549E44 /* Debug */,
-				D80AFEF064114D8E0112316F56CE2EFD /* Release */,
+				3650650823454320110557C6B98D0271 /* Debug */,
+				7F8A4E7054A002A5254A916EA003885A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

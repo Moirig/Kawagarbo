@@ -286,4 +286,21 @@
         wx.invokeHandler('setTabBarItem', object)
     }
 
+    wx.showTabBarRedDot = function (object) {
+        wx.invokeHandler('showTabBarRedDot', object)
+    }
+
+    wx.setTabBarBadge = function (object) {
+        wx.invokeHandler('setTabBarBadge', object)
+    }
+
+    wx.hideTabBarRedDot = function (object) {
+        wx.invokeHandler('hideTabBarRedDot', object)
+    }
+
+    wx.removeTabBarBadge = function (object) {
+        wx.invokeHandler('removeTabBarBadge', object)
+    }
+
+
 })();
