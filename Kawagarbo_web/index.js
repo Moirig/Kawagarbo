@@ -31,6 +31,10 @@ function toTabBar() {
     window.location.href = 'pages/tabBar/tabBar.html'
 }
 
+function towebviewUI() {
+    window.location.href = 'pages/webviewUI/webviewUI.html'
+}
+
 function navigateTo(url) {
     wx.navigateTo({
         url: url

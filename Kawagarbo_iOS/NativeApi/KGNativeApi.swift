@@ -61,6 +61,8 @@ public class KGNativeApi: NSObject {
         KGHideTabBarRedDotApi().regist()
         KGSetTabBarBadgeApi().regist()
         KGRemoveTabBarBadgeApi().regist()
+        
+        KGPageScrollToApi().regist()
     }
     
 }

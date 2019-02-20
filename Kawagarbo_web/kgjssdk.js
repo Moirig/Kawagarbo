@@ -302,5 +302,10 @@
         wx.invokeHandler('removeTabBarBadge', object)
     }
 
+    wx.pageScrollTo = function (object) {
+        object.duration = object.duration || 300
+        wx.invokeHandler('pageScrollTo', object)
+    }
+
 
 })();
