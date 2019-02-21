@@ -16,7 +16,8 @@ class KGHideTabBarApi: KGNativeApi, KGNativeApiDelegate {
         guard let tabBarController = webViewController?.tabBarController else { return complete(.failure(code: kParamCodeDefaultFail, message: "fail not TabBar page")) }
 
         guard let navigationController = webViewController?.navigationController, navigationController.viewControllers.count == 1 else { return complete(.failure(code: kParamCodeDefaultFail, message: "fail not TabBar page")) }
-
+        
+        //TODO-
         tabBarController.tabBar.isHidden = true
         complete(.success(data: nil))
     }

@@ -96,13 +96,21 @@ public class KGWebViewController: UIViewController {
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        guard let webView = webView, let navigationBar = navigationController?.navigationBar, navigationBar.frame.maxY > 20 else {
-            return
+        guard let webView = webView else { return }
+        var navigationBarHeight: CGFloat = 0
+        var tabbarHeight: CGFloat = 0
+        
+        if let navigationController = navigationController, navigationController.navigationBar.frame.maxY > 20 {
+            navigationBarHeight = navigationController.navigationBar.frame.maxY
+        }
+        
+        if let count = navigationController?.viewControllers.count, count == 1, let tabBar = tabBarController?.tabBar, tabBar.isHidden == false {
+            tabbarHeight = tabBar.frame.height
         }
         
         var frame = webView.frame
-        frame.origin.y = navigationBar.frame.maxY
-        frame.size.height = UIScreen.kg.height - navigationBar.frame.maxY
+        frame.origin.y = navigationBarHeight
+        frame.size.height = UIScreen.kg.height - navigationBarHeight - tabbarHeight
         webView.frame = frame
     }
 
