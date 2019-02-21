@@ -63,6 +63,8 @@ public class KGNativeApi: NSObject {
         KGRemoveTabBarBadgeApi().regist()
         
         KGPageScrollToApi().regist()
+        
+        KGOnKeyboardHeightChangeApi().regist()
     }
     
 }

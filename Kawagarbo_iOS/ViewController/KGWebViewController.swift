@@ -141,7 +141,7 @@ extension KGWebViewController {
         webview.frame = view.frame
         webview.webViewDelegate = self
         webview.scrollView.delegate = self
-        webview.allowDisplayingKeyboardWithoutUserAction = true
+//        webview.allowDisplayingKeyboardWithoutUserAction = true
 
         if #available(iOS 11.0, *) {
             webview.scrollView.contentInsetAdjustmentBehavior = .never
@@ -295,19 +295,23 @@ extension KGWebViewController {
 extension KGWebViewController {
 
     func addNotification() {
-        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) {[weak self] (notification) in
-            guard let strongSelf = self else { return }
-            strongSelf.onHide()
-        }
         
-        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: OperationQueue.main) {[weak self] (notification) in
-            guard let strongSelf = self else { return }
-            strongSelf.onShow()
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(onHide), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onShow), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
     }
     
     func removeNotification() {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func onKeyboardHeightChange(_ notification: Notification) {
+        let duration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? CGFloat) ?? 0
+        let frame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) ?? CGRect.zero
+        let height = UIScreen.kg.height - frame.minY
+        let data: [String: CGFloat] = ["duration": duration, "height": height]
+        nativeApiManager?.callJS(function: "onKeyboardHeightChange_subscription", parameters: data)
     }
     
 }
@@ -324,11 +328,11 @@ extension KGWebViewController: UIScrollViewDelegate {
 // MARK: - Web Life Cycle
 extension KGWebViewController {
     
-    func onShow() {
+    @objc func onShow() {
         nativeApiManager?.callJS(function: "onShow")
     }
     
-    func onHide() {
+    @objc func onHide() {
         nativeApiManager?.callJS(function: "onHide")
     }
     

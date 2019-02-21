@@ -3,6 +3,12 @@ wx.onReady(function () {
 
 })
 
+function navigateTo(url) {
+    wx.navigateTo({
+        url: url
+    })
+}
+
 function toAlert() {
     window.location.href = 'pages/alert/alert.html'
 }
@@ -35,9 +41,9 @@ function towebviewUI() {
     window.location.href = 'pages/webviewUI/webviewUI.html'
 }
 
-function navigateTo(url) {
-    wx.navigateTo({
-        url: url
-    })
+function toKeyboard() {
+    window.location.href = 'pages/keyboard/keyboard.html'
 }
+
+
 

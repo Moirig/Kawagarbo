@@ -307,5 +307,16 @@
         wx.invokeHandler('pageScrollTo', object)
     }
 
+    wx.onKeyboardHeightChange = function (callback) {
+
+        wx.invokeHandler('onKeyboardHeightChange', {
+                success: function () {
+                    wx.subscribeHandler('onKeyboardHeightChange_subscription', callback)
+                }
+            }
+        )
+
+    }
+
 
 })();
