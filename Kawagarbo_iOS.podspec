@@ -13,5 +13,6 @@ Pod::Spec.new do |s|
   }
   
   s.dependency  'MBProgressHUD'
-  
+  s.dependency  'Cache'
+
 end

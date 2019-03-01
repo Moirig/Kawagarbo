@@ -44,7 +44,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		68D9F2A00516117D55705D68 /* Pods-Kawagarbo_iOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kawagarbo_iOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-Kawagarbo_iOS_Example/Pods-Kawagarbo_iOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6CF26D3910359E6A8B45CFD7 /* Kawagarbo_iOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Kawagarbo_iOS.podspec; path = ../Kawagarbo_iOS.podspec; sourceTree = "<group>"; };
+		6CF26D3910359E6A8B45CFD7 /* Kawagarbo_iOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Kawagarbo_iOS.podspec; path = ../Kawagarbo_iOS.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		819DCA9FFDC59B272E720587 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8FB33E6E38560F7D2B67DA0E /* Pods-Kawagarbo_iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kawagarbo_iOS_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Kawagarbo_iOS_Tests/Pods-Kawagarbo_iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A3B0FE5B0E10431798A87FC /* Pods_Kawagarbo_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kawagarbo_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +276,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Kawagarbo_iOS_Example/Pods-Kawagarbo_iOS_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/Kawagarbo_iOS/Kawagarbo_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 			);
@@ -283,6 +284,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kawagarbo_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 			);
