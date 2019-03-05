@@ -24,4 +24,6 @@ public struct KGGlobalConfig {
     
     public static var barFrontColor: UIColor = UIColor(hexString: "#000000")!
     
+    public static var appIdKey: String = "appId"
+    
 }

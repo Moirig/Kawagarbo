@@ -65,6 +65,12 @@ public class KGNativeApi: NSObject {
         KGPageScrollToApi().regist()
         
         KGOnKeyboardHeightChangeApi().regist()
+        
+        KGClearStorageApi().regist()
+        KGGetStorageApi().regist()
+        KGGetStorageInfoApi().regist()
+        KGRemoveStorageApi().regist()
+        KGSetStorageApi().regist()
     }
     
 }

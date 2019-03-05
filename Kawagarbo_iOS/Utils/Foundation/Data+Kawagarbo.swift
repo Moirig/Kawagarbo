@@ -25,6 +25,20 @@ extension KGNamespace where Base == Data {
         
     }
     
+    var json: Any? {
+        do {
+            let json = try JSONSerialization.jsonObject(with: base, options: .allowFragments)
+            return json
+        }
+        catch {
+            if let jsonString = String(data: base, encoding: .utf8) {
+                return jsonString
+            }
+            debugPrint(error)
+            return nil
+        }
+    }
+    
     var base64EncodedString: String {
         return base.base64EncodedString()
     }

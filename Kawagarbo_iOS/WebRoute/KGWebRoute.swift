@@ -16,6 +16,35 @@ public class KGWebRoute: NSObject {
     
     public var urlRequest: URLRequest?
     
+    public var appId: String? {
+        get {
+            if let appId = storeAppId {
+                return appId
+            }
+            
+            if let host = url?.host {
+                return host.kg.base64EncodedString
+            }
+            
+            if let url = urlString, let components = URLComponents(string: url) {
+                if let queryItems = components.queryItems {
+                    for item in queryItems {
+                        if item.name == config.appIdKey {
+                            return item.value
+                        }
+                    }
+                }
+            }
+                
+            return nil
+        }
+        set {
+            storeAppId = newValue
+        }
+    }
+    
+    public var storeAppId: String?
+    
     public var config: KGConfig! {
         get { return KGConfig() }
         set {

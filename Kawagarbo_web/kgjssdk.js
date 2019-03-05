@@ -134,7 +134,7 @@
             }
 
             delete res.message
-            object.complete && object.complete(res)
+            object.complete && object.complete(res.data)
         })
     }
 
@@ -316,6 +316,27 @@
             }
         )
 
+    }
+
+
+    wx.clearStorage = function (object) {
+        wx.invokeHandler('clearStorage', object)
+    }
+
+    wx.getStorage = function (object) {
+        wx.invokeHandler('getStorage', object)
+    }
+
+    wx.getStorageInfo = function (object) {
+        wx.invokeHandler('getStorageInfo', object)
+    }
+
+    wx.removeStorage = function (object) {
+        wx.invokeHandler('removeStorage', object)
+    }
+
+    wx.setStorage = function (object) {
+        wx.invokeHandler('setStorage', object)
     }
 
 

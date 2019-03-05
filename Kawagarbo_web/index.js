@@ -45,5 +45,7 @@ function toKeyboard() {
     window.location.href = 'pages/keyboard/keyboard.html'
 }
 
-
+function toStorage() {
+    window.location.href = 'pages/storage/storage.html'
+}
 
