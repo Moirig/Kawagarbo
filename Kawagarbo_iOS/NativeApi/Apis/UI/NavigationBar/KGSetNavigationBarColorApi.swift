@@ -15,10 +15,10 @@ class KGSetNavigationBarColorApi: KGNativeApi, KGNativeApiDelegate {
         
         guard let webVC = webViewController else { return }
         
-        guard let frontColor = parameters?["frontColor"] as? String else { return complete(.failure(code: kParamCodeDefaultFail, message: "fail parameter error: parameter.frontColor should be String instead of Undefined;")) }
+        guard let frontColor = parameters?["frontColor"] as? String else { return complete(failure(message: "fail parameter error: parameter.frontColor should be String instead of Undefined;")) }
         if KGInfoPlist.baseStatusBarAppearance {
             KGLog(title: "infoPlist error", "Pleast set UIViewControllerBasedStatusBarAppearance to true in infoPlist;")
-            return complete(.failure(code: kParamCodeDefaultFail, message: "Pleast set UIViewControllerBasedStatusBarAppearance to true in infoPlist;"))
+            return complete(failure(message: "Pleast set UIViewControllerBasedStatusBarAppearance to true in infoPlist;"))
         }
         
         if frontColor == "#000000" || frontColor == "#ffffff" {
@@ -27,14 +27,14 @@ class KGSetNavigationBarColorApi: KGNativeApi, KGNativeApiDelegate {
             webVC.titleView.tintColor = color
         }
         else {
-            return complete(.failure(code: kParamCodeDefaultFail, message: "fail invalid frontColor \"\(frontColor)\""))
+            return complete(failure(message: "fail invalid frontColor \"\(frontColor)\""))
         }
         
-        guard let backgroundColor = parameters?["backgroundColor"] as? String else { return complete(.failure(code: kParamCodeDefaultFail, message: "fail parameter error: parameter.backgroundColor should be String instead of Undefined;")) }
+        guard let backgroundColor = parameters?["backgroundColor"] as? String else { return complete(failure(message: "fail parameter error: parameter.backgroundColor should be String instead of Undefined;")) }
         webVC.currentUI.navigationBar.backgroundColor = UIColor(hexString: backgroundColor) ?? UIColor.white
         
         webVC.changeToCurrentUI()
-        complete(.success(data: nil))
+        complete(success())
     }
 
 }

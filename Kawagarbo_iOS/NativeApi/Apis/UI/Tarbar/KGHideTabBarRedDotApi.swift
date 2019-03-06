@@ -12,23 +12,23 @@ class KGHideTabBarRedDotApi: KGNativeApi, KGNativeApiDelegate {
     var path: String { return "hideTabBarRedDot" }
     
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
-        guard let tabBarController = webViewController?.tabBarController else { return complete(.failure(code: kParamCodeDefaultFail, message: "fail not TabBar page")) }
+        guard let tabBarController = webViewController?.tabBarController else { return complete(failure(message: "fail not TabBar page")) }
         
-        guard let navigationController = webViewController?.navigationController, navigationController.viewControllers.count == 1 else { return complete(.failure(code: kParamCodeDefaultFail, message: "fail not TabBar page")) }
+        guard let navigationController = webViewController?.navigationController, navigationController.viewControllers.count == 1 else { return complete(failure(message: "fail not TabBar page")) }
         
-        guard var index = parameters?["index"] as? Int else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid index;")) }
+        guard var index = parameters?["index"] as? Int else { return complete(failure(message: "Invalid index;")) }
         
-        guard let count = tabBarController.viewControllers?.count else { return complete(.failure(code: kParamCodeDefaultFail, message: "no tabbar;")) }
+        guard let count = tabBarController.viewControllers?.count else { return complete(failure(message: "no tabbar;")) }
         if index < 0 { index = 0 }
         if index > count - 1 { index = count - 1 }
         
-        guard let tabBarItem = tabBarController.tabBar.items?[index] else { return complete(.failure(code: kParamCodeDefaultFail, message: "no tabBarItem;")) }
+        guard let tabBarItem = tabBarController.tabBar.items?[index] else { return complete(failure(message: "no tabBarItem;")) }
         
         tabBarItem.badgeValue = nil
         
         tabBarController.tabBar.kg_badgeScale = 1.0
         
-        complete(.success(data: nil))
+        complete(success())
     }
     
 }

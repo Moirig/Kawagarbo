@@ -13,14 +13,14 @@ class KGNavigateToApi: KGNativeApi, KGNativeApiDelegate {
     
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
 
-        guard let urlString = parameters?["url"] as? String else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid url!")) }
+        guard let urlString = parameters?["url"] as? String else { return complete(failure(message: "Invalid url!")) }
         
-        guard let _ = URL(string: urlString) else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid url!")) }
+        guard let _ = URL(string: urlString) else { return complete(failure(message: "Invalid url!")) }
         
         if urlString.kg.isFile {
             let filePath = urlString.kg.noScheme
             if FileManager.kg.fileExists(atPath: filePath) == false {
-                return complete(.failure(code: kParamCodeDefaultFail, message: "No file!"))
+                return complete(failure(message: "No file!"))
             }
         }
         
@@ -28,7 +28,7 @@ class KGNavigateToApi: KGNativeApi, KGNativeApiDelegate {
         webVC.hidesBottomBarWhenPushed = true
         webViewController?.navigationController?.pushViewController(webVC, animated: true)
         
-        complete(.success(data: nil))
+        complete(success())
     }
     
 

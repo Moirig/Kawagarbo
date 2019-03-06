@@ -13,9 +13,9 @@ class KGSetTabBarStyleApi: KGNativeApi, KGNativeApiDelegate {
     
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
         
-        guard let tabBarController = webViewController?.tabBarController else { return complete(.failure(code: kParamCodeDefaultFail, message: "fail not TabBar page")) }
+        guard let tabBarController = webViewController?.tabBarController else { return complete(failure(message: "fail not TabBar page")) }
         
-        guard let navigationController = webViewController?.navigationController, navigationController.viewControllers.count == 1 else { return complete(.failure(code: kParamCodeDefaultFail, message: "fail not TabBar page")) }
+        guard let navigationController = webViewController?.navigationController, navigationController.viewControllers.count == 1 else { return complete(failure(message: "fail not TabBar page")) }
         
         if let normalColor = parameters?["color"] as? String {
             if let color = UIColor(hexString: normalColor) {
@@ -47,7 +47,7 @@ class KGSetTabBarStyleApi: KGNativeApi, KGNativeApiDelegate {
             tabBarController.tabBar.clipsToBounds = borderStyle == "white"
         }
 
-        complete(.success(data: nil))
+        complete(success())
     }
 
 }

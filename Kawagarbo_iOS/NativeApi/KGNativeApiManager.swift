@@ -56,15 +56,15 @@ extension KGNativeApiManager {
                     """)
                 
                 api.webViewController = strongSelf.webViewController
-                api.perform(with: parameters) { (apiResponse) in
+                api.perform(with: parameters) { (response) in
                     if let callback = callback {
                         KGLog(title: "nativeResponse:", """
                             path:\(apiPath)
-                            response:\(apiResponse.jsonObject)
+                            response:\(response)
                             """)
                         
                         DispatchQueue.main.async {
-                            callback(apiResponse.jsonObject)
+                            callback(response)
                         }
                     }
                 }
@@ -93,7 +93,7 @@ extension KGNativeApiManager {
             
             
             
-            guard let jsonObj = jsonObject, let code = jsonObj[kParamCode] as? Int else {
+            guard let jsonObj = jsonObject, let _ = jsonObj[kParamCode] as? Int else {
                 KGLog(title: "Invalid Response Type:", jsonObject?.kg.string ?? "")
                 return
             }
@@ -103,23 +103,7 @@ extension KGNativeApiManager {
                 \(jsonObj.kg.string)
                 """)
             
-            let message = jsonObj[kParamMessage] as? String ?? ""
-            
-            switch code {
-                
-            case kParamCodeSuccess:
-                let data = jsonObj[kParamData] as? [String: Any]
-                complete(.success(data: data))
-            
-            case kParamCodeCancel:
-                complete(.cancel(message: message))
-
-            case kParamCodeUnknownApi:
-                complete(.unknownApi(api: function))
-                
-            default:
-                complete(.failure(code: code, message: message))
-            }
+            complete(jsonObj)
         }
     }
     
@@ -173,7 +157,7 @@ extension KGNativeApiManager {
                 KGLog(title: "UnknownApi:", handlerName)
 
                 guard let aCallback = callback else { return }
-                aCallback(KGNativeApiResponse.unknownApi(api: handlerName).jsonObject)
+                aCallback(unknowApi(message: "Unknown Api:\(handlerName)!"))
                 return
             }
             handler(message[kParamData] as? Message, callback)

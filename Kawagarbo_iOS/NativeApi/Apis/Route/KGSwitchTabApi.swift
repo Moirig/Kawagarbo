@@ -13,9 +13,9 @@ class KGSwitchTabApi: KGNativeApi, KGNativeApiDelegate {
     
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
 
-        guard var index = parameters?["index"] as? Int else { return complete(.failure(code: kParamCodeDefaultFail, message: "Invalid delta!")) }
+        guard var index = parameters?["index"] as? Int else { return complete(failure(message: "Invalid delta!")) }
         
-        guard let tabBarController = webViewController?.navigationController?.tabBarController, let count = tabBarController.viewControllers?.count else { return complete(.failure(code: kParamCodeDefaultFail, message: "no tabbar;")) }
+        guard let tabBarController = webViewController?.navigationController?.tabBarController, let count = tabBarController.viewControllers?.count else { return complete(failure(message: "no tabbar;")) }
         if index < 0 { index = 0 }
         if index > count - 1 { index = count - 1 }
         
@@ -27,7 +27,7 @@ class KGSwitchTabApi: KGNativeApi, KGNativeApiDelegate {
             }
         }
         
-        complete(.success(data: nil))
+        complete(success())
     }
     
 }

@@ -19,7 +19,7 @@ class KGShowLoadingApi: KGNativeApi, KGNativeApiDelegate {
         
         MBProgressHUD.loading(title: title, hasMask: mask)
         
-        complete(.success(data: nil))
+        complete(success())
     }
 
 }

@@ -13,12 +13,12 @@ class KGPageScrollToApi: KGNativeApi, KGNativeApiDelegate {
     
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
         
-        guard let webView = webViewController?.webView else { return complete(.failure(code: kParamCodeDefaultFail, message: "No webView;")) }
+        guard let webView = webViewController?.webView else { return complete(failure(message: "No webView;")) }
         
-        guard var scrollTop = parameters?["scrollTop"] as? CGFloat else { return complete(.failure(code: kParamCodeDefaultFail, message: "scrollTop undefined;")) }
+        guard var scrollTop = parameters?["scrollTop"] as? CGFloat else { return complete(failure(message: "scrollTop undefined;")) }
         
         if webView.scrollView.contentSize.height < webView.scrollView.frame.height {
-            return complete(.failure(code: kParamCodeDefaultFail, message: "can not scroll;"))
+            return complete(failure(message: "can not scroll;"))
         }
         
         //TODO-
@@ -29,7 +29,7 @@ class KGPageScrollToApi: KGNativeApi, KGNativeApiDelegate {
         
         webView.scrollView.setContentOffset(CGPoint(x: 0, y: scrollTop), animated: true)
         
-        complete(.success(data: nil))
+        complete(success())
     }
 
 }

@@ -14,10 +14,10 @@ class KGSetStorageApi: KGNativeApi, KGNativeApiDelegate {
     
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
         
-        guard let appId = webViewController?.webRoute?.appId else { return complete(.failure(code: kParamCodeDefaultFail, message: "No appId;")) }
+        guard let appId = webViewController?.webRoute?.appId else { return complete(failure(message: "No appId;")) }
         
-        guard let key = parameters?["key"] as? String else { return complete(.failure(code: kParamCodeDefaultFail, message: "key undefined!")) }
-        guard let data = parameters?["data"] else { return complete(.failure(code: kParamCodeDefaultFail, message: "data undefined!")) }
+        guard let key = parameters?["key"] as? String else { return complete(failure(message: "key undefined!")) }
+        guard let data = parameters?["data"] else { return complete(failure(message: "data undefined!")) }
 
         
         let url = URL(fileURLWithPath: KawagarboCachePath + "/\(appId)")
@@ -38,10 +38,10 @@ class KGSetStorageApi: KGNativeApi, KGNativeApiDelegate {
             if keys.contains(key) == false { keys.append(key) }
             let keysData = try JSONSerialization.data(withJSONObject: keys, options: .prettyPrinted)
             try storage.setObject(keysData, forKey: "kgKeys")
-            return complete(.success(data: nil))
+            return complete(success())
         } catch {
             let nsError = error
-            return complete(.failure(code: kParamCodeDefaultFail, message: nsError.localizedDescription))
+            return complete(failure(message: nsError.localizedDescription))
         }
         
     }

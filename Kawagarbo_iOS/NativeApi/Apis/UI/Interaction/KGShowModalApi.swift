@@ -25,14 +25,14 @@ class KGShowModalApi: KGNativeApi, KGNativeApiDelegate {
         
         if showCancel {
             let action = UIAlertAction(title: cancelText, style: .cancel) { (action) in
-                complete(.success(data: ["confirm": false, "cancel": true]))
+                complete(success(data: ["confirm": false, "cancel": true]))
             }
             action.setValue(UIColor(hexString: cancelColor), forKey: "_titleTextColor")
             alert.addAction(action)
         }
         
         let action = UIAlertAction(title: confirmText, style: .default) { (action) in
-            complete(.success(data: ["confirm": true, "cancel": false]))
+            complete(success(data: ["confirm": true, "cancel": false]))
         }
         action.setValue(UIColor(hexString: confirmColor), forKey: "_titleTextColor")
         alert.addAction(action)

@@ -13,7 +13,7 @@ class KGShowNavigationBarLoadingApi: KGNativeApi, KGNativeApiDelegate {
     
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
         webViewController?.titleView.isShowLoading = true
-        complete(.success(data: nil))
+        complete(success())
     }
 
 }

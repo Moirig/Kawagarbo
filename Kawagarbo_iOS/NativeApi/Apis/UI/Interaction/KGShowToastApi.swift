@@ -24,7 +24,7 @@ class KGShowToastApi: KGNativeApi, KGNativeApiDelegate {
         
         if icon == "none", image == nil {
             MBProgressHUD.toast(title: title, delay: delay, hasMask: mask)
-            return complete(.success(data: nil))
+            return complete(success())
         }
         
         if let aImage = image {
@@ -34,7 +34,7 @@ class KGShowToastApi: KGNativeApi, KGNativeApiDelegate {
             else {
                 MBProgressHUD.showSuccess(title: title, delay: delay, hasMask: mask)
             }
-            return complete(.success(data: nil))
+            return complete(success())
         }
             
         if icon == "loading" {
@@ -50,7 +50,7 @@ class KGShowToastApi: KGNativeApi, KGNativeApiDelegate {
             MBProgressHUD.showSuccess(title: title, delay: delay, hasMask: mask)
         }
         
-        return complete(.success(data: nil))
+        return complete(success())
     }
     
 

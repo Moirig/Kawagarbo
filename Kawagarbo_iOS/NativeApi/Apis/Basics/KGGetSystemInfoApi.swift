@@ -58,7 +58,7 @@ class KGGetSystemInfoApi: KGNativeApi, KGNativeApiDelegate {
         dict["windowHeight"] = webViewController?.webView?.frame.height ?? 0
         
         
-        complete(.success(data: dict))
+        complete(success(data: dict))
         
     }
     

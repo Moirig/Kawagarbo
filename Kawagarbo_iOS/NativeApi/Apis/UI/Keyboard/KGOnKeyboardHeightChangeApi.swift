@@ -13,7 +13,7 @@ class KGOnKeyboardHeightChangeApi: KGNativeApi, KGNativeApiDelegate {
     
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
         
-        guard let webVC = webViewController else { return complete(.failure(code: kParamCodeDefaultFail, message: "no webview;")) }
+        guard let webVC = webViewController else { return complete(failure(message: "no webview;")) }
         NotificationCenter.default.addObserver(webVC, selector: #selector(onKeyboardHeightChange(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
     }

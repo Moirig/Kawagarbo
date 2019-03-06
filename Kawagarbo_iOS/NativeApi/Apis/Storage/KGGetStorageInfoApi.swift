@@ -14,7 +14,7 @@ class KGGetStorageInfoApi: KGNativeApi, KGNativeApiDelegate {
     
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
         
-        guard let appId = webViewController?.webRoute?.appId else { return complete(.failure(code: kParamCodeDefaultFail, message: "No appId;")) }
+        guard let appId = webViewController?.webRoute?.appId else { return complete(failure(message: "No appId;")) }
         
         let url = URL(fileURLWithPath: KawagarboCachePath + "/\(appId)")
         let config = DiskConfig(name: "kgstorage", expiry: .never, maxSize: 10 * 1024 * 1024, directory: url, protectionType: .complete)
@@ -27,10 +27,10 @@ class KGGetStorageInfoApi: KGNativeApi, KGNativeApiDelegate {
             let dataDict: [String: Any] = ["keys": keys,
                                            "currentSize": currentSize,
                                            "limitSize": limitSize]
-            return complete(.success(data: dataDict))
+            return complete(success(data: dataDict))
         } catch {
             let nsError = error
-            return complete(.failure(code: kParamCodeDefaultFail, message: nsError.localizedDescription))
+            return complete(failure(message: nsError.localizedDescription))
         }
         
     }
