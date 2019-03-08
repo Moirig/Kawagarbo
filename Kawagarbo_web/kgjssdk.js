@@ -339,5 +339,165 @@
         wx.invokeHandler('setStorage', object)
     }
 
+    wx.request = function (object) {
+        var path = 'request'
+        object.method = object.method || 'GET'
+        object.dataType = object.dataType || 'json'
+        object.responseType = object.responseType || 'text'
+        wx.invokeHandler(path, object)
+
+        var RequestTask = {
+            requestID: btoa(object.url + object.method)
+        }
+        RequestTask.abort = function () {
+            var obj = {
+                method: 'abort',
+                requestID: RequestTask.requestID
+            }
+            wx.invokeHandler(path, obj)
+        }
+
+        RequestTask.onHeadersReceived = function(callback) {
+            var obj = {
+                method: 'onHeadersReceived',
+                requestID: RequestTask.requestID,
+                complete: function (res) {
+                    res.errMsg.replace(path, 'onHeadersReceived')
+                    callback && callback(res)
+                }
+            }
+            wx.invokeHandler(path, obj)
+        }
+
+        RequestTask.offHeadersReceived = function(callback) {
+            callback && callback({errMsg: 'offHeadersReceived:ok'})
+        }
+
+        return RequestTask
+    }
+
+    wx.downloadFile = function (object) {
+        var path = 'downloadFile'
+        object.method = object.method || 'GET'
+        if (object.filePath) {
+            object.filePath = _toAbsURL(object.filePath)
+        }
+        wx.invokeHandler(path, object)
+
+        var DownloadTask = {
+            requestID: btoa(object.url + object.method)
+        }
+        DownloadTask.abort = function () {
+            var obj = {
+                method: 'abort',
+                requestID: DownloadTask.requestID
+            }
+            wx.invokeHandler(path, obj)
+        }
+
+        DownloadTask.onHeadersReceived = function(callback) {
+            var obj = {
+                method: 'onHeadersReceived',
+                requestID: DownloadTask.requestID,
+                complete: function (res) {
+                    res.errMsg.replace(path, 'onHeadersReceived')
+                    callback && callback(res)
+                }
+            }
+            wx.invokeHandler(path, obj)
+        }
+
+        DownloadTask.offHeadersReceived = function(callback) {
+            callback && callback({errMsg: 'offHeadersReceived:ok'})
+        }
+
+        DownloadTask.onProgressUpdate = function (callback) {
+            var handlerName = 'DownloadTask.onProgressUpdate' + DownloadTask.requestID
+            wx.subscribeHandler(handlerName, callback)
+
+            var obj = {
+                method: 'onProgressUpdate',
+                requestID: DownloadTask.requestID,
+                handlerName: handlerName
+            }
+            wx.invokeHandler(path, obj)
+        }
+
+        DownloadTask.offProgressUpdate = function(callback) {
+            var obj = {
+                method: 'offProgressUpdate',
+                requestID: DownloadTask.requestID,
+                complete: function (res) {
+                    res.errMsg.replace(path, 'offProgressUpdate')
+                    callback && callback(res)
+                }
+            }
+            wx.invokeHandler(path, obj)
+        }
+
+        return DownloadTask
+    }
+
+    wx.uploadFile = function (object) {
+        var path = 'uploadFile'
+        if (object.filePath) {
+            object.filePath = _toAbsURL(object.filePath)
+        }
+        wx.invokeHandler(path, object)
+
+        var UploadTask = {
+            requestID: btoa(object.url + 'POST')
+        }
+        UploadTask.abort = function () {
+            var obj = {
+                method: 'abort',
+                requestID: UploadTask.requestID
+            }
+            wx.invokeHandler(path, obj)
+        }
+
+        UploadTask.onHeadersReceived = function(callback) {
+            var obj = {
+                method: 'onHeadersReceived',
+                requestID: UploadTask.requestID,
+                complete: function (res) {
+                    res.errMsg.replace(path, 'onHeadersReceived')
+                    callback && callback(res)
+                }
+            }
+            wx.invokeHandler(path, obj)
+        }
+
+        UploadTask.offHeadersReceived = function(callback) {
+            callback && callback({errMsg: 'offHeadersReceived:ok'})
+        }
+
+        UploadTask.onProgressUpdate = function (callback) {
+            var handlerName = 'UploadTask.onProgressUpdate' + UploadTask.requestID
+            wx.subscribeHandler(handlerName, callback)
+
+            var method = 'onProgressUpdate'
+            var obj = {
+                method: method,
+                requestID: UploadTask.requestID,
+                handlerName: handlerName
+            }
+            wx.invokeHandler(path, obj)
+        }
+
+        UploadTask.offProgressUpdate = function(callback) {
+            var obj = {
+                method: 'offProgressUpdate',
+                requestID: UploadTask.requestID,
+                complete: function (res) {
+                    res.errMsg.replace(path, 'offProgressUpdate')
+                    callback && callback(res)
+                }
+            }
+            wx.invokeHandler(path, obj)
+        }
+
+        return UploadTask
+    }
 
 })();

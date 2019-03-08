@@ -71,6 +71,10 @@ public class KGNativeApi: NSObject {
         KGGetStorageInfoApi().regist()
         KGRemoveStorageApi().regist()
         KGSetStorageApi().regist()
+        
+        KGRequestApi().regist()
+        KGDownloadFileApi().regist()
+        KGUploadFileApi().regist()
     }
     
 }

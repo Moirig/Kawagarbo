@@ -34,3 +34,11 @@ body {
     vertical-align:middle;
     height: 2000px;
 }
+
+.textView {
+    width: 100%;
+    height: auto;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+}

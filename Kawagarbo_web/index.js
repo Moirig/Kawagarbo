@@ -49,3 +49,7 @@ function toStorage() {
     window.location.href = 'pages/storage/storage.html'
 }
 
+function toRequest() {
+    window.location.href = 'pages/network/request.html'
+}
+

@@ -10,23 +10,23 @@ import Foundation
 
 public typealias KGNativeApiResponse = [String: Any]
 
-public func success(message: String = "", data: [String: Any]? = nil) -> KGNativeApiResponse {
-    return response(code: kParamCodeSuccess, message: message, data: data)
+public func success(message: String? = "", data: [String: Any]? = nil) -> KGNativeApiResponse {
+    return response(code: ResCodeSuccess, message: message, data: data)
 }
 
-public func cancel(message: String = "", data: [String: Any]? = nil) -> KGNativeApiResponse {
-    return response(code: kParamCodeCancel, message: message, data: data)
+public func cancel(message: String? = "", data: [String: Any]? = nil) -> KGNativeApiResponse {
+    return response(code: ResCodeCancel, message: message, data: data)
 }
 
-public func unknowApi(message: String = "", data: [String: Any]? = nil) -> KGNativeApiResponse {
-    return response(code: kParamCodeUnknownApi, message: message, data: data)
+public func unknowApi(message: String? = "", data: [String: Any]? = nil) -> KGNativeApiResponse {
+    return response(code: ResCodeUnknownApi, message: message, data: data)
 }
 
-public func failure(code: Int = -1, message: String = "", data: [String: Any]? = nil) -> KGNativeApiResponse {
+public func failure(code: Int = ResCodeDefaultFail, message: String? = "", data: [String: Any]? = nil) -> KGNativeApiResponse {
     return response(code: code, message: message, data: data)
 }
 
-func response(code: Int, message: String = "", data: [String: Any]? = nil) -> KGNativeApiResponse {
+func response(code: Int, message: String? = "", data: [String: Any]? = nil) -> KGNativeApiResponse {
     var dict: [String : Any] = [:]
     dict[kParamCode] = code
     dict[kParamMessage] = message

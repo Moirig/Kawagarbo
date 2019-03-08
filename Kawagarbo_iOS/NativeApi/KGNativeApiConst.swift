@@ -13,10 +13,10 @@ public let kParamMessage: String = "message"
 public let kParamData: String = "data"
 
 
-let kParamCodeSuccess: Int = 200
-let kParamCodeCancel: Int = -999
-let kParamCodeUnknownApi: Int = 404
-let kParamCodeDefaultFail: Int = -1
+let ResCodeSuccess: Int = 200
+let ResCodeCancel: Int = -999
+let ResCodeUnknownApi: Int = 404
+public let ResCodeDefaultFail: Int = -1
 
 internal typealias Message = [String: Any]
 internal typealias Handler = (_ parameters: [String: Any]?, _ callback: Callback?) -> Void

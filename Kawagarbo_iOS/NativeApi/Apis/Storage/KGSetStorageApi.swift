@@ -26,11 +26,12 @@ class KGSetStorageApi: KGNativeApi, KGNativeApiDelegate {
         do {
             let storage = try DiskStorage(config: config, transformer: TransformerFactory.forData())
             var jsonData: Data
-            if let jsonString = data as? String {
-                jsonData = jsonString.kg.data
+            if let _ = data as? [String: Any], let _ = data as? [Any] {
+                jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
             }
             else {
-                jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+                let str = "\(data)"
+                jsonData = str.kg.data
             }
             try storage.setObject(jsonData, forKey: key)
             

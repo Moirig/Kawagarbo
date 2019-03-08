@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let vc2 = KGWebViewController(urlString: urlString)
         vc2.title = "tab2"
+        vc2.webRoute?.appId = "Kawagarbo_web"
         let navi2 = UINavigationController(rootViewController: vc2)
         
         let tabbarVC = UITabBarController()
