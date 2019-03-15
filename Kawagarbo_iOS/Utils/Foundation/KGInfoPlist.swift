@@ -23,4 +23,11 @@ struct KGInfoPlist {
         return KGInfoPlist.shared["UIViewControllerBasedStatusBarAppearance"] as? Bool ?? false
     }
     
+    static var photoLibraryAddUsageDescription: Bool {
+        if let _ = KGInfoPlist.shared["NSPhotoLibraryAddUsageDescription"] as? String {
+            return true
+        }
+        return false
+    }
+    
 }

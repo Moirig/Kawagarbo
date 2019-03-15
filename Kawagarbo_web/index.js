@@ -53,3 +53,6 @@ function toRequest() {
     window.location.href = 'pages/network/request.html'
 }
 
+function toImage() {
+    location.href = 'pages/image/image.html'
+}

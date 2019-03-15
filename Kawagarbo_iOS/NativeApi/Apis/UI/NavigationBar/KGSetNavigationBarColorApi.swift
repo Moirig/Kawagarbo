@@ -17,8 +17,8 @@ class KGSetNavigationBarColorApi: KGNativeApi, KGNativeApiDelegate {
         
         guard let frontColor = parameters?["frontColor"] as? String else { return complete(failure(message: "fail parameter error: parameter.frontColor should be String instead of Undefined;")) }
         if KGInfoPlist.baseStatusBarAppearance {
-            KGLog(title: "infoPlist error", "Pleast set UIViewControllerBasedStatusBarAppearance to true in infoPlist;")
-            return complete(failure(message: "Pleast set UIViewControllerBasedStatusBarAppearance to true in infoPlist;"))
+            KGLog(title: "infoPlist error", "Pleast set UIViewControllerBasedStatusBarAppearance to false in infoPlist;")
+            return complete(failure(message: "Pleast set UIViewControllerBasedStatusBarAppearance to false in infoPlist;"))
         }
         
         if frontColor == "#000000" || frontColor == "#ffffff" {

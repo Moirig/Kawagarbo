@@ -500,4 +500,11 @@
         return UploadTask
     }
 
+
+    wx.saveImageToPhotosAlbum = function (object) {
+        object.filePath = _toAbsURL(object.filePath)
+        wx.invokeHandler('saveImageToPhotosAlbum', object)
+    }
+
+
 })();
