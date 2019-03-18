@@ -55,4 +55,29 @@ extension KGNamespace where Base == Data {
         return Data(base64Encoded: base, options: .ignoreUnknownCharacters) ?? Data()
     }
     
+    var imageExtension: String {
+        let bytes = base.bytes
+        guard let byte0 = bytes.first else { return "" }
+        
+        switch byte0 {
+        case 255: return "jpeg"
+            
+        case 137: return "png"
+            
+        case 71: return "gif"
+            
+        case 60: return "svg"
+            
+        case 73, 77: return "tiff"
+            
+        case 82:
+            if base.count < 12 { return "" }
+            guard let str = String(data: base.subdata(in: 0..<12), encoding: .ascii) else { return "" }
+            if str.hasPrefix("RIFF"), str.hasSuffix("WEBP") { return "webp" }
+            return ""
+        
+        default:
+            return ""
+        }        
+    }
 }

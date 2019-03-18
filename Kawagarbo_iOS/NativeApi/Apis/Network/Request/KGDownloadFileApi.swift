@@ -67,6 +67,12 @@ class KGDownloadFileApi: KGNativeApi, KGNativeApiDelegate {
         if let filePath = parameters?["filePath"] as? String {
             request.destinationURL = URL(string: filePath)
         }
+        else {
+            if let rootPath = webViewController?.webRoute?.webApp?.rootPath {
+                let path = rootPath + "/kgtempfiles/" + request.requestID
+                request.destinationURL = URL(fileURLWithPath: path)
+            }
+        }
         
         KGNetwork.download(request, progressClosure: { [weak self] (progress) in
             guard let strongSelf = self else { return }

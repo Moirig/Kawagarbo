@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3B58990021FEDE8E0089B83E /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5898FF21FEDE8E0089B83E /* FirstVC.swift */; };
-		3B85FD79223B93A6003E1590 /* apps.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B85FD78223B93A6003E1590 /* apps.json */; };
 		3B96C7E1221273A600D2E5D5 /* Kawagarbo_web in Resources */ = {isa = PBXBuildFile; fileRef = 3B96C7E0221273A600D2E5D5 /* Kawagarbo_web */; };
 		3B96C7E32212A96500D2E5D5 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B96C7E22212A96500D2E5D5 /* SecondVC.swift */; };
 		5363E4A73C49ACDD58FE8BB5 /* Pods_Kawagarbo_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3B0FE5B0E10431798A87FC /* Pods_Kawagarbo_iOS_Example.framework */; };
@@ -33,7 +32,6 @@
 		1F466891191D9E0B4911C3BC /* Pods_Kawagarbo_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kawagarbo_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32ECA303202AE905B4C6F90A /* Pods-Kawagarbo_iOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kawagarbo_iOS_Example.release.xcconfig"; path = "Target Support Files/Pods-Kawagarbo_iOS_Example/Pods-Kawagarbo_iOS_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3B5898FF21FEDE8E0089B83E /* FirstVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
-		3B85FD78223B93A6003E1590 /* apps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apps.json; sourceTree = "<group>"; };
 		3B96C7E0221273A600D2E5D5 /* Kawagarbo_web */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Kawagarbo_web; path = ../Kawagarbo_web; sourceTree = "<group>"; };
 		3B96C7E22212A96500D2E5D5 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		593F87FAF764811492D6D4FD /* Pods-Kawagarbo_iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kawagarbo_iOS_Tests.release.xcconfig"; path = "Target Support Files/Pods-Kawagarbo_iOS_Tests/Pods-Kawagarbo_iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 		607FACD21AFB9204008FA782 /* Example for Kawagarbo_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				3B85FD78223B93A6003E1590 /* apps.json */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				3B5898FF21FEDE8E0089B83E /* FirstVC.swift */,
 				3B96C7E22212A96500D2E5D5 /* SecondVC.swift */,
@@ -255,7 +252,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				3B85FD79223B93A6003E1590 /* apps.json in Resources */,
 				3B96C7E1221273A600D2E5D5 /* Kawagarbo_web in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);

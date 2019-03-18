@@ -1,9 +1,0 @@
-{
-    "58ec026f2986f7f57471ff351a1d37ad": {
-        "version": 1.0.0,
-        "enable": true,
-        "signature": "signature_value: RSA(md5(package.zip))",
-        "network" : "all",
-        "url": "https:xxx.com/business_package.zip",
-    }
-}

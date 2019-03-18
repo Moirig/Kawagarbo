@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Kawagarbo.setup()
         
         let atPath = Bundle.main.bundlePath + "/Kawagarbo_web"
-        let toPath = KawagarboCachePath + "/58ec026f2986f7f57471ff351a1d37ad"
+        let toPath = KawagarboCachePath + "/3e7e36678fa26ff53dfe2fefcbeedd3a"
         FileManager.kg.createDirectory(toPath)
         FileManager.kg.copyItem(atPath: atPath, toPath: toPath)
         

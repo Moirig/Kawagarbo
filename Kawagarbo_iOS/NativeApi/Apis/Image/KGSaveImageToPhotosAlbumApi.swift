@@ -25,7 +25,7 @@ class KGSaveImageToPhotosAlbumApi: KGNativeApi, KGNativeApiDelegate {
         self.complete = complete
 
         if filePath.kg.isFile {
-            saveImage(filePath: filePath)
+            saveImage(urlStr: filePath)
         }
         
         else if filePath.kg.isHTTP {
@@ -33,8 +33,8 @@ class KGSaveImageToPhotosAlbumApi: KGNativeApi, KGNativeApiDelegate {
             MBProgressHUD.loading()
             KGNetwork.download(request) { (response) in
                 MBProgressHUD.hide()
-                if let path = response.destinationURL?.absoluteString {
-                    self.saveImage(filePath: path)
+                if let urlStr = response.destinationURL?.absoluteString {
+                    self.saveImage(urlStr: urlStr)
                 }
                 else if let error = response.error {
                     complete(failure(message: error.localizedDescription))
@@ -46,8 +46,8 @@ class KGSaveImageToPhotosAlbumApi: KGNativeApi, KGNativeApiDelegate {
     
     var complete: ((KGNativeApiResponse) -> Void)!
     
-    func saveImage(filePath: String) {
-        guard let image = UIImage(contentsOfFile: filePath.kg.noScheme) else { return complete(failure(message: "No file!")) }
+    func saveImage(urlStr: String) {
+        guard let image = UIImage(contentsOfFile: urlStr.kg.noScheme) else { return complete(failure(message: "No file!")) }
         
         
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveImage(image:didFinishSavingWithError:contextInfo:)), nil)

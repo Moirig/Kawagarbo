@@ -506,5 +506,39 @@
         wx.invokeHandler('saveImageToPhotosAlbum', object)
     }
 
+    wx.getImageInfo = function (object) {
+        object.src = _toAbsURL(object.src)
+        wx.invokeHandler('getImageInfo', object)
+    }
+
 
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
