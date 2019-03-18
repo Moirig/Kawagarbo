@@ -12,7 +12,7 @@ extension Data: KGNamespaceProtocol {}
 
 extension KGNamespace where Base == Data {
     
-    var dictionary: [String: Any]? {
+    public var dictionary: [String: Any]? {
         
         do {
             let dict = try JSONSerialization.jsonObject(with: base, options: .allowFragments) as? [String: Any]

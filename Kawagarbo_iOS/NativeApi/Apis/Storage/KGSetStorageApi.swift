@@ -14,14 +14,22 @@ class KGSetStorageApi: KGNativeApi, KGNativeApiDelegate {
     
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
         
-        guard let appId = webViewController?.webRoute?.appId else { return complete(failure(message: "No appId;")) }
-        
         guard let key = parameters?["key"] as? String else { return complete(failure(message: "key undefined!")) }
         guard let data = parameters?["data"] else { return complete(failure(message: "data undefined!")) }
 
+        var url: URL?
+        var storageName: String = "kgstorage"
         
-        let url = URL(fileURLWithPath: KawagarboCachePath + "/\(appId)")
-        let config = DiskConfig(name: "kgstorage", expiry: .never, maxSize: 10 * 1024 * 1024, directory: url, protectionType: .complete)
+        if let rootPath = webViewController?.webRoute?.webApp?.rootPath {
+            url = URL(fileURLWithPath: rootPath)
+        }
+        else {
+            if let appId = webViewController?.webRoute?.appId {
+                storageName = appId + "/" + storageName
+            }
+        }
+        
+        let config = DiskConfig(name: storageName, expiry: .never, maxSize: 10 * 1024 * 1024, directory: url, protectionType: .complete)
         
         do {
             let storage = try DiskStorage(config: config, transformer: TransformerFactory.forData())

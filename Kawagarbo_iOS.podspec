@@ -12,8 +12,9 @@ Pod::Spec.new do |s|
     'Kawagarbo_iOS' => ['Kawagarbo_iOS/Resource/*']
   }
   
-  s.dependency  'SolarNetwork'
   s.dependency  'Cache'
+  s.dependency  'CryptoSwift'
   s.dependency  'MBProgressHUD'
+  s.dependency  'SolarNetwork'
 
 end

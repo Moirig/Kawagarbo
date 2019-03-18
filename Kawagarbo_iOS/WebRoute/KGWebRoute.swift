@@ -14,55 +14,47 @@ public class KGWebRoute: NSObject {
     
     public var urlString: String? { return urlRequest?.url?.absoluteString }
     
-    public var urlRequest: URLRequest?
-    
-    public var appId: String? {
-        get {
-            if let appId = storeAppId {
-                return appId
-            }
-            
-            if let host = url?.host {
-                return host.kg.base64EncodedString
-            }
-            
-            if let url = urlString, let components = URLComponents(string: url) {
-                if let queryItems = components.queryItems {
-                    for item in queryItems {
-                        if item.name == config.appIdKey {
-                            return item.value
-                        }
-                    }
-                }
-            }
-                
-            return nil
+    public var urlRequest: URLRequest? {
+        if let awebApp = webApp {
+            storeURLString = "file://" + awebApp.launchPagePath
         }
-        set {
-            storeAppId = newValue
-        }
+        var request = formatURLRequest()
+        request?.timeoutInterval = config.timeoutInterval
+        request?.cachePolicy = config.cachePolicy
+        return formatURLRequest()
     }
     
-    public var storeAppId: String?
-    
-    public var config: KGConfig! {
-        get { return KGConfig() }
-        set {
-            urlRequest?.cachePolicy = newValue.cachePolicy
-            urlRequest?.timeoutInterval = newValue.timeoutInterval
-        }
+    public var appId: String {
+        guard let aurl = url else { return "" }
+        
+        return aurl.kg.baseURLString.md5()
     }
+    
+    public var webAppUrlString: String?
+    
+    public var webApp: KGWebApp? {
+        guard let _ = webAppUrlString else { return nil }
+        return KGWebApp(appId: appId)
+    }
+    
+    public var config: KGConfig!
+    
+    var storeURLString: String?
+    var storeParameters: [String: String]?
+    var storeHeaderFields: [String: String]?
     
     public convenience init(urlString: String, parameters: [String: String]? = nil, headerFields: [String: String]? = nil) {
         self.init()
         
-        urlRequest = format(urlString: urlString, parameters: parameters, headerFields: headerFields)
-        
+        storeURLString = urlString
+        storeParameters = parameters
+        storeHeaderFields = headerFields
     }
     
-    func format(urlString: String, parameters: [String: String]? = nil, headerFields: [String: String]? = nil) -> URLRequest? {
+    func formatURLRequest() -> URLRequest? {
+        guard let urlString = storeURLString else { return nil }
         var formatUrl: String = urlString
-        if let params = parameters {
+        if let params = storeParameters {
             for (key, obj) in params {
                 formatUrl = formatUrl.replacingOccurrences(of: key, with: obj)
             }
@@ -74,7 +66,7 @@ public class KGWebRoute: NSObject {
         
         if let url = URL(string: formatUrl) {
             var request = URLRequest(url: url)
-            request.allHTTPHeaderFields = headerFields
+            request.allHTTPHeaderFields = storeHeaderFields
             
             return request
         }

@@ -38,6 +38,15 @@ public class KGWebViewController: UIViewController {
     
     public weak var webView: KGWKWebView?
     
+    public func start(with vc: UIViewController) {
+        guard let route = webRoute else { return }
+        if let urlStr = route.webAppUrlString {
+            //download webApp
+            return
+        }
+        vc.navigationController?.pushViewController(self, animated: true)
+    }
+    
     deinit {
         KGLog(title: "Deinit", self)
         deinitWebView()
@@ -54,6 +63,7 @@ public class KGWebViewController: UIViewController {
     public convenience init(urlString: String, parameters: [String: String]? = nil, headerFields: [String: String]? = nil) {
         self.init()
         webRoute = KGWebRoute(urlString: urlString, parameters: parameters, headerFields: headerFields)
+        webRoute?.config = config
     }
     
     override public func viewDidLoad() {
@@ -63,7 +73,6 @@ public class KGWebViewController: UIViewController {
         storeOriginUI()
         navigationItem.titleView = titleView
         view.backgroundColor = UIColor.white
-        webRoute?.config = config
 
         setup()
     }
@@ -160,8 +169,7 @@ extension KGWebViewController {
             view .addSubview(webView)
         }
         
-        guard let urlRequest = webRoute?.urlRequest else { return }
-        guard let url = urlRequest.url else { return }
+        guard let urlRequest = webRoute?.urlRequest, let url = webRoute?.url else { return }
         
         //TODO-加载离线包首页的逻辑
         if #available(iOS 9.0, *), url.isFileURL {

@@ -1,8 +1,10 @@
 PODS:
   - Alamofire (4.8.1)
   - Cache (5.2.0)
+  - CryptoSwift (0.14.0)
   - Kawagarbo_iOS (0.1.0):
     - Cache
+    - CryptoSwift
     - MBProgressHUD
     - SolarNetwork
   - MBProgressHUD (1.1.0)
@@ -16,6 +18,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Cache
+    - CryptoSwift
     - MBProgressHUD
     - SolarNetwork
 
@@ -26,7 +29,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
-  Kawagarbo_iOS: e889630c5988a102de1ba7b08b70cf52b2305567
+  CryptoSwift: 35a10419f4dbf0619c13f8c1c180037e115323fa
+  Kawagarbo_iOS: 78e76493d7e7d4972756d7171d801efee396b7d5
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SolarNetwork: f04b0094e0150b79f2b208a5367a374505ed70b9
 
