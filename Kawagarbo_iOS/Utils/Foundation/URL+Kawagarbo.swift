@@ -2,7 +2,7 @@
 //  URL+Kawagarbo.swift
 //  Alamofire
 //
-//  Created by 温一鸿 on 2019/3/15.
+//  Created by wyhazq on 2019/3/15.
 //
 
 import Foundation

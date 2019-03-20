@@ -2,7 +2,7 @@
 //  UIImage.swift
 //  Kawagarbo_iOS
 //
-//  Created by 温一鸿 on 2019/2/19.
+//  Created by wyhazq on 2019/2/19.
 //
 
 import Foundation

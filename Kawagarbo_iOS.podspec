@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.dependency  'CryptoSwift'
   s.dependency  'MBProgressHUD'
   s.dependency  'SolarNetwork'
-
+  s.dependency  'JXPhotoBrowser'
 end

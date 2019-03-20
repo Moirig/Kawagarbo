@@ -511,6 +511,19 @@
         wx.invokeHandler('getImageInfo', object)
     }
 
+    wx.previewImage = function (object) {
+        for (item in object.urls) {
+            item = _toAbsURL(item)
+        }
+        for (var i = 0; i < object.urls.length; i++) {
+            var url = object.urls[i]
+            if (url.indexOf('http') == -1) {
+                object.urls.splice(i, 1, _toAbsURL(url))
+            }
+        }
+
+        wx.invokeHandler('previewImage', object)
+    }
 
 })();
 

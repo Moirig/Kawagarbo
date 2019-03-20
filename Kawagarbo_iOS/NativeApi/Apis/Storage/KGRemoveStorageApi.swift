@@ -2,7 +2,7 @@
 //  KGRemoveStorageApi.swift
 //  Cache
 //
-//  Created by 温一鸿 on 2019/3/4.
+//  Created by wyhazq on 2019/3/4.
 //
 
 import UIKit

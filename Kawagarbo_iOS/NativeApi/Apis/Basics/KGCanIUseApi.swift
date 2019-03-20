@@ -2,7 +2,7 @@
 //  KGCanIUseApi.swift
 //  Kawagarbo_iOS
 //
-//  Created by 温一鸿 on 2019/2/11.
+//  Created by wyhazq on 2019/2/11.
 //
 
 //${API} 代表 API 名字

@@ -2,7 +2,7 @@
 //  KGNavigateBackApi.swift
 //  Kawagarbo_iOS
 //
-//  Created by 温一鸿 on 2019/2/11.
+//  Created by wyhazq on 2019/2/11.
 //
 
 import UIKit

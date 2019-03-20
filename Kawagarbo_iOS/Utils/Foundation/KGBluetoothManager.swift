@@ -2,7 +2,7 @@
 //  KGBluetoothManager.swift
 //  Kawagarbo_iOS
 //
-//  Created by 温一鸿 on 2019/1/30.
+//  Created by wyhazq on 2019/1/30.
 //
 
 import UIKit

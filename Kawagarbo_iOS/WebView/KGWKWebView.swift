@@ -2,7 +2,7 @@
 //  KGWKWebView.swift
 //  KawagarboExample
 //
-//  Created by 温一鸿 on 2018/9/12.
+//  Created by wyhazq on 2018/9/12.
 //  Copyright © 2018年 Moirig. All rights reserved.
 //
 

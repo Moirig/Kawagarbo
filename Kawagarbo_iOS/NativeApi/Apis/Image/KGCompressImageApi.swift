@@ -2,7 +2,7 @@
 //  KGCompressImageApi.swift
 //  Alamofire
 //
-//  Created by 温一鸿 on 2019/3/14.
+//  Created by wyhazq on 2019/3/14.
 //
 
 import UIKit

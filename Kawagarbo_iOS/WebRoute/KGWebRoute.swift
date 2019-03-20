@@ -2,7 +2,7 @@
 //  KGWebRoute.swift
 //  KawagarboExample
 //
-//  Created by 温一鸿 on 2019/1/16.
+//  Created by wyhazq on 2019/1/16.
 //  Copyright © 2019年 Moirig. All rights reserved.
 //
 

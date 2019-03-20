@@ -2,7 +2,7 @@
 //  KGJSBridgeConst.swift
 //  KawagarboExample
 //
-//  Created by 温一鸿 on 2018/12/18.
+//  Created by wyhazq on 2018/12/18.
 //  Copyright © 2018年 Moirig. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  SecondVC.swift
 //  Kawagarbo_iOS_Example
 //
-//  Created by 温一鸿 on 2019/2/12.
+//  Created by wyhazq on 2019/2/12.
 //  Copyright © 2019年 CocoaPods. All rights reserved.
 //
 

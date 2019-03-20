@@ -2,7 +2,7 @@
 //  KGNamespace.swift
 //  KawagarboExample
 //
-//  Created by 温一鸿 on 2019/1/25.
+//  Created by wyhazq on 2019/1/25.
 //  Copyright © 2019年 Moirig. All rights reserved.
 //
 
@@ -33,13 +33,13 @@ public struct KGNamespace<Base> {
 /// A type that has reactive extensions.
 public protocol KGNamespaceProtocol {
     /// Extended type
-    associatedtype CompatibleType
+    associatedtype KGCompatibleType
     
     /// Reactive extensions.
-    static var kg: KGNamespace<CompatibleType>.Type { get set }
+    static var kg: KGNamespace<KGCompatibleType>.Type { get set }
     
     /// Reactive extensions.
-    var kg: KGNamespace<CompatibleType> { get set }
+    var kg: KGNamespace<KGCompatibleType> { get set }
 }
 
 extension KGNamespaceProtocol {

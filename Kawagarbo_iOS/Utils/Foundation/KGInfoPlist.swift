@@ -2,7 +2,7 @@
 //  KGInfoPlist.swift
 //  Kawagarbo_iOS
 //
-//  Created by 温一鸿 on 2019/1/29.
+//  Created by wyhazq on 2019/1/29.
 //
 
 import UIKit

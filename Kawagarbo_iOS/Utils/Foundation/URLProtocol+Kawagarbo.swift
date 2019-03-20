@@ -2,7 +2,7 @@
 //  URLProtocol+Kawagarbo.swift
 //  Kawagarbo_iOS
 //
-//  Created by 温一鸿 on 2019/1/28.
+//  Created by wyhazq on 2019/1/28.
 //
 
 import Foundation

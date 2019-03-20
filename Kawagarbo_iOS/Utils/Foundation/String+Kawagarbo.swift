@@ -2,7 +2,7 @@
 //  String+Extension.swift
 //  KawagarboExample
 //
-//  Created by 温一鸿 on 2018/9/24.
+//  Created by wyhazq on 2018/9/24.
 //  Copyright © 2018年 Moirig. All rights reserved.
 //
 
