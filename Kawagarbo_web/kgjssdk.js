@@ -525,6 +525,11 @@
         wx.invokeHandler('previewImage', object)
     }
 
+    wx.compressImage = function (object) {
+        object.src = _toAbsURL(object.src)
+        wx.invokeHandler('compressImage', object)
+    }
+
 })();
 
 

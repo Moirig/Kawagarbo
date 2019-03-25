@@ -25,3 +25,10 @@ function previewImage() {
         current: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2246038698,370269254&fm=26&gp=0.jpg'
     })
 }
+
+function compressImage() {
+    wx.compressImage({
+        src: 'testImage.jpg',
+        quality: 10
+    })
+}

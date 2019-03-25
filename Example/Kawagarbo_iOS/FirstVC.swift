@@ -49,7 +49,7 @@ class FirstVC: UIViewController {
 extension FirstVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let urlString = "http://192.168.197.79:4000/Kawagarbo_web/index.html"
+        let urlString = "http://192.168.202.140:4000/Kawagarbo_web/index.html"
 
 //        let urlString = "http://localhost:4000/Kawagarbo_web/index.html"
         
