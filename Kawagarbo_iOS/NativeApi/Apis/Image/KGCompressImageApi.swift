@@ -28,8 +28,11 @@ class KGCompressImageApi: KGNativeApi, KGNativeApiDelegate {
         else if src.kg.isHTTP {
             let request = SLDownloadRequest(URLString: src)
             if let rootPath = webViewController?.webRoute?.webApp?.rootPath {
-                let path = rootPath + "/kgtempfiles/" + request.requestID
+                let path = rootPath + "/" + KawagarboTempCachePathName + "/" + request.requestID
                 request.destinationURL = URL(fileURLWithPath: path)
+            }
+            else {
+                request.destinationURL = URL(fileURLWithPath: KawagarboTempCachePath)
             }
             MBProgressHUD.loading()
             KGNetwork.download(request) { (response) in

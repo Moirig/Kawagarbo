@@ -13,8 +13,6 @@ public class Kawagarbo: NSObject {
     public static func setup() {
         KGWebViewManager.preloadWebView()
         KGNativeApi.regist()
-        
-        FileManager.kg.createDirectory(KawagarboCachePath)
     }
     
 }

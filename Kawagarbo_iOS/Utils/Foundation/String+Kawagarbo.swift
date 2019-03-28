@@ -55,4 +55,8 @@ extension KGNamespace where Base == String {
         return data.kg.base64DecodedString
     }
     
+    var localized: String {
+        return NSLocalizedString(base, comment: "")
+    }
+    
 }

@@ -23,9 +23,5 @@ public struct KGGlobalConfig {
     public static var barBackgroundColor: UIColor = UIColor(hexString: "#ffffff")!
     
     public static var barFrontColor: UIColor = UIColor(hexString: "#000000")!
-        
-    public static var offlineWebAppConfig: [String: Any] = [:]
-    
-    public static var offlineWebAppEnable: Bool = false
     
 }

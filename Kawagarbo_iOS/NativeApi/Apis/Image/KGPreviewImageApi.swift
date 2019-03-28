@@ -45,16 +45,16 @@ class KGPreviewImageApi: KGNativeApi, KGNativeApiDelegate, PhotoBrowserDelegate 
     
     func photoBrowser(_ photoBrowser: PhotoBrowser, didLongPressForIndex index: Int, image: UIImage) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let saveImageAction = UIAlertAction(title: NSLocalizedString("Save Image", comment: ""), style: .default) { [weak self] (_) in
+        let saveImageAction = UIAlertAction(title: "Save Image".kg.localized, style: .default) { [weak self] (_) in
             guard let strongSelf = self else { return }
             guard KGInfoPlist.photoLibraryAddUsageDescription else {
-                KGLog(title: "infoPlist error", "Pleast set UIViewControllerBasedStatusBarAppearance to false in infoPlist;")
+                KGLog(title: "InfoPlist error", "Pleast add NSPhotoLibraryAddUsageDescription in infoPlist;")
                 return
             }
             
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(strongSelf.saveImage(image:didFinishSavingWithError:contextInfo:)), nil)
         }
-        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel".kg.localized, style: .cancel, handler: nil)
         actionSheet.addAction(saveImageAction)
         actionSheet.addAction(cancelAction)
         photoBrowser.present(actionSheet, animated: true, completion: nil)

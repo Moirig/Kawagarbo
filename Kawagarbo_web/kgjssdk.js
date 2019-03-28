@@ -530,6 +530,10 @@
         wx.invokeHandler('compressImage', object)
     }
 
+    wx.chooseImage = function (object) {
+        wx.invokeHandler('chooseImage', object)
+    }
+
 })();
 
 

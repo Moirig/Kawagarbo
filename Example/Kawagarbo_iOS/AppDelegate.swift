@@ -20,29 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Kawagarbo.setup()
         
+        let urlString = "http://192.168.202.140:4000/Kawagarbo_web/index.html"
+        
         let atPath = Bundle.main.bundlePath + "/Kawagarbo_web"
-        let toPath = KawagarboCachePath + "/3e7e36678fa26ff53dfe2fefcbeedd3a"
+        let toPath = KawagarboCachePath + "/" + urlString.md5()
         FileManager.kg.createDirectory(toPath)
         FileManager.kg.copyItem(atPath: atPath, toPath: toPath)
-        
-        if let offlineWebAppsConfig = Bundle.main.url(forResource: "apps", withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: offlineWebAppsConfig)
-                if let dict = data.kg.dictionary {
-                    KGGlobalConfig.offlineWebAppConfig = dict
-                }
-            }
-            catch {}
-        }
-        
         
         let vc1 = FirstVC()
         let navi1 = UINavigationController(rootViewController: vc1)
         
-        let urlString = "file://" + toPath + "/index.html"
-        
         let vc2 = KGWebViewController(urlString: urlString)
         vc2.title = "tab2"
+        vc2.webRoute?.webAppUrlString = ""
         let navi2 = UINavigationController(rootViewController: vc2)
         
         let tabbarVC = UITabBarController()

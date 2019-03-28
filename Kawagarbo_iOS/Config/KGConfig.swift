@@ -23,6 +23,5 @@ public struct KGConfig {
     public var barBackgroundColor: UIColor = KGGlobalConfig.barBackgroundColor
     
     public var barFrontColor: UIColor = KGGlobalConfig.barFrontColor
-    
-    public var offlineWebAppEnable: Bool = KGGlobalConfig.offlineWebAppEnable
+
 }

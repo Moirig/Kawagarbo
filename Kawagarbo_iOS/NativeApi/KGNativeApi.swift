@@ -80,6 +80,7 @@ public class KGNativeApi: NSObject {
         KGGetImageInfoApi().regist()
         KGPreviewImageApi().regist()
         KGCompressImageApi().regist()
+        KGChooseImageApi().regist()
     }
     
 }

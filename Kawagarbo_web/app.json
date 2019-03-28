@@ -1,6 +1,7 @@
 {
-    "version": 1.0.0,
+    "version": "1.0.0",
     "pages": [
         "index.html",
-    ]
+    ],
+    "url": "https:www.baidu.com"
 }

@@ -11,6 +11,10 @@ struct KGInfoPlist {
     
     static let shared: [String: Any] = Bundle.main.infoDictionary ?? [:]
     
+    static var bundleID: String {
+        return KGInfoPlist.shared["CFBundleIdentifier"] as? String ?? ""
+    }
+    
     static var appName: String {
         return KGInfoPlist.shared["CFBundleDisplayName"] as? String ?? ""
     }
@@ -29,5 +33,21 @@ struct KGInfoPlist {
         }
         return false
     }
+    
+    static var photoLibraryUsageDescription: Bool {
+        if let _ = KGInfoPlist.shared["NSPhotoLibraryUsageDescription"] as? String {
+            return true
+        }
+        return false
+    }
+    
+    static var cameraUsageDescription: Bool {
+        if let _ = KGInfoPlist.shared["NSCameraUsageDescription"] as? String {
+            return true
+        }
+        return false
+    }
+    
+    
     
 }

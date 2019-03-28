@@ -32,3 +32,15 @@ function compressImage() {
         quality: 10
     })
 }
+
+function chooseImage() {
+    wx.chooseImage({
+        success: function (res) {
+            for (var i = 0; i < res.tempFilePaths.length; i++) {
+                var path = res.tempFilePaths[i]
+                var image = document.getElementById('image' + i)
+                image.src = path
+            }
+        }
+    })
+}

@@ -13,12 +13,12 @@ extension KGNamespace where Base == URL {
     
     var baseURLString: String {
         guard let scheme = base.scheme, let host = base.host else { return "" }
-        var str = "\(scheme)://\(host)"
+        var str = scheme + "://" + host
         if let port = base.port {
-            str = "\(str):\(port)"
+            str += ":\(port)"
         }
         if base.path.count > 0 {
-            str = "\(str)/\(base.path)"
+            str += base.path
         }
         return str
     }

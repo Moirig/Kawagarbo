@@ -27,13 +27,13 @@ public struct KGWebApp {
             if let appJson = data.kg.dictionary,
                 let aversion = appJson["version"] as? String,
                 let apages = appJson["pages"] as? [String],
-                let apackageUrl = appJson["packageUrl"] as? String {
+                let aurl = appJson["url"] as? String {
                 self.appId = appId
                 self.rootPath = rootPath
                 
                 version = aversion
                 pages = apages
-                packageUrl = apackageUrl
+                url = aurl
             }
         }
         catch { return nil }
@@ -43,12 +43,18 @@ public struct KGWebApp {
     
     var pages: [String] = []
     
-    var packageUrl: String = ""
+    var url: String = ""
 
     
     var appId: String = ""
 
     var rootPath: String = ""
     
-    var launchPagePath: String { return pages.first ?? "" }
+    var launchPagePath: String {
+        var path = pages.first ?? "/index.html"
+        if path.hasPrefix("/") == false {
+            path = "/" + path
+        }
+        return rootPath + path
+    }
 }

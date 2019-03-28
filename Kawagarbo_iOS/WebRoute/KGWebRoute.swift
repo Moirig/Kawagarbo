@@ -15,26 +15,31 @@ public class KGWebRoute: NSObject {
     public var urlString: String? { return urlRequest?.url?.absoluteString }
     
     public var urlRequest: URLRequest? {
-        if let awebApp = webApp {
-            storeURLString = "file://" + awebApp.launchPagePath
+        if let request = storeURLRequest {
+            return request
         }
-        var request = formatURLRequest()
-        request?.timeoutInterval = config.timeoutInterval
-        request?.cachePolicy = config.cachePolicy
-        return formatURLRequest()
+        storeURLRequest = formatURLRequest()
+        return storeURLRequest
     }
     
     public var appId: String {
-        guard let aurl = url else { return "" }
+        guard let aurl = storeURLString else { return "" }
         
-        return aurl.kg.baseURLString.md5()
+        if let url = URL(string: aurl) {
+            return url.kg.baseURLString.md5()
+        }
+        return ""
     }
     
     public var webAppUrlString: String?
     
     public var webApp: KGWebApp? {
         guard let _ = webAppUrlString else { return nil }
-        return KGWebApp(appId: appId)
+        if let webApp = storeWebApp {
+            return webApp
+        }
+        storeWebApp = KGWebApp(appId: appId)
+        return storeWebApp
     }
     
     public var config: KGConfig!
@@ -42,6 +47,8 @@ public class KGWebRoute: NSObject {
     var storeURLString: String?
     var storeParameters: [String: String]?
     var storeHeaderFields: [String: String]?
+    var storeWebApp: KGWebApp?
+    var storeURLRequest: URLRequest?
     
     public convenience init(urlString: String, parameters: [String: String]? = nil, headerFields: [String: String]? = nil) {
         self.init()
@@ -52,6 +59,9 @@ public class KGWebRoute: NSObject {
     }
     
     func formatURLRequest() -> URLRequest? {
+        if let awebApp = webApp {
+            storeURLString = "file://" + awebApp.launchPagePath
+        }
         guard let urlString = storeURLString else { return nil }
         var formatUrl: String = urlString
         if let params = storeParameters {
@@ -67,7 +77,8 @@ public class KGWebRoute: NSObject {
         if let url = URL(string: formatUrl) {
             var request = URLRequest(url: url)
             request.allHTTPHeaderFields = storeHeaderFields
-            
+            request.timeoutInterval = config.timeoutInterval
+            request.cachePolicy = config.cachePolicy
             return request
         }
         

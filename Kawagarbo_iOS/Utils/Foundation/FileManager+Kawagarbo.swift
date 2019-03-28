@@ -10,15 +10,24 @@ import Foundation
 
 public let KawagarboCachePath: String = FileManager.kg.kawagarboCachePath
 
+public let KawagarboTempCachePath: String = FileManager.kg.tmpCachePath
+
+public let KawagarboTempCachePathName: String = "kgtempCache"
+
 private let KawagarboCachePathName: String = "kawagarbo"
 
 extension KGNamespace where Base == FileManager {
     
     static var kawagarboCachePath: String {
+        let path: String
         if #available(iOS 9.0, *) {
-            return documentPath + "/" + KawagarboCachePathName
+            path = documentPath + "/" + KawagarboCachePathName
         }
-        return tmpPath + KawagarboCachePathName
+        else {
+            path = tmpPath + KawagarboCachePathName
+        }
+        FileManager.kg.createDirectory(path)
+        return path
     }
     
 }
@@ -35,6 +44,12 @@ public extension KGNamespace where Base == FileManager {
     
     static var tmpPath: String {
         return NSTemporaryDirectory()
+    }
+    
+    static var tmpCachePath: String {
+        let path = cachePath + "/" + KawagarboTempCachePathName
+        FileManager.kg.createDirectory(path)
+        return path
     }
     
 }

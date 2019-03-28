@@ -16,7 +16,7 @@ class KGSaveImageToPhotosAlbumApi: KGNativeApi, KGNativeApiDelegate {
     func perform(with parameters: [String : Any]?, complete: @escaping (KGNativeApiResponse) -> Void) {
         
         guard KGInfoPlist.photoLibraryAddUsageDescription else {
-            KGLog(title: "infoPlist error", "Pleast set UIViewControllerBasedStatusBarAppearance to false in infoPlist;")
+            KGLog(title: "InfoPlist error", "Pleast add NSPhotoLibraryAddUsageDescription in infoPlist;")
             return complete(failure(message: "Pleast add NSPhotoLibraryAddUsageDescription in infoPlist;"))
         }
         
@@ -44,21 +44,30 @@ class KGSaveImageToPhotosAlbumApi: KGNativeApi, KGNativeApiDelegate {
         
     }
     
-    var complete: ((KGNativeApiResponse) -> Void)!
+    var complete: ((KGNativeApiResponse) -> Void)?
     
     func saveImage(urlStr: String) {
-        guard let image = UIImage(contentsOfFile: urlStr.kg.noScheme) else { return complete(failure(message: "No file!")) }
-        
+        guard let image = UIImage(contentsOfFile: urlStr.kg.noScheme) else {
+            if let acomplete = complete {
+                acomplete(failure(message: "No file!"))
+            }
+            return
+        }
         
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveImage(image:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     @objc private func saveImage(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: AnyObject) {
         if let err = error {
-            return complete(failure(message: err.localizedDescription))
+            if let acomplete = complete {
+                acomplete(failure(message: err.localizedDescription))
+            }
+            return
         }
         
-        complete(success())
+        if let acomplete = complete {
+            acomplete(success())
+        }
     }
 
 }

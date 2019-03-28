@@ -69,8 +69,11 @@ class KGDownloadFileApi: KGNativeApi, KGNativeApiDelegate {
         }
         else {
             if let rootPath = webViewController?.webRoute?.webApp?.rootPath {
-                let path = rootPath + "/kgtempfiles/" + request.requestID
+                let path = rootPath + "/" + KawagarboTempCachePathName + "/" + request.requestID
                 request.destinationURL = URL(fileURLWithPath: path)
+            }
+            else {
+                request.destinationURL = URL(fileURLWithPath: KawagarboTempCachePath)
             }
         }
         
