@@ -534,6 +534,12 @@
         wx.invokeHandler('chooseImage', object)
     }
 
+
+    wx.saveVideoToPhotosAlbum = function (object) {
+        object.filePath = _toAbsURL(object.filePath)
+        wx.invokeHandler('saveVideoToPhotosAlbum', object)
+    }
+
 })();
 
 

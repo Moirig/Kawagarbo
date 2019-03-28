@@ -81,6 +81,8 @@ public class KGNativeApi: NSObject {
         KGPreviewImageApi().regist()
         KGCompressImageApi().regist()
         KGChooseImageApi().regist()
+        
+        KGSaveVideoToPhotosAlbumApi().regist()
     }
     
 }

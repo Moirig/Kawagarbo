@@ -56,3 +56,7 @@ function toRequest() {
 function toImage() {
     location.href = 'pages/image/image.html'
 }
+
+function toVideo() {
+    location.href = 'pages/video/video.html'
+}
