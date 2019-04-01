@@ -52,7 +52,7 @@ public class KGImagePickerController: UIImagePickerController, UINavigationContr
     
     public typealias KGPhotoPickerCompleteClosure = (Data?, NSError?) -> Void
     
-    public typealias KGVideoPickerCompleteClosure = (Data?, UInt, NSError?) -> Void
+    public typealias KGVideoPickerCompleteClosure = (AVURLAsset?, NSError?) -> Void
     
     public convenience init(_ pickerType: KGImagePickerType = .TakePhoto, isSaveToAlbum: Bool = true) {
         self.init()
@@ -66,7 +66,7 @@ public class KGImagePickerController: UIImagePickerController, UINavigationContr
             case .TakePhoto:
                 cameraCaptureMode = .photo
             case .RecordVideo:
-                cameraCaptureMode = .video
+//                cameraCaptureMode = .video
                 mediaTypes = [kUTTypeMovie as String]
             case .AlbumList, .AlbumTimeline:
                 break
@@ -119,7 +119,7 @@ public class KGImagePickerController: UIImagePickerController, UINavigationContr
                 closure(nil, NSError(code: -1, message: "SourceType Invalid!".kg.localized))
             }
             else if let closure = videoPickerCompleteClosure {
-                closure(nil, 0, NSError(code: -1, message: "SourceType Invalid!".kg.localized))
+                closure(nil, NSError(code: -1, message: "SourceType Invalid!".kg.localized))
             }
             KGLog("SourceType Invalid!")
             UIAlertView(title: "Camera or Album Invalid!".kg.localized, message: nil, delegate: nil, cancelButtonTitle: "OK".kg.localized).show()
@@ -142,31 +142,12 @@ extension KGImagePickerController {
         case .RecordVideo:
             
             if let url = info[.mediaURL] as? URL {
-                do {
-                    let data = try Data(contentsOf: url)
-                    let asset = AVURLAsset(url: url)
-                    let time = asset.duration
-                    let second: UInt = UInt(time.value / Int64(time.timescale))
-                    if isSaveToAlbum {
-                        UISaveVideoAtPathToSavedPhotosAlbum(url.absoluteString, self, #selector(video(videoPath:didFinishSavingWithError:contextInfo:)), nil)
-                    }
-                    if let block = videoPickerCompleteClosure {
-                        KGLog("""
-                            Length:\(data.count)
-                            Seconds"\(second)
-                            """)
-                        block(data, second, nil)
-                    }
+                let asset = AVURLAsset(url: url)
+                if isSaveToAlbum {
+                    UISaveVideoAtPathToSavedPhotosAlbum(url.relativePath, self, #selector(video(videoPath:didFinishSavingWithError:contextInfo:)), nil)
                 }
-                catch {
-                    if let block = videoPickerCompleteClosure {
-                        block(nil, 0, error as NSError)
-                    }
-                }
-            }
-            else {
                 if let block = videoPickerCompleteClosure {
-                    block(nil, 0, NSError(code: -1, message: "No UIImagePickerControllerMediaURL!".kg.localized))
+                    block(asset, nil)
                 }
             }
             
@@ -224,7 +205,7 @@ extension KGImagePickerController {
             block(nil, NSError(code: -1, message: "Cancel".kg.localized))
         }
         if let block = videoPickerCompleteClosure {
-            block(nil, 0, NSError(code: -1, message: "Cancel".kg.localized))
+            block(nil, NSError(code: -1, message: "Cancel".kg.localized))
         }
         picker.dismiss(animated: true, completion: nil)
     }

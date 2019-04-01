@@ -540,6 +540,10 @@
         wx.invokeHandler('saveVideoToPhotosAlbum', object)
     }
 
+    wx.chooseVideo = function (object) {
+        wx.invokeHandler('chooseVideo', object)
+    }
+
 })();
 
 

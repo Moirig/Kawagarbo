@@ -120,5 +120,15 @@ public extension KGNamespace where Base == FileManager {
         return true
     }
     
+    static func fileSize(of path: String) -> UInt {
+        
+        do {
+            let fileInfo = try FileManager.default.attributesOfItem(atPath: path)
+            return fileInfo[.size] as? UInt ?? 0
+        } catch {
+            return 0
+        }
+        
+    }
     
 }

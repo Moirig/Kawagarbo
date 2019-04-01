@@ -48,6 +48,11 @@ struct KGInfoPlist {
         return false
     }
     
-    
+    static var microphoneUsageDescription: Bool {
+        if let _ = KGInfoPlist.shared["NSMicrophoneUsageDescription"] as? String {
+            return true
+        }
+        return false
+    }
     
 }

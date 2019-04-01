@@ -17,5 +17,6 @@ Pod::Spec.new do |s|
   s.dependency  'JXPhotoBrowser'
   s.dependency  'MBProgressHUD'
   s.dependency  'SolarNetwork'
-  s.dependency  'ZYImagePickerAndBrower'
+  s.dependency  'TZImagePickerController'
+
 end

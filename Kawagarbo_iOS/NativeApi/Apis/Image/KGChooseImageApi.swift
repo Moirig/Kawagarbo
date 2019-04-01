@@ -6,9 +6,9 @@
 //
 
 import UIKit
-import ZYImagePickerAndBrower
+import TZImagePickerController
 
-class KGChooseImageApi: KGNativeApi, KGNativeApiDelegate, ZYPhotoAlbumProtocol {
+class KGChooseImageApi: KGNativeApi, KGNativeApiDelegate, TZImagePickerControllerDelegate {
     
     var path: String { return "chooseImage" }
     
@@ -45,10 +45,6 @@ class KGChooseImageApi: KGNativeApi, KGNativeApiDelegate, ZYPhotoAlbumProtocol {
     var isCompress: Bool = true
     
     var imageTempCachePath: String {
-//        var toPath = KawagarboCachePath + "/6c54e788077a596b004344f048f2dbb4"
-//        toPath = toPath + "/" + KawagarboTempCachePathName
-//        FileManager.kg.createDirectory(toPath)
-//        return toPath
         let path: String
         if let rootPath = webViewController?.webRoute?.webApp?.rootPath {
             path = rootPath + "/" + KawagarboTempCachePathName
@@ -86,9 +82,9 @@ class KGChooseImageApi: KGNativeApi, KGNativeApiDelegate, ZYPhotoAlbumProtocol {
             return
         }
         
-        let photoAlbumVC = ZYPhotoNavigationViewController(photoAlbumDelegate: self, photoAlbumType: .selectPhoto)    //初始化需要设置代理对象
-        photoAlbumVC.maxSelectCount = count   //最大可选择张数
-        webViewController?.present(photoAlbumVC, animated: true, completion: nil)
+        let imagePicker = TZImagePickerController(maxImagesCount: count, delegate: self)
+        imagePicker!.allowPickingVideo = false
+        webViewController?.present(imagePicker!, animated: true, completion: nil)
     }
     
     func takePhoto() {
@@ -132,22 +128,22 @@ class KGChooseImageApi: KGNativeApi, KGNativeApiDelegate, ZYPhotoAlbumProtocol {
         }
     }
     
-    func photoAlbum(selectPhotos: [ZYPhotoModel]) {
+    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
         var tempFilePaths: [String] = []
         var tempFiles: [[String: Any]] = []
-        for (idx, model) in selectPhotos.enumerated() {
-            let (tempFilePath, tempFile, error) = compressAndSave(image: model.originImage!, index: idx)
-                if let err = error {
-                    if let acomplete = complete {
-                        acomplete(failure(message: err.localizedDescription))
-                        complete = nil
-                    }
-                    return
+        for (idx, image) in photos.enumerated() {
+            let (tempFilePath, tempFile, error) = compressAndSave(image: image, index: idx)
+            if let err = error {
+                if let acomplete = complete {
+                    acomplete(failure(message: err.localizedDescription))
+                    complete = nil
                 }
-                else if let atempFilePath = tempFilePath, let atempFile = tempFile {
-                    tempFilePaths.append(atempFilePath)
-                    tempFiles.append(atempFile)
-                }
+                return
+            }
+            else if let atempFilePath = tempFilePath, let atempFile = tempFile {
+                tempFilePaths.append(atempFilePath)
+                tempFiles.append(atempFile)
+            }
         }
         if let acomplete = complete {
             acomplete(success(data: ["tempFilePaths": tempFilePaths, "tempFiles": tempFiles]))
@@ -173,10 +169,6 @@ class KGChooseImageApi: KGNativeApi, KGNativeApiDelegate, ZYPhotoAlbumProtocol {
             let err = error as NSError
             return (nil, nil, err)
         }
-        
-//        if let acomplete = complete {
-//            acomplete(success(data: ["tempFilePaths": tempFilePaths, "tempFiles": tempFiles]))
-//        }
         return (imagePath, ["path": imagePath, "size": data.count], nil)
     }
     
