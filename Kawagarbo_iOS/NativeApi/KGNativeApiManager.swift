@@ -47,7 +47,7 @@ extension KGNativeApiManager {
     
     func injectApis() {
         for (apiPath, api) in KGNativeApiManager.nativeApis {
-            regist(apiPath) {[weak self] (parameters, callback) in
+            regist(apiPath) { [weak self] (parameters, callback) in
                 guard let strongSelf = self else { return }
                 
                 KGLog(title: "callNative:", """

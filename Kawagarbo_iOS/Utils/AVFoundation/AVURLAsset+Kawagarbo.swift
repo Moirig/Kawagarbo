@@ -7,6 +7,11 @@
 
 import AVFoundation
 
+enum KGVideoOrientation {
+    case portrait
+    case landscape
+}
+
 extension KGNamespace where Base == AVURLAsset {
 
     var duration: UInt {
@@ -21,13 +26,21 @@ extension KGNamespace where Base == AVURLAsset {
     }
     
     var size: CGSize {
-        let tracks = base.tracks(withMediaType: .video)
-        if tracks.count > 0 {
-            let videoTrack = tracks[0]
-            return videoTrack.naturalSize
+        if let videoTrack = base.tracks(withMediaType: .video).first {
+            let size = videoTrack.naturalSize.applying(videoTrack.preferredTransform)
+            return CGSize(width: fabs(size.width), height: fabs(size.height))
         }
         
-        return CGSize.zero
+        return .zero
     }
     
+    var orientation: KGVideoOrientation {
+        if let videoTrack = base.tracks(withMediaType: .video).first {
+            let transform = videoTrack.preferredTransform
+            let videoAngleInDegree = atan2(transform.b, transform.a) * 180 / .pi
+            return videoAngleInDegree == 0 ? .landscape : .portrait
+        }
+        
+        return .portrait
+    }
 }

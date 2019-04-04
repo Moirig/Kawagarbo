@@ -104,7 +104,7 @@ class KGChooseImageApi: KGNativeApi, KGNativeApiDelegate, TZImagePickerControlle
         }
         
         let imagePicker = KGImagePickerController(.TakePhoto, isSaveToAlbum: true)
-        imagePicker.pickerPhotoComplete {[weak self] (data, error) in
+        imagePicker.pickerPhotoComplete { [weak self] (data, error) in
             guard let strongSelf = self else { return }
             if let err = error {
                 if let acomplete = strongSelf.complete {

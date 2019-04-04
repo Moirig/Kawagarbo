@@ -7,6 +7,7 @@
 
 import UIKit
 import TZImagePickerController
+import MBProgressHUD
 
 class KGChooseVideoApi: KGNativeApi, KGNativeApiDelegate, TZImagePickerControllerDelegate {
     
@@ -112,7 +113,9 @@ class KGChooseVideoApi: KGNativeApi, KGNativeApiDelegate, TZImagePickerControlle
         
         let imagePicker = KGImagePickerController(.RecordVideo, isSaveToAlbum: true)
         imagePicker.videoQuality = .typeIFrame960x540
-        imagePicker.pickerVideoComplete {[weak self] (asset, error) in
+        imagePicker.videoMaximumDuration = TimeInterval(maxDuration)
+        imagePicker.cameraDevice = camera == "front" ? .front : .rear
+        imagePicker.pickerVideoComplete { [weak self] (asset, error) in
             guard let strongSelf = self else { return }
             if let err = error {
                 if let acomplete = strongSelf.complete {
@@ -131,22 +134,69 @@ class KGChooseVideoApi: KGNativeApi, KGNativeApiDelegate, TZImagePickerControlle
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingVideo coverImage: UIImage!, sourceAssets asset: PHAsset!) {
         PHCachingImageManager().requestAVAsset(forVideo: asset, options: nil) { (avAsset, audioMix, info) in
             if let aasset = avAsset as? AVURLAsset {
-                self.compressAndCallback(asset: aasset)
+                DispatchQueue.main.async {
+                    self.compressAndCallback(asset: aasset)
+                }
             }
         }
     }
     
+    var assetExportSession: KGAssetExportSession!
+    
     func compressAndCallback(asset: AVURLAsset) {
-        let atPath = asset.url.relativePath
-        let toPath = tempCachePath + "/" + asset.url.lastPathComponent
-        
-        guard FileManager.kg.copyItem(atPath: atPath, toPath: toPath) else {
-            if let acomplete = complete {
-                acomplete(failure(message: "Move file to temp path fail."))
+        if isCompress {
+            MBProgressHUD.loading()
+            assetExportSession = KGAssetExportSession(asset: asset)
+            assetExportSession.outputCachePath = tempCachePath
+            assetExportSession.export {[weak self] (status, outputAsset, error) in
+                MBProgressHUD.hide()
+                guard let strongSelf = self else { return }
+                
+                switch status {
+                    
+                case .unknown:
+                    strongSelf.complete(asset, isCompressed: false)
+
+                case .waiting:
+                    break
+                case .exporting:
+                    break
+                case .completed:
+                    if let aoutputAsset = outputAsset {
+                        strongSelf.complete(aoutputAsset, isCompressed: true)
+                    }
+                    
+                case .failed:
+                    strongSelf.complete(asset, isCompressed: false)
+                    
+                case .cancelled:
+                    strongSelf.complete(asset, isCompressed: false)
+                }
             }
+            
             return
         }
+        
+        complete(asset, isCompressed: false)
+        
+    }
+    
+    func complete(_ asset: AVURLAsset, isCompressed: Bool) {
+        var tempFilePath = asset.url.absoluteString
 
+        if isCompressed == false {
+            let atPath = asset.url.relativePath
+            let toPath = tempCachePath + "/" + asset.url.lastPathComponent
+            
+            guard FileManager.kg.copyItem(atPath: atPath, toPath: toPath) else {
+                if let acomplete = complete {
+                    acomplete(failure(message: "Move file to temp path fail."))
+                }
+                return
+            }
+            tempFilePath = "file://" + toPath
+        }
+        
         let duration = asset.kg.duration
         let size = asset.kg.fileSize
         let width = asset.kg.size.width
@@ -154,7 +204,7 @@ class KGChooseVideoApi: KGNativeApi, KGNativeApiDelegate, TZImagePickerControlle
         
         if let acomplete = complete {
             acomplete(
-                success(data: ["tempFilePath": toPath,
+                success(data: ["tempFilePath": tempFilePath,
                                "duration": duration,
                                "size": size,
                                "width": width,
