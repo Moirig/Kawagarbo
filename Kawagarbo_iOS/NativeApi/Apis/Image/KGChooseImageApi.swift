@@ -44,7 +44,7 @@ class KGChooseImageApi: KGNativeApi, KGNativeApiDelegate, TZImagePickerControlle
 
     var isCompress: Bool = true
     
-    var imageTempCachePath: String {
+    var tempCachePath: String {
         let path: String
         if let rootPath = webViewController?.webRoute?.webApp?.rootPath {
             path = rootPath + "/" + KawagarboTempCachePathName
@@ -160,7 +160,7 @@ class KGChooseImageApi: KGNativeApi, KGNativeApiDelegate, TZImagePickerControlle
             data = image.jpegData(compressionQuality: 0.8)!
         }
         
-        let imagePath = "file://" + imageTempCachePath + "/" + "\(Date().timeIntervalSince1970)_\(index)"
+        let imagePath = "file://" + tempCachePath + "/" + "\(Date().timeIntervalSince1970)_\(index)"
         do {
             if let url = URL(string: imagePath) {
                 try data.write(to: url)

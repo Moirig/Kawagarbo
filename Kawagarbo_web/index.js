@@ -60,3 +60,7 @@ function toImage() {
 function toVideo() {
     location.href = 'pages/video/video.html'
 }
+
+function toRecord() {
+    location.href = 'pages/record/record.html'
+}

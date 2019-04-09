@@ -84,6 +84,8 @@ public class KGNativeApi: NSObject {
         
         KGSaveVideoToPhotosAlbumApi().regist()
         KGChooseVideoApi().regist()
+        
+        KGRecorderManagerApi().regist()
     }
     
 }

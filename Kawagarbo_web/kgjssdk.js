@@ -544,6 +544,54 @@
         wx.invokeHandler('chooseVideo', object)
     }
 
+    wx.getRecorderManager = function () {
+        var RecorderManager = {
+            onStart: '',
+            onStop: '',
+            onPause: '',
+            onResume: ''
+        }
+
+        RecorderManager.start = function (object) {
+            object = object || {}
+            object.method = 'start'
+            object.success = function () {
+                RecorderManager.onStart && typeof RecorderManager.onStart == 'function' && RecorderManager.onStart()
+            }
+            wx.invokeHandler('RecorderManager', object)
+        }
+        
+        RecorderManager.stop = function () {
+            var object = {method: 'stop', success: function (res) {
+                    RecorderManager.onStop && typeof RecorderManager.onStop == 'function' && RecorderManager.onStop(res)
+                }}
+            wx.invokeHandler('RecorderManager', object)
+        }
+
+        RecorderManager.pause = function () {
+            var object = {method: 'pause', success: function () {
+                    RecorderManager.onPause && typeof RecorderManager.onPause == 'function'  && RecorderManager.onPause()
+                }}
+            wx.invokeHandler('RecorderManager', object)
+        }
+
+        RecorderManager.resume = function () {
+            var object = {method: 'resume', success: function () {
+                    RecorderManager.onResume && typeof RecorderManager.onResume == 'function' && RecorderManager.onResume()
+                }}
+            wx.invokeHandler('RecorderManager', object)
+        }
+
+        RecorderManager.onError = function (callback) {
+            var object = {method: 'onError', fail: function (res) {
+                    callback && callback(res)
+                }}
+            wx.invokeHandler('RecorderManager', object)
+        }
+        
+        return RecorderManager
+    }
+
 })();
 
 

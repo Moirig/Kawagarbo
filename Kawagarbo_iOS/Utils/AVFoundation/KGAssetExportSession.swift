@@ -2,7 +2,7 @@
 //  KGAssetExportSession.swift
 //  Alamofire
 //
-//  Created by 温一鸿 on 2019/4/1.
+//  Created by wyhazq on 2019/4/1.
 //
 
 import UIKit
