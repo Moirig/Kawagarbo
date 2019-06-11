@@ -57,7 +57,7 @@ public class KGWebViewController: UIViewController {
         webView.webViewDelegate = nil
         webView.scrollView.delegate = nil
         webView.removeFromSuperview()
-        KGWebViewManager.removeCurrentWebView()
+        KGWebViewManager.destoryCurrentWebView()
     }
     
     public convenience init(urlString: String, parameters: [String: String]? = nil, headerFields: [String: String]? = nil) {
@@ -253,7 +253,7 @@ extension KGWebViewController: KGWebViewDelegate {
             onReady()
         }
         
-        onShow()
+//        onShow()
         
         KGWebViewController.delegate?.webViewControllerDidFinishLoad(self)
         delegate?.webViewControllerDidFinishLoad(self)

@@ -23,7 +23,7 @@ internal typealias Handler = (_ parameters: [String: Any]?, _ callback: Callback
 internal typealias Callback = (_ jsonObject: [String: Any]?) -> Void
 
 
-internal let KGScriptMessageHandleName = "invokeHandler"
+internal let KGScriptMessageHandleName: String = "invokeHandler"
 internal let kParamHandlerName: String = "handlerName"
 internal let kParamCallbackId: String = "callbackId"
 internal let kParamResponseData: String = "responseData"

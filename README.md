@@ -21,6 +21,8 @@ it, simply add the following line to your Podfile:
 pod 'Kawagarbo_iOS'
 ```
 
+###[设计文档](./Documentation/Hybrid_Design_CN.md)
+
 ## Author
 
 wyhazq, 443265447@qq.com

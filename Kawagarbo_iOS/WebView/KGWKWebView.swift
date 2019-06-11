@@ -76,7 +76,7 @@ public class KGWKWebView: WKWebView {
     }
     
     static var webView: KGWKWebView {
-        return KGWebViewManager.createWebView
+        return KGWebViewManager.createWebView()
     }
     
     override init(frame: CGRect, configuration: WKWebViewConfiguration) {
@@ -155,16 +155,14 @@ extension KGWKWebView: WKNavigationDelegate {
     }
     
     public func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        guard challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust && challenge.previousFailureCount == 0 else {
-            completionHandler(.cancelAuthenticationChallenge, nil)
-            return
+        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust && challenge.previousFailureCount == 0 {
+            let credential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+            return completionHandler(.useCredential, credential)
         }
-        let credential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
-        completionHandler(.useCredential, credential)
-    }
-    
-    public func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        decisionHandler(.allow)
+        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodClientCertificate {
+            return completionHandler(.performDefaultHandling, nil)
+        }
+        return completionHandler(.cancelAuthenticationChallenge, nil)
     }
     
 }

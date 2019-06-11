@@ -19,7 +19,7 @@ public class KGWebViewManager: NSObject {
     
     var emptyWebView: KGWKWebView?
     
-    static var createWebView: KGWKWebView {
+    static func createWebView() -> KGWKWebView {
         if KGWebViewManager.manager.emptyWebView == nil {
             createEmptyWebView()
         }
@@ -54,7 +54,7 @@ public class KGWebViewManager: NSObject {
         return webView
     }
     
-    static func removeCurrentWebView() {
+    static func destoryCurrentWebView() {
         KGWebViewManager.manager.webViewStack.removeLast()
     }
 

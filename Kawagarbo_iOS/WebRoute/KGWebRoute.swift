@@ -59,6 +59,7 @@ public class KGWebRoute: NSObject {
     }
     
     func formatURLRequest() -> URLRequest? {
+        //TODO-webApp不应该放在这里的
         if let awebApp = webApp {
             storeURLString = "file://" + awebApp.launchPagePath
         }
@@ -70,6 +71,7 @@ public class KGWebRoute: NSObject {
             }
         }
         
+        //url is invalid: contain chinese
         if URL(string: formatUrl) == nil {
             formatUrl = formatUrl.kg.urlEncode
         }
