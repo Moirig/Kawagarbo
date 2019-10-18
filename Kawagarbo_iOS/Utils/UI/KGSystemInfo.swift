@@ -108,7 +108,7 @@ struct KGSystemInfo {
             guard let settings = UIApplication.shared.currentUserNotificationSettings else {
                 return notificationAuthorized
             }
-            notificationAuthorized = settings.types != .none
+            notificationAuthorized = settings.types != []
             semaphore.signal()
         }
         

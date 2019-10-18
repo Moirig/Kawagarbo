@@ -9,3 +9,8 @@ function getSystemInfo() {
         }
     })
 }
+
+// function getSystemInfoSync() {
+//     var res = wx.getSystemInfoSync()
+//     alert(JSON.stringify(res))
+// }

@@ -182,7 +182,19 @@
         wx.invokeHandler('getSystemInfo', object)
     }
 
-
+    // wx.getSystemInfoSync = function() {
+    //     var resSync = undefined
+    //     var obj = {
+    //         success: function (res) {
+    //             resSync = res
+    //         }
+    //     }
+    //     wx.invokeHandler('getSystemInfo', obj)
+    //     while (resSync === undefined) {
+    //         console.log('while')
+    //     }
+    //     return resSync 
+    // }
 
     wx.navigateTo = function (object) {
         object.url = _toAbsURL(object.url)
