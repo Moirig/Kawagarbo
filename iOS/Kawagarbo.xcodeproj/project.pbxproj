@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F01795B2CCB31733442D9AA /* Pods_Kawagarbo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32693D17FA91B297AAFE10B8 /* Pods_Kawagarbo.framework */; };
+		F8348D8F24D11B6200E55B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348D8E24D11B6200E55B8C /* AppDelegate.swift */; };
+		F8348D9124D11B6200E55B8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348D9024D11B6200E55B8C /* SceneDelegate.swift */; };
+		F8348D9324D11B6200E55B8C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348D9224D11B6200E55B8C /* FirstViewController.swift */; };
+		F8348D9524D11B6200E55B8C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348D9424D11B6200E55B8C /* SecondViewController.swift */; };
+		F8348D9824D11B6200E55B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8348D9624D11B6200E55B8C /* Main.storyboard */; };
+		F8348D9A24D11B6600E55B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8348D9924D11B6600E55B8C /* Assets.xcassets */; };
+		F8348D9D24D11B6600E55B8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8348D9B24D11B6600E55B8C /* LaunchScreen.storyboard */; };
+		F84B24E824FBFA5D00871ADE /* InvokeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24BE24FBFA5D00871ADE /* InvokeApi.swift */; };
+		F84B24E924FBFA5D00871ADE /* AlertPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C024FBFA5D00871ADE /* AlertPlugin.swift */; };
+		F84B24EA24FBFA5D00871ADE /* InvokeHandlerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C224FBFA5D00871ADE /* InvokeHandlerPlugin.swift */; };
+		F84B24EB24FBFA5D00871ADE /* JSBridgePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C324FBFA5D00871ADE /* JSBridgePlugin.swift */; };
+		F84B24EC24FBFA5D00871ADE /* SubscribeHandlePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C424FBFA5D00871ADE /* SubscribeHandlePlugin.swift */; };
+		F84B24ED24FBFA5D00871ADE /* Res.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C524FBFA5D00871ADE /* Res.swift */; };
+		F84B24EE24FBFA5D00871ADE /* RouterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C624FBFA5D00871ADE /* RouterPlugin.swift */; };
+		F84B24EF24FBFA5D00871ADE /* TitlePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C724FBFA5D00871ADE /* TitlePlugin.swift */; };
+		F84B24F024FBFA5D00871ADE /* WebViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C824FBFA5D00871ADE /* WebViewController+Extension.swift */; };
+		F84B24F124FBFA5D00871ADE /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24CA24FBFA5D00871ADE /* Toolbar.swift */; };
+		F84B24F224FBFA5D00871ADE /* Bundle+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24CC24FBFA5D00871ADE /* Bundle+Kawagarbo.swift */; };
+		F84B24F324FBFA5D00871ADE /* UIImage+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24CD24FBFA5D00871ADE /* UIImage+Kawagarbo.swift */; };
+		F84B24F424FBFA5D00871ADE /* UIVIewController+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24CE24FBFA5D00871ADE /* UIVIewController+Kawagarbo.swift */; };
+		F84B24F524FBFA5D00871ADE /* NSNumber+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24CF24FBFA5D00871ADE /* NSNumber+Kawagarbo.swift */; };
+		F84B24F624FBFA5D00871ADE /* WKWebView+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D024FBFA5D00871ADE /* WKWebView+Kawagarbo.swift */; };
+		F84B24F724FBFA5D00871ADE /* String+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D124FBFA5D00871ADE /* String+Kawagarbo.swift */; };
+		F84B24F824FBFA5D00871ADE /* Data+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D224FBFA5D00871ADE /* Data+Kawagarbo.swift */; };
+		F84B24F924FBFA5D00871ADE /* Dictionary+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D324FBFA5D00871ADE /* Dictionary+Kawagarbo.swift */; };
+		F84B24FA24FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D424FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift */; };
+		F84B24FB24FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D524FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift */; };
+		F84B24FC24FBFA5D00871ADE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D624FBFA5D00871ADE /* Log.swift */; };
+		F84B24FD24FBFA5D00871ADE /* NameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D724FBFA5D00871ADE /* NameSpace.swift */; };
+		F84B24FE24FBFA5D00871ADE /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D824FBFA5D00871ADE /* Const.swift */; };
+		F84B24FF24FBFA5D00871ADE /* Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D924FBFA5D00871ADE /* Kawagarbo.swift */; };
+		F84B250024FBFA5D00871ADE /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24DA24FBFA5D00871ADE /* WebView.swift */; };
+		F84B250124FBFA5D00871ADE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24DB24FBFA5D00871ADE /* Router.swift */; };
+		F84B250224FBFA5D00871ADE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24DC24FBFA5D00871ADE /* WebViewController.swift */; };
+		F84B250324FBFA5D00871ADE /* Kawagarbo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F84B24DE24FBFA5D00871ADE /* Kawagarbo.bundle */; };
+		F84B250424FBFA5D00871ADE /* WKWebView+Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E024FBFA5D00871ADE /* WKWebView+Interceptor.swift */; };
+		F84B250524FBFA5D00871ADE /* POSTInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E124FBFA5D00871ADE /* POSTInterceptor.swift */; };
+		F84B250624FBFA5D00871ADE /* URLRequest+Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E224FBFA5D00871ADE /* URLRequest+Interceptor.swift */; };
+		F84B250724FBFA5D00871ADE /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E324FBFA5D00871ADE /* Interceptor.swift */; };
+		F84B250824FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E424FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift */; };
+		F84B250924FBFA5D00871ADE /* TestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E624FBFA5D00871ADE /* TestInterceptor.swift */; };
+		F84B250A24FBFA5D00871ADE /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E724FBFA5D00871ADE /* Plugin.swift */; };
+		F875BBDA24D81091002B1D83 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F875BBD924D81091002B1D83 /* NavigationController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		32693D17FA91B297AAFE10B8 /* Pods_Kawagarbo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kawagarbo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50F943C477D4AC92E5C999DC /* Pods-Kawagarbo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kawagarbo.release.xcconfig"; path = "Target Support Files/Pods-Kawagarbo/Pods-Kawagarbo.release.xcconfig"; sourceTree = "<group>"; };
+		B78E1D4E1BC8F13DA1FC5342 /* Pods-Kawagarbo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kawagarbo.debug.xcconfig"; path = "Target Support Files/Pods-Kawagarbo/Pods-Kawagarbo.debug.xcconfig"; sourceTree = "<group>"; };
+		F8348D8B24D11B6200E55B8C /* Kawagarbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kawagarbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8348D8E24D11B6200E55B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F8348D9024D11B6200E55B8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F8348D9224D11B6200E55B8C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		F8348D9424D11B6200E55B8C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F8348D9724D11B6200E55B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F8348D9924D11B6600E55B8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8348D9C24D11B6600E55B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F8348D9E24D11B6600E55B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F84B24BE24FBFA5D00871ADE /* InvokeApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvokeApi.swift; sourceTree = "<group>"; };
+		F84B24C024FBFA5D00871ADE /* AlertPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPlugin.swift; sourceTree = "<group>"; };
+		F84B24C224FBFA5D00871ADE /* InvokeHandlerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvokeHandlerPlugin.swift; sourceTree = "<group>"; };
+		F84B24C324FBFA5D00871ADE /* JSBridgePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSBridgePlugin.swift; sourceTree = "<group>"; };
+		F84B24C424FBFA5D00871ADE /* SubscribeHandlePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeHandlePlugin.swift; sourceTree = "<group>"; };
+		F84B24C524FBFA5D00871ADE /* Res.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Res.swift; sourceTree = "<group>"; };
+		F84B24C624FBFA5D00871ADE /* RouterPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterPlugin.swift; sourceTree = "<group>"; };
+		F84B24C724FBFA5D00871ADE /* TitlePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlePlugin.swift; sourceTree = "<group>"; };
+		F84B24C824FBFA5D00871ADE /* WebViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WebViewController+Extension.swift"; sourceTree = "<group>"; };
+		F84B24CA24FBFA5D00871ADE /* Toolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
+		F84B24CC24FBFA5D00871ADE /* Bundle+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24CD24FBFA5D00871ADE /* UIImage+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24CE24FBFA5D00871ADE /* UIVIewController+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24CF24FBFA5D00871ADE /* NSNumber+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D024FBFA5D00871ADE /* WKWebView+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKWebView+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D124FBFA5D00871ADE /* String+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D224FBFA5D00871ADE /* Data+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D324FBFA5D00871ADE /* Dictionary+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D424FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D524FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D624FBFA5D00871ADE /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		F84B24D724FBFA5D00871ADE /* NameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameSpace.swift; sourceTree = "<group>"; };
+		F84B24D824FBFA5D00871ADE /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		F84B24D924FBFA5D00871ADE /* Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kawagarbo.swift; sourceTree = "<group>"; };
+		F84B24DA24FBFA5D00871ADE /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		F84B24DB24FBFA5D00871ADE /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F84B24DC24FBFA5D00871ADE /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F84B24DE24FBFA5D00871ADE /* Kawagarbo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Kawagarbo.bundle; sourceTree = "<group>"; };
+		F84B24E024FBFA5D00871ADE /* WKWebView+Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKWebView+Interceptor.swift"; sourceTree = "<group>"; };
+		F84B24E124FBFA5D00871ADE /* POSTInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POSTInterceptor.swift; sourceTree = "<group>"; };
+		F84B24E224FBFA5D00871ADE /* URLRequest+Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Interceptor.swift"; sourceTree = "<group>"; };
+		F84B24E324FBFA5D00871ADE /* Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
+		F84B24E424FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLProtocol+Interceptor.swift"; sourceTree = "<group>"; };
+		F84B24E624FBFA5D00871ADE /* TestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestInterceptor.swift; sourceTree = "<group>"; };
+		F84B24E724FBFA5D00871ADE /* Plugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		F875BBD924D81091002B1D83 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8348D8824D11B6200E55B8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F01795B2CCB31733442D9AA /* Pods_Kawagarbo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18417FD15FD1C1CE335DFECE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B78E1D4E1BC8F13DA1FC5342 /* Pods-Kawagarbo.debug.xcconfig */,
+				50F943C477D4AC92E5C999DC /* Pods-Kawagarbo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E89BF96EEAC6CA0BBEA2329F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32693D17FA91B297AAFE10B8 /* Pods_Kawagarbo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8348D8224D11B6200E55B8C = {
+			isa = PBXGroup;
+			children = (
+				F84B24BC24FBFA5D00871ADE /* Source */,
+				F8348D8D24D11B6200E55B8C /* Kawagarbo */,
+				F8348D8C24D11B6200E55B8C /* Products */,
+				18417FD15FD1C1CE335DFECE /* Pods */,
+				E89BF96EEAC6CA0BBEA2329F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F8348D8C24D11B6200E55B8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8348D8B24D11B6200E55B8C /* Kawagarbo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8348D8D24D11B6200E55B8C /* Kawagarbo */ = {
+			isa = PBXGroup;
+			children = (
+				F8348D8E24D11B6200E55B8C /* AppDelegate.swift */,
+				F8348D9024D11B6200E55B8C /* SceneDelegate.swift */,
+				F8348D9224D11B6200E55B8C /* FirstViewController.swift */,
+				F8348D9424D11B6200E55B8C /* SecondViewController.swift */,
+				F875BBD924D81091002B1D83 /* NavigationController.swift */,
+				F8348D9624D11B6200E55B8C /* Main.storyboard */,
+				F8348D9924D11B6600E55B8C /* Assets.xcassets */,
+				F8348D9B24D11B6600E55B8C /* LaunchScreen.storyboard */,
+				F8348D9E24D11B6600E55B8C /* Info.plist */,
+			);
+			path = Kawagarbo;
+			sourceTree = "<group>";
+		};
+		F84B24BC24FBFA5D00871ADE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24BD24FBFA5D00871ADE /* NativeApis */,
+				F84B24BF24FBFA5D00871ADE /* Plugins */,
+				F84B24C824FBFA5D00871ADE /* WebViewController+Extension.swift */,
+				F84B24C924FBFA5D00871ADE /* Utils */,
+				F84B24D924FBFA5D00871ADE /* Kawagarbo.swift */,
+				F84B24DA24FBFA5D00871ADE /* WebView.swift */,
+				F84B24DB24FBFA5D00871ADE /* Router.swift */,
+				F84B24DC24FBFA5D00871ADE /* WebViewController.swift */,
+				F84B24DD24FBFA5D00871ADE /* Resource */,
+				F84B24DF24FBFA5D00871ADE /* Interceptor */,
+				F84B24E724FBFA5D00871ADE /* Plugin.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F84B24BD24FBFA5D00871ADE /* NativeApis */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24BE24FBFA5D00871ADE /* InvokeApi.swift */,
+			);
+			path = NativeApis;
+			sourceTree = "<group>";
+		};
+		F84B24BF24FBFA5D00871ADE /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24C024FBFA5D00871ADE /* AlertPlugin.swift */,
+				F84B24C124FBFA5D00871ADE /* JSBridge */,
+				F84B24C624FBFA5D00871ADE /* RouterPlugin.swift */,
+				F84B24C724FBFA5D00871ADE /* TitlePlugin.swift */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		F84B24C124FBFA5D00871ADE /* JSBridge */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24C224FBFA5D00871ADE /* InvokeHandlerPlugin.swift */,
+				F84B24C324FBFA5D00871ADE /* JSBridgePlugin.swift */,
+				F84B24C424FBFA5D00871ADE /* SubscribeHandlePlugin.swift */,
+				F84B24C524FBFA5D00871ADE /* Res.swift */,
+			);
+			path = JSBridge;
+			sourceTree = "<group>";
+		};
+		F84B24C924FBFA5D00871ADE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24CA24FBFA5D00871ADE /* Toolbar.swift */,
+				F84B24CB24FBFA5D00871ADE /* Extension */,
+				F84B24D624FBFA5D00871ADE /* Log.swift */,
+				F84B24D724FBFA5D00871ADE /* NameSpace.swift */,
+				F84B24D824FBFA5D00871ADE /* Const.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F84B24CB24FBFA5D00871ADE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24CC24FBFA5D00871ADE /* Bundle+Kawagarbo.swift */,
+				F84B24CD24FBFA5D00871ADE /* UIImage+Kawagarbo.swift */,
+				F84B24CE24FBFA5D00871ADE /* UIVIewController+Kawagarbo.swift */,
+				F84B24CF24FBFA5D00871ADE /* NSNumber+Kawagarbo.swift */,
+				F84B24D024FBFA5D00871ADE /* WKWebView+Kawagarbo.swift */,
+				F84B24D124FBFA5D00871ADE /* String+Kawagarbo.swift */,
+				F84B24D224FBFA5D00871ADE /* Data+Kawagarbo.swift */,
+				F84B24D324FBFA5D00871ADE /* Dictionary+Kawagarbo.swift */,
+				F84B24D424FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift */,
+				F84B24D524FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F84B24DD24FBFA5D00871ADE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24DE24FBFA5D00871ADE /* Kawagarbo.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F84B24DF24FBFA5D00871ADE /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24E024FBFA5D00871ADE /* WKWebView+Interceptor.swift */,
+				F84B24E124FBFA5D00871ADE /* POSTInterceptor.swift */,
+				F84B24E224FBFA5D00871ADE /* URLRequest+Interceptor.swift */,
+				F84B24E324FBFA5D00871ADE /* Interceptor.swift */,
+				F84B24E424FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift */,
+				F84B24E524FBFA5D00871ADE /* TestInterceptor */,
+			);
+			path = Interceptor;
+			sourceTree = "<group>";
+		};
+		F84B24E524FBFA5D00871ADE /* TestInterceptor */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24E624FBFA5D00871ADE /* TestInterceptor.swift */,
+			);
+			path = TestInterceptor;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8348D8A24D11B6200E55B8C /* Kawagarbo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8348DA124D11B6600E55B8C /* Build configuration list for PBXNativeTarget "Kawagarbo" */;
+			buildPhases = (
+				94EF8520A5571766482C9AB0 /* [CP] Check Pods Manifest.lock */,
+				F8348D8724D11B6200E55B8C /* Sources */,
+				F8348D8824D11B6200E55B8C /* Frameworks */,
+				F8348D8924D11B6200E55B8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kawagarbo;
+			productName = Kawagarbo;
+			productReference = F8348D8B24D11B6200E55B8C /* Kawagarbo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8348D8324D11B6200E55B8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = Moirig;
+				TargetAttributes = {
+					F8348D8A24D11B6200E55B8C = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = F8348D8624D11B6200E55B8C /* Build configuration list for PBXProject "Kawagarbo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F8348D8224D11B6200E55B8C;
+			productRefGroup = F8348D8C24D11B6200E55B8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8348D8A24D11B6200E55B8C /* Kawagarbo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8348D8924D11B6200E55B8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8348D9D24D11B6600E55B8C /* LaunchScreen.storyboard in Resources */,
+				F8348D9A24D11B6600E55B8C /* Assets.xcassets in Resources */,
+				F8348D9824D11B6200E55B8C /* Main.storyboard in Resources */,
+				F84B250324FBFA5D00871ADE /* Kawagarbo.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		94EF8520A5571766482C9AB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kawagarbo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8348D8724D11B6200E55B8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84B24ED24FBFA5D00871ADE /* Res.swift in Sources */,
+				F84B24FA24FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift in Sources */,
+				F84B24FC24FBFA5D00871ADE /* Log.swift in Sources */,
+				F84B24FF24FBFA5D00871ADE /* Kawagarbo.swift in Sources */,
+				F84B24FD24FBFA5D00871ADE /* NameSpace.swift in Sources */,
+				F84B250124FBFA5D00871ADE /* Router.swift in Sources */,
+				F8348D9524D11B6200E55B8C /* SecondViewController.swift in Sources */,
+				F84B250724FBFA5D00871ADE /* Interceptor.swift in Sources */,
+				F8348D9324D11B6200E55B8C /* FirstViewController.swift in Sources */,
+				F84B24E824FBFA5D00871ADE /* InvokeApi.swift in Sources */,
+				F84B24E924FBFA5D00871ADE /* AlertPlugin.swift in Sources */,
+				F84B24F624FBFA5D00871ADE /* WKWebView+Kawagarbo.swift in Sources */,
+				F84B24F224FBFA5D00871ADE /* Bundle+Kawagarbo.swift in Sources */,
+				F84B24F824FBFA5D00871ADE /* Data+Kawagarbo.swift in Sources */,
+				F84B24EF24FBFA5D00871ADE /* TitlePlugin.swift in Sources */,
+				F84B250824FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift in Sources */,
+				F84B24EB24FBFA5D00871ADE /* JSBridgePlugin.swift in Sources */,
+				F84B250224FBFA5D00871ADE /* WebViewController.swift in Sources */,
+				F84B250424FBFA5D00871ADE /* WKWebView+Interceptor.swift in Sources */,
+				F84B24FE24FBFA5D00871ADE /* Const.swift in Sources */,
+				F8348D8F24D11B6200E55B8C /* AppDelegate.swift in Sources */,
+				F84B250524FBFA5D00871ADE /* POSTInterceptor.swift in Sources */,
+				F84B24EA24FBFA5D00871ADE /* InvokeHandlerPlugin.swift in Sources */,
+				F84B250924FBFA5D00871ADE /* TestInterceptor.swift in Sources */,
+				F875BBDA24D81091002B1D83 /* NavigationController.swift in Sources */,
+				F84B24F524FBFA5D00871ADE /* NSNumber+Kawagarbo.swift in Sources */,
+				F84B24EE24FBFA5D00871ADE /* RouterPlugin.swift in Sources */,
+				F84B24F024FBFA5D00871ADE /* WebViewController+Extension.swift in Sources */,
+				F84B250024FBFA5D00871ADE /* WebView.swift in Sources */,
+				F84B24F724FBFA5D00871ADE /* String+Kawagarbo.swift in Sources */,
+				F84B24F324FBFA5D00871ADE /* UIImage+Kawagarbo.swift in Sources */,
+				F84B24FB24FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift in Sources */,
+				F84B24F424FBFA5D00871ADE /* UIVIewController+Kawagarbo.swift in Sources */,
+				F84B24F924FBFA5D00871ADE /* Dictionary+Kawagarbo.swift in Sources */,
+				F84B24F124FBFA5D00871ADE /* Toolbar.swift in Sources */,
+				F8348D9124D11B6200E55B8C /* SceneDelegate.swift in Sources */,
+				F84B250A24FBFA5D00871ADE /* Plugin.swift in Sources */,
+				F84B250624FBFA5D00871ADE /* URLRequest+Interceptor.swift in Sources */,
+				F84B24EC24FBFA5D00871ADE /* SubscribeHandlePlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F8348D9624D11B6200E55B8C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8348D9724D11B6200E55B8C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F8348D9B24D11B6600E55B8C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8348D9C24D11B6600E55B8C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8348D9F24D11B6600E55B8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F8348DA024D11B6600E55B8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F8348DA224D11B6600E55B8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B78E1D4E1BC8F13DA1FC5342 /* Pods-Kawagarbo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Kawagarbo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Moirig.Kawagarbo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8348DA324D11B6600E55B8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50F943C477D4AC92E5C999DC /* Pods-Kawagarbo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Kawagarbo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Moirig.Kawagarbo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8348D8624D11B6200E55B8C /* Build configuration list for PBXProject "Kawagarbo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8348D9F24D11B6600E55B8C /* Debug */,
+				F8348DA024D11B6600E55B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8348DA124D11B6600E55B8C /* Build configuration list for PBXNativeTarget "Kawagarbo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8348DA224D11B6600E55B8C /* Debug */,
+				F8348DA324D11B6600E55B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8348D8324D11B6200E55B8C /* Project object */;
+}
