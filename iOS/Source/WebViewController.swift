@@ -86,23 +86,17 @@ extension WebViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        
+
         setBar()
-        
+
         self.route = Route(path: path, query: query, params: params)
         
         view.addSubview(webView)
         webView.addSubview(progressView)
         webView.load(route.request)
-        
-
     }
     
     func setUI() {
-//        if let navi = navigationController, navi.viewControllers.count > 1 {
-//            navi.interactivePopGestureRecognizer?.isEnabled = true
-//        }
-        
         view.backgroundColor = .white
     }
     

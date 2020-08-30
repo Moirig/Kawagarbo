@@ -64,7 +64,7 @@ private let JSBridge = """
     }
 
     kawagarbo._invoke = function(path, params, callback) {
-        var message = { path, params };
+        var message = { path: path, params: params };
         message.msgId = 'invoke_' + (_uniqueId++) + '_' + new Date().getTime();
         _invokes[message.msgId] = callback;
         window.webkit.messageHandlers.invokeHandler.postMessage(message);
@@ -133,6 +133,8 @@ class JSBridgePlugin: NSObject, NavigationPlugin {
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if navigationAction.request.url?.absoluteString == JSBridgeInjectFlag {
+            webView.configuration.userContentController.removeScriptMessageHandler(forName: InvokeHandleName)
+            webView.configuration.userContentController.removeScriptMessageHandler(forName: SubscribeHandleName)
             webView.configuration.userContentController.add(webView.kw.viewController, name: InvokeHandleName)
             webView.configuration.userContentController.add(webView.kw.viewController, name: SubscribeHandleName)
             webView.evaluateJavaScript(JSBridge, completionHandler: nil)

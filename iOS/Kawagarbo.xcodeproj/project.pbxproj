@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2F01795B2CCB31733442D9AA /* Pods_Kawagarbo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32693D17FA91B297AAFE10B8 /* Pods_Kawagarbo.framework */; };
-		F826D0AA24D2B8C900EBB9DE /* Res.swift in Sources */ = {isa = PBXBuildFile; fileRef = F826D0A924D2B8C900EBB9DE /* Res.swift */; };
-		F826D0AC24D3059B00EBB9DE /* AlertPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F826D0AB24D3059B00EBB9DE /* AlertPlugin.swift */; };
-		F826D0AF24D3188700EBB9DE /* InvokeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F826D0AE24D3188700EBB9DE /* InvokeApi.swift */; };
 		F8348D8F24D11B6200E55B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348D8E24D11B6200E55B8C /* AppDelegate.swift */; };
 		F8348D9124D11B6200E55B8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348D9024D11B6200E55B8C /* SceneDelegate.swift */; };
 		F8348D9324D11B6200E55B8C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348D9224D11B6200E55B8C /* FirstViewController.swift */; };
@@ -18,41 +15,48 @@
 		F8348D9824D11B6200E55B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8348D9624D11B6200E55B8C /* Main.storyboard */; };
 		F8348D9A24D11B6600E55B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8348D9924D11B6600E55B8C /* Assets.xcassets */; };
 		F8348D9D24D11B6600E55B8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8348D9B24D11B6600E55B8C /* LaunchScreen.storyboard */; };
-		F8348DA624D11C1000E55B8C /* Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DA524D11C1000E55B8C /* Kawagarbo.swift */; };
-		F8348DA824D11CAD00E55B8C /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DA724D11CAD00E55B8C /* WebView.swift */; };
-		F8348DAA24D11D8200E55B8C /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DA924D11D8200E55B8C /* Plugin.swift */; };
-		F8348DAC24D11DC900E55B8C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DAB24D11DC900E55B8C /* WebViewController.swift */; };
-		F8348DAE24D11E1800E55B8C /* WebViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DAD24D11E1800E55B8C /* WebViewController+Extension.swift */; };
-		F8348DB024D11E6900E55B8C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DAF24D11E6900E55B8C /* Router.swift */; };
-		F8348DB324D11EF800E55B8C /* RouterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DB224D11EF800E55B8C /* RouterPlugin.swift */; };
-		F8348DB524D11F1D00E55B8C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DB424D11F1D00E55B8C /* Log.swift */; };
-		F8348DB724D11F4500E55B8C /* JSBridgePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DB624D11F4500E55B8C /* JSBridgePlugin.swift */; };
-		F8348DB924D11FFD00E55B8C /* InvokeHandlerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DB824D11FFD00E55B8C /* InvokeHandlerPlugin.swift */; };
-		F8348DBF24D1B58700E55B8C /* Dictionary+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DBE24D1B58700E55B8C /* Dictionary+Kawagarbo.swift */; };
-		F8348DC124D1B5E300E55B8C /* NameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DC024D1B5E300E55B8C /* NameSpace.swift */; };
-		F8348DC324D1B7C400E55B8C /* WKWebView+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DC224D1B7C400E55B8C /* WKWebView+Kawagarbo.swift */; };
-		F8348DC524D1C42E00E55B8C /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DC424D1C42E00E55B8C /* Const.swift */; };
-		F8348DC724D2623D00E55B8C /* SubscribeHandlePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348DC624D2623D00E55B8C /* SubscribeHandlePlugin.swift */; };
-		F875BBD424D6F2D2002B1D83 /* UIScrollView+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F875BBD324D6F2D2002B1D83 /* UIScrollView+Kawagarbo.swift */; };
-		F875BBD624D70A92002B1D83 /* TitlePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F875BBD524D70A92002B1D83 /* TitlePlugin.swift */; };
+		F84B24E824FBFA5D00871ADE /* InvokeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24BE24FBFA5D00871ADE /* InvokeApi.swift */; };
+		F84B24E924FBFA5D00871ADE /* AlertPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C024FBFA5D00871ADE /* AlertPlugin.swift */; };
+		F84B24EA24FBFA5D00871ADE /* InvokeHandlerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C224FBFA5D00871ADE /* InvokeHandlerPlugin.swift */; };
+		F84B24EB24FBFA5D00871ADE /* JSBridgePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C324FBFA5D00871ADE /* JSBridgePlugin.swift */; };
+		F84B24EC24FBFA5D00871ADE /* SubscribeHandlePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C424FBFA5D00871ADE /* SubscribeHandlePlugin.swift */; };
+		F84B24ED24FBFA5D00871ADE /* Res.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C524FBFA5D00871ADE /* Res.swift */; };
+		F84B24EE24FBFA5D00871ADE /* RouterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C624FBFA5D00871ADE /* RouterPlugin.swift */; };
+		F84B24EF24FBFA5D00871ADE /* TitlePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C724FBFA5D00871ADE /* TitlePlugin.swift */; };
+		F84B24F024FBFA5D00871ADE /* WebViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24C824FBFA5D00871ADE /* WebViewController+Extension.swift */; };
+		F84B24F124FBFA5D00871ADE /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24CA24FBFA5D00871ADE /* Toolbar.swift */; };
+		F84B24F224FBFA5D00871ADE /* Bundle+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24CC24FBFA5D00871ADE /* Bundle+Kawagarbo.swift */; };
+		F84B24F324FBFA5D00871ADE /* UIImage+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24CD24FBFA5D00871ADE /* UIImage+Kawagarbo.swift */; };
+		F84B24F424FBFA5D00871ADE /* UIVIewController+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24CE24FBFA5D00871ADE /* UIVIewController+Kawagarbo.swift */; };
+		F84B24F524FBFA5D00871ADE /* NSNumber+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24CF24FBFA5D00871ADE /* NSNumber+Kawagarbo.swift */; };
+		F84B24F624FBFA5D00871ADE /* WKWebView+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D024FBFA5D00871ADE /* WKWebView+Kawagarbo.swift */; };
+		F84B24F724FBFA5D00871ADE /* String+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D124FBFA5D00871ADE /* String+Kawagarbo.swift */; };
+		F84B24F824FBFA5D00871ADE /* Data+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D224FBFA5D00871ADE /* Data+Kawagarbo.swift */; };
+		F84B24F924FBFA5D00871ADE /* Dictionary+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D324FBFA5D00871ADE /* Dictionary+Kawagarbo.swift */; };
+		F84B24FA24FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D424FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift */; };
+		F84B24FB24FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D524FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift */; };
+		F84B24FC24FBFA5D00871ADE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D624FBFA5D00871ADE /* Log.swift */; };
+		F84B24FD24FBFA5D00871ADE /* NameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D724FBFA5D00871ADE /* NameSpace.swift */; };
+		F84B24FE24FBFA5D00871ADE /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D824FBFA5D00871ADE /* Const.swift */; };
+		F84B24FF24FBFA5D00871ADE /* Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24D924FBFA5D00871ADE /* Kawagarbo.swift */; };
+		F84B250024FBFA5D00871ADE /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24DA24FBFA5D00871ADE /* WebView.swift */; };
+		F84B250124FBFA5D00871ADE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24DB24FBFA5D00871ADE /* Router.swift */; };
+		F84B250224FBFA5D00871ADE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24DC24FBFA5D00871ADE /* WebViewController.swift */; };
+		F84B250324FBFA5D00871ADE /* Kawagarbo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F84B24DE24FBFA5D00871ADE /* Kawagarbo.bundle */; };
+		F84B250424FBFA5D00871ADE /* WKWebView+Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E024FBFA5D00871ADE /* WKWebView+Interceptor.swift */; };
+		F84B250524FBFA5D00871ADE /* POSTInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E124FBFA5D00871ADE /* POSTInterceptor.swift */; };
+		F84B250624FBFA5D00871ADE /* URLRequest+Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E224FBFA5D00871ADE /* URLRequest+Interceptor.swift */; };
+		F84B250724FBFA5D00871ADE /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E324FBFA5D00871ADE /* Interceptor.swift */; };
+		F84B250824FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E424FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift */; };
+		F84B250924FBFA5D00871ADE /* TestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E624FBFA5D00871ADE /* TestInterceptor.swift */; };
+		F84B250A24FBFA5D00871ADE /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E724FBFA5D00871ADE /* Plugin.swift */; };
 		F875BBDA24D81091002B1D83 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F875BBD924D81091002B1D83 /* NavigationController.swift */; };
-		F87A3E3624D4553500B8BEDF /* NSNumber+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A3E3524D4553500B8BEDF /* NSNumber+Kawagarbo.swift */; };
-		F87A3E3824D455CF00B8BEDF /* String+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A3E3724D455CF00B8BEDF /* String+Kawagarbo.swift */; };
-		F87A3E3A24D4567300B8BEDF /* CharacterSet+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A3E3924D4567300B8BEDF /* CharacterSet+Kawagarbo.swift */; };
-		F87A3E3C24D5095500B8BEDF /* UIImage+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A3E3B24D5095500B8BEDF /* UIImage+Kawagarbo.swift */; };
-		F87A3E3F24D50BFA00B8BEDF /* Kawagarbo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F87A3E3E24D50BFA00B8BEDF /* Kawagarbo.bundle */; };
-		F87A3E4124D53B6F00B8BEDF /* Bundle+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A3E4024D53B6F00B8BEDF /* Bundle+Kawagarbo.swift */; };
-		F87A3E4324D5579B00B8BEDF /* UIVIewController+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A3E4224D5579B00B8BEDF /* UIVIewController+Kawagarbo.swift */; };
-		F87A3E4524D5B92000B8BEDF /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A3E4424D5B92000B8BEDF /* Toolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32693D17FA91B297AAFE10B8 /* Pods_Kawagarbo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kawagarbo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F943C477D4AC92E5C999DC /* Pods-Kawagarbo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kawagarbo.release.xcconfig"; path = "Target Support Files/Pods-Kawagarbo/Pods-Kawagarbo.release.xcconfig"; sourceTree = "<group>"; };
 		B78E1D4E1BC8F13DA1FC5342 /* Pods-Kawagarbo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kawagarbo.debug.xcconfig"; path = "Target Support Files/Pods-Kawagarbo/Pods-Kawagarbo.debug.xcconfig"; sourceTree = "<group>"; };
-		F826D0A924D2B8C900EBB9DE /* Res.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Res.swift; sourceTree = "<group>"; };
-		F826D0AB24D3059B00EBB9DE /* AlertPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPlugin.swift; sourceTree = "<group>"; };
-		F826D0AE24D3188700EBB9DE /* InvokeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeApi.swift; sourceTree = "<group>"; };
 		F8348D8B24D11B6200E55B8C /* Kawagarbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kawagarbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8348D8E24D11B6200E55B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8348D9024D11B6200E55B8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,32 +66,42 @@
 		F8348D9924D11B6600E55B8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8348D9C24D11B6600E55B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8348D9E24D11B6600E55B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8348DA524D11C1000E55B8C /* Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kawagarbo.swift; sourceTree = "<group>"; };
-		F8348DA724D11CAD00E55B8C /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		F8348DA924D11D8200E55B8C /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
-		F8348DAB24D11DC900E55B8C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		F8348DAD24D11E1800E55B8C /* WebViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewController+Extension.swift"; sourceTree = "<group>"; };
-		F8348DAF24D11E6900E55B8C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		F8348DB224D11EF800E55B8C /* RouterPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterPlugin.swift; sourceTree = "<group>"; };
-		F8348DB424D11F1D00E55B8C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		F8348DB624D11F4500E55B8C /* JSBridgePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBridgePlugin.swift; sourceTree = "<group>"; };
-		F8348DB824D11FFD00E55B8C /* InvokeHandlerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeHandlerPlugin.swift; sourceTree = "<group>"; };
-		F8348DBE24D1B58700E55B8C /* Dictionary+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Kawagarbo.swift"; sourceTree = "<group>"; };
-		F8348DC024D1B5E300E55B8C /* NameSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSpace.swift; sourceTree = "<group>"; };
-		F8348DC224D1B7C400E55B8C /* WKWebView+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Kawagarbo.swift"; sourceTree = "<group>"; };
-		F8348DC424D1C42E00E55B8C /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
-		F8348DC624D2623D00E55B8C /* SubscribeHandlePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeHandlePlugin.swift; sourceTree = "<group>"; };
-		F875BBD324D6F2D2002B1D83 /* UIScrollView+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Kawagarbo.swift"; sourceTree = "<group>"; };
-		F875BBD524D70A92002B1D83 /* TitlePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePlugin.swift; sourceTree = "<group>"; };
+		F84B24BE24FBFA5D00871ADE /* InvokeApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvokeApi.swift; sourceTree = "<group>"; };
+		F84B24C024FBFA5D00871ADE /* AlertPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPlugin.swift; sourceTree = "<group>"; };
+		F84B24C224FBFA5D00871ADE /* InvokeHandlerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvokeHandlerPlugin.swift; sourceTree = "<group>"; };
+		F84B24C324FBFA5D00871ADE /* JSBridgePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSBridgePlugin.swift; sourceTree = "<group>"; };
+		F84B24C424FBFA5D00871ADE /* SubscribeHandlePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeHandlePlugin.swift; sourceTree = "<group>"; };
+		F84B24C524FBFA5D00871ADE /* Res.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Res.swift; sourceTree = "<group>"; };
+		F84B24C624FBFA5D00871ADE /* RouterPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterPlugin.swift; sourceTree = "<group>"; };
+		F84B24C724FBFA5D00871ADE /* TitlePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlePlugin.swift; sourceTree = "<group>"; };
+		F84B24C824FBFA5D00871ADE /* WebViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WebViewController+Extension.swift"; sourceTree = "<group>"; };
+		F84B24CA24FBFA5D00871ADE /* Toolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
+		F84B24CC24FBFA5D00871ADE /* Bundle+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24CD24FBFA5D00871ADE /* UIImage+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24CE24FBFA5D00871ADE /* UIVIewController+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24CF24FBFA5D00871ADE /* NSNumber+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D024FBFA5D00871ADE /* WKWebView+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKWebView+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D124FBFA5D00871ADE /* String+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D224FBFA5D00871ADE /* Data+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D324FBFA5D00871ADE /* Dictionary+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D424FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D524FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B24D624FBFA5D00871ADE /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		F84B24D724FBFA5D00871ADE /* NameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameSpace.swift; sourceTree = "<group>"; };
+		F84B24D824FBFA5D00871ADE /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		F84B24D924FBFA5D00871ADE /* Kawagarbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kawagarbo.swift; sourceTree = "<group>"; };
+		F84B24DA24FBFA5D00871ADE /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		F84B24DB24FBFA5D00871ADE /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F84B24DC24FBFA5D00871ADE /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F84B24DE24FBFA5D00871ADE /* Kawagarbo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Kawagarbo.bundle; sourceTree = "<group>"; };
+		F84B24E024FBFA5D00871ADE /* WKWebView+Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKWebView+Interceptor.swift"; sourceTree = "<group>"; };
+		F84B24E124FBFA5D00871ADE /* POSTInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POSTInterceptor.swift; sourceTree = "<group>"; };
+		F84B24E224FBFA5D00871ADE /* URLRequest+Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Interceptor.swift"; sourceTree = "<group>"; };
+		F84B24E324FBFA5D00871ADE /* Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
+		F84B24E424FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLProtocol+Interceptor.swift"; sourceTree = "<group>"; };
+		F84B24E624FBFA5D00871ADE /* TestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestInterceptor.swift; sourceTree = "<group>"; };
+		F84B24E724FBFA5D00871ADE /* Plugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
 		F875BBD924D81091002B1D83 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		F87A3E3524D4553500B8BEDF /* NSNumber+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNumber+Kawagarbo.swift"; sourceTree = "<group>"; };
-		F87A3E3724D455CF00B8BEDF /* String+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Kawagarbo.swift"; sourceTree = "<group>"; };
-		F87A3E3924D4567300B8BEDF /* CharacterSet+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Kawagarbo.swift"; sourceTree = "<group>"; };
-		F87A3E3B24D5095500B8BEDF /* UIImage+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Kawagarbo.swift"; sourceTree = "<group>"; };
-		F87A3E3E24D50BFA00B8BEDF /* Kawagarbo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Kawagarbo.bundle; sourceTree = "<group>"; };
-		F87A3E4024D53B6F00B8BEDF /* Bundle+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Kawagarbo.swift"; sourceTree = "<group>"; };
-		F87A3E4224D5579B00B8BEDF /* UIVIewController+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Kawagarbo.swift"; sourceTree = "<group>"; };
-		F87A3E4424D5B92000B8BEDF /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,18 +133,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F826D0AD24D3186500EBB9DE /* NativeApis */ = {
-			isa = PBXGroup;
-			children = (
-				F826D0AE24D3188700EBB9DE /* InvokeApi.swift */,
-			);
-			path = NativeApis;
-			sourceTree = "<group>";
-		};
 		F8348D8224D11B6200E55B8C = {
 			isa = PBXGroup;
 			children = (
-				F8348DA424D11BE300E55B8C /* Source */,
+				F84B24BC24FBFA5D00871ADE /* Source */,
 				F8348D8D24D11B6200E55B8C /* Kawagarbo */,
 				F8348D8C24D11B6200E55B8C /* Products */,
 				18417FD15FD1C1CE335DFECE /* Pods */,
@@ -162,71 +168,110 @@
 			path = Kawagarbo;
 			sourceTree = "<group>";
 		};
-		F8348DA424D11BE300E55B8C /* Source */ = {
+		F84B24BC24FBFA5D00871ADE /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F87A3E3D24D50BD600B8BEDF /* Resource */,
-				F826D0AD24D3186500EBB9DE /* NativeApis */,
-				F8348DBA24D1B0BA00E55B8C /* Utils */,
-				F8348DB124D11EE100E55B8C /* Plugins */,
-				F8348DA524D11C1000E55B8C /* Kawagarbo.swift */,
-				F8348DA724D11CAD00E55B8C /* WebView.swift */,
-				F8348DA924D11D8200E55B8C /* Plugin.swift */,
-				F8348DAB24D11DC900E55B8C /* WebViewController.swift */,
-				F8348DAD24D11E1800E55B8C /* WebViewController+Extension.swift */,
-				F8348DAF24D11E6900E55B8C /* Router.swift */,
+				F84B24BD24FBFA5D00871ADE /* NativeApis */,
+				F84B24BF24FBFA5D00871ADE /* Plugins */,
+				F84B24C824FBFA5D00871ADE /* WebViewController+Extension.swift */,
+				F84B24C924FBFA5D00871ADE /* Utils */,
+				F84B24D924FBFA5D00871ADE /* Kawagarbo.swift */,
+				F84B24DA24FBFA5D00871ADE /* WebView.swift */,
+				F84B24DB24FBFA5D00871ADE /* Router.swift */,
+				F84B24DC24FBFA5D00871ADE /* WebViewController.swift */,
+				F84B24DD24FBFA5D00871ADE /* Resource */,
+				F84B24DF24FBFA5D00871ADE /* Interceptor */,
+				F84B24E724FBFA5D00871ADE /* Plugin.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		F8348DB124D11EE100E55B8C /* Plugins */ = {
+		F84B24BD24FBFA5D00871ADE /* NativeApis */ = {
 			isa = PBXGroup;
 			children = (
-				F826D0AB24D3059B00EBB9DE /* AlertPlugin.swift */,
-				F875BBD524D70A92002B1D83 /* TitlePlugin.swift */,
-				F8348DB224D11EF800E55B8C /* RouterPlugin.swift */,
-				F8348DB624D11F4500E55B8C /* JSBridgePlugin.swift */,
-				F8348DB824D11FFD00E55B8C /* InvokeHandlerPlugin.swift */,
-				F8348DC624D2623D00E55B8C /* SubscribeHandlePlugin.swift */,
+				F84B24BE24FBFA5D00871ADE /* InvokeApi.swift */,
+			);
+			path = NativeApis;
+			sourceTree = "<group>";
+		};
+		F84B24BF24FBFA5D00871ADE /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24C024FBFA5D00871ADE /* AlertPlugin.swift */,
+				F84B24C124FBFA5D00871ADE /* JSBridge */,
+				F84B24C624FBFA5D00871ADE /* RouterPlugin.swift */,
+				F84B24C724FBFA5D00871ADE /* TitlePlugin.swift */,
 			);
 			path = Plugins;
 			sourceTree = "<group>";
 		};
-		F8348DBA24D1B0BA00E55B8C /* Utils */ = {
+		F84B24C124FBFA5D00871ADE /* JSBridge */ = {
 			isa = PBXGroup;
 			children = (
-				F8348DC424D1C42E00E55B8C /* Const.swift */,
-				F826D0A924D2B8C900EBB9DE /* Res.swift */,
-				F8348DB424D11F1D00E55B8C /* Log.swift */,
-				F8348DC024D1B5E300E55B8C /* NameSpace.swift */,
-				F87A3E4424D5B92000B8BEDF /* Toolbar.swift */,
-				F8348DBD24D1B56300E55B8C /* Extension */,
+				F84B24C224FBFA5D00871ADE /* InvokeHandlerPlugin.swift */,
+				F84B24C324FBFA5D00871ADE /* JSBridgePlugin.swift */,
+				F84B24C424FBFA5D00871ADE /* SubscribeHandlePlugin.swift */,
+				F84B24C524FBFA5D00871ADE /* Res.swift */,
+			);
+			path = JSBridge;
+			sourceTree = "<group>";
+		};
+		F84B24C924FBFA5D00871ADE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24CA24FBFA5D00871ADE /* Toolbar.swift */,
+				F84B24CB24FBFA5D00871ADE /* Extension */,
+				F84B24D624FBFA5D00871ADE /* Log.swift */,
+				F84B24D724FBFA5D00871ADE /* NameSpace.swift */,
+				F84B24D824FBFA5D00871ADE /* Const.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		F8348DBD24D1B56300E55B8C /* Extension */ = {
+		F84B24CB24FBFA5D00871ADE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F8348DBE24D1B58700E55B8C /* Dictionary+Kawagarbo.swift */,
-				F8348DC224D1B7C400E55B8C /* WKWebView+Kawagarbo.swift */,
-				F87A3E3524D4553500B8BEDF /* NSNumber+Kawagarbo.swift */,
-				F87A3E3724D455CF00B8BEDF /* String+Kawagarbo.swift */,
-				F87A3E3924D4567300B8BEDF /* CharacterSet+Kawagarbo.swift */,
-				F87A3E3B24D5095500B8BEDF /* UIImage+Kawagarbo.swift */,
-				F87A3E4024D53B6F00B8BEDF /* Bundle+Kawagarbo.swift */,
-				F87A3E4224D5579B00B8BEDF /* UIVIewController+Kawagarbo.swift */,
-				F875BBD324D6F2D2002B1D83 /* UIScrollView+Kawagarbo.swift */,
+				F84B24CC24FBFA5D00871ADE /* Bundle+Kawagarbo.swift */,
+				F84B24CD24FBFA5D00871ADE /* UIImage+Kawagarbo.swift */,
+				F84B24CE24FBFA5D00871ADE /* UIVIewController+Kawagarbo.swift */,
+				F84B24CF24FBFA5D00871ADE /* NSNumber+Kawagarbo.swift */,
+				F84B24D024FBFA5D00871ADE /* WKWebView+Kawagarbo.swift */,
+				F84B24D124FBFA5D00871ADE /* String+Kawagarbo.swift */,
+				F84B24D224FBFA5D00871ADE /* Data+Kawagarbo.swift */,
+				F84B24D324FBFA5D00871ADE /* Dictionary+Kawagarbo.swift */,
+				F84B24D424FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift */,
+				F84B24D524FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		F87A3E3D24D50BD600B8BEDF /* Resource */ = {
+		F84B24DD24FBFA5D00871ADE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				F87A3E3E24D50BFA00B8BEDF /* Kawagarbo.bundle */,
+				F84B24DE24FBFA5D00871ADE /* Kawagarbo.bundle */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		F84B24DF24FBFA5D00871ADE /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24E024FBFA5D00871ADE /* WKWebView+Interceptor.swift */,
+				F84B24E124FBFA5D00871ADE /* POSTInterceptor.swift */,
+				F84B24E224FBFA5D00871ADE /* URLRequest+Interceptor.swift */,
+				F84B24E324FBFA5D00871ADE /* Interceptor.swift */,
+				F84B24E424FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift */,
+				F84B24E524FBFA5D00871ADE /* TestInterceptor */,
+			);
+			path = Interceptor;
+			sourceTree = "<group>";
+		};
+		F84B24E524FBFA5D00871ADE /* TestInterceptor */ = {
+			isa = PBXGroup;
+			children = (
+				F84B24E624FBFA5D00871ADE /* TestInterceptor.swift */,
+			);
+			path = TestInterceptor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +336,7 @@
 				F8348D9D24D11B6600E55B8C /* LaunchScreen.storyboard in Resources */,
 				F8348D9A24D11B6600E55B8C /* Assets.xcassets in Resources */,
 				F8348D9824D11B6200E55B8C /* Main.storyboard in Resources */,
-				F87A3E3F24D50BFA00B8BEDF /* Kawagarbo.bundle in Resources */,
+				F84B250324FBFA5D00871ADE /* Kawagarbo.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,38 +372,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F84B24ED24FBFA5D00871ADE /* Res.swift in Sources */,
+				F84B24FA24FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift in Sources */,
+				F84B24FC24FBFA5D00871ADE /* Log.swift in Sources */,
+				F84B24FF24FBFA5D00871ADE /* Kawagarbo.swift in Sources */,
+				F84B24FD24FBFA5D00871ADE /* NameSpace.swift in Sources */,
+				F84B250124FBFA5D00871ADE /* Router.swift in Sources */,
 				F8348D9524D11B6200E55B8C /* SecondViewController.swift in Sources */,
+				F84B250724FBFA5D00871ADE /* Interceptor.swift in Sources */,
 				F8348D9324D11B6200E55B8C /* FirstViewController.swift in Sources */,
-				F8348DB524D11F1D00E55B8C /* Log.swift in Sources */,
-				F87A3E3624D4553500B8BEDF /* NSNumber+Kawagarbo.swift in Sources */,
-				F8348DB024D11E6900E55B8C /* Router.swift in Sources */,
-				F8348DAA24D11D8200E55B8C /* Plugin.swift in Sources */,
-				F8348DB724D11F4500E55B8C /* JSBridgePlugin.swift in Sources */,
-				F8348DAE24D11E1800E55B8C /* WebViewController+Extension.swift in Sources */,
-				F8348DC124D1B5E300E55B8C /* NameSpace.swift in Sources */,
-				F87A3E3C24D5095500B8BEDF /* UIImage+Kawagarbo.swift in Sources */,
-				F8348DA624D11C1000E55B8C /* Kawagarbo.swift in Sources */,
-				F8348DC324D1B7C400E55B8C /* WKWebView+Kawagarbo.swift in Sources */,
-				F826D0AC24D3059B00EBB9DE /* AlertPlugin.swift in Sources */,
-				F875BBD424D6F2D2002B1D83 /* UIScrollView+Kawagarbo.swift in Sources */,
-				F826D0AA24D2B8C900EBB9DE /* Res.swift in Sources */,
-				F875BBD624D70A92002B1D83 /* TitlePlugin.swift in Sources */,
-				F87A3E4124D53B6F00B8BEDF /* Bundle+Kawagarbo.swift in Sources */,
-				F8348DB924D11FFD00E55B8C /* InvokeHandlerPlugin.swift in Sources */,
-				F8348DA824D11CAD00E55B8C /* WebView.swift in Sources */,
-				F826D0AF24D3188700EBB9DE /* InvokeApi.swift in Sources */,
+				F84B24E824FBFA5D00871ADE /* InvokeApi.swift in Sources */,
+				F84B24E924FBFA5D00871ADE /* AlertPlugin.swift in Sources */,
+				F84B24F624FBFA5D00871ADE /* WKWebView+Kawagarbo.swift in Sources */,
+				F84B24F224FBFA5D00871ADE /* Bundle+Kawagarbo.swift in Sources */,
+				F84B24F824FBFA5D00871ADE /* Data+Kawagarbo.swift in Sources */,
+				F84B24EF24FBFA5D00871ADE /* TitlePlugin.swift in Sources */,
+				F84B250824FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift in Sources */,
+				F84B24EB24FBFA5D00871ADE /* JSBridgePlugin.swift in Sources */,
+				F84B250224FBFA5D00871ADE /* WebViewController.swift in Sources */,
+				F84B250424FBFA5D00871ADE /* WKWebView+Interceptor.swift in Sources */,
+				F84B24FE24FBFA5D00871ADE /* Const.swift in Sources */,
 				F8348D8F24D11B6200E55B8C /* AppDelegate.swift in Sources */,
+				F84B250524FBFA5D00871ADE /* POSTInterceptor.swift in Sources */,
+				F84B24EA24FBFA5D00871ADE /* InvokeHandlerPlugin.swift in Sources */,
+				F84B250924FBFA5D00871ADE /* TestInterceptor.swift in Sources */,
 				F875BBDA24D81091002B1D83 /* NavigationController.swift in Sources */,
+				F84B24F524FBFA5D00871ADE /* NSNumber+Kawagarbo.swift in Sources */,
+				F84B24EE24FBFA5D00871ADE /* RouterPlugin.swift in Sources */,
+				F84B24F024FBFA5D00871ADE /* WebViewController+Extension.swift in Sources */,
+				F84B250024FBFA5D00871ADE /* WebView.swift in Sources */,
+				F84B24F724FBFA5D00871ADE /* String+Kawagarbo.swift in Sources */,
+				F84B24F324FBFA5D00871ADE /* UIImage+Kawagarbo.swift in Sources */,
+				F84B24FB24FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift in Sources */,
+				F84B24F424FBFA5D00871ADE /* UIVIewController+Kawagarbo.swift in Sources */,
+				F84B24F924FBFA5D00871ADE /* Dictionary+Kawagarbo.swift in Sources */,
+				F84B24F124FBFA5D00871ADE /* Toolbar.swift in Sources */,
 				F8348D9124D11B6200E55B8C /* SceneDelegate.swift in Sources */,
-				F87A3E4524D5B92000B8BEDF /* Toolbar.swift in Sources */,
-				F87A3E3824D455CF00B8BEDF /* String+Kawagarbo.swift in Sources */,
-				F87A3E3A24D4567300B8BEDF /* CharacterSet+Kawagarbo.swift in Sources */,
-				F8348DB324D11EF800E55B8C /* RouterPlugin.swift in Sources */,
-				F8348DAC24D11DC900E55B8C /* WebViewController.swift in Sources */,
-				F87A3E4324D5579B00B8BEDF /* UIVIewController+Kawagarbo.swift in Sources */,
-				F8348DBF24D1B58700E55B8C /* Dictionary+Kawagarbo.swift in Sources */,
-				F8348DC724D2623D00E55B8C /* SubscribeHandlePlugin.swift in Sources */,
-				F8348DC524D1C42E00E55B8C /* Const.swift in Sources */,
+				F84B250A24FBFA5D00871ADE /* Plugin.swift in Sources */,
+				F84B250624FBFA5D00871ADE /* URLRequest+Interceptor.swift in Sources */,
+				F84B24EC24FBFA5D00871ADE /* SubscribeHandlePlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

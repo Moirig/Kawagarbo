@@ -12,7 +12,7 @@ private let kSubscribeJSFunc: String = "kawagarbo._subscribeNative"
 
 extension WebViewController {
     
-    func invokeJS(path: String, params: [String: Any]?, callback: ((Res) -> Void)?) {
+    func invokeJS(path: String, params: [String: Any]? = nil, callback: ((Res) -> Void)? = nil) {
         guard path.count > 0 else { return kwlog("invokeJS no path!") }
         kwlog(title: "Invoke JS", """
             \(kPath):\(path)

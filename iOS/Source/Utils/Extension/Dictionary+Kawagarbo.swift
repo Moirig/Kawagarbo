@@ -13,7 +13,6 @@ extension Dictionary: KWNamespaceProtocol {}
 extension KWNamespace where Base == Dictionary<String, Any> {
     
     var string: String? {
-        
         do {
             let data = try JSONSerialization.data(withJSONObject: base, options: .prettyPrinted)
             return String(data: data, encoding: .utf8)
@@ -22,7 +21,16 @@ extension KWNamespace where Base == Dictionary<String, Any> {
             debugPrint("Dictionary to String error: \(error)")
             return nil
         }
-        
+    }
+    
+    var data: Data? {
+        do {
+            let data = try JSONSerialization.data(withJSONObject: base, options: .prettyPrinted)
+            return data
+        } catch {
+            debugPrint("Dictionary to String error: \(error)")
+        }
+        return nil
     }
     
 }

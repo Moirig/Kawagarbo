@@ -20,8 +20,17 @@ kw.invoke = function (obj) {
 kw.subscribe = function () {
   kw.setup(function () {
     window.kawagarbo.subscribe('subscribe', function (params) {
-      alert('subscribe')
+      alert('subscribe' + JSON.stringify(params))
+      if (params.callback) {
+        params.callback({code: 200, message: 'subscribe'})
+      }
     })
+  })
+}
+
+kw.testInterceptor = function(obj) {
+  kw.setup(function () {
+    window.kawagarbo.invoke('testInterceptor', obj)
   })
 }
 

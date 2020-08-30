@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SubscribeHandlePlugin().regist()
         
         InvokeApi().regist()
+        TestInterceptorApi().regist()
         
         return true
     }

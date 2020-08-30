@@ -13,6 +13,8 @@ class InvokeApi: NativeApi {
     
     func webview(_ webView: WKWebView, invokeWith params: [String : Any]?, callback: @escaping (Res) -> Void) {
         callback(.success())
+        webView.kw.viewController.invokeJS(path: "subscribe", params: Res.success().jsonObj) { (res) in
+        }
     }
     
 }
