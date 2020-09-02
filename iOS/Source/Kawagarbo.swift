@@ -12,6 +12,12 @@ public class Kawagarbo: NSObject {
 
     public static func setup() {
         WebView.preload()
+        
+        SafariPopupItem.add()
+        SMSPopupItem.add()
+        
+        CopyLinkPopupItem.add()
+        SystemPopupItem.add()
     }
     
 }

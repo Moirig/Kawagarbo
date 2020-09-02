@@ -28,7 +28,7 @@ kw.subscribe = function () {
   })
 }
 
-kw.testInterceptor = function(obj) {
+kw.testInterceptor = function (obj) {
   kw.setup(function () {
     window.kawagarbo.invoke('testInterceptor', obj)
   })
