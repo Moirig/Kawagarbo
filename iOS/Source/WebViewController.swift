@@ -16,6 +16,12 @@ private let KVOKeyCanGoBack: String = "canGoBack"
 
 public class WebViewController: UIViewController {
     
+    lazy var morePopupView: MorePopupView = {
+        let morePopupView = MorePopupView()
+        
+        return morePopupView
+    }()
+    
     lazy var progressView: UIProgressView = {
         let progressView = UIProgressView(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 0)))
         progressView.progressTintColor = UIColor.green
@@ -170,7 +176,14 @@ extension WebViewController: ToolbarDelegate, UIScrollViewDelegate {
     }
     
     @objc func rightItemAction(item: UINavigationItem) {
-        
+        morePopupView.info = MorePopupItemInfo(image: UIImage(), title: webView.title ?? "", message: "", link: route.urlStr)
+        morePopupView.show()
+        morePopupView.selected = { (res, item) in
+            kwlog("""
+            \(res)
+            \(item)
+            """)
+        }
     }
     
     func backItemAction(item: UIBarButtonItem) {

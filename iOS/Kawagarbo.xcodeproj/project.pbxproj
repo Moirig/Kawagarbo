@@ -50,6 +50,15 @@
 		F84B250824FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E424FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift */; };
 		F84B250924FBFA5D00871ADE /* TestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E624FBFA5D00871ADE /* TestInterceptor.swift */; };
 		F84B250A24FBFA5D00871ADE /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B24E724FBFA5D00871ADE /* Plugin.swift */; };
+		F84B250D24FC944A00871ADE /* MorePopupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B250C24FC944A00871ADE /* MorePopupCell.swift */; };
+		F84B250F24FCBF2200871ADE /* UIView+KWConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B250E24FCBF2200871ADE /* UIView+KWConstraint.swift */; };
+		F84B251124FCDE2200871ADE /* MorePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B251024FCDE2200871ADE /* MorePopupView.swift */; };
+		F84B251324FDEE2E00871ADE /* MorePopupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B251224FDEE2E00871ADE /* MorePopupItem.swift */; };
+		F84B251524FE1A2E00871ADE /* Array+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B251424FE1A2E00871ADE /* Array+Kawagarbo.swift */; };
+		F84B251824FE387200871ADE /* SafariPopupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B251724FE387200871ADE /* SafariPopupItem.swift */; };
+		F84B251A24FE393800871ADE /* SMSPopupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B251924FE393800871ADE /* SMSPopupItem.swift */; };
+		F84B251C24FE93CF00871ADE /* CopyLinkPopupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B251B24FE93CE00871ADE /* CopyLinkPopupItem.swift */; };
+		F84B251E24FF7E6300871ADE /* SystemPopupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B251D24FF7E6300871ADE /* SystemPopupItem.swift */; };
 		F875BBDA24D81091002B1D83 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F875BBD924D81091002B1D83 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +110,15 @@
 		F84B24E424FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLProtocol+Interceptor.swift"; sourceTree = "<group>"; };
 		F84B24E624FBFA5D00871ADE /* TestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestInterceptor.swift; sourceTree = "<group>"; };
 		F84B24E724FBFA5D00871ADE /* Plugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		F84B250C24FC944A00871ADE /* MorePopupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePopupCell.swift; sourceTree = "<group>"; };
+		F84B250E24FCBF2200871ADE /* UIView+KWConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+KWConstraint.swift"; sourceTree = "<group>"; };
+		F84B251024FCDE2200871ADE /* MorePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePopupView.swift; sourceTree = "<group>"; };
+		F84B251224FDEE2E00871ADE /* MorePopupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePopupItem.swift; sourceTree = "<group>"; };
+		F84B251424FE1A2E00871ADE /* Array+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F84B251724FE387200871ADE /* SafariPopupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariPopupItem.swift; sourceTree = "<group>"; };
+		F84B251924FE393800871ADE /* SMSPopupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSPopupItem.swift; sourceTree = "<group>"; };
+		F84B251B24FE93CE00871ADE /* CopyLinkPopupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyLinkPopupItem.swift; sourceTree = "<group>"; };
+		F84B251D24FF7E6300871ADE /* SystemPopupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPopupItem.swift; sourceTree = "<group>"; };
 		F875BBD924D81091002B1D83 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +237,7 @@
 		F84B24C924FBFA5D00871ADE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F84B250B24FC940200871ADE /* MorePopupView */,
 				F84B24CA24FBFA5D00871ADE /* Toolbar.swift */,
 				F84B24CB24FBFA5D00871ADE /* Extension */,
 				F84B24D624FBFA5D00871ADE /* Log.swift */,
@@ -241,6 +260,8 @@
 				F84B24D324FBFA5D00871ADE /* Dictionary+Kawagarbo.swift */,
 				F84B24D424FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift */,
 				F84B24D524FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift */,
+				F84B250E24FCBF2200871ADE /* UIView+KWConstraint.swift */,
+				F84B251424FE1A2E00871ADE /* Array+Kawagarbo.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -272,6 +293,28 @@
 				F84B24E624FBFA5D00871ADE /* TestInterceptor.swift */,
 			);
 			path = TestInterceptor;
+			sourceTree = "<group>";
+		};
+		F84B250B24FC940200871ADE /* MorePopupView */ = {
+			isa = PBXGroup;
+			children = (
+				F84B250C24FC944A00871ADE /* MorePopupCell.swift */,
+				F84B251024FCDE2200871ADE /* MorePopupView.swift */,
+				F84B251224FDEE2E00871ADE /* MorePopupItem.swift */,
+				F84B251624FE380C00871ADE /* Items */,
+			);
+			path = MorePopupView;
+			sourceTree = "<group>";
+		};
+		F84B251624FE380C00871ADE /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				F84B251724FE387200871ADE /* SafariPopupItem.swift */,
+				F84B251924FE393800871ADE /* SMSPopupItem.swift */,
+				F84B251B24FE93CE00871ADE /* CopyLinkPopupItem.swift */,
+				F84B251D24FF7E6300871ADE /* SystemPopupItem.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,12 +415,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F84B251324FDEE2E00871ADE /* MorePopupItem.swift in Sources */,
+				F84B251A24FE393800871ADE /* SMSPopupItem.swift in Sources */,
 				F84B24ED24FBFA5D00871ADE /* Res.swift in Sources */,
 				F84B24FA24FBFA5D00871ADE /* UIScrollView+Kawagarbo.swift in Sources */,
+				F84B251824FE387200871ADE /* SafariPopupItem.swift in Sources */,
 				F84B24FC24FBFA5D00871ADE /* Log.swift in Sources */,
 				F84B24FF24FBFA5D00871ADE /* Kawagarbo.swift in Sources */,
 				F84B24FD24FBFA5D00871ADE /* NameSpace.swift in Sources */,
+				F84B251E24FF7E6300871ADE /* SystemPopupItem.swift in Sources */,
 				F84B250124FBFA5D00871ADE /* Router.swift in Sources */,
+				F84B251124FCDE2200871ADE /* MorePopupView.swift in Sources */,
 				F8348D9524D11B6200E55B8C /* SecondViewController.swift in Sources */,
 				F84B250724FBFA5D00871ADE /* Interceptor.swift in Sources */,
 				F8348D9324D11B6200E55B8C /* FirstViewController.swift in Sources */,
@@ -388,12 +436,15 @@
 				F84B24F824FBFA5D00871ADE /* Data+Kawagarbo.swift in Sources */,
 				F84B24EF24FBFA5D00871ADE /* TitlePlugin.swift in Sources */,
 				F84B250824FBFA5D00871ADE /* NSURLProtocol+Interceptor.swift in Sources */,
+				F84B250F24FCBF2200871ADE /* UIView+KWConstraint.swift in Sources */,
 				F84B24EB24FBFA5D00871ADE /* JSBridgePlugin.swift in Sources */,
 				F84B250224FBFA5D00871ADE /* WebViewController.swift in Sources */,
 				F84B250424FBFA5D00871ADE /* WKWebView+Interceptor.swift in Sources */,
 				F84B24FE24FBFA5D00871ADE /* Const.swift in Sources */,
 				F8348D8F24D11B6200E55B8C /* AppDelegate.swift in Sources */,
 				F84B250524FBFA5D00871ADE /* POSTInterceptor.swift in Sources */,
+				F84B251C24FE93CF00871ADE /* CopyLinkPopupItem.swift in Sources */,
+				F84B251524FE1A2E00871ADE /* Array+Kawagarbo.swift in Sources */,
 				F84B24EA24FBFA5D00871ADE /* InvokeHandlerPlugin.swift in Sources */,
 				F84B250924FBFA5D00871ADE /* TestInterceptor.swift in Sources */,
 				F875BBDA24D81091002B1D83 /* NavigationController.swift in Sources */,
@@ -404,6 +455,7 @@
 				F84B24F724FBFA5D00871ADE /* String+Kawagarbo.swift in Sources */,
 				F84B24F324FBFA5D00871ADE /* UIImage+Kawagarbo.swift in Sources */,
 				F84B24FB24FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift in Sources */,
+				F84B250D24FC944A00871ADE /* MorePopupCell.swift in Sources */,
 				F84B24F424FBFA5D00871ADE /* UIVIewController+Kawagarbo.swift in Sources */,
 				F84B24F924FBFA5D00871ADE /* Dictionary+Kawagarbo.swift in Sources */,
 				F84B24F124FBFA5D00871ADE /* Toolbar.swift in Sources */,
