@@ -14,7 +14,7 @@ class SafariPopupItem: MorePopupItem {
     
     static var image: UIImage? { return UIImage.kw.image(named: "safari") }
     
-    static var text: String { return "浏览器打开" }
+    static var text: String { return NSLocalizedString("Safari") }
     
     static func selected(info: MorePopupItemInfo, callback: @escaping (MorePopupItemRes) -> Void) {
         guard let url = URL(string: info.link), UIApplication.shared.canOpenURL(url) else { return callback(.fail)

@@ -15,7 +15,7 @@ class SMSPopupItem: MorePopupItem {
     
     static var image: UIImage? { return UIImage.kw.image(named: "sms") }
 
-    static var text: String { return "短信" }
+    static var text: String { return NSLocalizedString("SMS") }
     
     static func selected(info: MorePopupItemInfo, callback: @escaping (MorePopupItemRes) -> Void) {
         guard KWMessageComposeViewController.canSendText() else { return callback(.fail) }

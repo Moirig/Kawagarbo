@@ -46,7 +46,7 @@ class MorePopupView: UIView, UIGestureRecognizerDelegate, UICollectionViewDelega
         let titleLabel = UILabel(frame: .zero)
         titleLabel.font = UIFont.systemFont(ofSize: 13.0)
         titleLabel.textColor = UIColor(white: 0.2, alpha: 1)
-        titleLabel.text = "More"
+        titleLabel.text = NSLocalizedString("More")
         
         return titleLabel
     }()
@@ -104,7 +104,7 @@ class MorePopupView: UIView, UIGestureRecognizerDelegate, UICollectionViewDelega
         cancelButton.backgroundColor = .white
         cancelButton.tintColor = UIColor(white: 0.2, alpha: 1)
         cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitle(NSLocalizedString("Cancel"), for: .normal)
         if #available(iOS 11.0, *) {
             if let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets, safeAreaInsets.bottom > 0 {
                 cancelButton.titleEdgeInsets = UIEdgeInsets(top: -16, left: 0, bottom: 0, right: 0)

@@ -14,7 +14,7 @@ class SystemPopupItem: MorePopupItem {
     
     static var image: UIImage? { return UIImage.kw.image(named: "more1") }
     
-    static var text: String { return "更多" }
+    static var text: String { return NSLocalizedString("More") }
     
     static func selected(info: MorePopupItemInfo, callback: @escaping (MorePopupItemRes) -> Void) {
         guard let url = URL(string: info.link), UIApplication.shared.canOpenURL(url) else { return callback(.fail)

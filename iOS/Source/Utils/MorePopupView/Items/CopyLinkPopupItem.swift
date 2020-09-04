@@ -14,7 +14,7 @@ class CopyLinkPopupItem: MorePopupItem {
     
     static var image: UIImage? { return UIImage.kw.image(named: "copylink") }
     
-    static var text: String { return "拷贝链接" }
+    static var text: String { return NSLocalizedString("Copy Link") }
     
     static func selected(info: MorePopupItemInfo, callback: @escaping (MorePopupItemRes) -> Void) {
         let text = """
@@ -24,8 +24,8 @@ class CopyLinkPopupItem: MorePopupItem {
         """
         let pasteBoard: UIPasteboard = UIPasteboard.general
         pasteBoard.string = text
-        //show tips
-        
+        toast("Content Copied")
+             
         callback(.success)
     }
 }

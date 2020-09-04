@@ -8,6 +8,10 @@
 
 import Foundation
 
+func NSLocalizedString(_ key: String) -> String {
+    return NSLocalizedString(key, comment: "")
+}
+
 extension String: KWNamespaceProtocol {}
 
 extension KWNamespace where Base == String {

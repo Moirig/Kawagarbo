@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F01795B2CCB31733442D9AA /* Pods_Kawagarbo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32693D17FA91B297AAFE10B8 /* Pods_Kawagarbo.framework */; };
+		F82AA02C24FFEBA9004E6224 /* UIApplication+Kawagarbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82AA02B24FFEBA9004E6224 /* UIApplication+Kawagarbo.swift */; };
+		F83059DC24FFEE750060CAA8 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83059DB24FFEE750060CAA8 /* Toast.swift */; };
 		F8348D8F24D11B6200E55B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348D8E24D11B6200E55B8C /* AppDelegate.swift */; };
 		F8348D9124D11B6200E55B8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348D9024D11B6200E55B8C /* SceneDelegate.swift */; };
 		F8348D9324D11B6200E55B8C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8348D9224D11B6200E55B8C /* FirstViewController.swift */; };
@@ -66,6 +68,8 @@
 		32693D17FA91B297AAFE10B8 /* Pods_Kawagarbo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kawagarbo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F943C477D4AC92E5C999DC /* Pods-Kawagarbo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kawagarbo.release.xcconfig"; path = "Target Support Files/Pods-Kawagarbo/Pods-Kawagarbo.release.xcconfig"; sourceTree = "<group>"; };
 		B78E1D4E1BC8F13DA1FC5342 /* Pods-Kawagarbo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kawagarbo.debug.xcconfig"; path = "Target Support Files/Pods-Kawagarbo/Pods-Kawagarbo.debug.xcconfig"; sourceTree = "<group>"; };
+		F82AA02B24FFEBA9004E6224 /* UIApplication+Kawagarbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Kawagarbo.swift"; sourceTree = "<group>"; };
+		F83059DB24FFEE750060CAA8 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		F8348D8B24D11B6200E55B8C /* Kawagarbo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kawagarbo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8348D8E24D11B6200E55B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8348D9024D11B6200E55B8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 				F84B24CA24FBFA5D00871ADE /* Toolbar.swift */,
 				F84B24CB24FBFA5D00871ADE /* Extension */,
 				F84B24D624FBFA5D00871ADE /* Log.swift */,
+				F83059DB24FFEE750060CAA8 /* Toast.swift */,
 				F84B24D724FBFA5D00871ADE /* NameSpace.swift */,
 				F84B24D824FBFA5D00871ADE /* Const.swift */,
 			);
@@ -262,6 +267,7 @@
 				F84B24D524FBFA5D00871ADE /* CharacterSet+Kawagarbo.swift */,
 				F84B250E24FCBF2200871ADE /* UIView+KWConstraint.swift */,
 				F84B251424FE1A2E00871ADE /* Array+Kawagarbo.swift */,
+				F82AA02B24FFEBA9004E6224 /* UIApplication+Kawagarbo.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 				F84B24FC24FBFA5D00871ADE /* Log.swift in Sources */,
 				F84B24FF24FBFA5D00871ADE /* Kawagarbo.swift in Sources */,
 				F84B24FD24FBFA5D00871ADE /* NameSpace.swift in Sources */,
+				F82AA02C24FFEBA9004E6224 /* UIApplication+Kawagarbo.swift in Sources */,
 				F84B251E24FF7E6300871ADE /* SystemPopupItem.swift in Sources */,
 				F84B250124FBFA5D00871ADE /* Router.swift in Sources */,
 				F84B251124FCDE2200871ADE /* MorePopupView.swift in Sources */,
@@ -461,6 +468,7 @@
 				F84B24F124FBFA5D00871ADE /* Toolbar.swift in Sources */,
 				F8348D9124D11B6200E55B8C /* SceneDelegate.swift in Sources */,
 				F84B250A24FBFA5D00871ADE /* Plugin.swift in Sources */,
+				F83059DC24FFEE750060CAA8 /* Toast.swift in Sources */,
 				F84B250624FBFA5D00871ADE /* URLRequest+Interceptor.swift in Sources */,
 				F84B24EC24FBFA5D00871ADE /* SubscribeHandlePlugin.swift in Sources */,
 			);
